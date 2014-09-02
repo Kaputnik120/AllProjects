@@ -1,0 +1,130 @@
+/* 
+    Document   : Style
+    Created on : 18.11.2012, 14:30:58
+    Author     : Uli
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#maindiv {
+    width: 740px;
+    height: 500px;
+    margin: 20px auto;
+    background-color: lightgray;
+}
+#headerdiv {
+    width: 100%;
+    background-color: crimson;
+    height:10%;
+    float:left;
+}
+#contentdiv {
+    width: 100%;
+    background-color: blue;
+    height:80%;
+    float:left;
+}
+#footerdiv {
+    width: 100%;
+    background-color: aquamarine;
+    height:10%;
+    float:left;
+}
+#div0 {
+    height: 70%;
+    width:100%;
+    background-color: activecaption;
+    z-index: 0;
+    position: relative;
+    top:0px;
+    left:0px;
+}
+#div001{
+    height:70%;
+    width: 30%;
+    background-color: mediumvioletred;
+    z-index: 2;
+    float:left;
+    position: relative;
+    top:0px;
+    left:0px;
+}
+#div01 {
+    height: 40%;
+    width: 70%;
+    background-color:lightgreen;
+    z-index: 1;
+    position: relative;
+    float: right;
+    left:0px;
+}
+#div010 {
+    width:43%;
+    height: 100%;
+    background-color: olivedrab;
+    z-index: 2;
+}
+#div011 {
+    width: 57%;
+    height: 100%;
+    background-color: tomato;
+    z-index: 2;
+}
+#div002 {
+    height: 30%;
+    width: 45%;
+    background-color: aliceblue;
+    z-index: 2;
+}
+#div003 {
+    height: 60%;
+    width: 25%;
+    background-color: mediumvioletred;
+    z-index: 2;
+}
+#div02 {
+    height: 30%;
+    width: 75%;
+    background-color: thistle;
+    z-index: 1;
+}
+#div020 {
+    height: 100%;
+    width: 27%;
+    background-color: lavenderblush;
+    z-index: 2;
+}
+#div021 {
+    height: 100%;
+    width: 73%;
+    background-color: lightgreen;
+    z-index: 2;
+}
+#div003 {
+    height: 60%;
+    width: 25%;
+    background-color: azure;
+    z-index: 2;
+}
+#div1 {
+    height: 30%;
+    width:100%;
+    background-color:blueviolet;
+    z-index: 0;
+}
+#div10 {
+    height: 100%;
+    background-color:red;
+    width: 35%;
+    z-index: 1;
+}
+#div20 {
+    height: 100%;
+    background-color: papayawhip;
+    width: 65%;
+    z-index: 1;
+}

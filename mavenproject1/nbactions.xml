@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-clean install -DmavenVersion=2.1.0</actionName>
+            <displayName>clean install -DmavenVersion=2.1.0</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-DmavenVersion=2.1.0</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install help:effective-pom -DmavenVersion=2.1.0</actionName>
+            <displayName>clean install help:effective-pom -DmavenVersion=2.1.0</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>help:effective-pom</goal>
+                <goal>-DmavenVersion=2.1.0</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install -Ptest</actionName>
+            <displayName>clean install -Ptest</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-Ptest</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-mvn -P graph graph:reactor</actionName>
+            <displayName>mvn -P graph graph:reactor</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>-P</goal>
+                <goal>graph</goal>
+                <goal>graph:reactor</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM--P graph graph:project</actionName>
+            <displayName>-P graph graph:project</displayName>
+            <goals>
+                <goal>-P</goal>
+                <goal>graph</goal>
+                <goal>graph:project</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM--P graph graph:reactor</actionName>
+            <displayName>-P graph graph:reactor</displayName>
+            <goals>
+                <goal>-P</goal>
+                <goal>graph</goal>
+                <goal>graph:reactor</goal>
+            </goals>
+        </action>
+    </actions>
