@@ -11,7 +11,7 @@ int ledDelay = 2000;
 extern HardwareSerial Serial;
 
 void setup() {
-    analogReference(INTERNAL);
+    analogReference(EXTERNAL);
     Serial.begin(115200);
     pinMode(newLED, OUTPUT);
     pinMode(okLED, OUTPUT);
