@@ -21,7 +21,7 @@ public class TrackedThread extends Thread {
 
     private static final String WORKBOOK_LOCATION = "/home/uli/Dokumente/IT/Entwicklung/Java/Timing/wb1.xls";
     private static final String WORKSHEET_NAME = "data";
-    private static final int EXECUTION_TIMES = 500000;
+    private static final int EXECUTION_TIMES = 250000;
     private static final int WARMUP_EXECUTION_TIMES = 50000;
 
     @Override
@@ -31,7 +31,7 @@ public class TrackedThread extends Thread {
             Workbook wb = createWorkbook(WORKBOOK_LOCATION);
 
             //Warmup JIT
-            doWorkAndLogTimes(WARMUP_EXECUTION_TIMES);
+//            doWorkAndLogTimes(WARMUP_EXECUTION_TIMES);
 
             //Do work and get tracked execution times
             List<Integer> values = doWorkAndLogTimes(EXECUTION_TIMES);
@@ -49,10 +49,11 @@ public class TrackedThread extends Thread {
     /**
      * Does some processing repeatedly and tracks execution time.
      *
+     * @param times
      * @return
      */
     public static List<Integer> doWorkAndLogTimes(int times) {
-        List<Integer> values = new ArrayList<>();
+        List<Integer> values = new ArrayList<>(times);
 
         for (int i = 0; i < EXECUTION_TIMES - 1; i++) {
             long startTime = System.nanoTime();
