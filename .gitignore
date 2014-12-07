@@ -7,3 +7,5 @@
 /Pathfinder/target/
 /SPIArduino/dist/
 /SPIArduino/build/
+/I2CArduino/build/
+/I2CArduino/dist/
