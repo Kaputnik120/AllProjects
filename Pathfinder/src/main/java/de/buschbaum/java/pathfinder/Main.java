@@ -20,23 +20,13 @@ public class Main {
             System.out.println("Creating I2C bus");
             I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
             System.out.println("Creating I2C device");
-            I2CDevice device = bus.getDevice(0x04);
+            I2CDevice device = bus.getDevice(0x68);
 
-            byte[] writeData = new byte[1];
-            long waitTimeSent = 5000;
-            long waitTimeRead = 5000;
+            long waitTimeRead = 250;
 
             while (true) {
-                //negative values don't work
-                new Random().nextBytes(writeData);
-                System.out.println("Writing " + writeData[0] + " via I2C");
-                device.write(writeData[0]);
-                System.out.println("Waiting 5 seconds");
-                Thread.sleep(waitTimeSent);
-                System.out.println("Reading data via I2C");
                 int dataRead = device.read();
                 System.out.println("Read " + dataRead + " via I2C");
-                System.out.println("Waiting 5 seconds");
                 Thread.sleep(waitTimeRead);
             }
         } catch (IOException ex) {
