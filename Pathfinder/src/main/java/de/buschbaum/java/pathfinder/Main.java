@@ -23,18 +23,14 @@ public class Main {
         Thread.sleep(3000l);
         System.out.println("Trying to read Gyro values...");
         while (true) {
-            printValueIfNotZero("MPU6050_RA_GYRO_XOUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_XOUT_L));
-            printValueIfNotZero("MPU6050_RA_GYRO_XOUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_XOUT_H));
-            printValueIfNotZero("MPU6050_RA_GYRO_YOUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_YOUT_L));
-            printValueIfNotZero("MPU6050_RA_GYRO_YOUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_YOUT_H));
-            printValueIfNotZero("MPU6050_RA_GYRO_ZOUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_ZOUT_L));
-            printValueIfNotZero("MPU6050_RA_GYRO_ZOUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_ZOUT_H));
-        }
-    }
-
-    private static void printValueIfNotZero(String name, long value) {
-        if (value != 0) {
-            System.out.println(name + ":\t" + value);
+            Helper.printValueIfNotZero("MPU6050_RA_GYRO_XOUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_XOUT_L));
+            Helper.printValueIfNotZero("MPU6050_RA_GYRO_XOUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_XOUT_H));
+            Helper.printValueIfNotZero("MPU6050_RA_GYRO_YOUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_YOUT_L));
+            Helper.printValueIfNotZero("MPU6050_RA_GYRO_YOUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_YOUT_H));
+            Helper.printValueIfNotZero("MPU6050_RA_GYRO_ZOUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_ZOUT_L));
+            Helper.printValueIfNotZero("MPU6050_RA_GYRO_ZOUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_GYRO_ZOUT_H));
+            Helper.printValue("MPU6050_RA_TEMP_OUT_L", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_TEMP_OUT_L));
+            Helper.printValue("MPU6050_RA_TEMP_OUT_H", Mpu6050Controller.readMpu6050Register(Mpu6050Registers.MPU6050_RA_TEMP_OUT_H));
         }
     }
 }
