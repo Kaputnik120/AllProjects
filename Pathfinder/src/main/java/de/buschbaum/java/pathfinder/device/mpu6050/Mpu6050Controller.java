@@ -25,6 +25,15 @@ public class Mpu6050Controller {
         configureMpu6050();
     }
 
+    public static short readAccXRegister() throws IOException {
+        byte accXL = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_L);
+        byte accXH = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H);
+        short accX = accXH; //Assign accXH
+        accX = (short) (accX << 8); //Shift accXH to high 8 bits
+        accX += accXL; //Add accXL as 8 low bits
+        return accX;
+    }
+
     private static void initializeI2C() throws IOException {
         System.out.println("Creating I2C bus");
         bus = I2CFactory.getInstance(I2CBus.BUS_1);
@@ -82,32 +91,23 @@ public class Mpu6050Controller {
                 "Low power operation config successfully written: ",
                 Mpu6050Registers.MPU6050_RA_PWR_MGMT_2,
                 Mpu6050RegisterValues.MPU6050_RA_PWR_MGMT_2);
-
-        for (byte i = 1; i <= 120; i++) {
-            byte registerData = Mpu6050Controller.readRegister(i);
-            System.out.println(i + "\t\tRegisterData:" + Helper.formatBinary(registerData));
-        }
-
-        System.exit(0);
     }
-    
-    
-    
+
     private static void writeRegister(byte register, byte data) throws IOException {
         mpu6050.write(register, data);
     }
 
-    public static byte readRegister(byte register) throws IOException {
+    private static byte readRegister(byte register) throws IOException {
         int data = mpu6050.read(register);
         return (byte) data;
     }
 
-    public static byte readRegister() throws IOException {
+    private static byte readRegister() throws IOException {
         int data = mpu6050.read();
         return (byte) data;
     }
 
-    public static void writeConfigRegisterAndValidate(String initialText, String successText, byte register, byte registerData) throws IOException {
+    private static void writeConfigRegisterAndValidate(String initialText, String successText, byte register, byte registerData) throws IOException {
         System.out.println(initialText);
         writeRegister(register, registerData);
         byte returnedRegisterData = Mpu6050Controller.readRegister(register);

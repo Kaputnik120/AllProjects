@@ -34,4 +34,18 @@ public class Helper {
         }
         return binaryString;
     }
+
+    public static String formatBinary(short b) {
+        String binaryString = Integer.toBinaryString(b);
+        if (binaryString.length() > 16) {
+            binaryString = binaryString.substring(binaryString.length() - 16);
+        }
+        if (binaryString.length() < 16) {
+            byte fillingZeros = (byte) (16 - binaryString.length());
+            for (int j = 1; j <= fillingZeros; j++) {
+                binaryString = "0" + binaryString;
+            }
+        }
+        return binaryString;
+    }
 }
