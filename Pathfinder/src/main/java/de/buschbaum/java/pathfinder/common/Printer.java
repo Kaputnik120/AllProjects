@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.buschbaum.java.pathfinder;
+package de.buschbaum.java.pathfinder.common;
 
 /**
  *
  * @author uli
  */
-public class Helper {
+public class Printer {
 
     public static void printValue(String name, byte value) {
         System.out.println(name + ":\t" + Integer.toBinaryString((int) value) + " (" + value + ")");
@@ -47,5 +47,20 @@ public class Helper {
             }
         }
         return binaryString;
+    }
+
+    public static void printBufferArray(short pos, short[] buffer, String description) {
+        System.out.print(description + " (" + pos + ") " + " [");
+        for (short i = 0; i < buffer.length; i++) {
+            if (i == pos) {
+                System.out.print("*");
+            }
+            if (i < buffer.length - 1) {
+                System.out.print(buffer[i] + ",");
+            } else {
+                System.out.print(buffer[i] + "]");
+            }
+        }
+        System.out.println();
     }
 }

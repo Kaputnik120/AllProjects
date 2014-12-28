@@ -8,7 +8,7 @@ package de.buschbaum.java.pathfinder.device.mpu6050;
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
-import de.buschbaum.java.pathfinder.Helper;
+import de.buschbaum.java.pathfinder.common.Printer;
 import java.io.IOException;
 
 /**
@@ -24,7 +24,12 @@ public class Mpu6050Controller {
         initializeI2C();
         configureMpu6050();
     }
-
+    
+    //TODO
+    public static short readAccXSelfTestRegister() {
+        return 0;
+    }
+    
     public static short readAccXRegister() throws IOException {
         byte accXL = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_L);
         byte accXH = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H);
@@ -112,10 +117,10 @@ public class Mpu6050Controller {
         writeRegister(register, registerData);
         byte returnedRegisterData = Mpu6050Controller.readRegister(register);
         if (returnedRegisterData == registerData) {
-            System.out.println(successText + Helper.formatBinary(returnedRegisterData));
+            System.out.println(successText + Printer.formatBinary(returnedRegisterData));
         } else {
-            throw new RuntimeException("Tried to write " + Helper.formatBinary(registerData) + " to "
-                    + register + ", but validiating value returned " + Helper.formatBinary(returnedRegisterData));
+            throw new RuntimeException("Tried to write " + Printer.formatBinary(registerData) + " to "
+                    + register + ", but validiating value returned " + Printer.formatBinary(returnedRegisterData));
         }
     }
 }
