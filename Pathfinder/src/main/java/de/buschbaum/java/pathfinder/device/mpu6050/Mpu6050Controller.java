@@ -8,7 +8,9 @@ package de.buschbaum.java.pathfinder.device.mpu6050;
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
+import de.buschbaum.java.pathfinder.common.Configuration;
 import de.buschbaum.java.pathfinder.common.Printer;
+import de.buschbaum.java.pathfinder.logic.TimingController;
 import java.io.IOException;
 
 /**
@@ -24,12 +26,20 @@ public class Mpu6050Controller {
         initializeI2C();
         configureMpu6050();
     }
-    
-    //TODO
-    public static short readAccXSelfTestRegister() {
-        return 0;
+
+    public static short calibrate() throws IOException, InterruptedException {
+        System.out.println("Calibrating x-axis accelerometer...");
+        int sum = 0;
+        int i = 0;
+        for (i = 1; i <= Configuration.CALIBRATION_COUNT; i++) {
+            sum += readAccXRegister();
+            TimingController.timeSlot(Configuration.CALIBRATION_TIME_SLOT, System.nanoTime());
+        }
+        short result = (short) ((sum / i) * (-1));
+        System.out.println("Calibrated x-axis accelerometer to " + result);
+        return result;
     }
-    
+
     public static short readAccXRegister() throws IOException {
         byte accXL = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_L);
         byte accXH = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H);

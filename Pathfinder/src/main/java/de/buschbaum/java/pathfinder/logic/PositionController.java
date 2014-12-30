@@ -32,6 +32,7 @@ public class PositionController {
     public static void initialize() throws Exception {
         System.out.println("Initializing Mpu6050");
         Mpu6050Controller.initialize();
+        Configuration.ACC_X_CORRECTION = Mpu6050Controller.calibrate();
         //TODO read self test values to adjust Mpu6050 data!
         System.out.println("Mpu6050 initialized!");
     }
@@ -54,22 +55,23 @@ public class PositionController {
     private static void updateAccX() throws IOException {
         //RAW
         short accXRawValue = Mpu6050Controller.readAccXRegister();
+        System.out.print(accXRawValue + ",");
         accXRawValue = adjustRawAccXValue(accXRawValue);
-        System.out.println("accX raw = " + accXRawValue);
+        System.out.print(accXRawValue + ",");
         accXRawPos = writeToBufferArray(accXRawPos, accXRaw, accXRawValue);
 
         //NORM
         accXRawValue = normalizeX(accXRaw, accXRawPos);
-        System.out.println("accX normalized = " + accXRawValue);
+        System.out.println(accXRawValue);
         accXNormPos = writeToBufferArray(accXNormPos, accXNorm, accXRawValue);
 
         //SUM
         accXSum += accXRawValue;
-        System.out.println("AccXSum = " + accXSum);
+//        System.out.println("AccXSum = " + accXSum);
 
         //PRINT
-        Printer.printBufferArray(accXNormPos, accXNorm, "AccXNorm buffer: ");
-        Printer.printBufferArray(accXRawPos, accXRaw, "AccXRaw buffer: ");
+//        Printer.printBufferArray(accXNormPos, accXNorm, "AccXNorm buffer: ");
+//        Printer.printBufferArray(accXRawPos, accXRaw, "AccXRaw buffer: ");
     }
 
     private static double getAcceleration(short rawAcc) {
@@ -92,23 +94,13 @@ public class PositionController {
         //Apply moving Average
         short value = Mathematics.movingAverage(accXRaw, pos, Configuration.MOVING_AVERAGE_WEIGHT, Configuration.MOVING_AVERAGE_SIZE);
         //Apply threshold
-        value = applyThreshold(value, Configuration.ACC_THRESHOLD);
+        value = Mathematics.applyThreshold(value, Configuration.ACC_THRESHOLD);
         return value;
     }
 
     private static short adjustRawAccXValue(short value) {
         //Apply correction value
         return (short) (value + Configuration.ACC_X_CORRECTION);
-    }
-
-    @SuppressWarnings("AssignmentToMethodParameter")
-    private static short applyThreshold(short value, short threshold) {
-        if (Mathematics.abs(value) < threshold) {
-            value = (short) (value / 20);
-        } else if (Mathematics.abs(value) < threshold * 2) {
-            value = (short) (value / 10);
-        }
-        return value;
     }
 
 }

@@ -14,7 +14,7 @@ public class Configuration {
     /**
      * The size of one time slot in ms
      */
-    public static final byte TIME_SLOT_LENGTH = 50;
+    public static final byte TIME_SLOT_LENGTH = 100;
 
     /**
      * The size of the buffer of the accelerator measurements
@@ -27,13 +27,14 @@ public class Configuration {
      * Setting this to 0 disables the Threshold normalization.
      * }
      */
-    public static final short ACC_THRESHOLD = 0;
+    public static final short ACC_THRESHOLD = 200;
 
     /**
      * This value is always added to the measured values.
      */
     //TODO This value must be adjusted dynamically to the initial self test values.
-    public static final short ACC_X_CORRECTION = 1260;
+    @SuppressWarnings("PublicField")
+    public static short ACC_X_CORRECTION = 0;
 
     /**
      * 2g (as configured) per 16-bit (as AD-conversion of Mpu6050)
@@ -44,11 +45,20 @@ public class Configuration {
      * See {@link  de.buschbaum.java.pathfinder.common.Mathematics#movingAverage(short[], short, byte)
      * }
      */
-    public static final byte MOVING_AVERAGE_WEIGHT = 20;
+    public static final byte MOVING_AVERAGE_WEIGHT = 1;
     /**
      * Defines how many of the values measured last are used for the calculation
      * of the moving average. Settings this to 1 effectively disables the moving
      * average normalization.
      */
     public static final byte MOVING_AVERAGE_SIZE = 1;
+
+    /**
+     * Defines how many times the sensor values are read for calibration.
+     */
+    public static final short CALIBRATION_COUNT = 200;
+    /**
+     * The time to wait after every read of all sensor values.
+     */
+    public static final byte CALIBRATION_TIME_SLOT = 10;
 }

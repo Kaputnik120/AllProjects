@@ -147,6 +147,46 @@ public class MathematicsTest {
         System.out.println("Moving average is: " + movingAverage);
         Printer.printBufferArray(pos, values, "Moving average applied to test data: ");
         assertTrue(movingAverage == 4);
+
+        values = new short[]{12, 17, 15, -13, 22, 55, 3, 16, 43, 81};
+        weight = 8;
+        pos = 3;
+
+        movingAverage = Mathematics.movingAverage(values, pos, weight, (byte) 1);
+        System.out.println("Moving average is: " + movingAverage);
+        Printer.printBufferArray(pos, values, "Moving average applied to test data: ");
+        assertTrue(movingAverage == -13);
+    }
+
+    @Test
+    public void testApplyThreshold() {
+        short value = 0;
+        short threshold = 200;
+        short expResult = 0;
+        short result = Mathematics.applyThreshold(value, threshold);
+        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
+        assertTrue(expResult == result);
+
+        value = 200;
+        threshold = 200;
+        expResult = 200;
+        result = Mathematics.applyThreshold(value, threshold);
+        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
+        assertTrue(expResult == result);
+
+        value = 171;
+        threshold = 200;
+        expResult = 171;
+        result = Mathematics.applyThreshold(value, threshold);
+        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
+        assertTrue(expResult == result);
+
+        value = -63;
+        threshold = 200;
+        expResult = -1;
+        result = Mathematics.applyThreshold(value, threshold);
+        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
+        assertTrue(expResult == result);
     }
 
 }
