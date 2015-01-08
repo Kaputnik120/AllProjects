@@ -1,7 +1,6 @@
 package de.buschbaum.java.pathfinder;
 
 import de.buschbaum.java.pathfinder.common.Configuration;
-import de.buschbaum.java.pathfinder.device.mpu6050.Mpu6050Controller;
 import de.buschbaum.java.pathfinder.logic.PositionController;
 import de.buschbaum.java.pathfinder.logic.TimingController;
 

@@ -9,9 +9,11 @@ import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
 import de.buschbaum.java.pathfinder.common.Configuration;
+import de.buschbaum.java.pathfinder.common.Mathematics;
 import de.buschbaum.java.pathfinder.common.Printer;
 import de.buschbaum.java.pathfinder.logic.TimingController;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  *
@@ -22,92 +24,96 @@ public class Mpu6050Controller {
     private static I2CBus bus = null;
     private static I2CDevice mpu6050 = null;
 
-    public static void initialize() throws IOException, InterruptedException {
+    public static void initialize() throws Exception {
         initializeI2C();
         configureMpu6050();
+        calibrate();
     }
 
-    public static void calibrate() throws IOException, InterruptedException {
-        System.out.println("Calibrating x-axis accelerometer...");
+    public static double[] getAlignedAccelerationValues() throws Exception {
+        //Read from Mpu6050
+        double[] accVector = new double[3];
+        accVector[0] = readAccXRegisters();
+        accVector[1] = readAccYRegisters();
+        accVector[2] = readAccZRegisters();
+
+        //Apply rotation matrix
+        accVector = Mathematics.multiplyVector3(accVector, Configuration.CALIBRATION_ROTATION_MATRIX);
+
+        //Apply noise reduce
+        accVector = removeNoise(accVector);
+
+        return accVector;
+    }
+
+    private static double[] removeNoise(double[] vector) {
+        vector[0] = Mathematics.applyThreshold(vector[0], Configuration.CALIBRATION_NOISE_THRESHOLD);
+        vector[1] = Mathematics.applyThreshold(vector[1], Configuration.CALIBRATION_NOISE_THRESHOLD);
+        return vector;
+    }
+
+    private static void calibrate() throws Exception {
+        System.out.println("Calibrating rotation matrix...");
+        calibrateRotationMatrix();
+    }
+
+    private static void calibrateRotationMatrix() throws Exception {
         int sumX = 0;
         int sumY = 0;
         int sumZ = 0;
 
-        int i = 1;
-//        for (i = 1; i <= Configuration.CALIBRATION_COUNT; i++) {
-        while (true) {
+        //Calculating average misalignment values
+        int i;
+        for (i = 1; i <= Configuration.CALIBRATION_COUNT; i++) {
             short x = readAccXRegisters();
             short y = readAccYRegisters();
             short z = readAccZRegisters();
             sumX += x;
             sumY += y;
             sumZ += z;
-            System.out.println("Calibration: " + sumX / (double) i + "\t" + sumY / (double) i + "\t" + sumZ / (double) i);
-            //The number printed is not correct. E.g. the number 
-            //2059(0000100000001011) is printed
-            //This is 100000001011 as a two-complement value, which is
-            //-2037
-            //Reasonableness of the value can be checked, by checking if the value for 16g resolution is
-            //within -2047 and +2047
-            //This must be corrected!!!
-            System.out.println((short) x + "(" + Printer.formatBinary(x) + ")" + "\t"
-                    + (short) y + "(" + Printer.formatBinary(y) + ")" + "\t"
-                    + (short) z + "(" + Printer.formatBinary(z) + ")" + "\t");
-            i++;
             TimingController.timeSlot(Configuration.CALIBRATION_TIME_SLOT, System.nanoTime());
         }
 
-//        }
-//        short result = (short) ((sumX / i) * (-1));
-//        System.out.println("Calibrated x-axis accelerometer to " + result);
-//        return result;
+        //Definining the misaligned vector for the vehicle not moving
+        double[] misalignmentVector = new double[3];
+        misalignmentVector[0] = sumX / i;
+        misalignmentVector[1] = sumY / i;
+        misalignmentVector[2] = sumZ / i;
+
+        //Calculating the rotation to the correct values
+        Configuration.CALIBRATION_ROTATION_MATRIX = Mathematics.rotationMatrix3(misalignmentVector, Configuration.CALIBRATION_VECTOR);
+        System.out.println("Calculated rotation matrix for vector " + Arrays.toString(misalignmentVector) + " is "
+                + Arrays.toString(Configuration.CALIBRATION_ROTATION_MATRIX[0]) + ","
+                + Arrays.toString(Configuration.CALIBRATION_ROTATION_MATRIX[1]) + ","
+                + Arrays.toString(Configuration.CALIBRATION_ROTATION_MATRIX[2]));
     }
 
-    public static short readAccXRegisters() throws IOException {
+    private static short readAccXRegisters() throws IOException {
         short accX = readRegistertsAndShiftWithLsb(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_L,
-                Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H,
-                Configuration.ACC_LSB);
+                Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H);
         return accX;
     }
 
-    public static short readAccYRegisters() throws IOException {
+    private static short readAccYRegisters() throws IOException {
         short accY = readRegistertsAndShiftWithLsb(Mpu6050Registers.MPU6050_RA_ACCEL_YOUT_L,
-                Mpu6050Registers.MPU6050_RA_ACCEL_YOUT_H,
-                Configuration.ACC_LSB);
+                Mpu6050Registers.MPU6050_RA_ACCEL_YOUT_H);
         return accY;
     }
 
-    public static short readAccZRegisters() throws IOException {
+    private static short readAccZRegisters() throws IOException {
         short accZ = readRegistertsAndShiftWithLsb(Mpu6050Registers.MPU6050_RA_ACCEL_ZOUT_L,
-                Mpu6050Registers.MPU6050_RA_ACCEL_ZOUT_H,
-                Configuration.ACC_LSB);
+                Mpu6050Registers.MPU6050_RA_ACCEL_ZOUT_H);
         return accZ;
     }
 
-    private static short readRegistertsAndShiftWithLsb(byte lowByteRegister, byte highByteRegister, byte lsb) throws IOException {
+    private static short readRegistertsAndShiftWithLsb(byte lowByteRegister, byte highByteRegister) throws IOException {
         //Read
         byte lowByte = readRegister(lowByteRegister);
         byte highByte = readRegister(highByteRegister);
 
         //Shift
-        short result = shiftBytesTogether(lowByte, highByte);
+        short result = Mathematics.shiftBytesTogether(lowByte, highByte);
 
-        return result;
-    }
-
-    public static short applyLeastSignificantBit(short data, byte lsb) {
-        int shift = Integer.SIZE - lsb;
-        // shift sign into position
-        int result = data << shift;
-        // Java right shift uses sign extension, but only works on integers or longs
-        result >>= shift;
-        return (short) result;
-    }
-
-    public static short shiftBytesTogether(byte lowByte, byte highByte) {
-        short result = highByte;
-        result = (short) (result << 8);
-        result += lowByte;
         return result;
     }
 

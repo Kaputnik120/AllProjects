@@ -49,7 +49,7 @@ public class Printer {
         return binaryString;
     }
 
-    public static void printBufferArray(short pos, short[] buffer, String description) {
+    public static void printBufferArray(short pos, double[] buffer, String description) {
         System.out.print(description + " (" + pos + ") " + " [");
         for (short i = 0; i < buffer.length; i++) {
             if (i == pos) {

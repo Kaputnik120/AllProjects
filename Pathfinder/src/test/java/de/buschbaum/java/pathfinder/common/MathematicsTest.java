@@ -6,8 +6,8 @@
 package de.buschbaum.java.pathfinder.common;
 
 import java.util.Arrays;
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  *
@@ -24,16 +24,17 @@ public class MathematicsTest {
     @Test
     public void testAbs() {
         System.out.println("abs");
-        short value = -12;
-        short expResult = 12;
-        short result = Mathematics.abs(value);
+        double value = -12;
+        double expResult = 12;
+        double result = Mathematics.abs(value);
         System.out.println("value: " + value + " expResult: " + expResult + " result: " + result);
-        assertEquals(expResult, result);
+        assertTrue(result == expResult);
 
         value = 12;
         expResult = 12;
         result = Mathematics.abs(value);
-        assertEquals(expResult, result);
+        System.out.println("value: " + value + " expResult: " + expResult + " result: " + result);
+        assertTrue(result == expResult);
     }
 
     /**
@@ -120,20 +121,18 @@ public class MathematicsTest {
      */
     @Test
     public void testMovingAverage() {
-        short[] values = new short[]{12, 17, 15, -13, 22, 55, 3, 16, 43, 81};
-        byte weight = 8;
+        double[] values = new double[]{12, 17, 15, -13, 22, 55, 3, 16, 43, 81};
         short pos = 3;
 
-        short movingAverage = Mathematics.movingAverage(values, pos, weight, (byte) 5);
+        double movingAverage = Mathematics.movingAverage(values, pos, (byte) 5);
         System.out.println("Moving average is: " + movingAverage);
         Printer.printBufferArray(pos, values, "Moving average applied to test data: ");
-        assertTrue(movingAverage == 4);
+        assertTrue(movingAverage == 22.4);
 
-        values = new short[]{12, 17, 15, -13, 22, 55, 3, 16, 43, 81};
-        weight = 8;
+        values = new double[]{12, 17, 15, -13, 22, 55, 3, 16, 43, 81};
         pos = 3;
 
-        movingAverage = Mathematics.movingAverage(values, pos, weight, (byte) 1);
+        movingAverage = Mathematics.movingAverage(values, pos, (byte) 1);
         System.out.println("Moving average is: " + movingAverage);
         Printer.printBufferArray(pos, values, "Moving average applied to test data: ");
         assertTrue(movingAverage == -13);
@@ -141,31 +140,10 @@ public class MathematicsTest {
 
     @Test
     public void testApplyThreshold() {
-        short value = 0;
-        short threshold = 200;
-        short expResult = 0;
-        short result = Mathematics.applyThreshold(value, threshold);
-        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
-        assertTrue(expResult == result);
-
-        value = 200;
-        threshold = 200;
-        expResult = 200;
-        result = Mathematics.applyThreshold(value, threshold);
-        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
-        assertTrue(expResult == result);
-
-        value = 171;
-        threshold = 200;
-        expResult = 171;
-        result = Mathematics.applyThreshold(value, threshold);
-        System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
-        assertTrue(expResult == result);
-
-        value = -63;
-        threshold = 200;
-        expResult = -1;
-        result = Mathematics.applyThreshold(value, threshold);
+        double value = 199;
+        double threshold = 200;
+        double expResult = 0;
+        double result = Mathematics.applyThreshold(value, threshold);
         System.out.println("value " + value + " threshold " + threshold + " expResult " + expResult + " result " + result);
         assertTrue(expResult == result);
     }

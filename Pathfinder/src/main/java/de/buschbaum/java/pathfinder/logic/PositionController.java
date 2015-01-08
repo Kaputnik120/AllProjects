@@ -7,9 +7,10 @@ package de.buschbaum.java.pathfinder.logic;
 
 import de.buschbaum.java.pathfinder.common.Configuration;
 import de.buschbaum.java.pathfinder.common.Mathematics;
-import de.buschbaum.java.pathfinder.common.Printer;
 import de.buschbaum.java.pathfinder.device.mpu6050.Mpu6050Controller;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -19,27 +20,29 @@ public class PositionController {
 
     private static int[] position = new int[]{0, 0};
 
-    private static final short[] accXNorm = new short[Configuration.ACC_BUFFER_SIZE];
-    private static final short[] accXRaw = new short[Configuration.ACC_BUFFER_SIZE];
+    private static final double[] accYBuffer = new double[Configuration.ACC_BUFFER_SIZE];
 
-    private static short accXNormPos = 0;
-    private static short accXRawPos = 0;
+    private static short pos = 0;
+//    private static final double[] accYNormBuffer = new double[Configuration.ACC_BUFFER_SIZE];
 
-    private static int accXSum = 0;
+    private static double accYSum = 0;
 
-    private static byte accXSpeed = 0;
+    private static double accYSumAvg = 0;
+
+    private static byte accYSpeed = 0;
+
+    private static List<double[]> accList = new ArrayList<>();
 
     public static void initialize() throws Exception {
         System.out.println("Initializing Mpu6050");
         Mpu6050Controller.initialize();
-        Mpu6050Controller.calibrate();
         System.out.println("Mpu6050 initialized!");
     }
 
-    public static void update() throws IOException {
+    public static void update() throws Exception {
         position[0] = 0;
         position[1] = 0;
-        updateAccX();
+        updateAccelerationValues();
     }
 
     @SuppressWarnings("ReturnOfCollectionOrArrayField")
@@ -51,34 +54,32 @@ public class PositionController {
         return 0f;
     }
 
-    private static void updateAccX() throws IOException {
-        //RAW
-//        short accXRawValue = Mpu6050Controller.readAccXRegister();
-//        System.out.print(accXRawValue + ",");
-//        accXRawValue = adjustRawAccXValue(accXRawValue);
-//        System.out.print(accXRawValue + ",");
-//        accXRawPos = writeToBufferArray(accXRawPos, accXRaw, accXRawValue);
+    private static void updateAccelerationValues() throws Exception {
+        //Read values
+        double[] accs = Mpu6050Controller.getAlignedAccelerationValues();
 
-        //NORM
-//        accXRawValue = normalizeX(accXRaw, accXRawPos);
-//        System.out.println(accXRawValue);
-//        accXNormPos = writeToBufferArray(accXNormPos, accXNorm, accXRawValue);
+        //Sum of y-accs
+        accYSum += accs[1]; //Add y value
 
-        //SUM
-//        accXSum += accXRawValue;
-//        System.out.println("AccXSum = " + accXSum);
+        //Moving average
+        pos = writeToBufferArray(pos, accYBuffer, accs[1]);
+        double accYAvg = Mathematics.movingAverage(accYBuffer, pos, (byte) 10);
+        accYSumAvg += accYAvg;
 
-        //PRINT
-//        Printer.printBufferArray(accXNormPos, accXNorm, "AccXNorm buffer: ");
-//        Printer.printBufferArray(accXRawPos, accXRaw, "AccXRaw buffer: ");
-    }
-
-    private static double getAcceleration(short rawAcc) {
-        return rawAcc * Configuration.ACC_RESOLUTION;
+        //Print list for Octave
+        accList.add(new double[]{0, accYAvg, 0});
+        if (accList.size() % 100 == 0) {
+            System.out.print("accYSumAvg=" + accYSumAvg + "[");
+            for (double[] acc : accList) {
+                System.out.print(acc[1] + " ");
+            }
+            System.out.println("]");
+        }
+//        System.out.println(accs[1] + " -> accYSum: " + accYSum + " || " + accYAvg + " -> accYSumAvg: " + accYSumAvg);
     }
 
     @SuppressWarnings("AssignmentToMethodParameter")
-    private static short writeToBufferArray(short pos, short[] buffer, short value) {
+    private static short writeToBufferArray(short pos, double[] buffer, double value) {
         //Write value
         buffer[pos] = value;
 
@@ -86,20 +87,6 @@ public class PositionController {
         pos = Mathematics.nextPos(pos, (short) buffer.length);
 
         return pos;
-    }
-
-    @SuppressWarnings("AssignmentToMethodParameter")
-    private static short normalizeX(short[] accXRaw, short pos) {
-        //Apply moving Average
-        short value = Mathematics.movingAverage(accXRaw, pos, Configuration.MOVING_AVERAGE_WEIGHT, Configuration.MOVING_AVERAGE_SIZE);
-        //Apply threshold
-        value = Mathematics.applyThreshold(value, Configuration.ACC_THRESHOLD);
-        return value;
-    }
-
-    private static short adjustRawAccXValue(short value) {
-        //Apply correction value
-        return (short) (value + Configuration.ACC_X_CORRECTION);
     }
 
 }

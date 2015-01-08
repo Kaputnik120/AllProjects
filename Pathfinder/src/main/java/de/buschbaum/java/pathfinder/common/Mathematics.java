@@ -11,9 +11,9 @@ package de.buschbaum.java.pathfinder.common;
  */
 public class Mathematics {
 
-    public static short abs(short value) {
+    public static double abs(double value) {
         if (value < 0) {
-            return (short) (value * ((short) -1));
+            return value * (-1);
         } else {
             return value;
         }
@@ -33,25 +33,16 @@ public class Mathematics {
      * @param size
      * @return
      */
-    public static short movingAverage(short[] values, short pos, byte weight, byte size) {
+    public static double movingAverage(double[] values, short pos, byte size) {
         if (size > 1) {
-            int sum = 0;
-            short count = (short) ((short) size + ((short) (weight / 2 - 1)) + ((short) (weight - 1)));
-            short prevPos = prevPos(pos, (short) values.length);
+            double sum = 0;
 
             //Loop backward through values until size is reached
             for (byte i = 0; i < size; i++) {
                 short pointer = substractFromPos(pos, (short) values.length, i);
-                //Apply weight
-                if (pointer == pos) {
-                    sum += values[pointer] * weight;
-                } else if (pointer == prevPos) {
-                    sum += values[pointer] * (weight / 2);
-                } else {
-                    sum += values[pointer];
-                }
+                sum += values[pointer];
             }
-            return (short) (sum / count);
+            return sum / size;
         } else {
             return values[pos];
         }
@@ -95,11 +86,9 @@ public class Mathematics {
      * @return
      */
     @SuppressWarnings("AssignmentToMethodParameter")
-    public static short applyThreshold(short value, short threshold) {
+    public static double applyThreshold(double value, double threshold) {
         if (value != 0 && Mathematics.abs(value) < threshold) {
-            int decile = (int) (((float) Mathematics.abs(value) / (float) threshold) * 10);
-            decile = Math.min(decile + 1, 10);
-            value = (short) (value / Math.max((10 - decile) * (10 - decile), 1));
+            value = 0;
         }
         return value;
     }
@@ -309,6 +298,13 @@ public class Mathematics {
                 result[i][j] = matrix[i][j] / divider;
             }
         }
+        return result;
+    }
+
+    public static short shiftBytesTogether(byte lowByte, byte highByte) {
+        short result = highByte;
+        result = (short) (result << 8);
+        result += lowByte;
         return result;
     }
 
