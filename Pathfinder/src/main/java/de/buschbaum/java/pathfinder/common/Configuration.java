@@ -41,6 +41,13 @@ public class Configuration {
      */
     public static final double ACC_RESOLUTION = 2 / (double) Short.MAX_VALUE;
     /**
+     * The least signifant bit for the 16-bit values from the acceleration
+     * registers. The value of lsb depends on the full scale range selected.
+     * Take a look at the MPU6050 register documentation for further
+     * information.
+     */
+    public static final byte ACC_LSB = 12;
+    /**
      * Weight applied to the newest data while calculating the moving average.
      * See {@link  de.buschbaum.java.pathfinder.common.Mathematics#movingAverage(short[], short, byte)
      * }
@@ -60,5 +67,5 @@ public class Configuration {
     /**
      * The time to wait after every read of all sensor values.
      */
-    public static final byte CALIBRATION_TIME_SLOT = 10;
+    public static final byte CALIBRATION_TIME_SLOT = 50;
 }

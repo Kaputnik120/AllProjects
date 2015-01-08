@@ -27,26 +27,88 @@ public class Mpu6050Controller {
         configureMpu6050();
     }
 
-    public static short calibrate() throws IOException, InterruptedException {
+    public static void calibrate() throws IOException, InterruptedException {
         System.out.println("Calibrating x-axis accelerometer...");
-        int sum = 0;
-        int i = 0;
-        for (i = 1; i <= Configuration.CALIBRATION_COUNT; i++) {
-            sum += readAccXRegister();
+        int sumX = 0;
+        int sumY = 0;
+        int sumZ = 0;
+
+        int i = 1;
+//        for (i = 1; i <= Configuration.CALIBRATION_COUNT; i++) {
+        while (true) {
+            short x = readAccXRegisters();
+            short y = readAccYRegisters();
+            short z = readAccZRegisters();
+            sumX += x;
+            sumY += y;
+            sumZ += z;
+            System.out.println("Calibration: " + sumX / (double) i + "\t" + sumY / (double) i + "\t" + sumZ / (double) i);
+            //The number printed is not correct. E.g. the number 
+            //2059(0000100000001011) is printed
+            //This is 100000001011 as a two-complement value, which is
+            //-2037
+            //Reasonableness of the value can be checked, by checking if the value for 16g resolution is
+            //within -2047 and +2047
+            //This must be corrected!!!
+            System.out.println((short) x + "(" + Printer.formatBinary(x) + ")" + "\t"
+                    + (short) y + "(" + Printer.formatBinary(y) + ")" + "\t"
+                    + (short) z + "(" + Printer.formatBinary(z) + ")" + "\t");
+            i++;
             TimingController.timeSlot(Configuration.CALIBRATION_TIME_SLOT, System.nanoTime());
         }
-        short result = (short) ((sum / i) * (-1));
-        System.out.println("Calibrated x-axis accelerometer to " + result);
+
+//        }
+//        short result = (short) ((sumX / i) * (-1));
+//        System.out.println("Calibrated x-axis accelerometer to " + result);
+//        return result;
+    }
+
+    public static short readAccXRegisters() throws IOException {
+        short accX = readRegistertsAndShiftWithLsb(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_L,
+                Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H,
+                Configuration.ACC_LSB);
+        return accX;
+    }
+
+    public static short readAccYRegisters() throws IOException {
+        short accY = readRegistertsAndShiftWithLsb(Mpu6050Registers.MPU6050_RA_ACCEL_YOUT_L,
+                Mpu6050Registers.MPU6050_RA_ACCEL_YOUT_H,
+                Configuration.ACC_LSB);
+        return accY;
+    }
+
+    public static short readAccZRegisters() throws IOException {
+        short accZ = readRegistertsAndShiftWithLsb(Mpu6050Registers.MPU6050_RA_ACCEL_ZOUT_L,
+                Mpu6050Registers.MPU6050_RA_ACCEL_ZOUT_H,
+                Configuration.ACC_LSB);
+        return accZ;
+    }
+
+    private static short readRegistertsAndShiftWithLsb(byte lowByteRegister, byte highByteRegister, byte lsb) throws IOException {
+        //Read
+        byte lowByte = readRegister(lowByteRegister);
+        byte highByte = readRegister(highByteRegister);
+
+        //Shift
+        short result = shiftBytesTogether(lowByte, highByte);
+
         return result;
     }
 
-    public static short readAccXRegister() throws IOException {
-        byte accXL = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_L);
-        byte accXH = readRegister(Mpu6050Registers.MPU6050_RA_ACCEL_XOUT_H);
-        short accX = accXH; //Assign accXH
-        accX = (short) (accX << 8); //Shift accXH to high 8 bits
-        accX += accXL; //Add accXL as 8 low bits
-        return accX;
+    public static short applyLeastSignificantBit(short data, byte lsb) {
+        int shift = Integer.SIZE - lsb;
+        // shift sign into position
+        int result = data << shift;
+        // Java right shift uses sign extension, but only works on integers or longs
+        result >>= shift;
+        return (short) result;
+    }
+
+    public static short shiftBytesTogether(byte lowByte, byte highByte) {
+        short result = highByte;
+        result = (short) (result << 8);
+        result += lowByte;
+        return result;
     }
 
     private static void initializeI2C() throws IOException {

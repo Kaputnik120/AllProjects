@@ -32,8 +32,7 @@ public class PositionController {
     public static void initialize() throws Exception {
         System.out.println("Initializing Mpu6050");
         Mpu6050Controller.initialize();
-        Configuration.ACC_X_CORRECTION = Mpu6050Controller.calibrate();
-        //TODO read self test values to adjust Mpu6050 data!
+        Mpu6050Controller.calibrate();
         System.out.println("Mpu6050 initialized!");
     }
 
@@ -54,19 +53,19 @@ public class PositionController {
 
     private static void updateAccX() throws IOException {
         //RAW
-        short accXRawValue = Mpu6050Controller.readAccXRegister();
-        System.out.print(accXRawValue + ",");
-        accXRawValue = adjustRawAccXValue(accXRawValue);
-        System.out.print(accXRawValue + ",");
-        accXRawPos = writeToBufferArray(accXRawPos, accXRaw, accXRawValue);
+//        short accXRawValue = Mpu6050Controller.readAccXRegister();
+//        System.out.print(accXRawValue + ",");
+//        accXRawValue = adjustRawAccXValue(accXRawValue);
+//        System.out.print(accXRawValue + ",");
+//        accXRawPos = writeToBufferArray(accXRawPos, accXRaw, accXRawValue);
 
         //NORM
-        accXRawValue = normalizeX(accXRaw, accXRawPos);
-        System.out.println(accXRawValue);
-        accXNormPos = writeToBufferArray(accXNormPos, accXNorm, accXRawValue);
+//        accXRawValue = normalizeX(accXRaw, accXRawPos);
+//        System.out.println(accXRawValue);
+//        accXNormPos = writeToBufferArray(accXNormPos, accXNorm, accXRawValue);
 
         //SUM
-        accXSum += accXRawValue;
+//        accXSum += accXRawValue;
 //        System.out.println("AccXSum = " + accXSum);
 
         //PRINT
