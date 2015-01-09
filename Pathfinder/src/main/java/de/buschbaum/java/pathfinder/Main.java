@@ -9,7 +9,7 @@ import de.buschbaum.java.pathfinder.logic.TimingController;
  *
  */
 public class Main {
-
+   
     public static void main(String[] args) throws Exception {
         initialize();
         while (true) {
