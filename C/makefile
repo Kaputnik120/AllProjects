@@ -4,12 +4,12 @@ CC = /usr/bin/gcc
 CFLAGS = 
 LDFLAGS = 
 
-OBJ = main.o foo.o bar.o
+OBJS = main.o foo.o bar.o
 BIN = prog
 
 #Default target
-prog: $(OBJ)
-	$(CC) $(CFLAGS) -o $(BIN) $(OBJ) $(LDFLAGS)
+prog: $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN) $(OBJS) $(LDFLAGS)
 
 #Removal of all binary files
 .PHONY: clean
@@ -18,5 +18,8 @@ clean:
 
 #Compilation of all .c files
 *.o: *.c
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -MM $*.c > $*.d
+	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
+#Pull in dependency information
+-include: $(OBJS:$*.o=$*.d)
