@@ -50,6 +50,13 @@ public class PositionController {
     private static List<double[]> octaveList = new ArrayList<>();
     private static List<double[]> octaveList2 = new ArrayList<>();
 
+    private static double lowX = 10000;
+    private static double lowY = 10000;
+    private static double lowZ = 10000;
+    private static double highX = -10000;
+    private static double highY = -10000;
+    private static double highZ = -10000;
+
     public static void initialize() throws Exception {
         System.out.println("Initializing Mpu6050");
         Mpu6050Controller.initialize();
@@ -58,38 +65,48 @@ public class PositionController {
     }
 
     public static void update() throws Exception {
-        //Increment execution counter
-        executionCounter++;
-
-        //Update acceleration values, speed and position
-        updateAccelerationValues();
-        accYSpeed += accYNormBuffer[pos];
-//        System.out.println("Current speed is: " + accYSpeed + " m/s");
-        vehiclePosition[1] += (accYSpeed * 100);
-//        System.out.println("Current position is: " + Arrays.toString(vehiclePosition) + " cm");
-
-        octaveList.add(new double[]{0, accYSpeed, 0});
-        if (octaveList.size() % 100 == 0) {
-            System.out.print("speedY = [");
-            for (double[] value : octaveList) {
-                System.out.print(value[1] + " ");
-            }
-            System.out.println("]");
-        }
-        octaveList2.add(new double[]{0, accYNormBuffer[pos], 0});
-        if (octaveList2.size() % 100 == 0) {
-            System.out.print("accY = [");
-            for (double[] value : octaveList2) {
-                System.out.print(value[1] + " ");
-            }
-            System.out.println("]");
-        }
-
-        //Correct speed every second
-        if ((executionCounter * Configuration.TIME_SLOT_LENGTH) == 1000) {
-            eraseLowSpeed();
-            executionCounter = 0;
-        }
+//        //Increment execution counter
+//        executionCounter++;
+//
+//        //Update acceleration values, speed and position
+//        updateAccelerationValues();
+//        accYSpeed += accYNormBuffer[pos];
+////        System.out.println("Current speed is: " + accYSpeed + " m/s");
+//        vehiclePosition[1] += (accYSpeed * 100);
+////        System.out.println("Current position is: " + Arrays.toString(vehiclePosition) + " cm");
+//
+//        octaveList.add(new double[]{0, accYSpeed, 0});
+//        if (octaveList.size() % 100 == 0) {
+//            System.out.print("speedY = [");
+//            for (double[] value : octaveList) {
+//                System.out.print(value[1] + " ");
+//            }
+//            System.out.println("]");
+//        }
+//        octaveList2.add(new double[]{0, accYNormBuffer[pos], 0});
+//        if (octaveList2.size() % 100 == 0) {
+//            System.out.print("accY = [");
+//            for (double[] value : octaveList2) {
+//                System.out.print(value[1] + " ");
+//            }
+//            System.out.println("]");
+//        }
+//
+//        //Correct speed every second
+//        if ((executionCounter * Configuration.TIME_SLOT_LENGTH) == 1000) {
+//            eraseLowSpeed();
+//            executionCounter = 0;
+//        }
+        double[] accVector = Mpu6050Controller.getAlignedAccelerationValues();
+        lowX = Math.min(accVector[0], lowX);
+        lowY = Math.min(accVector[1], lowY);
+        lowZ = Math.min(accVector[2], lowZ);
+        highX = Math.max(accVector[0], highX);
+        highY = Math.max(accVector[1], highY);
+        highZ = Math.max(accVector[2], highZ);
+        System.out.println(accVector[0] + "\t" + accVector[1] + "\t" + accVector[2]);
+        System.out.println("Lows:" + lowX + "\t" + lowY + "\t" + lowZ);
+        System.out.println("Highs:" + highX + "\t" + highY + "\t" + highZ);
     }
 
     @SuppressWarnings("ReturnOfCollectionOrArrayField")

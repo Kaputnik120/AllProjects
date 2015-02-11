@@ -38,10 +38,10 @@ public class Mpu6050Controller {
         accVector[2] = readAccZRegisters();
 
         //Apply rotation matrix
-        accVector = Mathematics.multiplyVector3(accVector, Configuration.CALIBRATION_ROTATION_MATRIX);
+//        accVector = Mathematics.multiplyVector3(accVector, Configuration.CALIBRATION_ROTATION_MATRIX);
 
         //Apply noise reduce
-        accVector = removeNoise(accVector);
+//        accVector = removeNoise(accVector);
 
         return accVector;
     }
