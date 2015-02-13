@@ -2,19 +2,33 @@
 VERSION = 1.0
 CFLAGS = 
 LDFLAGS = 
-OBJS = main.o foo.o bar.o
+OBJS_WIN = win.o
+OBJS_LINUX = linux.o
+OBJS_BASIC = main.o foo.o bar.o
+OS_WIN = win
+OS_LINUX = linux
+
+#Object files specific to OS
+ifeq ($(OS),$(OS_WIN))
+	OBJS = $(OBJS_BASIC) $(OBJS_WIN) 
+endif
+ifeq ($(OS),$(OS_LINUX))
+	OBJS = $(OBJS_BASIC) $(OBJS_LINUX) 
+endif
 
 #Binary specific to OS
-ifeq ($(OS),win)
+ifeq ($(OS),$(OS_WIN))
 	BIN = prog.exe
-else
+endif
+ifeq ($(OS),$(OS_LINUX))
 	BIN = prog
 endif
 
 #Compiler specific to OS
-ifeq ($(OS),win)
+ifeq ($(OS),$(OS_WIN))
 	CC = gcc.exe
-else
+endif
+ifeq ($(OS),$(OS_LINUX))
 	CC = /usr/bin/gcc
 endif
 
@@ -25,13 +39,14 @@ prog: $(OBJS)
 	@echo "Finished compilation"
 
 #Removal of all binary files
-ifeq ($(OS),win)
+ifeq ($(OS),$(OS_WIN))
 .PHONY: clean
 clean: 
 	@echo "Deleting files"
-	cmd del $(OBJS) $(BIN)
+	cmd /C del $(OBJS) $(BIN)
 	@echo "Finished deleting files"
-else
+endif
+ifeq ($(OS),$(OS_LINUX))
 .PHONY: clean
 clean: 
 	@echo "Deleting files"
@@ -39,7 +54,7 @@ clean:
 	@echo "Finished deleting files"
 endif
 
-#Compilation of all .c files
+#Compilation and dependency file creation of all .c files
 *.o: *.c
 	@echo "Creating dependency file for $*.c"
 	$(CC) $(CFLAGS) -MM $*.c > $*.d
