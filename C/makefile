@@ -1,12 +1,22 @@
 #Variables
 VERSION = 1.0
 CFLAGS = 
-LDFLAGS = 
+LDFLAGS_BASIC = 
+LDFLAGS_WIN = -lgdi32
+LDFLAGS_LINUX = 
 OBJS_WIN = win.o
 OBJS_LINUX = linux.o
 OBJS_BASIC = main.o foo.o bar.o
 OS_WIN = win
 OS_LINUX = linux
+
+#Libraries specific to OS
+ifeq ($(OS),$(OS_WIN))
+	LDFLAGS = $(LDFLAGS_BASIC) $(LDFLAGS_WIN) 
+endif
+ifeq ($(OS),$(OS_LINUX))
+	LDFLAGS = $(LDFLAGS_BASIC) $(LDFLAGS_LINUX) 
+endif
 
 #Object files specific to OS
 ifeq ($(OS),$(OS_WIN))
