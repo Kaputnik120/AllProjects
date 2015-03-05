@@ -1,0 +1,9 @@
+gdb prog.exe
+break WinMain
+run
+info registers
+backtrace
+info functions
+
+display/i $pc (einmalig)
+si

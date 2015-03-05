@@ -3,7 +3,6 @@
 
 void os() {
 	printf("Hey, I'm Windows!\n");
-	while (true) {}
 } 
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -14,6 +13,12 @@ LPCSTR lpszTitle   = "Meine erste Applikation";
 int APIENTRY WinMain(HINSTANCE hInstance,
            HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
 {
+	
+	int i = 0;
+	int j = 1;
+	int result = i + j;
+	printf("Finished");
+
    HWND       hWnd;
    MSG        msg;
    WNDCLASSEX   wc;
@@ -65,11 +70,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT umsg, WPARAM wParam, LPARAM lParam)
 {
    switch (umsg)
    {
-   case WM_DESTROY:
-      {
-         PostQuitMessage(0);
-         return 0;
-      }
+		case WM_DESTROY:
+		{
+			PostQuitMessage(0);
+			return 0;
+		}
+		case WM_MOVE:
+		{
+			printf("Fenster bewegt\n");
+			return 0;
+		}
    }
    return DefWindowProc(hWnd, umsg, wParam, lParam);
 }
