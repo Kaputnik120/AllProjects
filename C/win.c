@@ -3,6 +3,7 @@
 
 void os() {
 	printf("Hey, I'm Windows!\n");
+	while (true) {}
 } 
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -13,7 +14,6 @@ LPCSTR lpszTitle   = "Meine erste Applikation";
 int APIENTRY WinMain(HINSTANCE hInstance,
            HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
 {
-
    HWND       hWnd;
    MSG        msg;
    WNDCLASSEX   wc;

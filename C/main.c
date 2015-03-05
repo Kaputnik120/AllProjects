@@ -3,10 +3,10 @@
 #include "bar.h"
 #include "os.h"
 
-int main() {
+/*int main() {
 	printf("Hello World!\n");
 	foo();
 	bar();
 	os();
 	return 0;
-}
+}*/
