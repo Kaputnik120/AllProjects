@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 1
 
 
    1              		.file	"bar.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   46 000a 08       		.byte	0x8
   47 000b 01       		.uleb128 0x1
   48 000c 474E5520 		.ascii "GNU C 4.9.2 -mtune=haswell -march=x86-64 -g\0"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 2
 
 
   48      4320342E 
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   78      00
   79 00d1 02       		.uleb128 0x2
   80 00d2 04       		.byte	0x4
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 3
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 3
 
 
   81 00d3 07       		.byte	0x7
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
  121 000f 10       		.uleb128 0x10
  122 0010 17       		.uleb128 0x17
  123 0011 00       		.byte	0
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 4
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 4
 
 
  124 0012 00       		.byte	0
@@ -238,20 +238,20 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
  172      00000101 
  172      FB0E0D00 
  172      01010101 
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 5
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 5
 
 
  173              		.ident	"GCC: (GNU) 4.9.2"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 6
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bar.c
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:12     .text:0000000000000000 bar
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:12     .text:0000000000000000 bar
 
 UNDEFINED SYMBOLS
 puts
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 1
 
 
    1              		.file	"main.c"
@@ -311,7 +311,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   34 00af 02       		.uleb128 0x2
   35 00b0 04       		.byte	0x4
   36 00b1 05       		.byte	0x5
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 2
 
 
   37 00b2 696E7400 		.ascii "int\0"
@@ -371,7 +371,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   77 0010 24       		.uleb128 0x24
   78 0011 00       		.byte	0
   79 0012 0B       		.uleb128 0xb
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 3
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 3
 
 
   80 0013 0B       		.uleb128 0xb
@@ -402,14 +402,14 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
  100      FB0E0D00 
  100      01010101 
  101              		.ident	"GCC: (GNU) 4.9.2"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 4
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
 
 NO UNDEFINED SYMBOLS
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 1
 
 
    1              		.file	"foo.c"
@@ -469,7 +469,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   46 000a 08       		.byte	0x8
   47 000b 01       		.uleb128 0x1
   48 000c 474E5520 		.ascii "GNU C 4.9.2 -mtune=haswell -march=x86-64 -g\0"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 2
 
 
   48      4320342E 
@@ -529,7 +529,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   78      00
   79 00d1 02       		.uleb128 0x2
   80 00d2 04       		.byte	0x4
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 3
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 3
 
 
   81 00d3 07       		.byte	0x7
@@ -589,7 +589,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
  121 000f 10       		.uleb128 0x10
  122 0010 17       		.uleb128 0x17
  123 0011 00       		.byte	0
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 4
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 4
 
 
  124 0012 00       		.byte	0
@@ -649,20 +649,20 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
  172      00000101 
  172      FB0E0D00 
  172      01010101 
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 5
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 5
 
 
  173              		.ident	"GCC: (GNU) 4.9.2"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 6
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 foo.c
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:12     .text:0000000000000000 foo
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:12     .text:0000000000000000 foo
 
 UNDEFINED SYMBOLS
 puts
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 1
 
 
    1              		.file	"win.c"
@@ -722,7 +722,7 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   43      616D6500 
   44              		.data
   45              		.align 8
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 2
 
 
   46              	lpszAppName:
@@ -743,14 +743,31 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   55      00000000 
   56              		.section .rdata,"dr"
   57              	.LC3:
-  58 0032 46696E69 		.ascii "Finished\0"
-  58      73686564 
-  58      00
-  59              		.text
-  60              		.globl	WinMain
-  62              		.seh_proc	WinMain
-  63              	WinMain:
-  64              	.LFB1949:
+  58 0032 52657375 		.ascii "Result is %d\12\0"
+  58      6C742069 
+  58      73202564 
+  58      0A00
+  59              	.LC4:
+  60 0040 46696E69 		.ascii "Finished\0"
+  60      73686564 
+  60      00
+  61              	.LC5:
+  62 0049 53746172 		.ascii "Starting inline asm\0"
+  62      74696E67 
+  62      20696E6C 
+  62      696E6520 
+  62      61736D00 
+  63              	.LC6:
+  64 005d 46696E69 		.ascii "Finished inline asm\0"
+  64      73686564 
+  64      20696E6C 
+  64      696E6520 
+  64      61736D00 
+  65              		.text
+  66              		.globl	WinMain
+  68              		.seh_proc	WinMain
+  69              	WinMain:
+  70              	.LFB1949:
    7:win/win.c     **** 
    8:win/win.c     **** LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
    9:win/win.c     **** 
@@ -760,1871 +777,1972 @@ GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 1
   13:win/win.c     **** int APIENTRY WinMain(HINSTANCE hInstance,
   14:win/win.c     ****            HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
   15:win/win.c     **** {
-  65              		.loc 1 15 0
-  66              		.cfi_startproc
-  67 001b 55       		pushq	%rbp
-  68              		.seh_pushreg	%rbp
-  69              		.cfi_def_cfa_offset 16
-  70              		.cfi_offset 6, -16
-  71 001c 4881EC00 		subq	$256, %rsp
-  71      010000
-  72              		.seh_stackalloc	256
-  73              		.cfi_def_cfa_offset 272
-  74 0023 488DAC24 		leaq	128(%rsp), %rbp
-  74      80000000 
-  75              		.seh_setframe	%rbp, 128
-  76              		.cfi_def_cfa 6, 144
-  77              		.seh_endprologue
-  78 002b 48898D90 		movq	%rcx, 144(%rbp)
-  78      000000
-  79 0032 48899598 		movq	%rdx, 152(%rbp)
-  79      000000
-  80 0039 4C8985A0 		movq	%r8, 160(%rbp)
-  80      000000
-  81 0040 44898DA8 		movl	%r9d, 168(%rbp)
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 3
+  71              		.loc 1 15 0
+  72              		.cfi_startproc
+  73 001b 55       		pushq	%rbp
+  74              		.seh_pushreg	%rbp
+  75              		.cfi_def_cfa_offset 16
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 3
 
 
-  81      000000
+  76              		.cfi_offset 6, -16
+  77 001c 4881EC00 		subq	$256, %rsp
+  77      010000
+  78              		.seh_stackalloc	256
+  79              		.cfi_def_cfa_offset 272
+  80 0023 488DAC24 		leaq	128(%rsp), %rbp
+  80      80000000 
+  81              		.seh_setframe	%rbp, 128
+  82              		.cfi_def_cfa 6, 144
+  83              		.seh_endprologue
+  84 002b 48898D90 		movq	%rcx, 144(%rbp)
+  84      000000
+  85 0032 48899598 		movq	%rdx, 152(%rbp)
+  85      000000
+  86 0039 4C8985A0 		movq	%r8, 160(%rbp)
+  86      000000
+  87 0040 44898DA8 		movl	%r9d, 168(%rbp)
+  87      000000
   16:win/win.c     **** 	
   17:win/win.c     **** 	int i = 0;
-  82              		.loc 1 17 0
-  83 0047 C7457C00 		movl	$0, 124(%rbp)
-  83      000000
+  88              		.loc 1 17 0
+  89 0047 C7457C00 		movl	$0, 124(%rbp)
+  89      000000
   18:win/win.c     **** 	int j = 1;
-  84              		.loc 1 18 0
-  85 004e C7457801 		movl	$1, 120(%rbp)
-  85      000000
+  90              		.loc 1 18 0
+  91 004e C7457801 		movl	$1, 120(%rbp)
+  91      000000
   19:win/win.c     **** 	int result = i + j;
-  86              		.loc 1 19 0
-  87 0055 8B557C   		movl	124(%rbp), %edx
-  88 0058 8B4578   		movl	120(%rbp), %eax
-  89 005b 01D0     		addl	%edx, %eax
-  90 005d 894574   		movl	%eax, 116(%rbp)
-  20:win/win.c     **** 	printf("Finished");
-  91              		.loc 1 20 0
-  92 0060 488D0D32 		leaq	.LC3(%rip), %rcx
-  92      000000
-  93 0067 E8000000 		call	printf
-  93      00
-  21:win/win.c     **** 
-  22:win/win.c     ****    HWND       hWnd;
-  23:win/win.c     ****    MSG        msg;
-  24:win/win.c     ****    WNDCLASSEX   wc;
-  25:win/win.c     **** 
-  26:win/win.c     ****    wc.cbSize        =  sizeof(WNDCLASSEX);
-  94              		.loc 1 26 0
-  95 006c C745E050 		movl	$80, -32(%rbp)
-  95      000000
-  27:win/win.c     ****    wc.style         =  CS_HREDRAW | CS_VREDRAW | CS_NOCLOSE;
-  96              		.loc 1 27 0
-  97 0073 C745E403 		movl	$515, -28(%rbp)
-  97      020000
-  28:win/win.c     ****    wc.lpfnWndProc   =  WndProc;
-  98              		.loc 1 28 0
-  99 007a 488D05A4 		leaq	WndProc(%rip), %rax
-  99      010000
- 100 0081 488945E8 		movq	%rax, -24(%rbp)
-  29:win/win.c     ****    wc.cbClsExtra    =  0;
- 101              		.loc 1 29 0
- 102 0085 C745F000 		movl	$0, -16(%rbp)
- 102      000000
-  30:win/win.c     ****    wc.cbWndExtra    =  0;
- 103              		.loc 1 30 0
- 104 008c C745F400 		movl	$0, -12(%rbp)
- 104      000000
-  31:win/win.c     ****    wc.hInstance     =  hInstance;
- 105              		.loc 1 31 0
- 106 0093 488B8590 		movq	144(%rbp), %rax
+  92              		.loc 1 19 0
+  93 0055 8B557C   		movl	124(%rbp), %edx
+  94 0058 8B4578   		movl	120(%rbp), %eax
+  95 005b 01D0     		addl	%edx, %eax
+  96 005d 894574   		movl	%eax, 116(%rbp)
+  20:win/win.c     **** 	printf("Result is %d\n", result);
+  97              		.loc 1 20 0
+  98 0060 8B4574   		movl	116(%rbp), %eax
+  99 0063 89C2     		movl	%eax, %edx
+ 100 0065 488D0D32 		leaq	.LC3(%rip), %rcx
+ 100      000000
+ 101 006c E8000000 		call	printf
+ 101      00
+  21:win/win.c     **** 	printf("Finished\n");
+ 102              		.loc 1 21 0
+ 103 0071 488D0D40 		leaq	.LC4(%rip), %rcx
+ 103      000000
+ 104 0078 E8000000 		call	puts
+ 104      00
+  22:win/win.c     **** 	printf("Starting inline asm\n");
+ 105              		.loc 1 22 0
+ 106 007d 488D0D49 		leaq	.LC5(%rip), %rcx
  106      000000
- 107 009a 488945F8 		movq	%rax, -8(%rbp)
-  32:win/win.c     ****    wc.hCursor       =  LoadCursor(NULL,IDC_ARROW);
- 108              		.loc 1 32 0
- 109 009e BA007F00 		movl	$32512, %edx
- 109      00
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 4
+ 107 0084 E8000000 		call	puts
+ 107      00
+  23:win/win.c     **** 	int src = 1;
+ 108              		.loc 1 23 0
+ 109 0089 C7457001 		movl	$1, 112(%rbp)
+ 109      000000
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 4
 
 
- 110 00a3 B9000000 		movl	$0, %ecx
- 110      00
- 111 00a8 488B0500 		movq	__imp_LoadCursorA(%rip), %rax
+  24:win/win.c     **** 	int src2= 2;
+ 110              		.loc 1 24 0
+ 111 0090 C7456C02 		movl	$2, 108(%rbp)
  111      000000
- 112 00af FFD0     		call	*%rax
- 113 00b1 48894508 		movq	%rax, 8(%rbp)
-  33:win/win.c     ****    wc.hIcon         =  LoadIcon(NULL, IDI_APPLICATION);
- 114              		.loc 1 33 0
- 115 00b5 BA007F00 		movl	$32512, %edx
- 115      00
- 116 00ba B9000000 		movl	$0, %ecx
- 116      00
- 117 00bf 488B0500 		movq	__imp_LoadIconA(%rip), %rax
- 117      000000
- 118 00c6 FFD0     		call	*%rax
- 119 00c8 48894500 		movq	%rax, 0(%rbp)
-  34:win/win.c     ****    wc.hbrBackground =  (HBRUSH)GetStockObject(WHITE_BRUSH);
- 120              		.loc 1 34 0
- 121 00cc B9000000 		movl	$0, %ecx
- 121      00
- 122 00d1 488B0500 		movq	__imp_GetStockObject(%rip), %rax
- 122      000000
- 123 00d8 FFD0     		call	*%rax
- 124 00da 48894510 		movq	%rax, 16(%rbp)
-  35:win/win.c     ****    wc.lpszClassName =  lpszAppName;
- 125              		.loc 1 35 0
- 126 00de 488B0500 		movq	lpszAppName(%rip), %rax
- 126      000000
- 127 00e5 48894520 		movq	%rax, 32(%rbp)
-  36:win/win.c     ****    wc.lpszMenuName  =  lpszAppName;
- 128              		.loc 1 36 0
- 129 00e9 488B0500 		movq	lpszAppName(%rip), %rax
- 129      000000
- 130 00f0 48894518 		movq	%rax, 24(%rbp)
-  37:win/win.c     ****    wc.hIconSm       =  LoadIcon(NULL, IDI_APPLICATION);
- 131              		.loc 1 37 0
- 132 00f4 BA007F00 		movl	$32512, %edx
- 132      00
- 133 00f9 B9000000 		movl	$0, %ecx
- 133      00
- 134 00fe 488B0500 		movq	__imp_LoadIconA(%rip), %rax
- 134      000000
- 135 0105 FFD0     		call	*%rax
- 136 0107 48894528 		movq	%rax, 40(%rbp)
-  38:win/win.c     **** 
-  39:win/win.c     ****    if( RegisterClassEx(&wc) == 0)
- 137              		.loc 1 39 0
- 138 010b 488D45E0 		leaq	-32(%rbp), %rax
- 139 010f 4889C1   		movq	%rax, %rcx
- 140 0112 488B0500 		movq	__imp_RegisterClassExA(%rip), %rax
- 140      000000
- 141 0119 FFD0     		call	*%rax
- 142 011b 6685C0   		testw	%ax, %ax
- 143 011e 750A     		jne	.L3
-  40:win/win.c     ****       return 0;
- 144              		.loc 1 40 0
- 145 0120 B8000000 		movl	$0, %eax
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 5
+  25:win/win.c     ****     int dst;
+  26:win/win.c     ****      
+  27:win/win.c     **** 	 //"mov %2, %0\n\t"
+  28:win/win.c     **** 	 //"add $3, %0\n\t"
+  29:win/win.c     **** 	 //"add $3, %0\n\t"
+  30:win/win.c     **** 	 //1
+  31:win/win.c     **** 	 //"mov %%edx,%%esp\n\t"
+  32:win/win.c     **** 	 //"sysenter\n\t"
+  33:win/win.c     **** 	 //"ret\n\t"
+  34:win/win.c     **** 	 //2
+  35:win/win.c     **** 	 //"mov %%r10, %%rcx\n\t"
+  36:win/win.c     **** 	 //"mov %%eax, 52\n\t" 
+  37:win/win.c     **** 	 //"syscall \n\t"
+  38:win/win.c     **** 	 //"ret\n\t"
+  39:win/win.c     **** 	 //3
+  40:win/win.c     **** 	 
+  41:win/win.c     **** 	asm ("int $3\n\t"
+ 112              		.loc 1 41 0
+ 113 0097 8B4570   		movl	112(%rbp), %eax
+ 114 009a 8B556C   		movl	108(%rbp), %edx
+ 115              	/APP
+ 116              	 # 41 "win/win.c" 1
+ 117 009d CC       		int $3
+ 118 009e B8190000 		mov $0x19, %eax
+ 118      00
+ 119 00a3 CD2E     		int $0x2E
+ 120              		
+ 121              	 # 0 "" 2
+ 122              	/NO_APP
+ 123 00a5 894568   		movl	%eax, 104(%rbp)
+  42:win/win.c     **** 		 "mov $0x19, %%eax\n\t"
+  43:win/win.c     ****          "int $0x2E\n\t"
+  44:win/win.c     **** 		 : "=r" (dst)
+  45:win/win.c     **** 		 : "r" (src), "r" (src2)
+  46:win/win.c     **** 		 );
+  47:win/win.c     **** 		 
+  48:win/win.c     **** 	getchar();
+ 124              		.loc 1 48 0
+ 125 00a8 E8000000 		call	getchar
+ 125      00
+  49:win/win.c     ****      
+  50:win/win.c     ****     //printf("%d\n", dst);
+  51:win/win.c     **** 	printf("Finished inline asm\n");
+ 126              		.loc 1 51 0
+ 127 00ad 488D0D5D 		leaq	.LC6(%rip), %rcx
+ 127      000000
+ 128 00b4 E8000000 		call	puts
+ 128      00
+  52:win/win.c     **** 
+  53:win/win.c     ****    HWND       hWnd;
+  54:win/win.c     ****    MSG        msg;
+  55:win/win.c     ****    WNDCLASSEX   wc;
+  56:win/win.c     **** 
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 5
 
 
+  57:win/win.c     ****    wc.cbSize        =  sizeof(WNDCLASSEX);
+ 129              		.loc 1 57 0
+ 130 00b9 C745E050 		movl	$80, -32(%rbp)
+ 130      000000
+  58:win/win.c     ****    wc.style         =  CS_HREDRAW | CS_VREDRAW;
+ 131              		.loc 1 58 0
+ 132 00c0 C745E403 		movl	$3, -28(%rbp)
+ 132      000000
+  59:win/win.c     ****    wc.lpfnWndProc   =  WndProc;
+ 133              		.loc 1 59 0
+ 134 00c7 488D05A4 		leaq	WndProc(%rip), %rax
+ 134      010000
+ 135 00ce 488945E8 		movq	%rax, -24(%rbp)
+  60:win/win.c     ****    wc.cbClsExtra    =  0;
+ 136              		.loc 1 60 0
+ 137 00d2 C745F000 		movl	$0, -16(%rbp)
+ 137      000000
+  61:win/win.c     ****    wc.cbWndExtra    =  0;
+ 138              		.loc 1 61 0
+ 139 00d9 C745F400 		movl	$0, -12(%rbp)
+ 139      000000
+  62:win/win.c     ****    wc.hInstance     =  hInstance;
+ 140              		.loc 1 62 0
+ 141 00e0 488B8590 		movq	144(%rbp), %rax
+ 141      000000
+ 142 00e7 488945F8 		movq	%rax, -8(%rbp)
+  63:win/win.c     ****    wc.hCursor       =  LoadCursor(NULL,IDC_ARROW);
+ 143              		.loc 1 63 0
+ 144 00eb BA007F00 		movl	$32512, %edx
+ 144      00
+ 145 00f0 B9000000 		movl	$0, %ecx
  145      00
- 146 0125 E9F20000 		jmp	.L8
- 146      00
- 147              	.L3:
-  41:win/win.c     **** 
-  42:win/win.c     ****    hWnd = CreateWindowEx(NULL,
- 148              		.loc 1 42 0
- 149 012a 488B0D08 		movq	lpszTitle(%rip), %rcx
- 149      000000
- 150 0131 488B0500 		movq	lpszAppName(%rip), %rax
- 150      000000
- 151 0138 48C74424 		movq	$0, 88(%rsp)
- 151      58000000 
+ 146 00f5 488B0500 		movq	__imp_LoadCursorA(%rip), %rax
+ 146      000000
+ 147 00fc FFD0     		call	*%rax
+ 148 00fe 48894508 		movq	%rax, 8(%rbp)
+  64:win/win.c     ****    wc.hIcon         =  LoadIcon(NULL, IDI_APPLICATION);
+ 149              		.loc 1 64 0
+ 150 0102 BA007F00 		movl	$32512, %edx
+ 150      00
+ 151 0107 B9000000 		movl	$0, %ecx
  151      00
- 152 0141 488B9590 		movq	144(%rbp), %rdx
+ 152 010c 488B0500 		movq	__imp_LoadIconA(%rip), %rax
  152      000000
- 153 0148 48895424 		movq	%rdx, 80(%rsp)
- 153      50
- 154 014d 48C74424 		movq	$0, 72(%rsp)
- 154      48000000 
- 154      00
- 155 0156 48C74424 		movq	$0, 64(%rsp)
- 155      40000000 
- 155      00
- 156 015f C7442438 		movl	$-2147483648, 56(%rsp)
- 156      00000080 
- 157 0167 C7442430 		movl	$-2147483648, 48(%rsp)
- 157      00000080 
- 158 016f C7442428 		movl	$0, 40(%rsp)
- 158      00000000 
- 159 0177 C7442420 		movl	$0, 32(%rsp)
- 159      00000000 
- 160 017f 41B90000 		movl	$13565952, %r9d
- 160      CF00
- 161 0185 4989C8   		movq	%rcx, %r8
- 162 0188 4889C2   		movq	%rax, %rdx
- 163 018b B9000000 		movl	$0, %ecx
- 163      00
- 164 0190 488B0500 		movq	__imp_CreateWindowExA(%rip), %rax
+ 153 0113 FFD0     		call	*%rax
+ 154 0115 48894500 		movq	%rax, 0(%rbp)
+  65:win/win.c     ****    wc.hbrBackground =  (HBRUSH)GetStockObject(WHITE_BRUSH);
+ 155              		.loc 1 65 0
+ 156 0119 B9000000 		movl	$0, %ecx
+ 156      00
+ 157 011e 488B0500 		movq	__imp_GetStockObject(%rip), %rax
+ 157      000000
+ 158 0125 FFD0     		call	*%rax
+ 159 0127 48894510 		movq	%rax, 16(%rbp)
+  66:win/win.c     ****    wc.lpszClassName =  lpszAppName;
+ 160              		.loc 1 66 0
+ 161 012b 488B0500 		movq	lpszAppName(%rip), %rax
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 6
+
+
+ 161      000000
+ 162 0132 48894520 		movq	%rax, 32(%rbp)
+  67:win/win.c     ****    wc.lpszMenuName  =  lpszAppName;
+ 163              		.loc 1 67 0
+ 164 0136 488B0500 		movq	lpszAppName(%rip), %rax
  164      000000
- 165 0197 FFD0     		call	*%rax
- 166 0199 48894568 		movq	%rax, 104(%rbp)
-  43:win/win.c     ****                          lpszAppName,
-  44:win/win.c     ****                          lpszTitle,
-  45:win/win.c     ****                          WS_OVERLAPPEDWINDOW,
-  46:win/win.c     ****                          0,
-  47:win/win.c     ****                          0,
-  48:win/win.c     ****                          CW_USEDEFAULT,
-  49:win/win.c     ****                          CW_USEDEFAULT,
-  50:win/win.c     ****                          NULL,
-  51:win/win.c     ****                          NULL,
-  52:win/win.c     ****                          hInstance,
-  53:win/win.c     ****                          NULL);
-  54:win/win.c     **** 
-  55:win/win.c     ****    if( hWnd == NULL)
- 167              		.loc 1 55 0
- 168 019d 48837D68 		cmpq	$0, 104(%rbp)
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 6
-
-
+ 165 013d 48894518 		movq	%rax, 24(%rbp)
+  68:win/win.c     ****    wc.hIconSm       =  LoadIcon(NULL, IDI_APPLICATION);
+ 166              		.loc 1 68 0
+ 167 0141 BA007F00 		movl	$32512, %edx
+ 167      00
+ 168 0146 B9000000 		movl	$0, %ecx
  168      00
- 169 01a2 7507     		jne	.L5
-  56:win/win.c     ****       return 0;
- 170              		.loc 1 56 0
- 171 01a4 B8000000 		movl	$0, %eax
- 171      00
- 172 01a9 EB71     		jmp	.L8
- 173              	.L5:
-  57:win/win.c     **** 
-  58:win/win.c     ****    ShowWindow(hWnd, iCmdShow);
- 174              		.loc 1 58 0
- 175 01ab 8B95A800 		movl	168(%rbp), %edx
- 175      0000
- 176 01b1 488B4568 		movq	104(%rbp), %rax
- 177 01b5 4889C1   		movq	%rax, %rcx
- 178 01b8 488B0500 		movq	__imp_ShowWindow(%rip), %rax
- 178      000000
- 179 01bf FFD0     		call	*%rax
-  59:win/win.c     ****    UpdateWindow(hWnd);
- 180              		.loc 1 59 0
- 181 01c1 488B4568 		movq	104(%rbp), %rax
- 182 01c5 4889C1   		movq	%rax, %rcx
- 183 01c8 488B0500 		movq	__imp_UpdateWindow(%rip), %rax
- 183      000000
- 184 01cf FFD0     		call	*%rax
-  60:win/win.c     **** 
-  61:win/win.c     ****    while (GetMessage(&msg, NULL, 0, 0) > 0)
- 185              		.loc 1 61 0
- 186 01d1 EB20     		jmp	.L6
- 187              	.L7:
-  62:win/win.c     ****    {
-  63:win/win.c     ****       TranslateMessage(&msg);
- 188              		.loc 1 63 0
- 189 01d3 488D4530 		leaq	48(%rbp), %rax
- 190 01d7 4889C1   		movq	%rax, %rcx
- 191 01da 488B0500 		movq	__imp_TranslateMessage(%rip), %rax
- 191      000000
- 192 01e1 FFD0     		call	*%rax
-  64:win/win.c     ****       DispatchMessage(&msg);
- 193              		.loc 1 64 0
- 194 01e3 488D4530 		leaq	48(%rbp), %rax
- 195 01e7 4889C1   		movq	%rax, %rcx
- 196 01ea 488B0500 		movq	__imp_DispatchMessageA(%rip), %rax
- 196      000000
- 197 01f1 FFD0     		call	*%rax
- 198              	.L6:
-  61:win/win.c     ****    {
- 199              		.loc 1 61 0
- 200 01f3 488D4530 		leaq	48(%rbp), %rax
- 201 01f7 41B90000 		movl	$0, %r9d
- 201      0000
- 202 01fd 41B80000 		movl	$0, %r8d
- 202      0000
- 203 0203 BA000000 		movl	$0, %edx
+ 169 014b 488B0500 		movq	__imp_LoadIconA(%rip), %rax
+ 169      000000
+ 170 0152 FFD0     		call	*%rax
+ 171 0154 48894528 		movq	%rax, 40(%rbp)
+  69:win/win.c     **** 
+  70:win/win.c     ****    if( RegisterClassEx(&wc) == 0)
+ 172              		.loc 1 70 0
+ 173 0158 488D45E0 		leaq	-32(%rbp), %rax
+ 174 015c 4889C1   		movq	%rax, %rcx
+ 175 015f 488B0500 		movq	__imp_RegisterClassExA(%rip), %rax
+ 175      000000
+ 176 0166 FFD0     		call	*%rax
+ 177 0168 6685C0   		testw	%ax, %ax
+ 178 016b 750A     		jne	.L3
+  71:win/win.c     ****       return 0;
+ 179              		.loc 1 71 0
+ 180 016d B8000000 		movl	$0, %eax
+ 180      00
+ 181 0172 E9F20000 		jmp	.L8
+ 181      00
+ 182              	.L3:
+  72:win/win.c     **** 
+  73:win/win.c     ****    hWnd = CreateWindowEx(NULL,
+ 183              		.loc 1 73 0
+ 184 0177 488B0D08 		movq	lpszTitle(%rip), %rcx
+ 184      000000
+ 185 017e 488B0500 		movq	lpszAppName(%rip), %rax
+ 185      000000
+ 186 0185 48C74424 		movq	$0, 88(%rsp)
+ 186      58000000 
+ 186      00
+ 187 018e 488B9590 		movq	144(%rbp), %rdx
+ 187      000000
+ 188 0195 48895424 		movq	%rdx, 80(%rsp)
+ 188      50
+ 189 019a 48C74424 		movq	$0, 72(%rsp)
+ 189      48000000 
+ 189      00
+ 190 01a3 48C74424 		movq	$0, 64(%rsp)
+ 190      40000000 
+ 190      00
+ 191 01ac C7442438 		movl	$-2147483648, 56(%rsp)
+ 191      00000080 
+ 192 01b4 C7442430 		movl	$-2147483648, 48(%rsp)
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 7
+
+
+ 192      00000080 
+ 193 01bc C7442428 		movl	$0, 40(%rsp)
+ 193      00000000 
+ 194 01c4 C7442420 		movl	$0, 32(%rsp)
+ 194      00000000 
+ 195 01cc 41B90000 		movl	$13565952, %r9d
+ 195      CF00
+ 196 01d2 4989C8   		movq	%rcx, %r8
+ 197 01d5 4889C2   		movq	%rax, %rdx
+ 198 01d8 B9000000 		movl	$0, %ecx
+ 198      00
+ 199 01dd 488B0500 		movq	__imp_CreateWindowExA(%rip), %rax
+ 199      000000
+ 200 01e4 FFD0     		call	*%rax
+ 201 01e6 48894560 		movq	%rax, 96(%rbp)
+  74:win/win.c     ****                          lpszAppName,
+  75:win/win.c     ****                          lpszTitle,
+  76:win/win.c     ****                          WS_OVERLAPPEDWINDOW,
+  77:win/win.c     ****                          0,
+  78:win/win.c     ****                          0,
+  79:win/win.c     ****                          CW_USEDEFAULT,
+  80:win/win.c     ****                          CW_USEDEFAULT,
+  81:win/win.c     ****                          NULL,
+  82:win/win.c     ****                          NULL,
+  83:win/win.c     ****                          hInstance,
+  84:win/win.c     ****                          NULL);
+  85:win/win.c     **** 
+  86:win/win.c     ****    if( hWnd == NULL)
+ 202              		.loc 1 86 0
+ 203 01ea 48837D60 		cmpq	$0, 96(%rbp)
  203      00
- 204 0208 4889C1   		movq	%rax, %rcx
- 205 020b 488B0500 		movq	__imp_GetMessageA(%rip), %rax
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 7
+ 204 01ef 7507     		jne	.L5
+  87:win/win.c     ****       return 0;
+ 205              		.loc 1 87 0
+ 206 01f1 B8000000 		movl	$0, %eax
+ 206      00
+ 207 01f6 EB71     		jmp	.L8
+ 208              	.L5:
+  88:win/win.c     **** 
+  89:win/win.c     ****    ShowWindow(hWnd, iCmdShow);
+ 209              		.loc 1 89 0
+ 210 01f8 8B95A800 		movl	168(%rbp), %edx
+ 210      0000
+ 211 01fe 488B4560 		movq	96(%rbp), %rax
+ 212 0202 4889C1   		movq	%rax, %rcx
+ 213 0205 488B0500 		movq	__imp_ShowWindow(%rip), %rax
+ 213      000000
+ 214 020c FFD0     		call	*%rax
+  90:win/win.c     ****    UpdateWindow(hWnd);
+ 215              		.loc 1 90 0
+ 216 020e 488B4560 		movq	96(%rbp), %rax
+ 217 0212 4889C1   		movq	%rax, %rcx
+ 218 0215 488B0500 		movq	__imp_UpdateWindow(%rip), %rax
+ 218      000000
+ 219 021c FFD0     		call	*%rax
+  91:win/win.c     **** 
+  92:win/win.c     ****    while (GetMessage(&msg, NULL, 0, 0) > 0)
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 8
 
 
- 205      000000
- 206 0212 FFD0     		call	*%rax
- 207 0214 85C0     		testl	%eax, %eax
- 208 0216 7FBB     		jg	.L7
-  65:win/win.c     ****    }
-  66:win/win.c     ****    return msg.wParam;
- 209              		.loc 1 66 0
- 210 0218 488B4540 		movq	64(%rbp), %rax
- 211              	.L8:
-  67:win/win.c     **** }
- 212              		.loc 1 67 0 discriminator 1
- 213 021c 4881C400 		addq	$256, %rsp
- 213      010000
- 214 0223 5D       		popq	%rbp
- 215              		.cfi_restore 6
- 216              		.cfi_def_cfa 7, -248
- 217 0224 C3       		ret
- 218              		.cfi_endproc
- 219              	.LFE1949:
- 220              		.seh_endproc
- 221              		.section .rdata,"dr"
- 222              	.LC4:
- 223 003b 46656E73 		.ascii "Fenster bewegt\0"
- 223      74657220 
- 223      62657765 
- 223      677400
- 224 004a 00000000 		.text
- 224      0000
- 225              		.globl	WndProc
- 227              		.seh_proc	WndProc
- 228              	WndProc:
- 229              	.LFB1950:
-  68:win/win.c     **** 
-  69:win/win.c     **** LRESULT CALLBACK WndProc(HWND hWnd, UINT umsg, WPARAM wParam, LPARAM lParam)
-  70:win/win.c     **** {
- 230              		.loc 1 70 0
- 231              		.cfi_startproc
- 232 0225 55       		pushq	%rbp
- 233              		.seh_pushreg	%rbp
- 234              		.cfi_def_cfa_offset 16
- 235              		.cfi_offset 6, -16
- 236 0226 4889E5   		movq	%rsp, %rbp
- 237              		.seh_setframe	%rbp, 0
- 238              		.cfi_def_cfa_register 6
- 239 0229 4883EC20 		subq	$32, %rsp
- 240              		.seh_stackalloc	32
- 241              		.seh_endprologue
- 242 022d 48894D10 		movq	%rcx, 16(%rbp)
- 243 0231 895518   		movl	%edx, 24(%rbp)
- 244 0234 4C894520 		movq	%r8, 32(%rbp)
- 245 0238 4C894D28 		movq	%r9, 40(%rbp)
-  71:win/win.c     ****    switch (umsg)
- 246              		.loc 1 71 0
- 247 023c 8B4518   		movl	24(%rbp), %eax
- 248 023f 83F802   		cmpl	$2, %eax
- 249 0242 7407     		je	.L11
- 250 0244 83F803   		cmpl	$3, %eax
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 8
+ 220              		.loc 1 92 0
+ 221 021e EB20     		jmp	.L6
+ 222              	.L7:
+  93:win/win.c     ****    {
+  94:win/win.c     ****       TranslateMessage(&msg);
+ 223              		.loc 1 94 0
+ 224 0220 488D4530 		leaq	48(%rbp), %rax
+ 225 0224 4889C1   		movq	%rax, %rcx
+ 226 0227 488B0500 		movq	__imp_TranslateMessage(%rip), %rax
+ 226      000000
+ 227 022e FFD0     		call	*%rax
+  95:win/win.c     ****       DispatchMessage(&msg);
+ 228              		.loc 1 95 0
+ 229 0230 488D4530 		leaq	48(%rbp), %rax
+ 230 0234 4889C1   		movq	%rax, %rcx
+ 231 0237 488B0500 		movq	__imp_DispatchMessageA(%rip), %rax
+ 231      000000
+ 232 023e FFD0     		call	*%rax
+ 233              	.L6:
+  92:win/win.c     ****    {
+ 234              		.loc 1 92 0
+ 235 0240 488D4530 		leaq	48(%rbp), %rax
+ 236 0244 41B90000 		movl	$0, %r9d
+ 236      0000
+ 237 024a 41B80000 		movl	$0, %r8d
+ 237      0000
+ 238 0250 BA000000 		movl	$0, %edx
+ 238      00
+ 239 0255 4889C1   		movq	%rax, %rcx
+ 240 0258 488B0500 		movq	__imp_GetMessageA(%rip), %rax
+ 240      000000
+ 241 025f FFD0     		call	*%rax
+ 242 0261 85C0     		testl	%eax, %eax
+ 243 0263 7FBB     		jg	.L7
+  96:win/win.c     ****    }
+  97:win/win.c     ****    return msg.wParam;
+ 244              		.loc 1 97 0
+ 245 0265 488B4540 		movq	64(%rbp), %rax
+ 246              	.L8:
+  98:win/win.c     **** }
+ 247              		.loc 1 98 0 discriminator 1
+ 248 0269 4881C400 		addq	$256, %rsp
+ 248      010000
+ 249 0270 5D       		popq	%rbp
+ 250              		.cfi_restore 6
+ 251              		.cfi_def_cfa 7, -248
+ 252 0271 C3       		ret
+ 253              		.cfi_endproc
+ 254              	.LFE1949:
+ 255              		.seh_endproc
+ 256              		.section .rdata,"dr"
+ 257              	.LC7:
+ 258 0071 46656E73 		.ascii "Fenster bewegt\0"
+ 258      74657220 
+ 258      62657765 
+ 258      677400
+ 259              		.text
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 9
 
 
- 251 0247 7417     		je	.L12
- 252 0249 EB28     		jmp	.L14
- 253              	.L11:
-  72:win/win.c     ****    {
-  73:win/win.c     **** 		case WM_DESTROY:
-  74:win/win.c     **** 		{
-  75:win/win.c     **** 			PostQuitMessage(0);
- 254              		.loc 1 75 0
- 255 024b B9000000 		movl	$0, %ecx
- 255      00
- 256 0250 488B0500 		movq	__imp_PostQuitMessage(%rip), %rax
- 256      000000
- 257 0257 FFD0     		call	*%rax
-  76:win/win.c     **** 			return 0;
- 258              		.loc 1 76 0
- 259 0259 B8000000 		movl	$0, %eax
- 259      00
- 260 025e EB33     		jmp	.L13
- 261              	.L12:
-  77:win/win.c     **** 		}
-  78:win/win.c     **** 		case WM_MOVE:
-  79:win/win.c     **** 		{
-  80:win/win.c     **** 			printf("Fenster bewegt\n");
- 262              		.loc 1 80 0
- 263 0260 488D0D3B 		leaq	.LC4(%rip), %rcx
- 263      000000
- 264 0267 E8000000 		call	puts
- 264      00
-  81:win/win.c     **** 			return 0;
- 265              		.loc 1 81 0
- 266 026c B8000000 		movl	$0, %eax
- 266      00
- 267 0271 EB20     		jmp	.L13
- 268              	.L14:
-  82:win/win.c     **** 		}
-  83:win/win.c     ****    }
-  84:win/win.c     ****    return DefWindowProc(hWnd, umsg, wParam, lParam);
- 269              		.loc 1 84 0
- 270 0273 488B4D28 		movq	40(%rbp), %rcx
- 271 0277 488B5520 		movq	32(%rbp), %rdx
- 272 027b 8B4518   		movl	24(%rbp), %eax
- 273 027e 4989C9   		movq	%rcx, %r9
- 274 0281 4989D0   		movq	%rdx, %r8
- 275 0284 89C2     		movl	%eax, %edx
- 276 0286 488B4D10 		movq	16(%rbp), %rcx
- 277 028a 488B0500 		movq	__imp_DefWindowProcA(%rip), %rax
- 277      000000
- 278 0291 FFD0     		call	*%rax
- 279              	.L13:
-  85:win/win.c     **** }...
- 280              		.loc 1 85 0
- 281 0293 4883C420 		addq	$32, %rsp
- 282 0297 5D       		popq	%rbp
- 283              		.cfi_restore 6
- 284              		.cfi_def_cfa 7, 8
- 285 0298 C3       		ret
- 286              		.cfi_endproc
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 9
+ 260              		.globl	WndProc
+ 262              		.seh_proc	WndProc
+ 263              	WndProc:
+ 264              	.LFB1950:
+  99:win/win.c     **** 
+ 100:win/win.c     **** LRESULT CALLBACK WndProc(HWND hWnd, UINT umsg, WPARAM wParam, LPARAM lParam)
+ 101:win/win.c     **** {
+ 265              		.loc 1 101 0
+ 266              		.cfi_startproc
+ 267 0272 55       		pushq	%rbp
+ 268              		.seh_pushreg	%rbp
+ 269              		.cfi_def_cfa_offset 16
+ 270              		.cfi_offset 6, -16
+ 271 0273 4889E5   		movq	%rsp, %rbp
+ 272              		.seh_setframe	%rbp, 0
+ 273              		.cfi_def_cfa_register 6
+ 274 0276 4883EC20 		subq	$32, %rsp
+ 275              		.seh_stackalloc	32
+ 276              		.seh_endprologue
+ 277 027a 48894D10 		movq	%rcx, 16(%rbp)
+ 278 027e 895518   		movl	%edx, 24(%rbp)
+ 279 0281 4C894520 		movq	%r8, 32(%rbp)
+ 280 0285 4C894D28 		movq	%r9, 40(%rbp)
+ 102:win/win.c     ****    switch (umsg)
+ 281              		.loc 1 102 0
+ 282 0289 8B4518   		movl	24(%rbp), %eax
+ 283 028c 83F802   		cmpl	$2, %eax
+ 284 028f 7407     		je	.L11
+ 285 0291 83F803   		cmpl	$3, %eax
+ 286 0294 7417     		je	.L12
+ 287 0296 EB28     		jmp	.L14
+ 288              	.L11:
+ 103:win/win.c     ****    {
+ 104:win/win.c     **** 		case WM_DESTROY:
+ 105:win/win.c     **** 		{
+ 106:win/win.c     **** 			PostQuitMessage(0);
+ 289              		.loc 1 106 0
+ 290 0298 B9000000 		movl	$0, %ecx
+ 290      00
+ 291 029d 488B0500 		movq	__imp_PostQuitMessage(%rip), %rax
+ 291      000000
+ 292 02a4 FFD0     		call	*%rax
+ 107:win/win.c     **** 			return 0;
+ 293              		.loc 1 107 0
+ 294 02a6 B8000000 		movl	$0, %eax
+ 294      00
+ 295 02ab EB33     		jmp	.L13
+ 296              	.L12:
+ 108:win/win.c     **** 		}
+ 109:win/win.c     **** 		case WM_MOVE:
+ 110:win/win.c     **** 		{
+ 111:win/win.c     **** 			printf("Fenster bewegt\n");
+ 297              		.loc 1 111 0
+ 298 02ad 488D0D71 		leaq	.LC7(%rip), %rcx
+ 298      000000
+ 299 02b4 E8000000 		call	puts
+ 299      00
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 10
 
 
- 287              	.LFE1950:
- 288              		.seh_endproc
- 289              	.Letext0:
- 290              		.file 2 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/minwindef.h"
- 291              		.file 3 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/basetsd.h"
- 292              		.file 4 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winnt.h"
- 293              		.file 5 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/windef.h"
- 294              		.file 6 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winuser.h"
- 295              		.file 7 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/combaseapi.h"
- 296              		.file 8 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/wtypes.h"
- 297              		.file 9 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winbase.h"
- 298 0299 90909090 		.section	.debug_info,"dr"
- 298      909090
- 299              	.Ldebug_info0:
- 300 0000 3E090000 		.long	0x93e
- 301 0004 0400     		.word	0x4
- 302 0006 00000000 		.secrel32	.Ldebug_abbrev0
- 303 000a 08       		.byte	0x8
- 304 000b 01       		.uleb128 0x1
- 305 000c 474E5520 		.ascii "GNU C 4.9.2 -mtune=haswell -march=x86-64 -g\0"
- 305      4320342E 
- 305      392E3220 
- 305      2D6D7475 
- 305      6E653D68 
- 306 0038 01       		.byte	0x1
- 307 0039 77696E2F 		.ascii "win/win.c\0"
- 307      77696E2E 
- 307      6300
- 308 0043 433A5C4A 		.ascii "C:\\JavaProjects\\GIT\\Kaputnik120\\C\0"
- 308      61766150 
- 308      726F6A65 
- 308      6374735C 
- 308      4749545C 
- 309 0065 00000000 		.quad	.Ltext0
- 309      00000000 
- 310 006d 99020000 		.quad	.Letext0-.Ltext0
- 310      00000000 
- 311 0075 00000000 		.secrel32	.Ldebug_line0
- 312 0079 02       		.uleb128 0x2
- 313 007a 01       		.byte	0x1
- 314 007b 06       		.byte	0x6
- 315 007c 63686172 		.ascii "char\0"
- 315      00
- 316 0081 02       		.uleb128 0x2
- 317 0082 08       		.byte	0x8
- 318 0083 07       		.byte	0x7
- 319 0084 6C6F6E67 		.ascii "long long unsigned int\0"
- 319      206C6F6E 
- 319      6720756E 
- 319      7369676E 
- 319      65642069 
- 320 009b 02       		.uleb128 0x2
- 321 009c 08       		.byte	0x8
- 322 009d 05       		.byte	0x5
- 323 009e 6C6F6E67 		.ascii "long long int\0"
- 323      206C6F6E 
- 323      6720696E 
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 10
+ 112:win/win.c     **** 			return 0;
+ 300              		.loc 1 112 0
+ 301 02b9 B8000000 		movl	$0, %eax
+ 301      00
+ 302 02be EB20     		jmp	.L13
+ 303              	.L14:
+ 113:win/win.c     **** 		}
+ 114:win/win.c     ****    }
+ 115:win/win.c     ****    return DefWindowProc(hWnd, umsg, wParam, lParam);
+ 304              		.loc 1 115 0
+ 305 02c0 488B4D28 		movq	40(%rbp), %rcx
+ 306 02c4 488B5520 		movq	32(%rbp), %rdx
+ 307 02c8 8B4518   		movl	24(%rbp), %eax
+ 308 02cb 4989C9   		movq	%rcx, %r9
+ 309 02ce 4989D0   		movq	%rdx, %r8
+ 310 02d1 89C2     		movl	%eax, %edx
+ 311 02d3 488B4D10 		movq	16(%rbp), %rcx
+ 312 02d7 488B0500 		movq	__imp_DefWindowProcA(%rip), %rax
+ 312      000000
+ 313 02de FFD0     		call	*%rax
+ 314              	.L13:
+ 116:win/win.c     **** }...
+ 315              		.loc 1 116 0
+ 316 02e0 4883C420 		addq	$32, %rsp
+ 317 02e4 5D       		popq	%rbp
+ 318              		.cfi_restore 6
+ 319              		.cfi_def_cfa 7, 8
+ 320 02e5 C3       		ret
+ 321              		.cfi_endproc
+ 322              	.LFE1950:
+ 323              		.seh_endproc
+ 324              	.Letext0:
+ 325              		.file 2 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/minwindef.h"
+ 326              		.file 3 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/basetsd.h"
+ 327              		.file 4 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winnt.h"
+ 328              		.file 5 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/windef.h"
+ 329              		.file 6 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winuser.h"
+ 330              		.file 7 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/combaseapi.h"
+ 331              		.file 8 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/wtypes.h"
+ 332              		.file 9 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winbase.h"
+ 333 02e6 90909090 		.section	.debug_info,"dr"
+ 333      90909090 
+ 333      9090
+ 334              	.Ldebug_info0:
+ 335 0000 69090000 		.long	0x969
+ 336 0004 0400     		.word	0x4
+ 337 0006 00000000 		.secrel32	.Ldebug_abbrev0
+ 338 000a 08       		.byte	0x8
+ 339 000b 01       		.uleb128 0x1
+ 340 000c 474E5520 		.ascii "GNU C 4.9.2 -mtune=haswell -march=x86-64 -g\0"
+ 340      4320342E 
+ 340      392E3220 
+ 340      2D6D7475 
+ 340      6E653D68 
+ 341 0038 01       		.byte	0x1
+ 342 0039 77696E2F 		.ascii "win/win.c\0"
+ 342      77696E2E 
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 11
 
 
- 323      7400
- 324 00ac 02       		.uleb128 0x2
- 325 00ad 02       		.byte	0x2
- 326 00ae 07       		.byte	0x7
- 327 00af 73686F72 		.ascii "short unsigned int\0"
- 327      7420756E 
- 327      7369676E 
- 327      65642069 
- 327      6E7400
- 328 00c2 02       		.uleb128 0x2
- 329 00c3 04       		.byte	0x4
- 330 00c4 05       		.byte	0x5
- 331 00c5 696E7400 		.ascii "int\0"
- 332 00c9 02       		.uleb128 0x2
- 333 00ca 04       		.byte	0x4
- 334 00cb 05       		.byte	0x5
- 335 00cc 6C6F6E67 		.ascii "long int\0"
- 335      20696E74 
- 335      00
- 336 00d5 02       		.uleb128 0x2
- 337 00d6 04       		.byte	0x4
- 338 00d7 07       		.byte	0x7
- 339 00d8 756E7369 		.ascii "unsigned int\0"
- 339      676E6564 
- 339      20696E74 
- 339      00
- 340 00e5 02       		.uleb128 0x2
- 341 00e6 08       		.byte	0x8
- 342 00e7 07       		.byte	0x7
- 343 00e8 73697A65 		.ascii "sizetype\0"
- 343      74797065 
- 343      00
- 344 00f1 02       		.uleb128 0x2
- 345 00f2 04       		.byte	0x4
- 346 00f3 07       		.byte	0x7
- 347 00f4 6C6F6E67 		.ascii "long unsigned int\0"
- 347      20756E73 
- 347      69676E65 
- 347      6420696E 
- 347      7400
- 348 0106 02       		.uleb128 0x2
- 349 0107 01       		.byte	0x1
- 350 0108 08       		.byte	0x8
- 351 0109 756E7369 		.ascii "unsigned char\0"
- 351      676E6564 
- 351      20636861 
- 351      7200
- 352 0117 03       		.uleb128 0x3
- 353 0118 574F5244 		.ascii "WORD\0"
- 353      00
- 354 011d 02       		.byte	0x2
- 355 011e 7B       		.byte	0x7b
- 356 011f AC000000 		.long	0xac
- 357 0123 03       		.uleb128 0x3
- 358 0124 44574F52 		.ascii "DWORD\0"
- 358      4400
- 359 012a 02       		.byte	0x2
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 11
+ 342      6300
+ 343 0043 433A5C4A 		.ascii "C:\\JavaProjects\\GIT\\Kaputnik120\\C\0"
+ 343      61766150 
+ 343      726F6A65 
+ 343      6374735C 
+ 343      4749545C 
+ 344 0065 00000000 		.quad	.Ltext0
+ 344      00000000 
+ 345 006d E6020000 		.quad	.Letext0-.Ltext0
+ 345      00000000 
+ 346 0075 00000000 		.secrel32	.Ldebug_line0
+ 347 0079 02       		.uleb128 0x2
+ 348 007a 01       		.byte	0x1
+ 349 007b 06       		.byte	0x6
+ 350 007c 63686172 		.ascii "char\0"
+ 350      00
+ 351 0081 02       		.uleb128 0x2
+ 352 0082 08       		.byte	0x8
+ 353 0083 07       		.byte	0x7
+ 354 0084 6C6F6E67 		.ascii "long long unsigned int\0"
+ 354      206C6F6E 
+ 354      6720756E 
+ 354      7369676E 
+ 354      65642069 
+ 355 009b 02       		.uleb128 0x2
+ 356 009c 08       		.byte	0x8
+ 357 009d 05       		.byte	0x5
+ 358 009e 6C6F6E67 		.ascii "long long int\0"
+ 358      206C6F6E 
+ 358      6720696E 
+ 358      7400
+ 359 00ac 02       		.uleb128 0x2
+ 360 00ad 02       		.byte	0x2
+ 361 00ae 07       		.byte	0x7
+ 362 00af 73686F72 		.ascii "short unsigned int\0"
+ 362      7420756E 
+ 362      7369676E 
+ 362      65642069 
+ 362      6E7400
+ 363 00c2 02       		.uleb128 0x2
+ 364 00c3 04       		.byte	0x4
+ 365 00c4 05       		.byte	0x5
+ 366 00c5 696E7400 		.ascii "int\0"
+ 367 00c9 02       		.uleb128 0x2
+ 368 00ca 04       		.byte	0x4
+ 369 00cb 05       		.byte	0x5
+ 370 00cc 6C6F6E67 		.ascii "long int\0"
+ 370      20696E74 
+ 370      00
+ 371 00d5 02       		.uleb128 0x2
+ 372 00d6 04       		.byte	0x4
+ 373 00d7 07       		.byte	0x7
+ 374 00d8 756E7369 		.ascii "unsigned int\0"
+ 374      676E6564 
+ 374      20696E74 
+ 374      00
+ 375 00e5 02       		.uleb128 0x2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 12
 
 
- 360 012b 7C       		.byte	0x7c
- 361 012c F1000000 		.long	0xf1
- 362 0130 02       		.uleb128 0x2
- 363 0131 04       		.byte	0x4
- 364 0132 04       		.byte	0x4
- 365 0133 666C6F61 		.ascii "float\0"
- 365      7400
- 366 0139 03       		.uleb128 0x3
- 367 013a 55494E54 		.ascii "UINT\0"
- 367      00
- 368 013f 02       		.byte	0x2
- 369 0140 8E       		.byte	0x8e
- 370 0141 D5000000 		.long	0xd5
- 371 0145 02       		.uleb128 0x2
- 372 0146 01       		.byte	0x1
- 373 0147 06       		.byte	0x6
- 374 0148 7369676E 		.ascii "signed char\0"
- 374      65642063 
- 374      68617200 
- 375 0154 02       		.uleb128 0x2
- 376 0155 02       		.byte	0x2
- 377 0156 05       		.byte	0x5
- 378 0157 73686F72 		.ascii "short int\0"
- 378      7420696E 
- 378      7400
- 379 0161 03       		.uleb128 0x3
- 380 0162 55494E54 		.ascii "UINT_PTR\0"
- 380      5F505452 
- 380      00
- 381 016b 03       		.byte	0x3
- 382 016c 2F       		.byte	0x2f
- 383 016d 81000000 		.long	0x81
- 384 0171 03       		.uleb128 0x3
- 385 0172 4C4F4E47 		.ascii "LONG_PTR\0"
- 385      5F505452 
- 385      00
- 386 017b 03       		.byte	0x3
- 387 017c 30       		.byte	0x30
- 388 017d 9B000000 		.long	0x9b
- 389 0181 03       		.uleb128 0x3
- 390 0182 554C4F4E 		.ascii "ULONG_PTR\0"
- 390      475F5054 
- 390      5200
- 391 018c 03       		.byte	0x3
- 392 018d 31       		.byte	0x31
- 393 018e 81000000 		.long	0x81
- 394 0192 04       		.uleb128 0x4
- 395 0193 43484152 		.ascii "CHAR\0"
- 395      00
- 396 0198 04       		.byte	0x4
- 397 0199 0401     		.word	0x104
- 398 019b 79000000 		.long	0x79
- 399 019f 04       		.uleb128 0x4
- 400 01a0 4C4F4E47 		.ascii "LONG\0"
- 400      00
- 401 01a5 04       		.byte	0x4
- 402 01a6 0601     		.word	0x106
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 12
+ 376 00e6 08       		.byte	0x8
+ 377 00e7 07       		.byte	0x7
+ 378 00e8 73697A65 		.ascii "sizetype\0"
+ 378      74797065 
+ 378      00
+ 379 00f1 02       		.uleb128 0x2
+ 380 00f2 04       		.byte	0x4
+ 381 00f3 07       		.byte	0x7
+ 382 00f4 6C6F6E67 		.ascii "long unsigned int\0"
+ 382      20756E73 
+ 382      69676E65 
+ 382      6420696E 
+ 382      7400
+ 383 0106 02       		.uleb128 0x2
+ 384 0107 01       		.byte	0x1
+ 385 0108 08       		.byte	0x8
+ 386 0109 756E7369 		.ascii "unsigned char\0"
+ 386      676E6564 
+ 386      20636861 
+ 386      7200
+ 387 0117 03       		.uleb128 0x3
+ 388 0118 574F5244 		.ascii "WORD\0"
+ 388      00
+ 389 011d 02       		.byte	0x2
+ 390 011e 7B       		.byte	0x7b
+ 391 011f AC000000 		.long	0xac
+ 392 0123 03       		.uleb128 0x3
+ 393 0124 44574F52 		.ascii "DWORD\0"
+ 393      4400
+ 394 012a 02       		.byte	0x2
+ 395 012b 7C       		.byte	0x7c
+ 396 012c F1000000 		.long	0xf1
+ 397 0130 02       		.uleb128 0x2
+ 398 0131 04       		.byte	0x4
+ 399 0132 04       		.byte	0x4
+ 400 0133 666C6F61 		.ascii "float\0"
+ 400      7400
+ 401 0139 03       		.uleb128 0x3
+ 402 013a 55494E54 		.ascii "UINT\0"
+ 402      00
+ 403 013f 02       		.byte	0x2
+ 404 0140 8E       		.byte	0x8e
+ 405 0141 D5000000 		.long	0xd5
+ 406 0145 02       		.uleb128 0x2
+ 407 0146 01       		.byte	0x1
+ 408 0147 06       		.byte	0x6
+ 409 0148 7369676E 		.ascii "signed char\0"
+ 409      65642063 
+ 409      68617200 
+ 410 0154 02       		.uleb128 0x2
+ 411 0155 02       		.byte	0x2
+ 412 0156 05       		.byte	0x5
+ 413 0157 73686F72 		.ascii "short int\0"
+ 413      7420696E 
+ 413      7400
+ 414 0161 03       		.uleb128 0x3
+ 415 0162 55494E54 		.ascii "UINT_PTR\0"
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 13
 
 
- 403 01a8 C9000000 		.long	0xc9
- 404 01ac 05       		.uleb128 0x5
- 405 01ad 08       		.byte	0x8
- 406 01ae 92010000 		.long	0x192
- 407 01b2 05       		.uleb128 0x5
- 408 01b3 08       		.byte	0x8
- 409 01b4 B8010000 		.long	0x1b8
- 410 01b8 06       		.uleb128 0x6
- 411 01b9 92010000 		.long	0x192
- 412 01bd 04       		.uleb128 0x4
- 413 01be 4C505354 		.ascii "LPSTR\0"
- 413      5200
- 414 01c4 04       		.byte	0x4
- 415 01c5 3701     		.word	0x137
- 416 01c7 AC010000 		.long	0x1ac
- 417 01cb 04       		.uleb128 0x4
- 418 01cc 50535452 		.ascii "PSTR\0"
- 418      00
- 419 01d1 04       		.byte	0x4
- 420 01d2 3701     		.word	0x137
- 421 01d4 AC010000 		.long	0x1ac
- 422 01d8 04       		.uleb128 0x4
- 423 01d9 4C504353 		.ascii "LPCSTR\0"
- 423      545200
- 424 01e0 04       		.byte	0x4
- 425 01e1 3A01     		.word	0x13a
- 426 01e3 B2010000 		.long	0x1b2
- 427 01e7 02       		.uleb128 0x2
- 428 01e8 08       		.byte	0x8
- 429 01e9 04       		.byte	0x4
- 430 01ea 646F7562 		.ascii "double\0"
- 430      6C6500
- 431 01f1 02       		.uleb128 0x2
- 432 01f2 10       		.byte	0x10
- 433 01f3 04       		.byte	0x4
- 434 01f4 6C6F6E67 		.ascii "long double\0"
- 434      20646F75 
- 434      626C6500 
- 435 0200 03       		.uleb128 0x3
- 436 0201 57504152 		.ascii "WPARAM\0"
- 436      414D00
- 437 0208 02       		.byte	0x2
- 438 0209 95       		.byte	0x95
- 439 020a 61010000 		.long	0x161
- 440 020e 03       		.uleb128 0x3
- 441 020f 4C504152 		.ascii "LPARAM\0"
- 441      414D00
- 442 0216 02       		.byte	0x2
- 443 0217 96       		.byte	0x96
- 444 0218 71010000 		.long	0x171
- 445 021c 03       		.uleb128 0x3
- 446 021d 4C524553 		.ascii "LRESULT\0"
- 446      554C5400 
- 447 0225 02       		.byte	0x2
- 448 0226 97       		.byte	0x97
- 449 0227 71010000 		.long	0x171
- 450 022b 07       		.uleb128 0x7
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 13
+ 415      5F505452 
+ 415      00
+ 416 016b 03       		.byte	0x3
+ 417 016c 2F       		.byte	0x2f
+ 418 016d 81000000 		.long	0x81
+ 419 0171 03       		.uleb128 0x3
+ 420 0172 4C4F4E47 		.ascii "LONG_PTR\0"
+ 420      5F505452 
+ 420      00
+ 421 017b 03       		.byte	0x3
+ 422 017c 30       		.byte	0x30
+ 423 017d 9B000000 		.long	0x9b
+ 424 0181 03       		.uleb128 0x3
+ 425 0182 554C4F4E 		.ascii "ULONG_PTR\0"
+ 425      475F5054 
+ 425      5200
+ 426 018c 03       		.byte	0x3
+ 427 018d 31       		.byte	0x31
+ 428 018e 81000000 		.long	0x81
+ 429 0192 04       		.uleb128 0x4
+ 430 0193 43484152 		.ascii "CHAR\0"
+ 430      00
+ 431 0198 04       		.byte	0x4
+ 432 0199 0401     		.word	0x104
+ 433 019b 79000000 		.long	0x79
+ 434 019f 04       		.uleb128 0x4
+ 435 01a0 4C4F4E47 		.ascii "LONG\0"
+ 435      00
+ 436 01a5 04       		.byte	0x4
+ 437 01a6 0601     		.word	0x106
+ 438 01a8 C9000000 		.long	0xc9
+ 439 01ac 05       		.uleb128 0x5
+ 440 01ad 08       		.byte	0x8
+ 441 01ae 92010000 		.long	0x192
+ 442 01b2 05       		.uleb128 0x5
+ 443 01b3 08       		.byte	0x8
+ 444 01b4 B8010000 		.long	0x1b8
+ 445 01b8 06       		.uleb128 0x6
+ 446 01b9 92010000 		.long	0x192
+ 447 01bd 04       		.uleb128 0x4
+ 448 01be 4C505354 		.ascii "LPSTR\0"
+ 448      5200
+ 449 01c4 04       		.byte	0x4
+ 450 01c5 3701     		.word	0x137
+ 451 01c7 AC010000 		.long	0x1ac
+ 452 01cb 04       		.uleb128 0x4
+ 453 01cc 50535452 		.ascii "PSTR\0"
+ 453      00
+ 454 01d1 04       		.byte	0x4
+ 455 01d2 3701     		.word	0x137
+ 456 01d4 AC010000 		.long	0x1ac
+ 457 01d8 04       		.uleb128 0x4
+ 458 01d9 4C504353 		.ascii "LPCSTR\0"
+ 458      545200
+ 459 01e0 04       		.byte	0x4
+ 460 01e1 3A01     		.word	0x13a
+ 461 01e3 B2010000 		.long	0x1b2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 14
 
 
- 451 022c 48494E53 		.ascii "HINSTANCE__\0"
- 451      54414E43 
- 451      455F5F00 
- 452 0238 04       		.byte	0x4
- 453 0239 02       		.byte	0x2
- 454 023a BF       		.byte	0xbf
- 455 023b 4C020000 		.long	0x24c
- 456 023f 08       		.uleb128 0x8
- 457 0240 00000000 		.secrel32	.LASF0
- 458 0244 02       		.byte	0x2
- 459 0245 BF       		.byte	0xbf
- 460 0246 C2000000 		.long	0xc2
- 461 024a 00       		.byte	0
- 462 024b 00       		.byte	0
- 463 024c 03       		.uleb128 0x3
- 464 024d 48494E53 		.ascii "HINSTANCE\0"
- 464      54414E43 
- 464      4500
- 465 0257 02       		.byte	0x2
- 466 0258 BF       		.byte	0xbf
- 467 0259 5D020000 		.long	0x25d
- 468 025d 05       		.uleb128 0x5
- 469 025e 08       		.byte	0x8
- 470 025f 2B020000 		.long	0x22b
- 471 0263 07       		.uleb128 0x7
- 472 0264 48574E44 		.ascii "HWND__\0"
- 472      5F5F00
- 473 026b 04       		.byte	0x4
- 474 026c 05       		.byte	0x5
- 475 026d 19       		.byte	0x19
- 476 026e 7F020000 		.long	0x27f
- 477 0272 08       		.uleb128 0x8
- 478 0273 00000000 		.secrel32	.LASF0
- 479 0277 05       		.byte	0x5
- 480 0278 19       		.byte	0x19
- 481 0279 C2000000 		.long	0xc2
- 482 027d 00       		.byte	0
- 483 027e 00       		.byte	0
- 484 027f 03       		.uleb128 0x3
- 485 0280 48574E44 		.ascii "HWND\0"
- 485      00
- 486 0285 05       		.byte	0x5
- 487 0286 19       		.byte	0x19
- 488 0287 8B020000 		.long	0x28b
- 489 028b 05       		.uleb128 0x5
- 490 028c 08       		.byte	0x8
- 491 028d 63020000 		.long	0x263
- 492 0291 07       		.uleb128 0x7
- 493 0292 48425255 		.ascii "HBRUSH__\0"
- 493      53485F5F 
- 493      00
- 494 029b 04       		.byte	0x4
- 495 029c 05       		.byte	0x5
- 496 029d 2C       		.byte	0x2c
- 497 029e AF020000 		.long	0x2af
- 498 02a2 08       		.uleb128 0x8
- 499 02a3 00000000 		.secrel32	.LASF0
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 14
+ 462 01e7 02       		.uleb128 0x2
+ 463 01e8 08       		.byte	0x8
+ 464 01e9 04       		.byte	0x4
+ 465 01ea 646F7562 		.ascii "double\0"
+ 465      6C6500
+ 466 01f1 02       		.uleb128 0x2
+ 467 01f2 10       		.byte	0x10
+ 468 01f3 04       		.byte	0x4
+ 469 01f4 6C6F6E67 		.ascii "long double\0"
+ 469      20646F75 
+ 469      626C6500 
+ 470 0200 03       		.uleb128 0x3
+ 471 0201 57504152 		.ascii "WPARAM\0"
+ 471      414D00
+ 472 0208 02       		.byte	0x2
+ 473 0209 95       		.byte	0x95
+ 474 020a 61010000 		.long	0x161
+ 475 020e 03       		.uleb128 0x3
+ 476 020f 4C504152 		.ascii "LPARAM\0"
+ 476      414D00
+ 477 0216 02       		.byte	0x2
+ 478 0217 96       		.byte	0x96
+ 479 0218 71010000 		.long	0x171
+ 480 021c 03       		.uleb128 0x3
+ 481 021d 4C524553 		.ascii "LRESULT\0"
+ 481      554C5400 
+ 482 0225 02       		.byte	0x2
+ 483 0226 97       		.byte	0x97
+ 484 0227 71010000 		.long	0x171
+ 485 022b 07       		.uleb128 0x7
+ 486 022c 48494E53 		.ascii "HINSTANCE__\0"
+ 486      54414E43 
+ 486      455F5F00 
+ 487 0238 04       		.byte	0x4
+ 488 0239 02       		.byte	0x2
+ 489 023a BF       		.byte	0xbf
+ 490 023b 4C020000 		.long	0x24c
+ 491 023f 08       		.uleb128 0x8
+ 492 0240 00000000 		.secrel32	.LASF0
+ 493 0244 02       		.byte	0x2
+ 494 0245 BF       		.byte	0xbf
+ 495 0246 C2000000 		.long	0xc2
+ 496 024a 00       		.byte	0
+ 497 024b 00       		.byte	0
+ 498 024c 03       		.uleb128 0x3
+ 499 024d 48494E53 		.ascii "HINSTANCE\0"
+ 499      54414E43 
+ 499      4500
+ 500 0257 02       		.byte	0x2
+ 501 0258 BF       		.byte	0xbf
+ 502 0259 5D020000 		.long	0x25d
+ 503 025d 05       		.uleb128 0x5
+ 504 025e 08       		.byte	0x8
+ 505 025f 2B020000 		.long	0x22b
+ 506 0263 07       		.uleb128 0x7
+ 507 0264 48574E44 		.ascii "HWND__\0"
+ 507      5F5F00
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 15
 
 
- 500 02a7 05       		.byte	0x5
- 501 02a8 2C       		.byte	0x2c
- 502 02a9 C2000000 		.long	0xc2
- 503 02ad 00       		.byte	0
- 504 02ae 00       		.byte	0
- 505 02af 03       		.uleb128 0x3
- 506 02b0 48425255 		.ascii "HBRUSH\0"
- 506      534800
- 507 02b7 05       		.byte	0x5
- 508 02b8 2C       		.byte	0x2c
- 509 02b9 BD020000 		.long	0x2bd
- 510 02bd 05       		.uleb128 0x5
- 511 02be 08       		.byte	0x8
- 512 02bf 91020000 		.long	0x291
- 513 02c3 07       		.uleb128 0x7
- 514 02c4 4849434F 		.ascii "HICON__\0"
- 514      4E5F5F00 
- 515 02cc 04       		.byte	0x4
- 516 02cd 05       		.byte	0x5
- 517 02ce 33       		.byte	0x33
- 518 02cf E0020000 		.long	0x2e0
- 519 02d3 08       		.uleb128 0x8
- 520 02d4 00000000 		.secrel32	.LASF0
- 521 02d8 05       		.byte	0x5
- 522 02d9 33       		.byte	0x33
- 523 02da C2000000 		.long	0xc2
- 524 02de 00       		.byte	0
- 525 02df 00       		.byte	0
- 526 02e0 03       		.uleb128 0x3
- 527 02e1 4849434F 		.ascii "HICON\0"
- 527      4E00
- 528 02e7 05       		.byte	0x5
- 529 02e8 33       		.byte	0x33
- 530 02e9 ED020000 		.long	0x2ed
- 531 02ed 05       		.uleb128 0x5
- 532 02ee 08       		.byte	0x8
- 533 02ef C3020000 		.long	0x2c3
- 534 02f3 03       		.uleb128 0x3
- 535 02f4 48435552 		.ascii "HCURSOR\0"
- 535      534F5200 
- 536 02fc 05       		.byte	0x5
- 537 02fd 3A       		.byte	0x3a
- 538 02fe E0020000 		.long	0x2e0
- 539 0302 07       		.uleb128 0x7
- 540 0303 74616750 		.ascii "tagPOINT\0"
- 540      4F494E54 
- 540      00
- 541 030c 08       		.byte	0x8
- 542 030d 05       		.byte	0x5
- 543 030e 59       		.byte	0x59
- 544 030f 28030000 		.long	0x328
- 545 0313 09       		.uleb128 0x9
- 546 0314 7800     		.ascii "x\0"
- 547 0316 05       		.byte	0x5
- 548 0317 5A       		.byte	0x5a
- 549 0318 9F010000 		.long	0x19f
- 550 031c 00       		.byte	0
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 15
+ 508 026b 04       		.byte	0x4
+ 509 026c 05       		.byte	0x5
+ 510 026d 19       		.byte	0x19
+ 511 026e 7F020000 		.long	0x27f
+ 512 0272 08       		.uleb128 0x8
+ 513 0273 00000000 		.secrel32	.LASF0
+ 514 0277 05       		.byte	0x5
+ 515 0278 19       		.byte	0x19
+ 516 0279 C2000000 		.long	0xc2
+ 517 027d 00       		.byte	0
+ 518 027e 00       		.byte	0
+ 519 027f 03       		.uleb128 0x3
+ 520 0280 48574E44 		.ascii "HWND\0"
+ 520      00
+ 521 0285 05       		.byte	0x5
+ 522 0286 19       		.byte	0x19
+ 523 0287 8B020000 		.long	0x28b
+ 524 028b 05       		.uleb128 0x5
+ 525 028c 08       		.byte	0x8
+ 526 028d 63020000 		.long	0x263
+ 527 0291 07       		.uleb128 0x7
+ 528 0292 48425255 		.ascii "HBRUSH__\0"
+ 528      53485F5F 
+ 528      00
+ 529 029b 04       		.byte	0x4
+ 530 029c 05       		.byte	0x5
+ 531 029d 2C       		.byte	0x2c
+ 532 029e AF020000 		.long	0x2af
+ 533 02a2 08       		.uleb128 0x8
+ 534 02a3 00000000 		.secrel32	.LASF0
+ 535 02a7 05       		.byte	0x5
+ 536 02a8 2C       		.byte	0x2c
+ 537 02a9 C2000000 		.long	0xc2
+ 538 02ad 00       		.byte	0
+ 539 02ae 00       		.byte	0
+ 540 02af 03       		.uleb128 0x3
+ 541 02b0 48425255 		.ascii "HBRUSH\0"
+ 541      534800
+ 542 02b7 05       		.byte	0x5
+ 543 02b8 2C       		.byte	0x2c
+ 544 02b9 BD020000 		.long	0x2bd
+ 545 02bd 05       		.uleb128 0x5
+ 546 02be 08       		.byte	0x8
+ 547 02bf 91020000 		.long	0x291
+ 548 02c3 07       		.uleb128 0x7
+ 549 02c4 4849434F 		.ascii "HICON__\0"
+ 549      4E5F5F00 
+ 550 02cc 04       		.byte	0x4
+ 551 02cd 05       		.byte	0x5
+ 552 02ce 33       		.byte	0x33
+ 553 02cf E0020000 		.long	0x2e0
+ 554 02d3 08       		.uleb128 0x8
+ 555 02d4 00000000 		.secrel32	.LASF0
+ 556 02d8 05       		.byte	0x5
+ 557 02d9 33       		.byte	0x33
+ 558 02da C2000000 		.long	0xc2
+ 559 02de 00       		.byte	0
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 16
 
 
- 551 031d 09       		.uleb128 0x9
- 552 031e 7900     		.ascii "y\0"
- 553 0320 05       		.byte	0x5
- 554 0321 5B       		.byte	0x5b
- 555 0322 9F010000 		.long	0x19f
- 556 0326 04       		.byte	0x4
- 557 0327 00       		.byte	0
- 558 0328 03       		.uleb128 0x3
- 559 0329 504F494E 		.ascii "POINT\0"
- 559      5400
- 560 032f 05       		.byte	0x5
- 561 0330 5C       		.byte	0x5c
- 562 0331 02030000 		.long	0x302
- 563 0335 03       		.uleb128 0x3
- 564 0336 574E4450 		.ascii "WNDPROC\0"
- 564      524F4300 
- 565 033e 06       		.byte	0x6
- 566 033f 22       		.byte	0x22
- 567 0340 44030000 		.long	0x344
- 568 0344 05       		.uleb128 0x5
- 569 0345 08       		.byte	0x8
- 570 0346 4A030000 		.long	0x34a
- 571 034a 0A       		.uleb128 0xa
- 572 034b 1C020000 		.long	0x21c
- 573 034f 68030000 		.long	0x368
- 574 0353 0B       		.uleb128 0xb
- 575 0354 7F020000 		.long	0x27f
- 576 0358 0B       		.uleb128 0xb
- 577 0359 39010000 		.long	0x139
- 578 035d 0B       		.uleb128 0xb
- 579 035e 00020000 		.long	0x200
- 580 0362 0B       		.uleb128 0xb
- 581 0363 0E020000 		.long	0x20e
- 582 0367 00       		.byte	0
- 583 0368 0C       		.uleb128 0xc
- 584 0369 74616757 		.ascii "tagWNDCLASSEXA\0"
- 584      4E44434C 
- 584      41535345 
- 584      584100
- 585 0378 50       		.byte	0x50
- 586 0379 06       		.byte	0x6
- 587 037a EF02     		.word	0x2ef
- 588 037c 5F040000 		.long	0x45f
- 589 0380 0D       		.uleb128 0xd
- 590 0381 63625369 		.ascii "cbSize\0"
- 590      7A6500
- 591 0388 06       		.byte	0x6
- 592 0389 F002     		.word	0x2f0
- 593 038b 39010000 		.long	0x139
- 594 038f 00       		.byte	0
- 595 0390 0D       		.uleb128 0xd
- 596 0391 7374796C 		.ascii "style\0"
- 596      6500
- 597 0397 06       		.byte	0x6
- 598 0398 F102     		.word	0x2f1
- 599 039a 39010000 		.long	0x139
- 600 039e 04       		.byte	0x4
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 16
+ 560 02df 00       		.byte	0
+ 561 02e0 03       		.uleb128 0x3
+ 562 02e1 4849434F 		.ascii "HICON\0"
+ 562      4E00
+ 563 02e7 05       		.byte	0x5
+ 564 02e8 33       		.byte	0x33
+ 565 02e9 ED020000 		.long	0x2ed
+ 566 02ed 05       		.uleb128 0x5
+ 567 02ee 08       		.byte	0x8
+ 568 02ef C3020000 		.long	0x2c3
+ 569 02f3 03       		.uleb128 0x3
+ 570 02f4 48435552 		.ascii "HCURSOR\0"
+ 570      534F5200 
+ 571 02fc 05       		.byte	0x5
+ 572 02fd 3A       		.byte	0x3a
+ 573 02fe E0020000 		.long	0x2e0
+ 574 0302 07       		.uleb128 0x7
+ 575 0303 74616750 		.ascii "tagPOINT\0"
+ 575      4F494E54 
+ 575      00
+ 576 030c 08       		.byte	0x8
+ 577 030d 05       		.byte	0x5
+ 578 030e 59       		.byte	0x59
+ 579 030f 28030000 		.long	0x328
+ 580 0313 09       		.uleb128 0x9
+ 581 0314 7800     		.ascii "x\0"
+ 582 0316 05       		.byte	0x5
+ 583 0317 5A       		.byte	0x5a
+ 584 0318 9F010000 		.long	0x19f
+ 585 031c 00       		.byte	0
+ 586 031d 09       		.uleb128 0x9
+ 587 031e 7900     		.ascii "y\0"
+ 588 0320 05       		.byte	0x5
+ 589 0321 5B       		.byte	0x5b
+ 590 0322 9F010000 		.long	0x19f
+ 591 0326 04       		.byte	0x4
+ 592 0327 00       		.byte	0
+ 593 0328 03       		.uleb128 0x3
+ 594 0329 504F494E 		.ascii "POINT\0"
+ 594      5400
+ 595 032f 05       		.byte	0x5
+ 596 0330 5C       		.byte	0x5c
+ 597 0331 02030000 		.long	0x302
+ 598 0335 03       		.uleb128 0x3
+ 599 0336 574E4450 		.ascii "WNDPROC\0"
+ 599      524F4300 
+ 600 033e 06       		.byte	0x6
+ 601 033f 22       		.byte	0x22
+ 602 0340 44030000 		.long	0x344
+ 603 0344 05       		.uleb128 0x5
+ 604 0345 08       		.byte	0x8
+ 605 0346 4A030000 		.long	0x34a
+ 606 034a 0A       		.uleb128 0xa
+ 607 034b 1C020000 		.long	0x21c
+ 608 034f 68030000 		.long	0x368
+ 609 0353 0B       		.uleb128 0xb
+ 610 0354 7F020000 		.long	0x27f
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 17
 
 
- 601 039f 0D       		.uleb128 0xd
- 602 03a0 6C70666E 		.ascii "lpfnWndProc\0"
- 602      576E6450 
- 602      726F6300 
- 603 03ac 06       		.byte	0x6
- 604 03ad F202     		.word	0x2f2
- 605 03af 35030000 		.long	0x335
- 606 03b3 08       		.byte	0x8
- 607 03b4 0D       		.uleb128 0xd
- 608 03b5 6362436C 		.ascii "cbClsExtra\0"
- 608      73457874 
- 608      726100
- 609 03c0 06       		.byte	0x6
- 610 03c1 F302     		.word	0x2f3
- 611 03c3 C2000000 		.long	0xc2
- 612 03c7 10       		.byte	0x10
- 613 03c8 0D       		.uleb128 0xd
- 614 03c9 6362576E 		.ascii "cbWndExtra\0"
- 614      64457874 
- 614      726100
- 615 03d4 06       		.byte	0x6
- 616 03d5 F402     		.word	0x2f4
- 617 03d7 C2000000 		.long	0xc2
- 618 03db 14       		.byte	0x14
- 619 03dc 0E       		.uleb128 0xe
- 620 03dd 07000000 		.secrel32	.LASF1
- 621 03e1 06       		.byte	0x6
- 622 03e2 F502     		.word	0x2f5
- 623 03e4 4C020000 		.long	0x24c
- 624 03e8 18       		.byte	0x18
- 625 03e9 0D       		.uleb128 0xd
- 626 03ea 6849636F 		.ascii "hIcon\0"
- 626      6E00
- 627 03f0 06       		.byte	0x6
- 628 03f1 F602     		.word	0x2f6
- 629 03f3 E0020000 		.long	0x2e0
- 630 03f7 20       		.byte	0x20
- 631 03f8 0D       		.uleb128 0xd
- 632 03f9 68437572 		.ascii "hCursor\0"
- 632      736F7200 
- 633 0401 06       		.byte	0x6
- 634 0402 F702     		.word	0x2f7
- 635 0404 F3020000 		.long	0x2f3
- 636 0408 28       		.byte	0x28
- 637 0409 0D       		.uleb128 0xd
- 638 040a 68627242 		.ascii "hbrBackground\0"
- 638      61636B67 
- 638      726F756E 
- 638      6400
- 639 0418 06       		.byte	0x6
- 640 0419 F802     		.word	0x2f8
- 641 041b AF020000 		.long	0x2af
- 642 041f 30       		.byte	0x30
- 643 0420 0D       		.uleb128 0xd
- 644 0421 6C70737A 		.ascii "lpszMenuName\0"
- 644      4D656E75 
- 644      4E616D65 
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 17
+ 611 0358 0B       		.uleb128 0xb
+ 612 0359 39010000 		.long	0x139
+ 613 035d 0B       		.uleb128 0xb
+ 614 035e 00020000 		.long	0x200
+ 615 0362 0B       		.uleb128 0xb
+ 616 0363 0E020000 		.long	0x20e
+ 617 0367 00       		.byte	0
+ 618 0368 0C       		.uleb128 0xc
+ 619 0369 74616757 		.ascii "tagWNDCLASSEXA\0"
+ 619      4E44434C 
+ 619      41535345 
+ 619      584100
+ 620 0378 50       		.byte	0x50
+ 621 0379 06       		.byte	0x6
+ 622 037a EF02     		.word	0x2ef
+ 623 037c 5F040000 		.long	0x45f
+ 624 0380 0D       		.uleb128 0xd
+ 625 0381 63625369 		.ascii "cbSize\0"
+ 625      7A6500
+ 626 0388 06       		.byte	0x6
+ 627 0389 F002     		.word	0x2f0
+ 628 038b 39010000 		.long	0x139
+ 629 038f 00       		.byte	0
+ 630 0390 0D       		.uleb128 0xd
+ 631 0391 7374796C 		.ascii "style\0"
+ 631      6500
+ 632 0397 06       		.byte	0x6
+ 633 0398 F102     		.word	0x2f1
+ 634 039a 39010000 		.long	0x139
+ 635 039e 04       		.byte	0x4
+ 636 039f 0D       		.uleb128 0xd
+ 637 03a0 6C70666E 		.ascii "lpfnWndProc\0"
+ 637      576E6450 
+ 637      726F6300 
+ 638 03ac 06       		.byte	0x6
+ 639 03ad F202     		.word	0x2f2
+ 640 03af 35030000 		.long	0x335
+ 641 03b3 08       		.byte	0x8
+ 642 03b4 0D       		.uleb128 0xd
+ 643 03b5 6362436C 		.ascii "cbClsExtra\0"
+ 643      73457874 
+ 643      726100
+ 644 03c0 06       		.byte	0x6
+ 645 03c1 F302     		.word	0x2f3
+ 646 03c3 C2000000 		.long	0xc2
+ 647 03c7 10       		.byte	0x10
+ 648 03c8 0D       		.uleb128 0xd
+ 649 03c9 6362576E 		.ascii "cbWndExtra\0"
+ 649      64457874 
+ 649      726100
+ 650 03d4 06       		.byte	0x6
+ 651 03d5 F402     		.word	0x2f4
+ 652 03d7 C2000000 		.long	0xc2
+ 653 03db 14       		.byte	0x14
+ 654 03dc 0E       		.uleb128 0xe
+ 655 03dd 07000000 		.secrel32	.LASF1
+ 656 03e1 06       		.byte	0x6
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 18
 
 
- 644      00
- 645 042e 06       		.byte	0x6
- 646 042f F902     		.word	0x2f9
- 647 0431 D8010000 		.long	0x1d8
- 648 0435 38       		.byte	0x38
- 649 0436 0D       		.uleb128 0xd
- 650 0437 6C70737A 		.ascii "lpszClassName\0"
- 650      436C6173 
- 650      734E616D 
- 650      6500
- 651 0445 06       		.byte	0x6
- 652 0446 FA02     		.word	0x2fa
- 653 0448 D8010000 		.long	0x1d8
- 654 044c 40       		.byte	0x40
- 655 044d 0D       		.uleb128 0xd
- 656 044e 6849636F 		.ascii "hIconSm\0"
- 656      6E536D00 
- 657 0456 06       		.byte	0x6
- 658 0457 FB02     		.word	0x2fb
- 659 0459 E0020000 		.long	0x2e0
- 660 045d 48       		.byte	0x48
- 661 045e 00       		.byte	0
- 662 045f 04       		.uleb128 0x4
- 663 0460 574E4443 		.ascii "WNDCLASSEXA\0"
- 663      4C415353 
- 663      45584100 
- 664 046c 06       		.byte	0x6
- 665 046d FC02     		.word	0x2fc
- 666 046f 68030000 		.long	0x368
- 667 0473 04       		.uleb128 0x4
- 668 0474 574E4443 		.ascii "WNDCLASSEX\0"
- 668      4C415353 
- 668      455800
- 669 047f 06       		.byte	0x6
- 670 0480 0E03     		.word	0x30e
- 671 0482 5F040000 		.long	0x45f
- 672 0486 0C       		.uleb128 0xc
- 673 0487 7461674D 		.ascii "tagMSG\0"
- 673      534700
- 674 048e 30       		.byte	0x30
- 675 048f 06       		.byte	0x6
- 676 0490 3603     		.word	0x336
- 677 0492 F0040000 		.long	0x4f0
- 678 0496 0D       		.uleb128 0xd
- 679 0497 68776E64 		.ascii "hwnd\0"
+ 657 03e2 F502     		.word	0x2f5
+ 658 03e4 4C020000 		.long	0x24c
+ 659 03e8 18       		.byte	0x18
+ 660 03e9 0D       		.uleb128 0xd
+ 661 03ea 6849636F 		.ascii "hIcon\0"
+ 661      6E00
+ 662 03f0 06       		.byte	0x6
+ 663 03f1 F602     		.word	0x2f6
+ 664 03f3 E0020000 		.long	0x2e0
+ 665 03f7 20       		.byte	0x20
+ 666 03f8 0D       		.uleb128 0xd
+ 667 03f9 68437572 		.ascii "hCursor\0"
+ 667      736F7200 
+ 668 0401 06       		.byte	0x6
+ 669 0402 F702     		.word	0x2f7
+ 670 0404 F3020000 		.long	0x2f3
+ 671 0408 28       		.byte	0x28
+ 672 0409 0D       		.uleb128 0xd
+ 673 040a 68627242 		.ascii "hbrBackground\0"
+ 673      61636B67 
+ 673      726F756E 
+ 673      6400
+ 674 0418 06       		.byte	0x6
+ 675 0419 F802     		.word	0x2f8
+ 676 041b AF020000 		.long	0x2af
+ 677 041f 30       		.byte	0x30
+ 678 0420 0D       		.uleb128 0xd
+ 679 0421 6C70737A 		.ascii "lpszMenuName\0"
+ 679      4D656E75 
+ 679      4E616D65 
  679      00
- 680 049c 06       		.byte	0x6
- 681 049d 3703     		.word	0x337
- 682 049f 7F020000 		.long	0x27f
- 683 04a3 00       		.byte	0
- 684 04a4 0D       		.uleb128 0xd
- 685 04a5 6D657373 		.ascii "message\0"
- 685      61676500 
- 686 04ad 06       		.byte	0x6
- 687 04ae 3803     		.word	0x338
- 688 04b0 39010000 		.long	0x139
- 689 04b4 08       		.byte	0x8
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 18
+ 680 042e 06       		.byte	0x6
+ 681 042f F902     		.word	0x2f9
+ 682 0431 D8010000 		.long	0x1d8
+ 683 0435 38       		.byte	0x38
+ 684 0436 0D       		.uleb128 0xd
+ 685 0437 6C70737A 		.ascii "lpszClassName\0"
+ 685      436C6173 
+ 685      734E616D 
+ 685      6500
+ 686 0445 06       		.byte	0x6
+ 687 0446 FA02     		.word	0x2fa
+ 688 0448 D8010000 		.long	0x1d8
+ 689 044c 40       		.byte	0x40
+ 690 044d 0D       		.uleb128 0xd
+ 691 044e 6849636F 		.ascii "hIconSm\0"
+ 691      6E536D00 
+ 692 0456 06       		.byte	0x6
+ 693 0457 FB02     		.word	0x2fb
+ 694 0459 E0020000 		.long	0x2e0
+ 695 045d 48       		.byte	0x48
+ 696 045e 00       		.byte	0
+ 697 045f 04       		.uleb128 0x4
+ 698 0460 574E4443 		.ascii "WNDCLASSEXA\0"
+ 698      4C415353 
+ 698      45584100 
+ 699 046c 06       		.byte	0x6
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 19
 
 
- 690 04b5 0D       		.uleb128 0xd
- 691 04b6 77506172 		.ascii "wParam\0"
- 691      616D00
- 692 04bd 06       		.byte	0x6
- 693 04be 3903     		.word	0x339
- 694 04c0 00020000 		.long	0x200
- 695 04c4 10       		.byte	0x10
- 696 04c5 0D       		.uleb128 0xd
- 697 04c6 6C506172 		.ascii "lParam\0"
- 697      616D00
- 698 04cd 06       		.byte	0x6
- 699 04ce 3A03     		.word	0x33a
- 700 04d0 0E020000 		.long	0x20e
- 701 04d4 18       		.byte	0x18
- 702 04d5 0D       		.uleb128 0xd
- 703 04d6 74696D65 		.ascii "time\0"
- 703      00
- 704 04db 06       		.byte	0x6
- 705 04dc 3B03     		.word	0x33b
- 706 04de 23010000 		.long	0x123
- 707 04e2 20       		.byte	0x20
- 708 04e3 0D       		.uleb128 0xd
- 709 04e4 707400   		.ascii "pt\0"
- 710 04e7 06       		.byte	0x6
- 711 04e8 3C03     		.word	0x33c
- 712 04ea 28030000 		.long	0x328
- 713 04ee 24       		.byte	0x24
- 714 04ef 00       		.byte	0
- 715 04f0 04       		.uleb128 0x4
- 716 04f1 4D534700 		.ascii "MSG\0"
- 717 04f5 06       		.byte	0x6
- 718 04f6 3D03     		.word	0x33d
- 719 04f8 86040000 		.long	0x486
- 720 04fc 0F       		.uleb128 0xf
- 721 04fd 74616743 		.ascii "tagCOINITBASE\0"
- 721      4F494E49 
- 721      54424153 
- 721      4500
- 722 050b 04       		.byte	0x4
- 723 050c 07       		.byte	0x7
- 724 050d 95       		.byte	0x95
- 725 050e 2E050000 		.long	0x52e
- 726 0512 10       		.uleb128 0x10
- 727 0513 434F494E 		.ascii "COINITBASE_MULTITHREADED\0"
- 727      49544241 
- 727      53455F4D 
- 727      554C5449 
- 727      54485245 
- 728 052c 00       		.sleb128 0
- 729 052d 00       		.byte	0
- 730 052e 11       		.uleb128 0x11
- 731 052f 56415245 		.ascii "VARENUM\0"
- 731      4E554D00 
- 732 0537 04       		.byte	0x4
- 733 0538 08       		.byte	0x8
- 734 0539 0002     		.word	0x200
- 735 053b C2070000 		.long	0x7c2
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 19
+ 700 046d FC02     		.word	0x2fc
+ 701 046f 68030000 		.long	0x368
+ 702 0473 04       		.uleb128 0x4
+ 703 0474 574E4443 		.ascii "WNDCLASSEX\0"
+ 703      4C415353 
+ 703      455800
+ 704 047f 06       		.byte	0x6
+ 705 0480 0E03     		.word	0x30e
+ 706 0482 5F040000 		.long	0x45f
+ 707 0486 0C       		.uleb128 0xc
+ 708 0487 7461674D 		.ascii "tagMSG\0"
+ 708      534700
+ 709 048e 30       		.byte	0x30
+ 710 048f 06       		.byte	0x6
+ 711 0490 3603     		.word	0x336
+ 712 0492 F0040000 		.long	0x4f0
+ 713 0496 0D       		.uleb128 0xd
+ 714 0497 68776E64 		.ascii "hwnd\0"
+ 714      00
+ 715 049c 06       		.byte	0x6
+ 716 049d 3703     		.word	0x337
+ 717 049f 7F020000 		.long	0x27f
+ 718 04a3 00       		.byte	0
+ 719 04a4 0D       		.uleb128 0xd
+ 720 04a5 6D657373 		.ascii "message\0"
+ 720      61676500 
+ 721 04ad 06       		.byte	0x6
+ 722 04ae 3803     		.word	0x338
+ 723 04b0 39010000 		.long	0x139
+ 724 04b4 08       		.byte	0x8
+ 725 04b5 0D       		.uleb128 0xd
+ 726 04b6 77506172 		.ascii "wParam\0"
+ 726      616D00
+ 727 04bd 06       		.byte	0x6
+ 728 04be 3903     		.word	0x339
+ 729 04c0 00020000 		.long	0x200
+ 730 04c4 10       		.byte	0x10
+ 731 04c5 0D       		.uleb128 0xd
+ 732 04c6 6C506172 		.ascii "lParam\0"
+ 732      616D00
+ 733 04cd 06       		.byte	0x6
+ 734 04ce 3A03     		.word	0x33a
+ 735 04d0 0E020000 		.long	0x20e
+ 736 04d4 18       		.byte	0x18
+ 737 04d5 0D       		.uleb128 0xd
+ 738 04d6 74696D65 		.ascii "time\0"
+ 738      00
+ 739 04db 06       		.byte	0x6
+ 740 04dc 3B03     		.word	0x33b
+ 741 04de 23010000 		.long	0x123
+ 742 04e2 20       		.byte	0x20
+ 743 04e3 0D       		.uleb128 0xd
+ 744 04e4 707400   		.ascii "pt\0"
+ 745 04e7 06       		.byte	0x6
+ 746 04e8 3C03     		.word	0x33c
+ 747 04ea 28030000 		.long	0x328
+ 748 04ee 24       		.byte	0x24
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 20
 
 
- 736 053f 10       		.uleb128 0x10
- 737 0540 56545F45 		.ascii "VT_EMPTY\0"
- 737      4D505459 
- 737      00
- 738 0549 00       		.sleb128 0
- 739 054a 10       		.uleb128 0x10
- 740 054b 56545F4E 		.ascii "VT_NULL\0"
- 740      554C4C00 
- 741 0553 01       		.sleb128 1
- 742 0554 10       		.uleb128 0x10
- 743 0555 56545F49 		.ascii "VT_I2\0"
- 743      3200
- 744 055b 02       		.sleb128 2
- 745 055c 10       		.uleb128 0x10
- 746 055d 56545F49 		.ascii "VT_I4\0"
- 746      3400
- 747 0563 03       		.sleb128 3
- 748 0564 10       		.uleb128 0x10
- 749 0565 56545F52 		.ascii "VT_R4\0"
- 749      3400
- 750 056b 04       		.sleb128 4
- 751 056c 10       		.uleb128 0x10
- 752 056d 56545F52 		.ascii "VT_R8\0"
- 752      3800
- 753 0573 05       		.sleb128 5
- 754 0574 10       		.uleb128 0x10
- 755 0575 56545F43 		.ascii "VT_CY\0"
- 755      5900
- 756 057b 06       		.sleb128 6
- 757 057c 10       		.uleb128 0x10
- 758 057d 56545F44 		.ascii "VT_DATE\0"
- 758      41544500 
- 759 0585 07       		.sleb128 7
- 760 0586 10       		.uleb128 0x10
- 761 0587 56545F42 		.ascii "VT_BSTR\0"
- 761      53545200 
- 762 058f 08       		.sleb128 8
- 763 0590 10       		.uleb128 0x10
- 764 0591 56545F44 		.ascii "VT_DISPATCH\0"
- 764      49535041 
- 764      54434800 
- 765 059d 09       		.sleb128 9
- 766 059e 10       		.uleb128 0x10
- 767 059f 56545F45 		.ascii "VT_ERROR\0"
- 767      52524F52 
- 767      00
- 768 05a8 0A       		.sleb128 10
- 769 05a9 10       		.uleb128 0x10
- 770 05aa 56545F42 		.ascii "VT_BOOL\0"
- 770      4F4F4C00 
- 771 05b2 0B       		.sleb128 11
- 772 05b3 10       		.uleb128 0x10
- 773 05b4 56545F56 		.ascii "VT_VARIANT\0"
- 773      41524941 
- 773      4E5400
- 774 05bf 0C       		.sleb128 12
- 775 05c0 10       		.uleb128 0x10
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 20
+ 749 04ef 00       		.byte	0
+ 750 04f0 04       		.uleb128 0x4
+ 751 04f1 4D534700 		.ascii "MSG\0"
+ 752 04f5 06       		.byte	0x6
+ 753 04f6 3D03     		.word	0x33d
+ 754 04f8 86040000 		.long	0x486
+ 755 04fc 0F       		.uleb128 0xf
+ 756 04fd 74616743 		.ascii "tagCOINITBASE\0"
+ 756      4F494E49 
+ 756      54424153 
+ 756      4500
+ 757 050b 04       		.byte	0x4
+ 758 050c 07       		.byte	0x7
+ 759 050d 95       		.byte	0x95
+ 760 050e 2E050000 		.long	0x52e
+ 761 0512 10       		.uleb128 0x10
+ 762 0513 434F494E 		.ascii "COINITBASE_MULTITHREADED\0"
+ 762      49544241 
+ 762      53455F4D 
+ 762      554C5449 
+ 762      54485245 
+ 763 052c 00       		.sleb128 0
+ 764 052d 00       		.byte	0
+ 765 052e 11       		.uleb128 0x11
+ 766 052f 56415245 		.ascii "VARENUM\0"
+ 766      4E554D00 
+ 767 0537 04       		.byte	0x4
+ 768 0538 08       		.byte	0x8
+ 769 0539 0002     		.word	0x200
+ 770 053b C2070000 		.long	0x7c2
+ 771 053f 10       		.uleb128 0x10
+ 772 0540 56545F45 		.ascii "VT_EMPTY\0"
+ 772      4D505459 
+ 772      00
+ 773 0549 00       		.sleb128 0
+ 774 054a 10       		.uleb128 0x10
+ 775 054b 56545F4E 		.ascii "VT_NULL\0"
+ 775      554C4C00 
+ 776 0553 01       		.sleb128 1
+ 777 0554 10       		.uleb128 0x10
+ 778 0555 56545F49 		.ascii "VT_I2\0"
+ 778      3200
+ 779 055b 02       		.sleb128 2
+ 780 055c 10       		.uleb128 0x10
+ 781 055d 56545F49 		.ascii "VT_I4\0"
+ 781      3400
+ 782 0563 03       		.sleb128 3
+ 783 0564 10       		.uleb128 0x10
+ 784 0565 56545F52 		.ascii "VT_R4\0"
+ 784      3400
+ 785 056b 04       		.sleb128 4
+ 786 056c 10       		.uleb128 0x10
+ 787 056d 56545F52 		.ascii "VT_R8\0"
+ 787      3800
+ 788 0573 05       		.sleb128 5
+ 789 0574 10       		.uleb128 0x10
+ 790 0575 56545F43 		.ascii "VT_CY\0"
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 21
 
 
- 776 05c1 56545F55 		.ascii "VT_UNKNOWN\0"
- 776      4E4B4E4F 
- 776      574E00
- 777 05cc 0D       		.sleb128 13
- 778 05cd 10       		.uleb128 0x10
- 779 05ce 56545F44 		.ascii "VT_DECIMAL\0"
- 779      4543494D 
- 779      414C00
- 780 05d9 0E       		.sleb128 14
- 781 05da 10       		.uleb128 0x10
- 782 05db 56545F49 		.ascii "VT_I1\0"
- 782      3100
- 783 05e1 10       		.sleb128 16
- 784 05e2 10       		.uleb128 0x10
- 785 05e3 56545F55 		.ascii "VT_UI1\0"
- 785      493100
- 786 05ea 11       		.sleb128 17
- 787 05eb 10       		.uleb128 0x10
- 788 05ec 56545F55 		.ascii "VT_UI2\0"
- 788      493200
- 789 05f3 12       		.sleb128 18
- 790 05f4 10       		.uleb128 0x10
- 791 05f5 56545F55 		.ascii "VT_UI4\0"
- 791      493400
- 792 05fc 13       		.sleb128 19
- 793 05fd 10       		.uleb128 0x10
- 794 05fe 56545F49 		.ascii "VT_I8\0"
- 794      3800
- 795 0604 14       		.sleb128 20
- 796 0605 10       		.uleb128 0x10
- 797 0606 56545F55 		.ascii "VT_UI8\0"
- 797      493800
- 798 060d 15       		.sleb128 21
- 799 060e 10       		.uleb128 0x10
- 800 060f 56545F49 		.ascii "VT_INT\0"
- 800      4E5400
- 801 0616 16       		.sleb128 22
- 802 0617 10       		.uleb128 0x10
- 803 0618 56545F55 		.ascii "VT_UINT\0"
- 803      494E5400 
- 804 0620 17       		.sleb128 23
- 805 0621 10       		.uleb128 0x10
- 806 0622 56545F56 		.ascii "VT_VOID\0"
- 806      4F494400 
- 807 062a 18       		.sleb128 24
- 808 062b 10       		.uleb128 0x10
- 809 062c 56545F48 		.ascii "VT_HRESULT\0"
- 809      52455355 
- 809      4C5400
- 810 0637 19       		.sleb128 25
- 811 0638 10       		.uleb128 0x10
- 812 0639 56545F50 		.ascii "VT_PTR\0"
- 812      545200
- 813 0640 1A       		.sleb128 26
- 814 0641 10       		.uleb128 0x10
- 815 0642 56545F53 		.ascii "VT_SAFEARRAY\0"
- 815      41464541 
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 21
+ 790      5900
+ 791 057b 06       		.sleb128 6
+ 792 057c 10       		.uleb128 0x10
+ 793 057d 56545F44 		.ascii "VT_DATE\0"
+ 793      41544500 
+ 794 0585 07       		.sleb128 7
+ 795 0586 10       		.uleb128 0x10
+ 796 0587 56545F42 		.ascii "VT_BSTR\0"
+ 796      53545200 
+ 797 058f 08       		.sleb128 8
+ 798 0590 10       		.uleb128 0x10
+ 799 0591 56545F44 		.ascii "VT_DISPATCH\0"
+ 799      49535041 
+ 799      54434800 
+ 800 059d 09       		.sleb128 9
+ 801 059e 10       		.uleb128 0x10
+ 802 059f 56545F45 		.ascii "VT_ERROR\0"
+ 802      52524F52 
+ 802      00
+ 803 05a8 0A       		.sleb128 10
+ 804 05a9 10       		.uleb128 0x10
+ 805 05aa 56545F42 		.ascii "VT_BOOL\0"
+ 805      4F4F4C00 
+ 806 05b2 0B       		.sleb128 11
+ 807 05b3 10       		.uleb128 0x10
+ 808 05b4 56545F56 		.ascii "VT_VARIANT\0"
+ 808      41524941 
+ 808      4E5400
+ 809 05bf 0C       		.sleb128 12
+ 810 05c0 10       		.uleb128 0x10
+ 811 05c1 56545F55 		.ascii "VT_UNKNOWN\0"
+ 811      4E4B4E4F 
+ 811      574E00
+ 812 05cc 0D       		.sleb128 13
+ 813 05cd 10       		.uleb128 0x10
+ 814 05ce 56545F44 		.ascii "VT_DECIMAL\0"
+ 814      4543494D 
+ 814      414C00
+ 815 05d9 0E       		.sleb128 14
+ 816 05da 10       		.uleb128 0x10
+ 817 05db 56545F49 		.ascii "VT_I1\0"
+ 817      3100
+ 818 05e1 10       		.sleb128 16
+ 819 05e2 10       		.uleb128 0x10
+ 820 05e3 56545F55 		.ascii "VT_UI1\0"
+ 820      493100
+ 821 05ea 11       		.sleb128 17
+ 822 05eb 10       		.uleb128 0x10
+ 823 05ec 56545F55 		.ascii "VT_UI2\0"
+ 823      493200
+ 824 05f3 12       		.sleb128 18
+ 825 05f4 10       		.uleb128 0x10
+ 826 05f5 56545F55 		.ascii "VT_UI4\0"
+ 826      493400
+ 827 05fc 13       		.sleb128 19
+ 828 05fd 10       		.uleb128 0x10
+ 829 05fe 56545F49 		.ascii "VT_I8\0"
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 22
 
 
- 815      52524159 
- 815      00
- 816 064f 1B       		.sleb128 27
- 817 0650 10       		.uleb128 0x10
- 818 0651 56545F43 		.ascii "VT_CARRAY\0"
- 818      41525241 
- 818      5900
- 819 065b 1C       		.sleb128 28
- 820 065c 10       		.uleb128 0x10
- 821 065d 56545F55 		.ascii "VT_USERDEFINED\0"
- 821      53455244 
- 821      4546494E 
- 821      454400
- 822 066c 1D       		.sleb128 29
- 823 066d 10       		.uleb128 0x10
- 824 066e 56545F4C 		.ascii "VT_LPSTR\0"
- 824      50535452 
- 824      00
- 825 0677 1E       		.sleb128 30
- 826 0678 10       		.uleb128 0x10
- 827 0679 56545F4C 		.ascii "VT_LPWSTR\0"
- 827      50575354 
- 827      5200
- 828 0683 1F       		.sleb128 31
- 829 0684 10       		.uleb128 0x10
- 830 0685 56545F52 		.ascii "VT_RECORD\0"
- 830      45434F52 
- 830      4400
- 831 068f 24       		.sleb128 36
- 832 0690 10       		.uleb128 0x10
- 833 0691 56545F49 		.ascii "VT_INT_PTR\0"
- 833      4E545F50 
- 833      545200
- 834 069c 25       		.sleb128 37
- 835 069d 10       		.uleb128 0x10
- 836 069e 56545F55 		.ascii "VT_UINT_PTR\0"
- 836      494E545F 
- 836      50545200 
- 837 06aa 26       		.sleb128 38
- 838 06ab 10       		.uleb128 0x10
- 839 06ac 56545F46 		.ascii "VT_FILETIME\0"
- 839      494C4554 
- 839      494D4500 
- 840 06b8 C000     		.sleb128 64
- 841 06ba 10       		.uleb128 0x10
- 842 06bb 56545F42 		.ascii "VT_BLOB\0"
- 842      4C4F4200 
- 843 06c3 C100     		.sleb128 65
- 844 06c5 10       		.uleb128 0x10
- 845 06c6 56545F53 		.ascii "VT_STREAM\0"
- 845      54524541 
- 845      4D00
- 846 06d0 C200     		.sleb128 66
- 847 06d2 10       		.uleb128 0x10
- 848 06d3 56545F53 		.ascii "VT_STORAGE\0"
- 848      544F5241 
- 848      474500
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 22
+ 829      3800
+ 830 0604 14       		.sleb128 20
+ 831 0605 10       		.uleb128 0x10
+ 832 0606 56545F55 		.ascii "VT_UI8\0"
+ 832      493800
+ 833 060d 15       		.sleb128 21
+ 834 060e 10       		.uleb128 0x10
+ 835 060f 56545F49 		.ascii "VT_INT\0"
+ 835      4E5400
+ 836 0616 16       		.sleb128 22
+ 837 0617 10       		.uleb128 0x10
+ 838 0618 56545F55 		.ascii "VT_UINT\0"
+ 838      494E5400 
+ 839 0620 17       		.sleb128 23
+ 840 0621 10       		.uleb128 0x10
+ 841 0622 56545F56 		.ascii "VT_VOID\0"
+ 841      4F494400 
+ 842 062a 18       		.sleb128 24
+ 843 062b 10       		.uleb128 0x10
+ 844 062c 56545F48 		.ascii "VT_HRESULT\0"
+ 844      52455355 
+ 844      4C5400
+ 845 0637 19       		.sleb128 25
+ 846 0638 10       		.uleb128 0x10
+ 847 0639 56545F50 		.ascii "VT_PTR\0"
+ 847      545200
+ 848 0640 1A       		.sleb128 26
+ 849 0641 10       		.uleb128 0x10
+ 850 0642 56545F53 		.ascii "VT_SAFEARRAY\0"
+ 850      41464541 
+ 850      52524159 
+ 850      00
+ 851 064f 1B       		.sleb128 27
+ 852 0650 10       		.uleb128 0x10
+ 853 0651 56545F43 		.ascii "VT_CARRAY\0"
+ 853      41525241 
+ 853      5900
+ 854 065b 1C       		.sleb128 28
+ 855 065c 10       		.uleb128 0x10
+ 856 065d 56545F55 		.ascii "VT_USERDEFINED\0"
+ 856      53455244 
+ 856      4546494E 
+ 856      454400
+ 857 066c 1D       		.sleb128 29
+ 858 066d 10       		.uleb128 0x10
+ 859 066e 56545F4C 		.ascii "VT_LPSTR\0"
+ 859      50535452 
+ 859      00
+ 860 0677 1E       		.sleb128 30
+ 861 0678 10       		.uleb128 0x10
+ 862 0679 56545F4C 		.ascii "VT_LPWSTR\0"
+ 862      50575354 
+ 862      5200
+ 863 0683 1F       		.sleb128 31
+ 864 0684 10       		.uleb128 0x10
+ 865 0685 56545F52 		.ascii "VT_RECORD\0"
+ 865      45434F52 
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 23
 
 
- 849 06de C300     		.sleb128 67
- 850 06e0 10       		.uleb128 0x10
- 851 06e1 56545F53 		.ascii "VT_STREAMED_OBJECT\0"
- 851      54524541 
- 851      4D45445F 
- 851      4F424A45 
- 851      435400
- 852 06f4 C400     		.sleb128 68
- 853 06f6 10       		.uleb128 0x10
- 854 06f7 56545F53 		.ascii "VT_STORED_OBJECT\0"
- 854      544F5245 
- 854      445F4F42 
- 854      4A454354 
- 854      00
- 855 0708 C500     		.sleb128 69
- 856 070a 10       		.uleb128 0x10
- 857 070b 56545F42 		.ascii "VT_BLOB_OBJECT\0"
- 857      4C4F425F 
- 857      4F424A45 
- 857      435400
- 858 071a C600     		.sleb128 70
- 859 071c 10       		.uleb128 0x10
- 860 071d 56545F43 		.ascii "VT_CF\0"
- 860      4600
- 861 0723 C700     		.sleb128 71
- 862 0725 10       		.uleb128 0x10
- 863 0726 56545F43 		.ascii "VT_CLSID\0"
- 863      4C534944 
- 863      00
- 864 072f C800     		.sleb128 72
- 865 0731 10       		.uleb128 0x10
- 866 0732 56545F56 		.ascii "VT_VERSIONED_STREAM\0"
- 866      45525349 
- 866      4F4E4544 
- 866      5F535452 
- 866      45414D00 
- 867 0746 C900     		.sleb128 73
- 868 0748 10       		.uleb128 0x10
- 869 0749 56545F42 		.ascii "VT_BSTR_BLOB\0"
- 869      5354525F 
- 869      424C4F42 
- 869      00
- 870 0756 FF1F     		.sleb128 4095
- 871 0758 10       		.uleb128 0x10
- 872 0759 56545F56 		.ascii "VT_VECTOR\0"
- 872      4543544F 
- 872      5200
- 873 0763 8020     		.sleb128 4096
- 874 0765 10       		.uleb128 0x10
- 875 0766 56545F41 		.ascii "VT_ARRAY\0"
- 875      52524159 
- 875      00
- 876 076f 80C000   		.sleb128 8192
- 877 0772 10       		.uleb128 0x10
- 878 0773 56545F42 		.ascii "VT_BYREF\0"
- 878      59524546 
- 878      00
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 23
+ 865      4400
+ 866 068f 24       		.sleb128 36
+ 867 0690 10       		.uleb128 0x10
+ 868 0691 56545F49 		.ascii "VT_INT_PTR\0"
+ 868      4E545F50 
+ 868      545200
+ 869 069c 25       		.sleb128 37
+ 870 069d 10       		.uleb128 0x10
+ 871 069e 56545F55 		.ascii "VT_UINT_PTR\0"
+ 871      494E545F 
+ 871      50545200 
+ 872 06aa 26       		.sleb128 38
+ 873 06ab 10       		.uleb128 0x10
+ 874 06ac 56545F46 		.ascii "VT_FILETIME\0"
+ 874      494C4554 
+ 874      494D4500 
+ 875 06b8 C000     		.sleb128 64
+ 876 06ba 10       		.uleb128 0x10
+ 877 06bb 56545F42 		.ascii "VT_BLOB\0"
+ 877      4C4F4200 
+ 878 06c3 C100     		.sleb128 65
+ 879 06c5 10       		.uleb128 0x10
+ 880 06c6 56545F53 		.ascii "VT_STREAM\0"
+ 880      54524541 
+ 880      4D00
+ 881 06d0 C200     		.sleb128 66
+ 882 06d2 10       		.uleb128 0x10
+ 883 06d3 56545F53 		.ascii "VT_STORAGE\0"
+ 883      544F5241 
+ 883      474500
+ 884 06de C300     		.sleb128 67
+ 885 06e0 10       		.uleb128 0x10
+ 886 06e1 56545F53 		.ascii "VT_STREAMED_OBJECT\0"
+ 886      54524541 
+ 886      4D45445F 
+ 886      4F424A45 
+ 886      435400
+ 887 06f4 C400     		.sleb128 68
+ 888 06f6 10       		.uleb128 0x10
+ 889 06f7 56545F53 		.ascii "VT_STORED_OBJECT\0"
+ 889      544F5245 
+ 889      445F4F42 
+ 889      4A454354 
+ 889      00
+ 890 0708 C500     		.sleb128 69
+ 891 070a 10       		.uleb128 0x10
+ 892 070b 56545F42 		.ascii "VT_BLOB_OBJECT\0"
+ 892      4C4F425F 
+ 892      4F424A45 
+ 892      435400
+ 893 071a C600     		.sleb128 70
+ 894 071c 10       		.uleb128 0x10
+ 895 071d 56545F43 		.ascii "VT_CF\0"
+ 895      4600
+ 896 0723 C700     		.sleb128 71
+ 897 0725 10       		.uleb128 0x10
+ 898 0726 56545F43 		.ascii "VT_CLSID\0"
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 24
 
 
- 879 077c 808001   		.sleb128 16384
- 880 077f 10       		.uleb128 0x10
- 881 0780 56545F52 		.ascii "VT_RESERVED\0"
- 881      45534552 
- 881      56454400 
- 882 078c 808002   		.sleb128 32768
- 883 078f 10       		.uleb128 0x10
- 884 0790 56545F49 		.ascii "VT_ILLEGAL\0"
- 884      4C4C4547 
- 884      414C00
- 885 079b FFFF03   		.sleb128 65535
- 886 079e 10       		.uleb128 0x10
- 887 079f 56545F49 		.ascii "VT_ILLEGALMASKED\0"
- 887      4C4C4547 
- 887      414C4D41 
- 887      534B4544 
- 887      00
- 888 07b0 FF1F     		.sleb128 4095
- 889 07b2 10       		.uleb128 0x10
- 890 07b3 56545F54 		.ascii "VT_TYPEMASK\0"
- 890      5950454D 
- 890      41534B00 
- 891 07bf FF1F     		.sleb128 4095
- 892 07c1 00       		.byte	0
- 893 07c2 12       		.uleb128 0x12
- 894 07c3 6F7300   		.ascii "os\0"
- 895 07c6 01       		.byte	0x1
- 896 07c7 04       		.byte	0x4
- 897 07c8 00000000 		.quad	.LFB1948
- 897      00000000 
- 898 07d0 1B000000 		.quad	.LFE1948-.LFB1948
- 898      00000000 
- 899 07d8 01       		.uleb128 0x1
- 900 07d9 9C       		.byte	0x9c
- 901 07da 13       		.uleb128 0x13
- 902 07db 57696E4D 		.ascii "WinMain\0"
- 902      61696E00 
- 903 07e3 09       		.byte	0x9
- 904 07e4 2904     		.word	0x429
- 905 07e6 C2000000 		.long	0xc2
- 906 07ea 1B000000 		.quad	.LFB1949
- 906      00000000 
- 907 07f2 0A020000 		.quad	.LFE1949-.LFB1949
- 907      00000000 
- 908 07fa 01       		.uleb128 0x1
- 909 07fb 9C       		.byte	0x9c
- 910 07fc A3080000 		.long	0x8a3
- 911 0800 14       		.uleb128 0x14
- 912 0801 07000000 		.secrel32	.LASF1
- 913 0805 01       		.byte	0x1
- 914 0806 0D       		.byte	0xd
- 915 0807 4C020000 		.long	0x24c
- 916 080b 02       		.uleb128 0x2
- 917 080c 91       		.byte	0x91
- 918 080d 00       		.sleb128 0
- 919 080e 15       		.uleb128 0x15
- 920 080f 68507265 		.ascii "hPrevInstance\0"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 24
+ 898      4C534944 
+ 898      00
+ 899 072f C800     		.sleb128 72
+ 900 0731 10       		.uleb128 0x10
+ 901 0732 56545F56 		.ascii "VT_VERSIONED_STREAM\0"
+ 901      45525349 
+ 901      4F4E4544 
+ 901      5F535452 
+ 901      45414D00 
+ 902 0746 C900     		.sleb128 73
+ 903 0748 10       		.uleb128 0x10
+ 904 0749 56545F42 		.ascii "VT_BSTR_BLOB\0"
+ 904      5354525F 
+ 904      424C4F42 
+ 904      00
+ 905 0756 FF1F     		.sleb128 4095
+ 906 0758 10       		.uleb128 0x10
+ 907 0759 56545F56 		.ascii "VT_VECTOR\0"
+ 907      4543544F 
+ 907      5200
+ 908 0763 8020     		.sleb128 4096
+ 909 0765 10       		.uleb128 0x10
+ 910 0766 56545F41 		.ascii "VT_ARRAY\0"
+ 910      52524159 
+ 910      00
+ 911 076f 80C000   		.sleb128 8192
+ 912 0772 10       		.uleb128 0x10
+ 913 0773 56545F42 		.ascii "VT_BYREF\0"
+ 913      59524546 
+ 913      00
+ 914 077c 808001   		.sleb128 16384
+ 915 077f 10       		.uleb128 0x10
+ 916 0780 56545F52 		.ascii "VT_RESERVED\0"
+ 916      45534552 
+ 916      56454400 
+ 917 078c 808002   		.sleb128 32768
+ 918 078f 10       		.uleb128 0x10
+ 919 0790 56545F49 		.ascii "VT_ILLEGAL\0"
+ 919      4C4C4547 
+ 919      414C00
+ 920 079b FFFF03   		.sleb128 65535
+ 921 079e 10       		.uleb128 0x10
+ 922 079f 56545F49 		.ascii "VT_ILLEGALMASKED\0"
+ 922      4C4C4547 
+ 922      414C4D41 
+ 922      534B4544 
+ 922      00
+ 923 07b0 FF1F     		.sleb128 4095
+ 924 07b2 10       		.uleb128 0x10
+ 925 07b3 56545F54 		.ascii "VT_TYPEMASK\0"
+ 925      5950454D 
+ 925      41534B00 
+ 926 07bf FF1F     		.sleb128 4095
+ 927 07c1 00       		.byte	0
+ 928 07c2 12       		.uleb128 0x12
+ 929 07c3 6F7300   		.ascii "os\0"
+ 930 07c6 01       		.byte	0x1
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 25
 
 
- 920      76496E73 
- 920      74616E63 
- 920      6500
- 921 081d 01       		.byte	0x1
- 922 081e 0E       		.byte	0xe
- 923 081f 4C020000 		.long	0x24c
- 924 0823 02       		.uleb128 0x2
- 925 0824 91       		.byte	0x91
- 926 0825 08       		.sleb128 8
- 927 0826 15       		.uleb128 0x15
- 928 0827 737A436D 		.ascii "szCmdLine\0"
- 928      644C696E 
- 928      6500
- 929 0831 01       		.byte	0x1
- 930 0832 0E       		.byte	0xe
- 931 0833 CB010000 		.long	0x1cb
- 932 0837 02       		.uleb128 0x2
- 933 0838 91       		.byte	0x91
- 934 0839 10       		.sleb128 16
- 935 083a 15       		.uleb128 0x15
- 936 083b 69436D64 		.ascii "iCmdShow\0"
- 936      53686F77 
- 936      00
- 937 0844 01       		.byte	0x1
- 938 0845 0E       		.byte	0xe
- 939 0846 C2000000 		.long	0xc2
- 940 084a 02       		.uleb128 0x2
- 941 084b 91       		.byte	0x91
- 942 084c 18       		.sleb128 24
- 943 084d 16       		.uleb128 0x16
- 944 084e 6900     		.ascii "i\0"
- 945 0850 01       		.byte	0x1
- 946 0851 11       		.byte	0x11
- 947 0852 C2000000 		.long	0xc2
- 948 0856 02       		.uleb128 0x2
- 949 0857 91       		.byte	0x91
- 950 0858 6C       		.sleb128 -20
- 951 0859 16       		.uleb128 0x16
- 952 085a 6A00     		.ascii "j\0"
- 953 085c 01       		.byte	0x1
- 954 085d 12       		.byte	0x12
- 955 085e C2000000 		.long	0xc2
- 956 0862 02       		.uleb128 0x2
- 957 0863 91       		.byte	0x91
- 958 0864 68       		.sleb128 -24
- 959 0865 16       		.uleb128 0x16
- 960 0866 72657375 		.ascii "result\0"
- 960      6C7400
- 961 086d 01       		.byte	0x1
- 962 086e 13       		.byte	0x13
- 963 086f C2000000 		.long	0xc2
- 964 0873 02       		.uleb128 0x2
- 965 0874 91       		.byte	0x91
- 966 0875 64       		.sleb128 -28
- 967 0876 16       		.uleb128 0x16
- 968 0877 68576E64 		.ascii "hWnd\0"
- 968      00
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 25
+ 931 07c7 04       		.byte	0x4
+ 932 07c8 00000000 		.quad	.LFB1948
+ 932      00000000 
+ 933 07d0 1B000000 		.quad	.LFE1948-.LFB1948
+ 933      00000000 
+ 934 07d8 01       		.uleb128 0x1
+ 935 07d9 9C       		.byte	0x9c
+ 936 07da 13       		.uleb128 0x13
+ 937 07db 57696E4D 		.ascii "WinMain\0"
+ 937      61696E00 
+ 938 07e3 09       		.byte	0x9
+ 939 07e4 2904     		.word	0x429
+ 940 07e6 C2000000 		.long	0xc2
+ 941 07ea 1B000000 		.quad	.LFB1949
+ 941      00000000 
+ 942 07f2 57020000 		.quad	.LFE1949-.LFB1949
+ 942      00000000 
+ 943 07fa 01       		.uleb128 0x1
+ 944 07fb 9C       		.byte	0x9c
+ 945 07fc CE080000 		.long	0x8ce
+ 946 0800 14       		.uleb128 0x14
+ 947 0801 07000000 		.secrel32	.LASF1
+ 948 0805 01       		.byte	0x1
+ 949 0806 0D       		.byte	0xd
+ 950 0807 4C020000 		.long	0x24c
+ 951 080b 02       		.uleb128 0x2
+ 952 080c 91       		.byte	0x91
+ 953 080d 00       		.sleb128 0
+ 954 080e 15       		.uleb128 0x15
+ 955 080f 68507265 		.ascii "hPrevInstance\0"
+ 955      76496E73 
+ 955      74616E63 
+ 955      6500
+ 956 081d 01       		.byte	0x1
+ 957 081e 0E       		.byte	0xe
+ 958 081f 4C020000 		.long	0x24c
+ 959 0823 02       		.uleb128 0x2
+ 960 0824 91       		.byte	0x91
+ 961 0825 08       		.sleb128 8
+ 962 0826 15       		.uleb128 0x15
+ 963 0827 737A436D 		.ascii "szCmdLine\0"
+ 963      644C696E 
+ 963      6500
+ 964 0831 01       		.byte	0x1
+ 965 0832 0E       		.byte	0xe
+ 966 0833 CB010000 		.long	0x1cb
+ 967 0837 02       		.uleb128 0x2
+ 968 0838 91       		.byte	0x91
+ 969 0839 10       		.sleb128 16
+ 970 083a 15       		.uleb128 0x15
+ 971 083b 69436D64 		.ascii "iCmdShow\0"
+ 971      53686F77 
+ 971      00
+ 972 0844 01       		.byte	0x1
+ 973 0845 0E       		.byte	0xe
+ 974 0846 C2000000 		.long	0xc2
+ 975 084a 02       		.uleb128 0x2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 26
 
 
- 969 087c 01       		.byte	0x1
- 970 087d 16       		.byte	0x16
- 971 087e 7F020000 		.long	0x27f
- 972 0882 02       		.uleb128 0x2
- 973 0883 91       		.byte	0x91
- 974 0884 58       		.sleb128 -40
- 975 0885 16       		.uleb128 0x16
- 976 0886 6D736700 		.ascii "msg\0"
- 977 088a 01       		.byte	0x1
- 978 088b 17       		.byte	0x17
- 979 088c F0040000 		.long	0x4f0
- 980 0890 03       		.uleb128 0x3
- 981 0891 91       		.byte	0x91
- 982 0892 A07F     		.sleb128 -96
- 983 0894 16       		.uleb128 0x16
- 984 0895 776300   		.ascii "wc\0"
- 985 0898 01       		.byte	0x1
- 986 0899 18       		.byte	0x18
- 987 089a 73040000 		.long	0x473
- 988 089e 03       		.uleb128 0x3
- 989 089f 91       		.byte	0x91
- 990 08a0 D07E     		.sleb128 -176
- 991 08a2 00       		.byte	0
- 992 08a3 17       		.uleb128 0x17
- 993 08a4 576E6450 		.ascii "WndProc\0"
- 993      726F6300 
- 994 08ac 01       		.byte	0x1
- 995 08ad 45       		.byte	0x45
- 996 08ae 1C020000 		.long	0x21c
- 997 08b2 25020000 		.quad	.LFB1950
- 997      00000000 
- 998 08ba 74000000 		.quad	.LFE1950-.LFB1950
- 998      00000000 
- 999 08c2 01       		.uleb128 0x1
- 1000 08c3 9C       		.byte	0x9c
- 1001 08c4 09090000 		.long	0x909
- 1002 08c8 15       		.uleb128 0x15
- 1003 08c9 68576E64 		.ascii "hWnd\0"
- 1003      00
- 1004 08ce 01       		.byte	0x1
- 1005 08cf 45       		.byte	0x45
- 1006 08d0 7F020000 		.long	0x27f
- 1007 08d4 02       		.uleb128 0x2
- 1008 08d5 91       		.byte	0x91
- 1009 08d6 00       		.sleb128 0
- 1010 08d7 15       		.uleb128 0x15
- 1011 08d8 756D7367 		.ascii "umsg\0"
+ 976 084b 91       		.byte	0x91
+ 977 084c 18       		.sleb128 24
+ 978 084d 16       		.uleb128 0x16
+ 979 084e 6900     		.ascii "i\0"
+ 980 0850 01       		.byte	0x1
+ 981 0851 11       		.byte	0x11
+ 982 0852 C2000000 		.long	0xc2
+ 983 0856 02       		.uleb128 0x2
+ 984 0857 91       		.byte	0x91
+ 985 0858 6C       		.sleb128 -20
+ 986 0859 16       		.uleb128 0x16
+ 987 085a 6A00     		.ascii "j\0"
+ 988 085c 01       		.byte	0x1
+ 989 085d 12       		.byte	0x12
+ 990 085e C2000000 		.long	0xc2
+ 991 0862 02       		.uleb128 0x2
+ 992 0863 91       		.byte	0x91
+ 993 0864 68       		.sleb128 -24
+ 994 0865 16       		.uleb128 0x16
+ 995 0866 72657375 		.ascii "result\0"
+ 995      6C7400
+ 996 086d 01       		.byte	0x1
+ 997 086e 13       		.byte	0x13
+ 998 086f C2000000 		.long	0xc2
+ 999 0873 02       		.uleb128 0x2
+ 1000 0874 91       		.byte	0x91
+ 1001 0875 64       		.sleb128 -28
+ 1002 0876 16       		.uleb128 0x16
+ 1003 0877 73726300 		.ascii "src\0"
+ 1004 087b 01       		.byte	0x1
+ 1005 087c 17       		.byte	0x17
+ 1006 087d C2000000 		.long	0xc2
+ 1007 0881 02       		.uleb128 0x2
+ 1008 0882 91       		.byte	0x91
+ 1009 0883 60       		.sleb128 -32
+ 1010 0884 16       		.uleb128 0x16
+ 1011 0885 73726332 		.ascii "src2\0"
  1011      00
- 1012 08dd 01       		.byte	0x1
- 1013 08de 45       		.byte	0x45
- 1014 08df 39010000 		.long	0x139
- 1015 08e3 02       		.uleb128 0x2
- 1016 08e4 91       		.byte	0x91
- 1017 08e5 08       		.sleb128 8
- 1018 08e6 15       		.uleb128 0x15
- 1019 08e7 77506172 		.ascii "wParam\0"
- 1019      616D00
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 26
+ 1012 088a 01       		.byte	0x1
+ 1013 088b 18       		.byte	0x18
+ 1014 088c C2000000 		.long	0xc2
+ 1015 0890 02       		.uleb128 0x2
+ 1016 0891 91       		.byte	0x91
+ 1017 0892 5C       		.sleb128 -36
+ 1018 0893 16       		.uleb128 0x16
+ 1019 0894 64737400 		.ascii "dst\0"
+ 1020 0898 01       		.byte	0x1
+ 1021 0899 19       		.byte	0x19
+ 1022 089a C2000000 		.long	0xc2
+ 1023 089e 02       		.uleb128 0x2
+ 1024 089f 91       		.byte	0x91
+ 1025 08a0 58       		.sleb128 -40
+ 1026 08a1 16       		.uleb128 0x16
+ 1027 08a2 68576E64 		.ascii "hWnd\0"
+ 1027      00
+ 1028 08a7 01       		.byte	0x1
+ 1029 08a8 35       		.byte	0x35
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 27
 
 
- 1020 08ee 01       		.byte	0x1
- 1021 08ef 45       		.byte	0x45
- 1022 08f0 00020000 		.long	0x200
- 1023 08f4 02       		.uleb128 0x2
- 1024 08f5 91       		.byte	0x91
- 1025 08f6 10       		.sleb128 16
- 1026 08f7 15       		.uleb128 0x15
- 1027 08f8 6C506172 		.ascii "lParam\0"
- 1027      616D00
- 1028 08ff 01       		.byte	0x1
- 1029 0900 45       		.byte	0x45
- 1030 0901 0E020000 		.long	0x20e
- 1031 0905 02       		.uleb128 0x2
- 1032 0906 91       		.byte	0x91
- 1033 0907 18       		.sleb128 24
- 1034 0908 00       		.byte	0
- 1035 0909 18       		.uleb128 0x18
- 1036 090a 6C70737A 		.ascii "lpszAppName\0"
- 1036      4170704E 
- 1036      616D6500 
- 1037 0916 01       		.byte	0x1
- 1038 0917 0A       		.byte	0xa
- 1039 0918 D8010000 		.long	0x1d8
- 1040 091c 09       		.uleb128 0x9
- 1041 091d 03       		.byte	0x3
- 1042 091e 00000000 		.quad	lpszAppName
- 1042      00000000 
- 1043 0926 18       		.uleb128 0x18
- 1044 0927 6C70737A 		.ascii "lpszTitle\0"
- 1044      5469746C 
- 1044      6500
- 1045 0931 01       		.byte	0x1
- 1046 0932 0B       		.byte	0xb
- 1047 0933 D8010000 		.long	0x1d8
- 1048 0937 09       		.uleb128 0x9
- 1049 0938 03       		.byte	0x3
- 1050 0939 08000000 		.quad	lpszTitle
- 1050      00000000 
- 1051 0941 00       		.byte	0
- 1052              		.section	.debug_abbrev,"dr"
- 1053              	.Ldebug_abbrev0:
- 1054 0000 01       		.uleb128 0x1
- 1055 0001 11       		.uleb128 0x11
- 1056 0002 01       		.byte	0x1
- 1057 0003 25       		.uleb128 0x25
- 1058 0004 08       		.uleb128 0x8
- 1059 0005 13       		.uleb128 0x13
- 1060 0006 0B       		.uleb128 0xb
- 1061 0007 03       		.uleb128 0x3
- 1062 0008 08       		.uleb128 0x8
- 1063 0009 1B       		.uleb128 0x1b
- 1064 000a 08       		.uleb128 0x8
- 1065 000b 11       		.uleb128 0x11
- 1066 000c 01       		.uleb128 0x1
- 1067 000d 12       		.uleb128 0x12
- 1068 000e 07       		.uleb128 0x7
- 1069 000f 10       		.uleb128 0x10
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 27
+ 1030 08a9 7F020000 		.long	0x27f
+ 1031 08ad 02       		.uleb128 0x2
+ 1032 08ae 91       		.byte	0x91
+ 1033 08af 50       		.sleb128 -48
+ 1034 08b0 16       		.uleb128 0x16
+ 1035 08b1 6D736700 		.ascii "msg\0"
+ 1036 08b5 01       		.byte	0x1
+ 1037 08b6 36       		.byte	0x36
+ 1038 08b7 F0040000 		.long	0x4f0
+ 1039 08bb 03       		.uleb128 0x3
+ 1040 08bc 91       		.byte	0x91
+ 1041 08bd A07F     		.sleb128 -96
+ 1042 08bf 16       		.uleb128 0x16
+ 1043 08c0 776300   		.ascii "wc\0"
+ 1044 08c3 01       		.byte	0x1
+ 1045 08c4 37       		.byte	0x37
+ 1046 08c5 73040000 		.long	0x473
+ 1047 08c9 03       		.uleb128 0x3
+ 1048 08ca 91       		.byte	0x91
+ 1049 08cb D07E     		.sleb128 -176
+ 1050 08cd 00       		.byte	0
+ 1051 08ce 17       		.uleb128 0x17
+ 1052 08cf 576E6450 		.ascii "WndProc\0"
+ 1052      726F6300 
+ 1053 08d7 01       		.byte	0x1
+ 1054 08d8 64       		.byte	0x64
+ 1055 08d9 1C020000 		.long	0x21c
+ 1056 08dd 72020000 		.quad	.LFB1950
+ 1056      00000000 
+ 1057 08e5 74000000 		.quad	.LFE1950-.LFB1950
+ 1057      00000000 
+ 1058 08ed 01       		.uleb128 0x1
+ 1059 08ee 9C       		.byte	0x9c
+ 1060 08ef 34090000 		.long	0x934
+ 1061 08f3 15       		.uleb128 0x15
+ 1062 08f4 68576E64 		.ascii "hWnd\0"
+ 1062      00
+ 1063 08f9 01       		.byte	0x1
+ 1064 08fa 64       		.byte	0x64
+ 1065 08fb 7F020000 		.long	0x27f
+ 1066 08ff 02       		.uleb128 0x2
+ 1067 0900 91       		.byte	0x91
+ 1068 0901 00       		.sleb128 0
+ 1069 0902 15       		.uleb128 0x15
+ 1070 0903 756D7367 		.ascii "umsg\0"
+ 1070      00
+ 1071 0908 01       		.byte	0x1
+ 1072 0909 64       		.byte	0x64
+ 1073 090a 39010000 		.long	0x139
+ 1074 090e 02       		.uleb128 0x2
+ 1075 090f 91       		.byte	0x91
+ 1076 0910 08       		.sleb128 8
+ 1077 0911 15       		.uleb128 0x15
+ 1078 0912 77506172 		.ascii "wParam\0"
+ 1078      616D00
+ 1079 0919 01       		.byte	0x1
+ 1080 091a 64       		.byte	0x64
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 28
 
 
- 1070 0010 17       		.uleb128 0x17
- 1071 0011 00       		.byte	0
- 1072 0012 00       		.byte	0
- 1073 0013 02       		.uleb128 0x2
- 1074 0014 24       		.uleb128 0x24
- 1075 0015 00       		.byte	0
- 1076 0016 0B       		.uleb128 0xb
- 1077 0017 0B       		.uleb128 0xb
- 1078 0018 3E       		.uleb128 0x3e
- 1079 0019 0B       		.uleb128 0xb
- 1080 001a 03       		.uleb128 0x3
- 1081 001b 08       		.uleb128 0x8
- 1082 001c 00       		.byte	0
- 1083 001d 00       		.byte	0
- 1084 001e 03       		.uleb128 0x3
- 1085 001f 16       		.uleb128 0x16
- 1086 0020 00       		.byte	0
- 1087 0021 03       		.uleb128 0x3
- 1088 0022 08       		.uleb128 0x8
- 1089 0023 3A       		.uleb128 0x3a
- 1090 0024 0B       		.uleb128 0xb
- 1091 0025 3B       		.uleb128 0x3b
- 1092 0026 0B       		.uleb128 0xb
- 1093 0027 49       		.uleb128 0x49
- 1094 0028 13       		.uleb128 0x13
- 1095 0029 00       		.byte	0
- 1096 002a 00       		.byte	0
- 1097 002b 04       		.uleb128 0x4
- 1098 002c 16       		.uleb128 0x16
- 1099 002d 00       		.byte	0
- 1100 002e 03       		.uleb128 0x3
- 1101 002f 08       		.uleb128 0x8
- 1102 0030 3A       		.uleb128 0x3a
- 1103 0031 0B       		.uleb128 0xb
- 1104 0032 3B       		.uleb128 0x3b
- 1105 0033 05       		.uleb128 0x5
- 1106 0034 49       		.uleb128 0x49
- 1107 0035 13       		.uleb128 0x13
- 1108 0036 00       		.byte	0
- 1109 0037 00       		.byte	0
- 1110 0038 05       		.uleb128 0x5
- 1111 0039 0F       		.uleb128 0xf
- 1112 003a 00       		.byte	0
- 1113 003b 0B       		.uleb128 0xb
- 1114 003c 0B       		.uleb128 0xb
- 1115 003d 49       		.uleb128 0x49
- 1116 003e 13       		.uleb128 0x13
- 1117 003f 00       		.byte	0
- 1118 0040 00       		.byte	0
- 1119 0041 06       		.uleb128 0x6
- 1120 0042 26       		.uleb128 0x26
- 1121 0043 00       		.byte	0
- 1122 0044 49       		.uleb128 0x49
- 1123 0045 13       		.uleb128 0x13
- 1124 0046 00       		.byte	0
- 1125 0047 00       		.byte	0
- 1126 0048 07       		.uleb128 0x7
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 28
+ 1081 091b 00020000 		.long	0x200
+ 1082 091f 02       		.uleb128 0x2
+ 1083 0920 91       		.byte	0x91
+ 1084 0921 10       		.sleb128 16
+ 1085 0922 15       		.uleb128 0x15
+ 1086 0923 6C506172 		.ascii "lParam\0"
+ 1086      616D00
+ 1087 092a 01       		.byte	0x1
+ 1088 092b 64       		.byte	0x64
+ 1089 092c 0E020000 		.long	0x20e
+ 1090 0930 02       		.uleb128 0x2
+ 1091 0931 91       		.byte	0x91
+ 1092 0932 18       		.sleb128 24
+ 1093 0933 00       		.byte	0
+ 1094 0934 18       		.uleb128 0x18
+ 1095 0935 6C70737A 		.ascii "lpszAppName\0"
+ 1095      4170704E 
+ 1095      616D6500 
+ 1096 0941 01       		.byte	0x1
+ 1097 0942 0A       		.byte	0xa
+ 1098 0943 D8010000 		.long	0x1d8
+ 1099 0947 09       		.uleb128 0x9
+ 1100 0948 03       		.byte	0x3
+ 1101 0949 00000000 		.quad	lpszAppName
+ 1101      00000000 
+ 1102 0951 18       		.uleb128 0x18
+ 1103 0952 6C70737A 		.ascii "lpszTitle\0"
+ 1103      5469746C 
+ 1103      6500
+ 1104 095c 01       		.byte	0x1
+ 1105 095d 0B       		.byte	0xb
+ 1106 095e D8010000 		.long	0x1d8
+ 1107 0962 09       		.uleb128 0x9
+ 1108 0963 03       		.byte	0x3
+ 1109 0964 08000000 		.quad	lpszTitle
+ 1109      00000000 
+ 1110 096c 00       		.byte	0
+ 1111              		.section	.debug_abbrev,"dr"
+ 1112              	.Ldebug_abbrev0:
+ 1113 0000 01       		.uleb128 0x1
+ 1114 0001 11       		.uleb128 0x11
+ 1115 0002 01       		.byte	0x1
+ 1116 0003 25       		.uleb128 0x25
+ 1117 0004 08       		.uleb128 0x8
+ 1118 0005 13       		.uleb128 0x13
+ 1119 0006 0B       		.uleb128 0xb
+ 1120 0007 03       		.uleb128 0x3
+ 1121 0008 08       		.uleb128 0x8
+ 1122 0009 1B       		.uleb128 0x1b
+ 1123 000a 08       		.uleb128 0x8
+ 1124 000b 11       		.uleb128 0x11
+ 1125 000c 01       		.uleb128 0x1
+ 1126 000d 12       		.uleb128 0x12
+ 1127 000e 07       		.uleb128 0x7
+ 1128 000f 10       		.uleb128 0x10
+ 1129 0010 17       		.uleb128 0x17
+ 1130 0011 00       		.byte	0
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 29
 
 
- 1127 0049 13       		.uleb128 0x13
- 1128 004a 01       		.byte	0x1
- 1129 004b 03       		.uleb128 0x3
- 1130 004c 08       		.uleb128 0x8
- 1131 004d 0B       		.uleb128 0xb
- 1132 004e 0B       		.uleb128 0xb
- 1133 004f 3A       		.uleb128 0x3a
- 1134 0050 0B       		.uleb128 0xb
- 1135 0051 3B       		.uleb128 0x3b
- 1136 0052 0B       		.uleb128 0xb
- 1137 0053 01       		.uleb128 0x1
- 1138 0054 13       		.uleb128 0x13
- 1139 0055 00       		.byte	0
- 1140 0056 00       		.byte	0
- 1141 0057 08       		.uleb128 0x8
- 1142 0058 0D       		.uleb128 0xd
- 1143 0059 00       		.byte	0
- 1144 005a 03       		.uleb128 0x3
- 1145 005b 0E       		.uleb128 0xe
- 1146 005c 3A       		.uleb128 0x3a
- 1147 005d 0B       		.uleb128 0xb
- 1148 005e 3B       		.uleb128 0x3b
- 1149 005f 0B       		.uleb128 0xb
- 1150 0060 49       		.uleb128 0x49
- 1151 0061 13       		.uleb128 0x13
- 1152 0062 38       		.uleb128 0x38
- 1153 0063 0B       		.uleb128 0xb
- 1154 0064 00       		.byte	0
- 1155 0065 00       		.byte	0
- 1156 0066 09       		.uleb128 0x9
- 1157 0067 0D       		.uleb128 0xd
- 1158 0068 00       		.byte	0
- 1159 0069 03       		.uleb128 0x3
- 1160 006a 08       		.uleb128 0x8
- 1161 006b 3A       		.uleb128 0x3a
- 1162 006c 0B       		.uleb128 0xb
- 1163 006d 3B       		.uleb128 0x3b
- 1164 006e 0B       		.uleb128 0xb
- 1165 006f 49       		.uleb128 0x49
- 1166 0070 13       		.uleb128 0x13
- 1167 0071 38       		.uleb128 0x38
- 1168 0072 0B       		.uleb128 0xb
- 1169 0073 00       		.byte	0
- 1170 0074 00       		.byte	0
- 1171 0075 0A       		.uleb128 0xa
- 1172 0076 15       		.uleb128 0x15
- 1173 0077 01       		.byte	0x1
- 1174 0078 27       		.uleb128 0x27
- 1175 0079 19       		.uleb128 0x19
- 1176 007a 49       		.uleb128 0x49
- 1177 007b 13       		.uleb128 0x13
- 1178 007c 01       		.uleb128 0x1
- 1179 007d 13       		.uleb128 0x13
- 1180 007e 00       		.byte	0
- 1181 007f 00       		.byte	0
- 1182 0080 0B       		.uleb128 0xb
- 1183 0081 05       		.uleb128 0x5
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 29
+ 1131 0012 00       		.byte	0
+ 1132 0013 02       		.uleb128 0x2
+ 1133 0014 24       		.uleb128 0x24
+ 1134 0015 00       		.byte	0
+ 1135 0016 0B       		.uleb128 0xb
+ 1136 0017 0B       		.uleb128 0xb
+ 1137 0018 3E       		.uleb128 0x3e
+ 1138 0019 0B       		.uleb128 0xb
+ 1139 001a 03       		.uleb128 0x3
+ 1140 001b 08       		.uleb128 0x8
+ 1141 001c 00       		.byte	0
+ 1142 001d 00       		.byte	0
+ 1143 001e 03       		.uleb128 0x3
+ 1144 001f 16       		.uleb128 0x16
+ 1145 0020 00       		.byte	0
+ 1146 0021 03       		.uleb128 0x3
+ 1147 0022 08       		.uleb128 0x8
+ 1148 0023 3A       		.uleb128 0x3a
+ 1149 0024 0B       		.uleb128 0xb
+ 1150 0025 3B       		.uleb128 0x3b
+ 1151 0026 0B       		.uleb128 0xb
+ 1152 0027 49       		.uleb128 0x49
+ 1153 0028 13       		.uleb128 0x13
+ 1154 0029 00       		.byte	0
+ 1155 002a 00       		.byte	0
+ 1156 002b 04       		.uleb128 0x4
+ 1157 002c 16       		.uleb128 0x16
+ 1158 002d 00       		.byte	0
+ 1159 002e 03       		.uleb128 0x3
+ 1160 002f 08       		.uleb128 0x8
+ 1161 0030 3A       		.uleb128 0x3a
+ 1162 0031 0B       		.uleb128 0xb
+ 1163 0032 3B       		.uleb128 0x3b
+ 1164 0033 05       		.uleb128 0x5
+ 1165 0034 49       		.uleb128 0x49
+ 1166 0035 13       		.uleb128 0x13
+ 1167 0036 00       		.byte	0
+ 1168 0037 00       		.byte	0
+ 1169 0038 05       		.uleb128 0x5
+ 1170 0039 0F       		.uleb128 0xf
+ 1171 003a 00       		.byte	0
+ 1172 003b 0B       		.uleb128 0xb
+ 1173 003c 0B       		.uleb128 0xb
+ 1174 003d 49       		.uleb128 0x49
+ 1175 003e 13       		.uleb128 0x13
+ 1176 003f 00       		.byte	0
+ 1177 0040 00       		.byte	0
+ 1178 0041 06       		.uleb128 0x6
+ 1179 0042 26       		.uleb128 0x26
+ 1180 0043 00       		.byte	0
+ 1181 0044 49       		.uleb128 0x49
+ 1182 0045 13       		.uleb128 0x13
+ 1183 0046 00       		.byte	0
+ 1184 0047 00       		.byte	0
+ 1185 0048 07       		.uleb128 0x7
+ 1186 0049 13       		.uleb128 0x13
+ 1187 004a 01       		.byte	0x1
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 30
 
 
- 1184 0082 00       		.byte	0
- 1185 0083 49       		.uleb128 0x49
- 1186 0084 13       		.uleb128 0x13
- 1187 0085 00       		.byte	0
- 1188 0086 00       		.byte	0
- 1189 0087 0C       		.uleb128 0xc
- 1190 0088 13       		.uleb128 0x13
- 1191 0089 01       		.byte	0x1
- 1192 008a 03       		.uleb128 0x3
- 1193 008b 08       		.uleb128 0x8
- 1194 008c 0B       		.uleb128 0xb
- 1195 008d 0B       		.uleb128 0xb
- 1196 008e 3A       		.uleb128 0x3a
- 1197 008f 0B       		.uleb128 0xb
- 1198 0090 3B       		.uleb128 0x3b
- 1199 0091 05       		.uleb128 0x5
- 1200 0092 01       		.uleb128 0x1
- 1201 0093 13       		.uleb128 0x13
- 1202 0094 00       		.byte	0
- 1203 0095 00       		.byte	0
- 1204 0096 0D       		.uleb128 0xd
- 1205 0097 0D       		.uleb128 0xd
- 1206 0098 00       		.byte	0
- 1207 0099 03       		.uleb128 0x3
- 1208 009a 08       		.uleb128 0x8
- 1209 009b 3A       		.uleb128 0x3a
- 1210 009c 0B       		.uleb128 0xb
- 1211 009d 3B       		.uleb128 0x3b
- 1212 009e 05       		.uleb128 0x5
- 1213 009f 49       		.uleb128 0x49
- 1214 00a0 13       		.uleb128 0x13
- 1215 00a1 38       		.uleb128 0x38
- 1216 00a2 0B       		.uleb128 0xb
- 1217 00a3 00       		.byte	0
- 1218 00a4 00       		.byte	0
- 1219 00a5 0E       		.uleb128 0xe
- 1220 00a6 0D       		.uleb128 0xd
- 1221 00a7 00       		.byte	0
- 1222 00a8 03       		.uleb128 0x3
- 1223 00a9 0E       		.uleb128 0xe
- 1224 00aa 3A       		.uleb128 0x3a
- 1225 00ab 0B       		.uleb128 0xb
- 1226 00ac 3B       		.uleb128 0x3b
- 1227 00ad 05       		.uleb128 0x5
- 1228 00ae 49       		.uleb128 0x49
- 1229 00af 13       		.uleb128 0x13
- 1230 00b0 38       		.uleb128 0x38
- 1231 00b1 0B       		.uleb128 0xb
- 1232 00b2 00       		.byte	0
- 1233 00b3 00       		.byte	0
- 1234 00b4 0F       		.uleb128 0xf
- 1235 00b5 04       		.uleb128 0x4
- 1236 00b6 01       		.byte	0x1
- 1237 00b7 03       		.uleb128 0x3
- 1238 00b8 08       		.uleb128 0x8
- 1239 00b9 0B       		.uleb128 0xb
- 1240 00ba 0B       		.uleb128 0xb
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 30
+ 1188 004b 03       		.uleb128 0x3
+ 1189 004c 08       		.uleb128 0x8
+ 1190 004d 0B       		.uleb128 0xb
+ 1191 004e 0B       		.uleb128 0xb
+ 1192 004f 3A       		.uleb128 0x3a
+ 1193 0050 0B       		.uleb128 0xb
+ 1194 0051 3B       		.uleb128 0x3b
+ 1195 0052 0B       		.uleb128 0xb
+ 1196 0053 01       		.uleb128 0x1
+ 1197 0054 13       		.uleb128 0x13
+ 1198 0055 00       		.byte	0
+ 1199 0056 00       		.byte	0
+ 1200 0057 08       		.uleb128 0x8
+ 1201 0058 0D       		.uleb128 0xd
+ 1202 0059 00       		.byte	0
+ 1203 005a 03       		.uleb128 0x3
+ 1204 005b 0E       		.uleb128 0xe
+ 1205 005c 3A       		.uleb128 0x3a
+ 1206 005d 0B       		.uleb128 0xb
+ 1207 005e 3B       		.uleb128 0x3b
+ 1208 005f 0B       		.uleb128 0xb
+ 1209 0060 49       		.uleb128 0x49
+ 1210 0061 13       		.uleb128 0x13
+ 1211 0062 38       		.uleb128 0x38
+ 1212 0063 0B       		.uleb128 0xb
+ 1213 0064 00       		.byte	0
+ 1214 0065 00       		.byte	0
+ 1215 0066 09       		.uleb128 0x9
+ 1216 0067 0D       		.uleb128 0xd
+ 1217 0068 00       		.byte	0
+ 1218 0069 03       		.uleb128 0x3
+ 1219 006a 08       		.uleb128 0x8
+ 1220 006b 3A       		.uleb128 0x3a
+ 1221 006c 0B       		.uleb128 0xb
+ 1222 006d 3B       		.uleb128 0x3b
+ 1223 006e 0B       		.uleb128 0xb
+ 1224 006f 49       		.uleb128 0x49
+ 1225 0070 13       		.uleb128 0x13
+ 1226 0071 38       		.uleb128 0x38
+ 1227 0072 0B       		.uleb128 0xb
+ 1228 0073 00       		.byte	0
+ 1229 0074 00       		.byte	0
+ 1230 0075 0A       		.uleb128 0xa
+ 1231 0076 15       		.uleb128 0x15
+ 1232 0077 01       		.byte	0x1
+ 1233 0078 27       		.uleb128 0x27
+ 1234 0079 19       		.uleb128 0x19
+ 1235 007a 49       		.uleb128 0x49
+ 1236 007b 13       		.uleb128 0x13
+ 1237 007c 01       		.uleb128 0x1
+ 1238 007d 13       		.uleb128 0x13
+ 1239 007e 00       		.byte	0
+ 1240 007f 00       		.byte	0
+ 1241 0080 0B       		.uleb128 0xb
+ 1242 0081 05       		.uleb128 0x5
+ 1243 0082 00       		.byte	0
+ 1244 0083 49       		.uleb128 0x49
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 31
 
 
- 1241 00bb 3A       		.uleb128 0x3a
- 1242 00bc 0B       		.uleb128 0xb
- 1243 00bd 3B       		.uleb128 0x3b
- 1244 00be 0B       		.uleb128 0xb
- 1245 00bf 01       		.uleb128 0x1
- 1246 00c0 13       		.uleb128 0x13
- 1247 00c1 00       		.byte	0
- 1248 00c2 00       		.byte	0
- 1249 00c3 10       		.uleb128 0x10
- 1250 00c4 28       		.uleb128 0x28
- 1251 00c5 00       		.byte	0
- 1252 00c6 03       		.uleb128 0x3
- 1253 00c7 08       		.uleb128 0x8
- 1254 00c8 1C       		.uleb128 0x1c
- 1255 00c9 0D       		.uleb128 0xd
- 1256 00ca 00       		.byte	0
- 1257 00cb 00       		.byte	0
- 1258 00cc 11       		.uleb128 0x11
- 1259 00cd 04       		.uleb128 0x4
- 1260 00ce 01       		.byte	0x1
- 1261 00cf 03       		.uleb128 0x3
- 1262 00d0 08       		.uleb128 0x8
- 1263 00d1 0B       		.uleb128 0xb
- 1264 00d2 0B       		.uleb128 0xb
- 1265 00d3 3A       		.uleb128 0x3a
- 1266 00d4 0B       		.uleb128 0xb
- 1267 00d5 3B       		.uleb128 0x3b
- 1268 00d6 05       		.uleb128 0x5
- 1269 00d7 01       		.uleb128 0x1
- 1270 00d8 13       		.uleb128 0x13
- 1271 00d9 00       		.byte	0
- 1272 00da 00       		.byte	0
- 1273 00db 12       		.uleb128 0x12
- 1274 00dc 2E       		.uleb128 0x2e
- 1275 00dd 00       		.byte	0
- 1276 00de 3F       		.uleb128 0x3f
- 1277 00df 19       		.uleb128 0x19
- 1278 00e0 03       		.uleb128 0x3
- 1279 00e1 08       		.uleb128 0x8
- 1280 00e2 3A       		.uleb128 0x3a
- 1281 00e3 0B       		.uleb128 0xb
- 1282 00e4 3B       		.uleb128 0x3b
- 1283 00e5 0B       		.uleb128 0xb
- 1284 00e6 11       		.uleb128 0x11
- 1285 00e7 01       		.uleb128 0x1
- 1286 00e8 12       		.uleb128 0x12
- 1287 00e9 07       		.uleb128 0x7
- 1288 00ea 40       		.uleb128 0x40
- 1289 00eb 18       		.uleb128 0x18
- 1290 00ec 9642     		.uleb128 0x2116
- 1291 00ee 19       		.uleb128 0x19
- 1292 00ef 00       		.byte	0
- 1293 00f0 00       		.byte	0
- 1294 00f1 13       		.uleb128 0x13
- 1295 00f2 2E       		.uleb128 0x2e
- 1296 00f3 01       		.byte	0x1
- 1297 00f4 3F       		.uleb128 0x3f
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 31
+ 1245 0084 13       		.uleb128 0x13
+ 1246 0085 00       		.byte	0
+ 1247 0086 00       		.byte	0
+ 1248 0087 0C       		.uleb128 0xc
+ 1249 0088 13       		.uleb128 0x13
+ 1250 0089 01       		.byte	0x1
+ 1251 008a 03       		.uleb128 0x3
+ 1252 008b 08       		.uleb128 0x8
+ 1253 008c 0B       		.uleb128 0xb
+ 1254 008d 0B       		.uleb128 0xb
+ 1255 008e 3A       		.uleb128 0x3a
+ 1256 008f 0B       		.uleb128 0xb
+ 1257 0090 3B       		.uleb128 0x3b
+ 1258 0091 05       		.uleb128 0x5
+ 1259 0092 01       		.uleb128 0x1
+ 1260 0093 13       		.uleb128 0x13
+ 1261 0094 00       		.byte	0
+ 1262 0095 00       		.byte	0
+ 1263 0096 0D       		.uleb128 0xd
+ 1264 0097 0D       		.uleb128 0xd
+ 1265 0098 00       		.byte	0
+ 1266 0099 03       		.uleb128 0x3
+ 1267 009a 08       		.uleb128 0x8
+ 1268 009b 3A       		.uleb128 0x3a
+ 1269 009c 0B       		.uleb128 0xb
+ 1270 009d 3B       		.uleb128 0x3b
+ 1271 009e 05       		.uleb128 0x5
+ 1272 009f 49       		.uleb128 0x49
+ 1273 00a0 13       		.uleb128 0x13
+ 1274 00a1 38       		.uleb128 0x38
+ 1275 00a2 0B       		.uleb128 0xb
+ 1276 00a3 00       		.byte	0
+ 1277 00a4 00       		.byte	0
+ 1278 00a5 0E       		.uleb128 0xe
+ 1279 00a6 0D       		.uleb128 0xd
+ 1280 00a7 00       		.byte	0
+ 1281 00a8 03       		.uleb128 0x3
+ 1282 00a9 0E       		.uleb128 0xe
+ 1283 00aa 3A       		.uleb128 0x3a
+ 1284 00ab 0B       		.uleb128 0xb
+ 1285 00ac 3B       		.uleb128 0x3b
+ 1286 00ad 05       		.uleb128 0x5
+ 1287 00ae 49       		.uleb128 0x49
+ 1288 00af 13       		.uleb128 0x13
+ 1289 00b0 38       		.uleb128 0x38
+ 1290 00b1 0B       		.uleb128 0xb
+ 1291 00b2 00       		.byte	0
+ 1292 00b3 00       		.byte	0
+ 1293 00b4 0F       		.uleb128 0xf
+ 1294 00b5 04       		.uleb128 0x4
+ 1295 00b6 01       		.byte	0x1
+ 1296 00b7 03       		.uleb128 0x3
+ 1297 00b8 08       		.uleb128 0x8
+ 1298 00b9 0B       		.uleb128 0xb
+ 1299 00ba 0B       		.uleb128 0xb
+ 1300 00bb 3A       		.uleb128 0x3a
+ 1301 00bc 0B       		.uleb128 0xb
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 32
 
 
- 1298 00f5 19       		.uleb128 0x19
- 1299 00f6 03       		.uleb128 0x3
- 1300 00f7 08       		.uleb128 0x8
- 1301 00f8 3A       		.uleb128 0x3a
- 1302 00f9 0B       		.uleb128 0xb
- 1303 00fa 3B       		.uleb128 0x3b
- 1304 00fb 05       		.uleb128 0x5
- 1305 00fc 27       		.uleb128 0x27
- 1306 00fd 19       		.uleb128 0x19
- 1307 00fe 49       		.uleb128 0x49
- 1308 00ff 13       		.uleb128 0x13
- 1309 0100 11       		.uleb128 0x11
- 1310 0101 01       		.uleb128 0x1
- 1311 0102 12       		.uleb128 0x12
- 1312 0103 07       		.uleb128 0x7
- 1313 0104 40       		.uleb128 0x40
- 1314 0105 18       		.uleb128 0x18
- 1315 0106 9642     		.uleb128 0x2116
- 1316 0108 19       		.uleb128 0x19
- 1317 0109 01       		.uleb128 0x1
- 1318 010a 13       		.uleb128 0x13
- 1319 010b 00       		.byte	0
- 1320 010c 00       		.byte	0
- 1321 010d 14       		.uleb128 0x14
- 1322 010e 05       		.uleb128 0x5
- 1323 010f 00       		.byte	0
- 1324 0110 03       		.uleb128 0x3
- 1325 0111 0E       		.uleb128 0xe
- 1326 0112 3A       		.uleb128 0x3a
- 1327 0113 0B       		.uleb128 0xb
- 1328 0114 3B       		.uleb128 0x3b
- 1329 0115 0B       		.uleb128 0xb
- 1330 0116 49       		.uleb128 0x49
- 1331 0117 13       		.uleb128 0x13
- 1332 0118 02       		.uleb128 0x2
- 1333 0119 18       		.uleb128 0x18
- 1334 011a 00       		.byte	0
- 1335 011b 00       		.byte	0
- 1336 011c 15       		.uleb128 0x15
- 1337 011d 05       		.uleb128 0x5
- 1338 011e 00       		.byte	0
- 1339 011f 03       		.uleb128 0x3
- 1340 0120 08       		.uleb128 0x8
- 1341 0121 3A       		.uleb128 0x3a
- 1342 0122 0B       		.uleb128 0xb
- 1343 0123 3B       		.uleb128 0x3b
- 1344 0124 0B       		.uleb128 0xb
- 1345 0125 49       		.uleb128 0x49
- 1346 0126 13       		.uleb128 0x13
- 1347 0127 02       		.uleb128 0x2
- 1348 0128 18       		.uleb128 0x18
- 1349 0129 00       		.byte	0
- 1350 012a 00       		.byte	0
- 1351 012b 16       		.uleb128 0x16
- 1352 012c 34       		.uleb128 0x34
- 1353 012d 00       		.byte	0
- 1354 012e 03       		.uleb128 0x3
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 32
+ 1302 00bd 3B       		.uleb128 0x3b
+ 1303 00be 0B       		.uleb128 0xb
+ 1304 00bf 01       		.uleb128 0x1
+ 1305 00c0 13       		.uleb128 0x13
+ 1306 00c1 00       		.byte	0
+ 1307 00c2 00       		.byte	0
+ 1308 00c3 10       		.uleb128 0x10
+ 1309 00c4 28       		.uleb128 0x28
+ 1310 00c5 00       		.byte	0
+ 1311 00c6 03       		.uleb128 0x3
+ 1312 00c7 08       		.uleb128 0x8
+ 1313 00c8 1C       		.uleb128 0x1c
+ 1314 00c9 0D       		.uleb128 0xd
+ 1315 00ca 00       		.byte	0
+ 1316 00cb 00       		.byte	0
+ 1317 00cc 11       		.uleb128 0x11
+ 1318 00cd 04       		.uleb128 0x4
+ 1319 00ce 01       		.byte	0x1
+ 1320 00cf 03       		.uleb128 0x3
+ 1321 00d0 08       		.uleb128 0x8
+ 1322 00d1 0B       		.uleb128 0xb
+ 1323 00d2 0B       		.uleb128 0xb
+ 1324 00d3 3A       		.uleb128 0x3a
+ 1325 00d4 0B       		.uleb128 0xb
+ 1326 00d5 3B       		.uleb128 0x3b
+ 1327 00d6 05       		.uleb128 0x5
+ 1328 00d7 01       		.uleb128 0x1
+ 1329 00d8 13       		.uleb128 0x13
+ 1330 00d9 00       		.byte	0
+ 1331 00da 00       		.byte	0
+ 1332 00db 12       		.uleb128 0x12
+ 1333 00dc 2E       		.uleb128 0x2e
+ 1334 00dd 00       		.byte	0
+ 1335 00de 3F       		.uleb128 0x3f
+ 1336 00df 19       		.uleb128 0x19
+ 1337 00e0 03       		.uleb128 0x3
+ 1338 00e1 08       		.uleb128 0x8
+ 1339 00e2 3A       		.uleb128 0x3a
+ 1340 00e3 0B       		.uleb128 0xb
+ 1341 00e4 3B       		.uleb128 0x3b
+ 1342 00e5 0B       		.uleb128 0xb
+ 1343 00e6 11       		.uleb128 0x11
+ 1344 00e7 01       		.uleb128 0x1
+ 1345 00e8 12       		.uleb128 0x12
+ 1346 00e9 07       		.uleb128 0x7
+ 1347 00ea 40       		.uleb128 0x40
+ 1348 00eb 18       		.uleb128 0x18
+ 1349 00ec 9642     		.uleb128 0x2116
+ 1350 00ee 19       		.uleb128 0x19
+ 1351 00ef 00       		.byte	0
+ 1352 00f0 00       		.byte	0
+ 1353 00f1 13       		.uleb128 0x13
+ 1354 00f2 2E       		.uleb128 0x2e
+ 1355 00f3 01       		.byte	0x1
+ 1356 00f4 3F       		.uleb128 0x3f
+ 1357 00f5 19       		.uleb128 0x19
+ 1358 00f6 03       		.uleb128 0x3
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 33
 
 
- 1355 012f 08       		.uleb128 0x8
- 1356 0130 3A       		.uleb128 0x3a
- 1357 0131 0B       		.uleb128 0xb
- 1358 0132 3B       		.uleb128 0x3b
- 1359 0133 0B       		.uleb128 0xb
- 1360 0134 49       		.uleb128 0x49
- 1361 0135 13       		.uleb128 0x13
- 1362 0136 02       		.uleb128 0x2
- 1363 0137 18       		.uleb128 0x18
- 1364 0138 00       		.byte	0
- 1365 0139 00       		.byte	0
- 1366 013a 17       		.uleb128 0x17
- 1367 013b 2E       		.uleb128 0x2e
- 1368 013c 01       		.byte	0x1
- 1369 013d 3F       		.uleb128 0x3f
- 1370 013e 19       		.uleb128 0x19
- 1371 013f 03       		.uleb128 0x3
- 1372 0140 08       		.uleb128 0x8
- 1373 0141 3A       		.uleb128 0x3a
- 1374 0142 0B       		.uleb128 0xb
- 1375 0143 3B       		.uleb128 0x3b
- 1376 0144 0B       		.uleb128 0xb
- 1377 0145 27       		.uleb128 0x27
- 1378 0146 19       		.uleb128 0x19
- 1379 0147 49       		.uleb128 0x49
- 1380 0148 13       		.uleb128 0x13
- 1381 0149 11       		.uleb128 0x11
- 1382 014a 01       		.uleb128 0x1
- 1383 014b 12       		.uleb128 0x12
- 1384 014c 07       		.uleb128 0x7
- 1385 014d 40       		.uleb128 0x40
- 1386 014e 18       		.uleb128 0x18
- 1387 014f 9642     		.uleb128 0x2116
- 1388 0151 19       		.uleb128 0x19
- 1389 0152 01       		.uleb128 0x1
- 1390 0153 13       		.uleb128 0x13
- 1391 0154 00       		.byte	0
- 1392 0155 00       		.byte	0
- 1393 0156 18       		.uleb128 0x18
- 1394 0157 34       		.uleb128 0x34
- 1395 0158 00       		.byte	0
- 1396 0159 03       		.uleb128 0x3
- 1397 015a 08       		.uleb128 0x8
- 1398 015b 3A       		.uleb128 0x3a
- 1399 015c 0B       		.uleb128 0xb
- 1400 015d 3B       		.uleb128 0x3b
- 1401 015e 0B       		.uleb128 0xb
- 1402 015f 49       		.uleb128 0x49
- 1403 0160 13       		.uleb128 0x13
- 1404 0161 3F       		.uleb128 0x3f
- 1405 0162 19       		.uleb128 0x19
- 1406 0163 02       		.uleb128 0x2
- 1407 0164 18       		.uleb128 0x18
- 1408 0165 00       		.byte	0
- 1409 0166 00       		.byte	0
- 1410 0167 00       		.byte	0
- 1411              		.section	.debug_aranges,"dr"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 33
+ 1359 00f7 08       		.uleb128 0x8
+ 1360 00f8 3A       		.uleb128 0x3a
+ 1361 00f9 0B       		.uleb128 0xb
+ 1362 00fa 3B       		.uleb128 0x3b
+ 1363 00fb 05       		.uleb128 0x5
+ 1364 00fc 27       		.uleb128 0x27
+ 1365 00fd 19       		.uleb128 0x19
+ 1366 00fe 49       		.uleb128 0x49
+ 1367 00ff 13       		.uleb128 0x13
+ 1368 0100 11       		.uleb128 0x11
+ 1369 0101 01       		.uleb128 0x1
+ 1370 0102 12       		.uleb128 0x12
+ 1371 0103 07       		.uleb128 0x7
+ 1372 0104 40       		.uleb128 0x40
+ 1373 0105 18       		.uleb128 0x18
+ 1374 0106 9642     		.uleb128 0x2116
+ 1375 0108 19       		.uleb128 0x19
+ 1376 0109 01       		.uleb128 0x1
+ 1377 010a 13       		.uleb128 0x13
+ 1378 010b 00       		.byte	0
+ 1379 010c 00       		.byte	0
+ 1380 010d 14       		.uleb128 0x14
+ 1381 010e 05       		.uleb128 0x5
+ 1382 010f 00       		.byte	0
+ 1383 0110 03       		.uleb128 0x3
+ 1384 0111 0E       		.uleb128 0xe
+ 1385 0112 3A       		.uleb128 0x3a
+ 1386 0113 0B       		.uleb128 0xb
+ 1387 0114 3B       		.uleb128 0x3b
+ 1388 0115 0B       		.uleb128 0xb
+ 1389 0116 49       		.uleb128 0x49
+ 1390 0117 13       		.uleb128 0x13
+ 1391 0118 02       		.uleb128 0x2
+ 1392 0119 18       		.uleb128 0x18
+ 1393 011a 00       		.byte	0
+ 1394 011b 00       		.byte	0
+ 1395 011c 15       		.uleb128 0x15
+ 1396 011d 05       		.uleb128 0x5
+ 1397 011e 00       		.byte	0
+ 1398 011f 03       		.uleb128 0x3
+ 1399 0120 08       		.uleb128 0x8
+ 1400 0121 3A       		.uleb128 0x3a
+ 1401 0122 0B       		.uleb128 0xb
+ 1402 0123 3B       		.uleb128 0x3b
+ 1403 0124 0B       		.uleb128 0xb
+ 1404 0125 49       		.uleb128 0x49
+ 1405 0126 13       		.uleb128 0x13
+ 1406 0127 02       		.uleb128 0x2
+ 1407 0128 18       		.uleb128 0x18
+ 1408 0129 00       		.byte	0
+ 1409 012a 00       		.byte	0
+ 1410 012b 16       		.uleb128 0x16
+ 1411 012c 34       		.uleb128 0x34
+ 1412 012d 00       		.byte	0
+ 1413 012e 03       		.uleb128 0x3
+ 1414 012f 08       		.uleb128 0x8
+ 1415 0130 3A       		.uleb128 0x3a
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 34
 
 
- 1412 0000 2C000000 		.long	0x2c
- 1413 0004 0200     		.word	0x2
- 1414 0006 00000000 		.secrel32	.Ldebug_info0
- 1415 000a 08       		.byte	0x8
- 1416 000b 00       		.byte	0
- 1417 000c 0000     		.word	0
- 1418 000e 0000     		.word	0
- 1419 0010 00000000 		.quad	.Ltext0
- 1419      00000000 
- 1420 0018 99020000 		.quad	.Letext0-.Ltext0
- 1420      00000000 
- 1421 0020 00000000 		.quad	0
- 1421      00000000 
- 1422 0028 00000000 		.quad	0
- 1422      00000000 
- 1423              		.section	.debug_line,"dr"
- 1424              	.Ldebug_line0:
- 1425 0000 0C010000 		.section	.debug_str,"dr"
- 1425      0200B700 
- 1425      00000101 
- 1425      FB0E0D00 
- 1425      01010101 
- 1426              	.LASF0:
- 1427 0000 756E7573 		.ascii "unused\0"
- 1427      656400
- 1428              	.LASF1:
- 1429 0007 68496E73 		.ascii "hInstance\0"
- 1429      74616E63 
- 1429      6500
- 1430              		.ident	"GCC: (GNU) 4.9.2"
-GAS LISTING C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s 			page 34
+ 1416 0131 0B       		.uleb128 0xb
+ 1417 0132 3B       		.uleb128 0x3b
+ 1418 0133 0B       		.uleb128 0xb
+ 1419 0134 49       		.uleb128 0x49
+ 1420 0135 13       		.uleb128 0x13
+ 1421 0136 02       		.uleb128 0x2
+ 1422 0137 18       		.uleb128 0x18
+ 1423 0138 00       		.byte	0
+ 1424 0139 00       		.byte	0
+ 1425 013a 17       		.uleb128 0x17
+ 1426 013b 2E       		.uleb128 0x2e
+ 1427 013c 01       		.byte	0x1
+ 1428 013d 3F       		.uleb128 0x3f
+ 1429 013e 19       		.uleb128 0x19
+ 1430 013f 03       		.uleb128 0x3
+ 1431 0140 08       		.uleb128 0x8
+ 1432 0141 3A       		.uleb128 0x3a
+ 1433 0142 0B       		.uleb128 0xb
+ 1434 0143 3B       		.uleb128 0x3b
+ 1435 0144 0B       		.uleb128 0xb
+ 1436 0145 27       		.uleb128 0x27
+ 1437 0146 19       		.uleb128 0x19
+ 1438 0147 49       		.uleb128 0x49
+ 1439 0148 13       		.uleb128 0x13
+ 1440 0149 11       		.uleb128 0x11
+ 1441 014a 01       		.uleb128 0x1
+ 1442 014b 12       		.uleb128 0x12
+ 1443 014c 07       		.uleb128 0x7
+ 1444 014d 40       		.uleb128 0x40
+ 1445 014e 18       		.uleb128 0x18
+ 1446 014f 9642     		.uleb128 0x2116
+ 1447 0151 19       		.uleb128 0x19
+ 1448 0152 01       		.uleb128 0x1
+ 1449 0153 13       		.uleb128 0x13
+ 1450 0154 00       		.byte	0
+ 1451 0155 00       		.byte	0
+ 1452 0156 18       		.uleb128 0x18
+ 1453 0157 34       		.uleb128 0x34
+ 1454 0158 00       		.byte	0
+ 1455 0159 03       		.uleb128 0x3
+ 1456 015a 08       		.uleb128 0x8
+ 1457 015b 3A       		.uleb128 0x3a
+ 1458 015c 0B       		.uleb128 0xb
+ 1459 015d 3B       		.uleb128 0x3b
+ 1460 015e 0B       		.uleb128 0xb
+ 1461 015f 49       		.uleb128 0x49
+ 1462 0160 13       		.uleb128 0x13
+ 1463 0161 3F       		.uleb128 0x3f
+ 1464 0162 19       		.uleb128 0x19
+ 1465 0163 02       		.uleb128 0x2
+ 1466 0164 18       		.uleb128 0x18
+ 1467 0165 00       		.byte	0
+ 1468 0166 00       		.byte	0
+ 1469 0167 00       		.byte	0
+ 1470              		.section	.debug_aranges,"dr"
+ 1471 0000 2C000000 		.long	0x2c
+ 1472 0004 0200     		.word	0x2
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 35
+
+
+ 1473 0006 00000000 		.secrel32	.Ldebug_info0
+ 1474 000a 08       		.byte	0x8
+ 1475 000b 00       		.byte	0
+ 1476 000c 0000     		.word	0
+ 1477 000e 0000     		.word	0
+ 1478 0010 00000000 		.quad	.Ltext0
+ 1478      00000000 
+ 1479 0018 E6020000 		.quad	.Letext0-.Ltext0
+ 1479      00000000 
+ 1480 0020 00000000 		.quad	0
+ 1480      00000000 
+ 1481 0028 00000000 		.quad	0
+ 1481      00000000 
+ 1482              		.section	.debug_line,"dr"
+ 1483              	.Ldebug_line0:
+ 1484 0000 17010000 		.section	.debug_str,"dr"
+ 1484      0200B700 
+ 1484      00000101 
+ 1484      FB0E0D00 
+ 1484      01010101 
+ 1485              	.LASF0:
+ 1486 0000 756E7573 		.ascii "unused\0"
+ 1486      656400
+ 1487              	.LASF1:
+ 1488 0007 68496E73 		.ascii "hInstance\0"
+ 1488      74616E63 
+ 1488      6500
+ 1489              		.ident	"GCC: (GNU) 4.9.2"
+GAS LISTING C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 win.c
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:12     .text:0000000000000000 os
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:46     .data:0000000000000000 lpszAppName
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:54     .data:0000000000000008 lpszTitle
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:63     .text:000000000000001b WinMain
-C:\Users\UCB\AppData\Local\Temp\ccaX9t6f.s:228    .text:0000000000000225 WndProc
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:12     .text:0000000000000000 os
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:46     .data:0000000000000000 lpszAppName
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:54     .data:0000000000000008 lpszTitle
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:69     .text:000000000000001b WinMain
+C:\Users\UCB\AppData\Local\Temp\cc3jlmMj.s:263    .text:0000000000000272 WndProc
 
 UNDEFINED SYMBOLS
 __imp_LoadCursorA
@@ -2641,3 +2759,4 @@ __imp_PostQuitMessage
 __imp_DefWindowProcA
 puts
 printf
+getchar

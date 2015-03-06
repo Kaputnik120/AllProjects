@@ -47,7 +47,13 @@ lpszTitle:
 	.quad	.LC2
 	.section .rdata,"dr"
 .LC3:
+	.ascii "Result is %d\12\0"
+.LC4:
 	.ascii "Finished\0"
+.LC5:
+	.ascii "Starting inline asm\0"
+.LC6:
+	.ascii "Finished inline asm\0"
 	.text
 	.globl	WinMain
 	.def	WinMain;	.scl	2;	.type	32;	.endef
@@ -75,63 +81,92 @@ WinMain:
 	addl	%edx, %eax
 	movl	%eax, -12(%rbp)
 	.loc 1 20 0
+	movl	-12(%rbp), %eax
+	movl	%eax, %edx
 	leaq	.LC3(%rip), %rcx
 	call	printf
-	.loc 1 26 0
+	.loc 1 21 0
+	leaq	.LC4(%rip), %rcx
+	call	puts
+	.loc 1 22 0
+	leaq	.LC5(%rip), %rcx
+	call	puts
+	.loc 1 23 0
+	movl	$1, -16(%rbp)
+	.loc 1 24 0
+	movl	$2, -20(%rbp)
+	.loc 1 41 0
+	movl	-16(%rbp), %eax
+	movl	-20(%rbp), %edx
+/APP
+ # 41 "win/win.c" 1
+	int $3
+	mov $0x19, %eax
+	int $0x2E
+	
+ # 0 "" 2
+/NO_APP
+	movl	%eax, -24(%rbp)
+	.loc 1 48 0
+	call	getchar
+	.loc 1 51 0
+	leaq	.LC6(%rip), %rcx
+	call	puts
+	.loc 1 57 0
 	movl	$80, -160(%rbp)
-	.loc 1 27 0
-	movl	$515, -156(%rbp)
-	.loc 1 28 0
+	.loc 1 58 0
+	movl	$3, -156(%rbp)
+	.loc 1 59 0
 	leaq	WndProc(%rip), %rax
 	movq	%rax, -152(%rbp)
-	.loc 1 29 0
+	.loc 1 60 0
 	movl	$0, -144(%rbp)
-	.loc 1 30 0
+	.loc 1 61 0
 	movl	$0, -140(%rbp)
-	.loc 1 31 0
+	.loc 1 62 0
 	movq	16(%rbp), %rax
 	movq	%rax, -136(%rbp)
-	.loc 1 32 0
+	.loc 1 63 0
 	movl	$32512, %edx
 	movl	$0, %ecx
 	movq	__imp_LoadCursorA(%rip), %rax
 	call	*%rax
 	movq	%rax, -120(%rbp)
-	.loc 1 33 0
+	.loc 1 64 0
 	movl	$32512, %edx
 	movl	$0, %ecx
 	movq	__imp_LoadIconA(%rip), %rax
 	call	*%rax
 	movq	%rax, -128(%rbp)
-	.loc 1 34 0
+	.loc 1 65 0
 	movl	$0, %ecx
 	movq	__imp_GetStockObject(%rip), %rax
 	call	*%rax
 	movq	%rax, -112(%rbp)
-	.loc 1 35 0
+	.loc 1 66 0
 	movq	lpszAppName(%rip), %rax
 	movq	%rax, -96(%rbp)
-	.loc 1 36 0
+	.loc 1 67 0
 	movq	lpszAppName(%rip), %rax
 	movq	%rax, -104(%rbp)
-	.loc 1 37 0
+	.loc 1 68 0
 	movl	$32512, %edx
 	movl	$0, %ecx
 	movq	__imp_LoadIconA(%rip), %rax
 	call	*%rax
 	movq	%rax, -88(%rbp)
-	.loc 1 39 0
+	.loc 1 70 0
 	leaq	-160(%rbp), %rax
 	movq	%rax, %rcx
 	movq	__imp_RegisterClassExA(%rip), %rax
 	call	*%rax
 	testw	%ax, %ax
 	jne	.L3
-	.loc 1 40 0
+	.loc 1 71 0
 	movl	$0, %eax
 	jmp	.L8
 .L3:
-	.loc 1 42 0
+	.loc 1 73 0
 	movq	lpszTitle(%rip), %rcx
 	movq	lpszAppName(%rip), %rax
 	movq	$0, 88(%rsp)
@@ -149,40 +184,40 @@ WinMain:
 	movl	$0, %ecx
 	movq	__imp_CreateWindowExA(%rip), %rax
 	call	*%rax
-	movq	%rax, -24(%rbp)
-	.loc 1 55 0
-	cmpq	$0, -24(%rbp)
+	movq	%rax, -32(%rbp)
+	.loc 1 86 0
+	cmpq	$0, -32(%rbp)
 	jne	.L5
-	.loc 1 56 0
+	.loc 1 87 0
 	movl	$0, %eax
 	jmp	.L8
 .L5:
-	.loc 1 58 0
+	.loc 1 89 0
 	movl	40(%rbp), %edx
-	movq	-24(%rbp), %rax
+	movq	-32(%rbp), %rax
 	movq	%rax, %rcx
 	movq	__imp_ShowWindow(%rip), %rax
 	call	*%rax
-	.loc 1 59 0
-	movq	-24(%rbp), %rax
+	.loc 1 90 0
+	movq	-32(%rbp), %rax
 	movq	%rax, %rcx
 	movq	__imp_UpdateWindow(%rip), %rax
 	call	*%rax
-	.loc 1 61 0
+	.loc 1 92 0
 	jmp	.L6
 .L7:
-	.loc 1 63 0
+	.loc 1 94 0
 	leaq	-80(%rbp), %rax
 	movq	%rax, %rcx
 	movq	__imp_TranslateMessage(%rip), %rax
 	call	*%rax
-	.loc 1 64 0
+	.loc 1 95 0
 	leaq	-80(%rbp), %rax
 	movq	%rax, %rcx
 	movq	__imp_DispatchMessageA(%rip), %rax
 	call	*%rax
 .L6:
-	.loc 1 61 0
+	.loc 1 92 0
 	leaq	-80(%rbp), %rax
 	movl	$0, %r9d
 	movl	$0, %r8d
@@ -192,10 +227,10 @@ WinMain:
 	call	*%rax
 	testl	%eax, %eax
 	jg	.L7
-	.loc 1 66 0
+	.loc 1 97 0
 	movq	-64(%rbp), %rax
 .L8:
-	.loc 1 67 0 discriminator 1
+	.loc 1 98 0 discriminator 1
 	leave
 	.cfi_restore 6
 	.cfi_def_cfa 7, 8
@@ -203,14 +238,14 @@ WinMain:
 	.cfi_endproc
 .LFE1949:
 	.section .rdata,"dr"
-.LC4:
+.LC7:
 	.ascii "Fenster bewegt\0"
 	.text
 	.globl	WndProc
 	.def	WndProc;	.scl	2;	.type	32;	.endef
 WndProc:
 .LFB1950:
-	.loc 1 70 0
+	.loc 1 101 0
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -222,7 +257,7 @@ WndProc:
 	movl	%edx, 24(%rbp)
 	movq	%r8, 32(%rbp)
 	movq	%r9, 40(%rbp)
-	.loc 1 71 0
+	.loc 1 102 0
 	movl	24(%rbp), %eax
 	cmpl	$2, %eax
 	je	.L11
@@ -230,22 +265,22 @@ WndProc:
 	je	.L12
 	jmp	.L14
 .L11:
-	.loc 1 75 0
+	.loc 1 106 0
 	movl	$0, %ecx
 	movq	__imp_PostQuitMessage(%rip), %rax
 	call	*%rax
-	.loc 1 76 0
+	.loc 1 107 0
 	movl	$0, %eax
 	jmp	.L13
 .L12:
-	.loc 1 80 0
-	leaq	.LC4(%rip), %rcx
+	.loc 1 111 0
+	leaq	.LC7(%rip), %rcx
 	call	puts
-	.loc 1 81 0
+	.loc 1 112 0
 	movl	$0, %eax
 	jmp	.L13
 .L14:
-	.loc 1 84 0
+	.loc 1 115 0
 	movq	40(%rbp), %rcx
 	movq	32(%rbp), %rdx
 	movl	24(%rbp), %eax
@@ -256,7 +291,7 @@ WndProc:
 	movq	__imp_DefWindowProcA(%rip), %rax
 	call	*%rax
 .L13:
-	.loc 1 85 0
+	.loc 1 116 0
 	leave
 	.cfi_restore 6
 	.cfi_def_cfa 7, 8
@@ -274,7 +309,7 @@ WndProc:
 	.file 9 "c:/mingw12_2/mingw/x86_64-w64-mingw32/include/winbase.h"
 	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x961
+	.long	0x98c
 	.word	0x4
 	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
@@ -884,7 +919,7 @@ WndProc:
 	.quad	.LFE1949-.LFB1949
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x8c6
+	.long	0x8f1
 	.uleb128 0x14
 	.secrel32	.LASF1
 	.byte	0x1
@@ -942,17 +977,41 @@ WndProc:
 	.byte	0x91
 	.sleb128 -28
 	.uleb128 0x16
-	.ascii "hWnd\0"
+	.ascii "src\0"
 	.byte	0x1
-	.byte	0x16
-	.long	0x2a2
+	.byte	0x17
+	.long	0xe5
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x16
+	.ascii "src2\0"
+	.byte	0x1
+	.byte	0x18
+	.long	0xe5
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
+	.uleb128 0x16
+	.ascii "dst\0"
+	.byte	0x1
+	.byte	0x19
+	.long	0xe5
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
 	.uleb128 0x16
+	.ascii "hWnd\0"
+	.byte	0x1
+	.byte	0x35
+	.long	0x2a2
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -48
+	.uleb128 0x16
 	.ascii "msg\0"
 	.byte	0x1
-	.byte	0x17
+	.byte	0x36
 	.long	0x513
 	.uleb128 0x3
 	.byte	0x91
@@ -960,7 +1019,7 @@ WndProc:
 	.uleb128 0x16
 	.ascii "wc\0"
 	.byte	0x1
-	.byte	0x18
+	.byte	0x37
 	.long	0x496
 	.uleb128 0x3
 	.byte	0x91
@@ -969,17 +1028,17 @@ WndProc:
 	.uleb128 0x17
 	.ascii "WndProc\0"
 	.byte	0x1
-	.byte	0x45
+	.byte	0x64
 	.long	0x23f
 	.quad	.LFB1950
 	.quad	.LFE1950-.LFB1950
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x92c
+	.long	0x957
 	.uleb128 0x15
 	.ascii "hWnd\0"
 	.byte	0x1
-	.byte	0x45
+	.byte	0x64
 	.long	0x2a2
 	.uleb128 0x2
 	.byte	0x91
@@ -987,7 +1046,7 @@ WndProc:
 	.uleb128 0x15
 	.ascii "umsg\0"
 	.byte	0x1
-	.byte	0x45
+	.byte	0x64
 	.long	0x15c
 	.uleb128 0x2
 	.byte	0x91
@@ -995,7 +1054,7 @@ WndProc:
 	.uleb128 0x15
 	.ascii "wParam\0"
 	.byte	0x1
-	.byte	0x45
+	.byte	0x64
 	.long	0x223
 	.uleb128 0x2
 	.byte	0x91
@@ -1003,7 +1062,7 @@ WndProc:
 	.uleb128 0x15
 	.ascii "lParam\0"
 	.byte	0x1
-	.byte	0x45
+	.byte	0x64
 	.long	0x231
 	.uleb128 0x2
 	.byte	0x91
@@ -1407,3 +1466,4 @@ WndProc:
 	.ident	"GCC: (GNU) 4.9.2"
 	.def	puts;	.scl	2;	.type	32;	.endef
 	.def	printf;	.scl	2;	.type	32;	.endef
+	.def	getchar;	.scl	2;	.type	32;	.endef
