@@ -1,0 +1,30 @@
+#Variables
+VERSION = 1.0
+CC = /usr/bin/gcc
+CFLAGS = 
+LDFLAGS = 
+
+SRC = main.c foo.c bar.c
+BIN = prog
+
+DEPENDFILE = .depend
+
+#Look for dependencies and write to DEPENDFILE
+dep: $(SRC)
+	$(CC) -MM $(SRC) > $(DEPENDFILE)
+
+
+
+#Default target
+prog: $(OBJ)
+	$(CC) $(CFLAGS) -o $(BIN) $(OBJ) $(LDFLAGS)
+
+#Removal of all binary files
+.PHONY: clean
+clean: 
+	rm -rf $(OBJ) $(BIN)
+
+#Compilation of all .c files
+*.o: *.c
+	$(CC) $(CFLAGS) -c $<
+
