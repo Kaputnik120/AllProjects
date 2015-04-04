@@ -1,34 +1,32 @@
 package de.buschbaum.java.pathfinder.client;
 
-import de.buschbaum.java.pathfinder.api.Status;
-import de.buschbaum.java.pathfinder.client.network.Receiver;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import javafx.stage.WindowEvent;
 
 public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
-        
+
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
-        
-        stage.setTitle("JavaFX and Maven");
+
+        stage.setTitle("Pathfinder client");
         stage.setScene(scene);
+        
+        stage.setOnCloseRequest((WindowEvent we) -> {
+            System.out.println("Stage is closing - JVM will be shut down!");
+            System.exit(0);
+        });   
+        
         stage.show();
-        
-        Receiver receiver =  new Receiver();
-        
-        while (true) {
-            Status status = receiver.receive();
-            System.out.println("Status received: "+status);
-        }
     }
 
     /**

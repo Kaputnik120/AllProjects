@@ -6,6 +6,8 @@
 package de.buschbaum.java.pathfinder.client.network;
 
 import de.buschbaum.java.pathfinder.api.Status;
+import de.buschbaum.java.pathfinder.client.FXMLController;
+import de.buschbaum.java.pathfinder.client.Model;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,12 +15,13 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.UnknownHostException;
+import javafx.application.Platform;
 
 /**
  *
  * @author uli
  */
-public class Receiver {
+public class Receiver extends Thread {
 
     //MulticastSocket configuration
     private final static String multiCastAddress = "224.0.0.1";
@@ -28,8 +31,12 @@ public class Receiver {
     //MulticastSocket
     private static MulticastSocket s;
     private static InetAddress group;
+    //Instance of FXController for redraw callbacks
+    private final FXMLController fXMLController;
 
-    public Receiver() throws UnknownHostException, IOException {
+    public Receiver(FXMLController fXMLController) throws UnknownHostException, IOException {
+        this.fXMLController = fXMLController;
+        
         //Create Socket
         System.out.println("Create socket on address " + multiCastAddress + " and port " + multiCastPort + ".");
         group = InetAddress.getByName(multiCastAddress);
@@ -38,7 +45,28 @@ public class Receiver {
         System.out.println("Socket created successfully!");
     }
 
-    public Status receive() throws IOException, ClassNotFoundException {
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                Status status = receive();
+                Platform.runLater(() -> {
+                    //Direct bindings are updated
+                    Model.positionX.setValue(status.getPos()[0]);
+                    Model.positionY.setValue(status.getPos()[1]);
+                    Model.dimensionX.setValue(status.getMapDimensions()[0]);
+                    Model.dimensionY.setValue(status.getMapDimensions()[1]);
+                    
+                    //Explicitely call Canvas update
+                    fXMLController.updateCanvas();
+                });
+            } catch (Exception ex) {
+                System.out.println("Status couldn't be read from diagram:" + ex);
+            }
+        }
+    }
+
+    private Status receive() throws IOException, ClassNotFoundException {
 
         System.out.println("Wating for datagram to be received...");
 

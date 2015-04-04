@@ -15,6 +15,8 @@ import java.util.Arrays;
 public class Status implements Serializable {
 
     private int[] pos;
+    
+    private int[] mapDimensions;
 
     public int[] getPos() {
         return pos;
@@ -24,31 +26,14 @@ public class Status implements Serializable {
         this.pos = pos;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Arrays.hashCode(this.pos);
-        return hash;
+    public int[] getMapDimensions() {
+        return mapDimensions;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Status other = (Status) obj;
-        if (!Arrays.equals(this.pos, other.pos)) {
-            return false;
-        }
-        return true;
+    public void setMapDimensions(int[] mapDimensions) {
+        this.mapDimensions = mapDimensions;
     }
-
-    @Override
-    public String toString() {
-        return "Status{" + "pos=" + pos + '}';
-    }
+    
+    
 
 }

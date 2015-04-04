@@ -5,10 +5,12 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="de.buschbaum.java.pathfinder.client.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400" prefWidth="400" xmlns:fx="http://javafx.com/fxml" fx:controller="de.buschbaum.java.pathfinder.client.FXMLController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Canvas fx:id="map" layoutX="0" layoutY="0" height="200.0" width="200.0" />
+        <Label fx:id="posX" layoutX="0" layoutY="220" minHeight="10" minWidth="69"  />
+        <Label fx:id="posY" layoutX="0" layoutY="240" minHeight="10" minWidth="69"  />
     </children>
 </AnchorPane>

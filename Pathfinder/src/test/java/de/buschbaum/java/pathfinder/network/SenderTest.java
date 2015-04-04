@@ -23,6 +23,7 @@ public class SenderTest {
         Sender sender = new Sender();
         Status status = new Status();
         status.setPos(new int[] {12,15});
+        status.setMapDimensions(new int[] {20,20});
         sender.send(status);
     }
     
