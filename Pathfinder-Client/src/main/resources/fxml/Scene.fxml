@@ -7,10 +7,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.canvas.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400" prefWidth="400" xmlns:fx="http://javafx.com/fxml" fx:controller="de.buschbaum.java.pathfinder.client.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600" prefWidth="1000" xmlns:fx="http://javafx.com/fxml" fx:controller="de.buschbaum.java.pathfinder.client.FXMLController">
     <children>
-        <Canvas fx:id="map" layoutX="0" layoutY="0" height="200.0" width="200.0" />
-        <Label fx:id="posX" layoutX="0" layoutY="220" minHeight="10" minWidth="69"  />
-        <Label fx:id="posY" layoutX="0" layoutY="240" minHeight="10" minWidth="69"  />
+        <Pane fx:id="map" layoutX="0" layoutY="10" prefHeight="400.0" prefWidth="400.0" />
+        <Pane fx:id="accX" layoutX="420" layoutY="10" prefHeight="150.0" prefWidth="400.0" />
+        <Pane fx:id="accY" layoutX="420" layoutY="160" prefHeight="150.0" prefWidth="400.0" />
+        <Pane fx:id="accZ" layoutX="420" layoutY="310" prefHeight="150.0" prefWidth="400.0" />
+        <Label fx:id="posX" layoutX="0" layoutY="430" minHeight="10" minWidth="69"  />
+        <Label fx:id="posY" layoutX="0" layoutY="450" minHeight="10" minWidth="69"  />
     </children>
 </AnchorPane>

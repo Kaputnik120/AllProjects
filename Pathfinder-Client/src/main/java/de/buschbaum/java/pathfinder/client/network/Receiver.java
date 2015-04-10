@@ -15,6 +15,7 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import javafx.application.Platform;
 
 /**
@@ -36,7 +37,7 @@ public class Receiver extends Thread {
 
     public Receiver(FXMLController fXMLController) throws UnknownHostException, IOException {
         this.fXMLController = fXMLController;
-        
+
         //Create Socket
         System.out.println("Create socket on address " + multiCastAddress + " and port " + multiCastPort + ".");
         group = InetAddress.getByName(multiCastAddress);
@@ -56,9 +57,19 @@ public class Receiver extends Thread {
                     Model.positionY.setValue(status.getPos()[1]);
                     Model.dimensionX.setValue(status.getMapDimensions()[0]);
                     Model.dimensionY.setValue(status.getMapDimensions()[1]);
+                    Model.angle.setValue(status.getAngle());
+                    Model.sizeRobotX.setValue(status.getRobotSize()[0]);
+                    Model.sizeRobotY.setValue(status.getRobotSize()[1]);
+
+                    //Mapped status fields are updated
+                    Model.barriers = new ArrayList<>(1);
+                    Model.barriers.addAll(status.getBarriers());
+                    Model.accX = status.getAccX();
                     
-                    //Explicitely call Canvas update
-                    fXMLController.updateCanvas();
+                    //Explicitely call update of drawings
+                    fXMLController.updateMap();
+                    fXMLController.updateAccelerometers();
+                    
                 });
             } catch (Exception ex) {
                 System.out.println("Status couldn't be read from diagram:" + ex);
