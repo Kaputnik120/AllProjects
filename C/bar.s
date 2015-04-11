@@ -2,14 +2,14 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
-	.section .rdata,"dr"
+	.section	.rodata
 .LC0:
-	.ascii "bar\0"
+	.string	"bar"
 	.text
 	.globl	bar
-	.def	bar;	.scl	2;	.type	32;	.endef
+	.type	bar, @function
 bar:
-.LFB13:
+.LFB0:
 	.file 1 "bar.c"
 	.loc 1 3 0
 	.cfi_startproc
@@ -18,94 +18,93 @@ bar:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq	$32, %rsp
 	.loc 1 4 0
-	leaq	.LC0(%rip), %rcx
+	movl	$.LC0, %edi
 	call	puts
 	.loc 1 5 0
-	leave
-	.cfi_restore 6
+	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE13:
+.LFE0:
+	.size	bar, .-bar
 .Letext0:
-	.section	.debug_info,"dr"
+	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.long	0x14c
-	.word	0x4
-	.secrel32	.Ldebug_abbrev0
+	.long	0x89
+	.value	0x4
+	.long	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.ascii "GNU C 4.9.2 -mtune=haswell -march=x86-64 -ggdb -fno-asynchronous-unwind-tables\0"
+	.long	.LASF9
 	.byte	0x1
-	.ascii "bar.c\0"
-	.ascii "C:\\JavaProjects\\GIT\\Kaputnik120\\C\0"
+	.long	.LASF10
+	.long	.LASF11
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
-	.secrel32	.Ldebug_line0
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x6
-	.ascii "char\0"
+	.long	.Ldebug_line0
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
-	.ascii "long long unsigned int\0"
+	.long	.LASF0
 	.uleb128 0x2
+	.byte	0x1
 	.byte	0x8
-	.byte	0x5
-	.ascii "long long int\0"
+	.long	.LASF1
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
-	.ascii "short unsigned int\0"
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "int\0"
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x5
-	.ascii "long int\0"
+	.long	.LASF2
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.ascii "unsigned int\0"
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x7
-	.ascii "sizetype\0"
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x7
-	.ascii "long unsigned int\0"
+	.long	.LASF3
 	.uleb128 0x2
 	.byte	0x1
-	.byte	0x8
-	.ascii "unsigned char\0"
+	.byte	0x6
+	.long	.LASF4
+	.uleb128 0x2
+	.byte	0x2
+	.byte	0x5
+	.long	.LASF5
 	.uleb128 0x3
-	.ascii "bar\0"
+	.byte	0x4
+	.byte	0x5
+	.string	"int"
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x5
+	.long	.LASF6
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x7
+	.long	.LASF7
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.long	.LASF8
+	.uleb128 0x4
+	.string	"bar"
 	.byte	0x1
 	.byte	0x3
-	.quad	.LFB13
-	.quad	.LFE13-.LFB13
+	.quad	.LFB0
+	.quad	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
-	.section	.debug_abbrev,"dr"
+	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
 	.uleb128 0x1
 	.uleb128 0x11
 	.byte	0x1
 	.uleb128 0x25
-	.uleb128 0x8
+	.uleb128 0xe
 	.uleb128 0x13
 	.uleb128 0xb
 	.uleb128 0x3
-	.uleb128 0x8
+	.uleb128 0xe
 	.uleb128 0x1b
-	.uleb128 0x8
+	.uleb128 0xe
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -122,10 +121,21 @@ bar:
 	.uleb128 0x3e
 	.uleb128 0xb
 	.uleb128 0x3
-	.uleb128 0x8
+	.uleb128 0xe
 	.byte	0
 	.byte	0
 	.uleb128 0x3
+	.uleb128 0x24
+	.byte	0
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x3e
+	.uleb128 0xb
+	.uleb128 0x3
+	.uleb128 0x8
+	.byte	0
+	.byte	0
+	.uleb128 0x4
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -147,20 +157,44 @@ bar:
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_aranges,"dr"
+	.section	.debug_aranges,"",@progbits
 	.long	0x2c
-	.word	0x2
-	.secrel32	.Ldebug_info0
+	.value	0x2
+	.long	.Ldebug_info0
 	.byte	0x8
 	.byte	0
-	.word	0
-	.word	0
+	.value	0
+	.value	0
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.quad	0
 	.quad	0
-	.section	.debug_line,"dr"
+	.section	.debug_line,"",@progbits
 .Ldebug_line0:
-	.section	.debug_str,"dr"
-	.ident	"GCC: (GNU) 4.9.2"
-	.def	puts;	.scl	2;	.type	32;	.endef
+	.section	.debug_str,"MS",@progbits,1
+.LASF3:
+	.string	"unsigned int"
+.LASF0:
+	.string	"long unsigned int"
+.LASF4:
+	.string	"signed char"
+.LASF2:
+	.string	"short unsigned int"
+.LASF5:
+	.string	"short int"
+.LASF11:
+	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C"
+.LASF1:
+	.string	"unsigned char"
+.LASF6:
+	.string	"long int"
+.LASF7:
+	.string	"sizetype"
+.LASF10:
+	.string	"bar.c"
+.LASF8:
+	.string	"char"
+.LASF9:
+	.string	"GNU C 4.8.2 -mtune=generic -march=x86-64 -ggdb -fno-asynchronous-unwind-tables -fstack-protector"
+	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
+	.section	.note.GNU-stack,"",@progbits

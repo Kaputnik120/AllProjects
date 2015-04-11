@@ -1,16 +1,16 @@
-	.file	"foo.c"
+	.file	"linux.c"
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
 	.section	.rodata
 .LC0:
-	.string	"foo"
+	.string	"Hey, I'm Linux"
 	.text
-	.globl	foo
-	.type	foo, @function
-foo:
+	.globl	os
+	.type	os, @function
+os:
 .LFB0:
-	.file 1 "foo.c"
+	.file 1 "linux/linux.c"
 	.loc 1 3 0
 	.cfi_startproc
 	pushq	%rbp
@@ -20,18 +20,19 @@ foo:
 	.cfi_def_cfa_register 6
 	.loc 1 4 0
 	movl	$.LC0, %edi
-	call	puts
+	movl	$0, %eax
+	call	printf
 	.loc 1 5 0
 	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	foo, .-foo
+	.size	os, .-os
 .Letext0:
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.long	0x89
+	.long	0x88
 	.value	0x4
 	.long	.Ldebug_abbrev0
 	.byte	0x8
@@ -84,7 +85,7 @@ foo:
 	.byte	0x6
 	.long	.LASF8
 	.uleb128 0x4
-	.string	"foo"
+	.string	"os"
 	.byte	0x1
 	.byte	0x3
 	.quad	.LFB0
@@ -172,6 +173,8 @@ foo:
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
+.LASF10:
+	.string	"linux/linux.c"
 .LASF3:
 	.string	"unsigned int"
 .LASF0:
@@ -184,17 +187,15 @@ foo:
 	.string	"short int"
 .LASF11:
 	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C"
-.LASF10:
-	.string	"foo.c"
 .LASF1:
 	.string	"unsigned char"
 .LASF6:
 	.string	"long int"
 .LASF7:
 	.string	"sizetype"
-.LASF9:
-	.string	"GNU C 4.8.2 -mtune=generic -march=x86-64 -ggdb -fno-asynchronous-unwind-tables -fstack-protector"
 .LASF8:
 	.string	"char"
+.LASF9:
+	.string	"GNU C 4.8.2 -mtune=generic -march=x86-64 -ggdb -fno-asynchronous-unwind-tables -fstack-protector"
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits
