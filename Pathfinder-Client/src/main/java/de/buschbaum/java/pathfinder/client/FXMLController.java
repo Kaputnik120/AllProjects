@@ -23,6 +23,20 @@ public class FXMLController implements Initializable {
     @FXML
     private Label posY;
     @FXML
+    private Label maxMs;
+    @FXML
+    private Label maxX;
+    @FXML
+    private Label minX;
+    @FXML
+    private Label maxY;
+    @FXML
+    private Label minY;
+    @FXML
+    private Label maxZ;
+    @FXML
+    private Label minZ;
+    @FXML
     private Pane map;
     @FXML
     private Pane accX;
@@ -37,6 +51,7 @@ public class FXMLController implements Initializable {
             System.out.println("Initializing UI bindings...");
             posX.textProperty().bind(Bindings.concat("PositionX: ").concat(Model.positionX));
             posY.textProperty().bind(Bindings.concat("PositionY: ").concat(Model.positionY));
+            maxMs.textProperty().bind(Bindings.concat("Max ms loop execution: ").concat(Model.maxMs));
 
             System.out.println("Starting Receiver thread...");
             Receiver receiver = new Receiver(this);
@@ -103,44 +118,75 @@ public class FXMLController implements Initializable {
         map.setClip(clip);
 
         //Draw accelerometers
+        //AccX
         accX.getChildren().clear();
-        List<Rectangle> accelerometer = getAccelerometer(accX.getPrefWidth(), accX.getPrefHeight(), 0,
-                Model.accX, Color.BLACK);
+        List<Rectangle> accelerometer = getAccelerometer(accX.getPrefWidth(), accX.getPrefHeight(), Model.pointerX,
+                Model.accX, Color.BLACK, maxX, minX);
         accX.getChildren().addAll(accelerometer);
+        //AccY
+        accY.getChildren().clear();
+        accelerometer = getAccelerometer(accY.getPrefWidth(), accY.getPrefHeight(), Model.pointerY,
+                Model.accY, Color.BLACK, maxY, minY);
+        accY.getChildren().addAll(accelerometer);
+        //AccZ
+        accZ.getChildren().clear();
+        accelerometer = getAccelerometer(accZ.getPrefWidth(), accZ.getPrefHeight(), Model.pointerZ,
+                Model.accZ, Color.BLACK, maxZ, minZ);
+        accZ.getChildren().addAll(accelerometer);
 
     }
 
     private List<Rectangle> getAccelerometer(double width, double height,
-            int pointer, Double[] values, Color color) {
-        
+            int pointer, Double[] values, Color color, Label maxLabel, Label minLabel) {
+
         List<Rectangle> accelerometer = new ArrayList<>(1000);
-        
+
         double max = Collections.max(Arrays.asList(values));
         double min = Collections.min(Arrays.asList(values));
         double count = values.length;
         double spacing = width / count;
         double heightFactor = height / (max - min);
+        double zeroHeight = max * heightFactor;
+        double pointerPosition = pointer * spacing;
 
+        //Points
         for (int i = 0; i < count; i++) {
             Rectangle point = new Rectangle(1, 1, color);
-            double x = (i+1) * spacing;
+            double x = (i + 1) * spacing;
             double y = (max - values[i]) * heightFactor;
             point.setLayoutX(x);
             point.setLayoutY(y);
             accelerometer.add(point);
         }
 
+        //Y-Axis
         Rectangle yAxis = new Rectangle(1, height, color);
         yAxis.setLayoutX(0);
         yAxis.setLayoutY(0);
 
+        //X-Axis
         Rectangle xAxis = new Rectangle(width, 1, color);
         xAxis.setLayoutX(0);
         xAxis.setLayoutY(height);
 
-        
+        //Zero-Level
+        Rectangle zeroLevel = new Rectangle(width, 1, Color.BLUE);
+        zeroLevel.setLayoutX(0);
+        zeroLevel.setLayoutY(zeroHeight);
+
+        //Pointer
+        Rectangle pointerLine = new Rectangle(1, height, Color.RED);
+        pointerLine.setLayoutX(pointerPosition);
+        pointerLine.setLayoutY(0);
+
+        //Labels
+        maxLabel.textProperty().set(String.valueOf(max));
+        minLabel.textProperty().set(String.valueOf(min));
+
         accelerometer.add(xAxis);
         accelerometer.add(yAxis);
+        accelerometer.add(zeroLevel);
+        accelerometer.add(pointerLine);
 
         return accelerometer;
     }

@@ -32,6 +32,16 @@ public class Status implements Serializable {
 
     private int angle;
 
+    private double maxMs;
+
+    public double getMaxMs() {
+        return maxMs;
+    }
+
+    public void setMaxMs(double maxMs) {
+        this.maxMs = maxMs;
+    }
+
     public Double[] getAccY() {
         return accY;
     }

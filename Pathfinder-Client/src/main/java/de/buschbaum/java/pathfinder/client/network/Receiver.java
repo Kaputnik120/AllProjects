@@ -60,16 +60,22 @@ public class Receiver extends Thread {
                     Model.angle.setValue(status.getAngle());
                     Model.sizeRobotX.setValue(status.getRobotSize()[0]);
                     Model.sizeRobotY.setValue(status.getRobotSize()[1]);
+                    Model.maxMs.setValue(status.getMaxMs());
 
                     //Mapped status fields are updated
                     Model.barriers = new ArrayList<>(1);
                     Model.barriers.addAll(status.getBarriers());
                     Model.accX = status.getAccX();
-                    
+                    Model.accY = status.getAccY();
+                    Model.accZ = status.getAccZ();
+                    Model.pointerX = status.getPointerX();
+                    Model.pointerY = status.getPointerY();
+                    Model.pointerZ = status.getPointerZ();
+
                     //Explicitely call update of drawings
                     fXMLController.updateMap();
                     fXMLController.updateAccelerometers();
-                    
+
                 });
             } catch (Exception ex) {
                 System.out.println("Status couldn't be read from diagram:" + ex);

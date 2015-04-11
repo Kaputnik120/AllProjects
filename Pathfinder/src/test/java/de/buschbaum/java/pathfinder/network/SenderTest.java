@@ -52,17 +52,19 @@ public class SenderTest {
         barriers.add(new int[]{15, 13});
         status.setBarriers(barriers);
 
-        status.setAccX(new Double[]{12.0, 11.0, 8.0, 5.4, 3.2, 2.0, 1.0, 0.75, 0.6, 0.003, 0.0,
-            -1.0, -3.0, -5.0, -7.0, -7.4, -8.0, -12.0, -13.0});
-        status.setAccY(new Double[]{12.0, 11.0, 8.0, 5.4, 3.2, 2.0, 1.0, 0.75, 0.6, 0.003, 0.0,
-            -1.0, -3.0, -5.0, -7.0, -7.4, -8.0, -12.0, -13.0});
-        status.setAccZ(new Double[]{12.0, 11.0, 8.0, 5.4, 3.2, 2.0, 1.0, 0.75, 0.6, 0.003, 0.0,
-            -1.0, -3.0, -5.0, -7.0, -7.4, -8.0, -12.0, -13.0});
+        status.setAccX(new Double[]{25.0, 11.0, 8.0, 5.4, 3.2, 2.0, 1.0, 0.75, 0.6, 0.003, 0.0,
+            -1.0, -3.0, -5.0, -7.0, -7.4, -8.0, -12.0, -12.0});
+        status.setAccY(new Double[]{11.0, 11.0, 8.0, 5.4, 3.2, 2.0, 1.0, 0.75, 0.6, 0.003, 0.0,
+            -1.0, -3.0, -5.0, -7.0, -7.4, -8.0, -12.0, -14.8});
+        status.setAccZ(new Double[]{7.0, 11.0, 8.0, 5.4, 3.2, 2.0, 1.0, 0.75, 0.6, 0.003, 0.0,
+            -1.0, -3.0, -5.0, -7.0, -7.4, -8.0, -12.0, -20.0});
 
         status.setPointerX(13);
-        status.setPointerY(13);
-        status.setPointerZ(13);
+        status.setPointerY(8);
+        status.setPointerZ(2);
 
+        status.setMaxMs(3.07541);
+        
         sender.send(status);
     }
 
