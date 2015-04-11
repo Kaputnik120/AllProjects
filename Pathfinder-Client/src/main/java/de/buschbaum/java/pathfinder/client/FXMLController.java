@@ -17,13 +17,26 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class FXMLController implements Initializable {
-
+    
+    public volatile boolean run = true;
+    
+    //Other data
     @FXML
     private Label posX;
     @FXML
     private Label posY;
     @FXML
     private Label maxMs;
+    @FXML
+    private Label speed;
+    @FXML
+    private Label rotationX;
+    @FXML
+    private Label rotationY;
+    @FXML
+    private Label rotationZ;
+
+    //Accelerometer 
     @FXML
     private Label maxX;
     @FXML
@@ -36,8 +49,7 @@ public class FXMLController implements Initializable {
     private Label maxZ;
     @FXML
     private Label minZ;
-    @FXML
-    private Pane map;
+
     @FXML
     private Pane accX;
     @FXML
@@ -45,6 +57,41 @@ public class FXMLController implements Initializable {
     @FXML
     private Pane accZ;
 
+    //Gyroscope
+    @FXML
+    private Label maxGyroX;
+    @FXML
+    private Label minGyroX;
+    @FXML
+    private Label maxGyroY;
+    @FXML
+    private Label minGyroY;
+    @FXML
+    private Label maxGyroZ;
+    @FXML
+    private Label minGyroZ;
+    
+    @FXML
+    private Pane gyroX;
+    @FXML
+    private Pane gyroY;
+    @FXML
+    private Pane gyroZ;
+    
+    //Map
+    @FXML
+    private Pane map;
+
+    public void run () {
+        System.out.println("Running!");
+        run = true;
+    }
+    
+    public void stop() {
+        System.out.println("Stopped");
+        run = false;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -52,6 +99,10 @@ public class FXMLController implements Initializable {
             posX.textProperty().bind(Bindings.concat("PositionX: ").concat(Model.positionX));
             posY.textProperty().bind(Bindings.concat("PositionY: ").concat(Model.positionY));
             maxMs.textProperty().bind(Bindings.concat("Max ms loop execution: ").concat(Model.maxMs));
+            speed.textProperty().bind(Bindings.concat("Speed (cm/s) ").concat(Model.speed));
+            rotationX.textProperty().bind(Bindings.concat("Rotation matrix X angle: ").concat(Model.rotationX));
+            rotationY.textProperty().bind(Bindings.concat("Rotation matrix Y angle:: ").concat(Model.rotationY));
+            rotationZ.textProperty().bind(Bindings.concat("Rotation matrix Z angle:: ").concat(Model.rotationZ));
 
             System.out.println("Starting Receiver thread...");
             Receiver receiver = new Receiver(this);
@@ -133,6 +184,23 @@ public class FXMLController implements Initializable {
         accelerometer = getAccelerometer(accZ.getPrefWidth(), accZ.getPrefHeight(), Model.pointerZ,
                 Model.accZ, Color.BLACK, maxZ, minZ);
         accZ.getChildren().addAll(accelerometer);
+        
+        //Draw gyroscopes
+        //GyroX
+        gyroX.getChildren().clear();
+        List<Rectangle> gyro = getAccelerometer(gyroX.getPrefWidth(), gyroX.getPrefHeight(), Model.pointerGyroX,
+                Model.gyroX, Color.BLACK, maxGyroX, minGyroX);
+        gyroX.getChildren().addAll(gyro);
+        //GyroY
+        gyroY.getChildren().clear();
+        gyro = getAccelerometer(gyroY.getPrefWidth(), gyroY.getPrefHeight(), Model.pointerGyroY,
+                Model.gyroY, Color.BLACK, maxGyroY, minGyroY);
+        gyroY.getChildren().addAll(gyro);
+        //GyroZ
+        gyroZ.getChildren().clear();
+        gyro = getAccelerometer(gyroZ.getPrefWidth(), gyroZ.getPrefHeight(), Model.pointerGyroZ,
+                Model.gyroZ, Color.BLACK, maxGyroZ, minGyroZ);
+        gyroZ.getChildren().addAll(gyro);
 
     }
 

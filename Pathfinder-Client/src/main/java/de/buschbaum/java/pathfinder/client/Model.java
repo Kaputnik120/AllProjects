@@ -28,6 +28,10 @@ public class Model {
     public static DoubleProperty sizeRobotY = new SimpleDoubleProperty(1);
     public static IntegerProperty angle = new SimpleIntegerProperty(1);
     public static DoubleProperty maxMs = new SimpleDoubleProperty(1);
+    public static DoubleProperty speed = new SimpleDoubleProperty(1);
+    public static IntegerProperty rotationX = new SimpleIntegerProperty(1);
+    public static IntegerProperty rotationY = new SimpleIntegerProperty(1);
+    public static IntegerProperty rotationZ = new SimpleIntegerProperty(1);
 
     //Status model field
     public static List<int[]> barriers = new ArrayList<>(1);
@@ -37,5 +41,11 @@ public class Model {
     public static int pointerX = 1;
     public static int pointerY = 1;
     public static int pointerZ = 1;
+    public static Double[] gyroX = new Double[1];
+    public static Double[] gyroY = new Double[1];
+    public static Double[] gyroZ = new Double[1];
+    public static int pointerGyroX = 1;
+    public static int pointerGyroY = 1;
+    public static int pointerGyroZ = 1;
 
 }

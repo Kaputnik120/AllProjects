@@ -30,6 +30,100 @@ public class Status implements Serializable {
     private int pointerY;
     private int pointerZ;
 
+    private Double[] gyroX;
+    private Double[] gyroY;
+    private Double[] gyroZ;
+
+    private int pointerGyroX;
+    private int pointerGyroY;
+    private int pointerGyroZ;
+
+    private double speed;
+
+    private int rotationX;
+    private int rotationY;
+    private int rotationZ;
+
+    public Double[] getGyroX() {
+        return gyroX;
+    }
+
+    public void setGyroX(Double[] gyroX) {
+        this.gyroX = gyroX;
+    }
+
+    public Double[] getGyroY() {
+        return gyroY;
+    }
+
+    public void setGyroY(Double[] gyroY) {
+        this.gyroY = gyroY;
+    }
+
+    public Double[] getGyroZ() {
+        return gyroZ;
+    }
+
+    public void setGyroZ(Double[] gyroZ) {
+        this.gyroZ = gyroZ;
+    }
+
+    public int getPointerGyroX() {
+        return pointerGyroX;
+    }
+
+    public void setPointerGyroX(int pointerGyroX) {
+        this.pointerGyroX = pointerGyroX;
+    }
+
+    public int getPointerGyroY() {
+        return pointerGyroY;
+    }
+
+    public void setPointerGyroY(int pointerGyroY) {
+        this.pointerGyroY = pointerGyroY;
+    }
+
+    public int getPointerGyroZ() {
+        return pointerGyroZ;
+    }
+
+    public void setPointerGyroZ(int pointerGyroZ) {
+        this.pointerGyroZ = pointerGyroZ;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public int getRotationX() {
+        return rotationX;
+    }
+
+    public void setRotationX(int rotationX) {
+        this.rotationX = rotationX;
+    }
+
+    public int getRotationY() {
+        return rotationY;
+    }
+
+    public void setRotationY(int rotationY) {
+        this.rotationY = rotationY;
+    }
+
+    public int getRotationZ() {
+        return rotationZ;
+    }
+
+    public void setRotationZ(int rotationZ) {
+        this.rotationZ = rotationZ;
+    }
+
     private int angle;
 
     private double maxMs;

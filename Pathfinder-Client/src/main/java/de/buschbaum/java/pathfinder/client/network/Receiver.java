@@ -50,33 +50,45 @@ public class Receiver extends Thread {
     public void run() {
         while (true) {
             try {
-                Status status = receive();
-                Platform.runLater(() -> {
-                    //Direct bindings are updated
-                    Model.positionX.setValue(status.getPos()[0]);
-                    Model.positionY.setValue(status.getPos()[1]);
-                    Model.dimensionX.setValue(status.getMapDimensions()[0]);
-                    Model.dimensionY.setValue(status.getMapDimensions()[1]);
-                    Model.angle.setValue(status.getAngle());
-                    Model.sizeRobotX.setValue(status.getRobotSize()[0]);
-                    Model.sizeRobotY.setValue(status.getRobotSize()[1]);
-                    Model.maxMs.setValue(status.getMaxMs());
+                if (fXMLController.run) {
+                    Status status = receive();
+                    Platform.runLater(() -> {
+                        //Direct bindings are updated
+                        Model.positionX.setValue(status.getPos()[0]);
+                        Model.positionY.setValue(status.getPos()[1]);
+                        Model.dimensionX.setValue(status.getMapDimensions()[0]);
+                        Model.dimensionY.setValue(status.getMapDimensions()[1]);
+                        Model.angle.setValue(status.getAngle());
+                        Model.sizeRobotX.setValue(status.getRobotSize()[0]);
+                        Model.sizeRobotY.setValue(status.getRobotSize()[1]);
+                        Model.maxMs.setValue(status.getMaxMs());
+                        Model.speed.setValue(status.getSpeed());
+                        Model.rotationX.setValue(status.getRotationX());
+                        Model.rotationY.setValue(status.getRotationY());
+                        Model.rotationZ.setValue(status.getRotationZ());
 
-                    //Mapped status fields are updated
-                    Model.barriers = new ArrayList<>(1);
-                    Model.barriers.addAll(status.getBarriers());
-                    Model.accX = status.getAccX();
-                    Model.accY = status.getAccY();
-                    Model.accZ = status.getAccZ();
-                    Model.pointerX = status.getPointerX();
-                    Model.pointerY = status.getPointerY();
-                    Model.pointerZ = status.getPointerZ();
+                        //Mapped status fields are updated
+                        Model.barriers = new ArrayList<>(1);
+                        Model.barriers.addAll(status.getBarriers());
+                        Model.accX = status.getAccX();
+                        Model.accY = status.getAccY();
+                        Model.accZ = status.getAccZ();
+                        Model.pointerX = status.getPointerX();
+                        Model.pointerY = status.getPointerY();
+                        Model.pointerZ = status.getPointerZ();
+                        Model.gyroX = status.getGyroX();
+                        Model.gyroY = status.getGyroY();
+                        Model.gyroZ = status.getGyroZ();
+                        Model.pointerGyroX = status.getPointerX();
+                        Model.pointerGyroY = status.getPointerY();
+                        Model.pointerGyroZ = status.getPointerZ();
 
-                    //Explicitely call update of drawings
-                    fXMLController.updateMap();
-                    fXMLController.updateAccelerometers();
+                        //Explicitely call update of drawings
+                        fXMLController.updateMap();
+                        fXMLController.updateAccelerometers();
 
-                });
+                    });
+                }
             } catch (Exception ex) {
                 System.out.println("Status couldn't be read from diagram:" + ex);
             }
