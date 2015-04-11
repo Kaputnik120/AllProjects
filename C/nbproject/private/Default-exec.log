@@ -1,0 +1,8 @@
+called: cc
+	/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C
+	cc
+	-S
+	-c
+	-fno-asynchronous-unwind-tables
+	-ggdb
+

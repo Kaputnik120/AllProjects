@@ -1,0 +1,5 @@
+Creating assembly files for 
+cc -S -c  -fno-asynchronous-unwind-tables -ggdb 
+cc: fatal error: no input files
+compilation terminated.
+make: *** [objectFiles] Fehler 4

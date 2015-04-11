@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccDgbch3.s 			page 1
+GAS LISTING /tmp/ccG5XE84.s 			page 1
 
 
    1              		.file	"bar.c"
@@ -36,16 +36,16 @@ GAS LISTING /tmp/ccDgbch3.s 			page 1
   27              		.cfi_endproc
   28              	.LFE0:
   30              	.Letext0:
-GAS LISTING /tmp/ccDgbch3.s 			page 2
+GAS LISTING /tmp/ccG5XE84.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bar.c
-     /tmp/ccDgbch3.s:10     .text:0000000000000000 bar
+     /tmp/ccG5XE84.s:10     .text:0000000000000000 bar
 
 UNDEFINED SYMBOLS
 puts
-GAS LISTING /tmp/ccDgbch3.s 			page 1
+GAS LISTING /tmp/ccG5XE84.s 			page 1
 
 
    1              		.file	"foo.c"
@@ -83,97 +83,30 @@ GAS LISTING /tmp/ccDgbch3.s 			page 1
   27              		.cfi_endproc
   28              	.LFE0:
   30              	.Letext0:
-GAS LISTING /tmp/ccDgbch3.s 			page 2
+GAS LISTING /tmp/ccG5XE84.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 foo.c
-     /tmp/ccDgbch3.s:10     .text:0000000000000000 foo
+     /tmp/ccG5XE84.s:10     .text:0000000000000000 foo
 
 UNDEFINED SYMBOLS
 puts
-GAS LISTING /tmp/ccDgbch3.s 			page 1
+GAS LISTING /tmp/ccG5XE84.s 			page 1
 
 
    1              		.file	"main.c"
    2              		.text
    3              	.Ltext0:
-   4              		.section	.rodata
-   5              	.LC0:
-   6 0000 48656C6C 		.string	"Hello World!"
-   6      6F20576F 
-   6      726C6421 
-   6      00
-   7              		.text
-   8              		.globl	main
-  10              	main:
-  11              	.LFB0:
-  12              		.file 1 "main.c"
-   1:main.c        **** #include <stdio.h>
-   2:main.c        **** #include "foo.h"
-   3:main.c        **** #include "bar.h"
-   4:main.c        **** #include "os.h"
-   5:main.c        **** 
-   6:main.c        **** int main() {
-  13              		.loc 1 6 0
-  14              		.cfi_startproc
-  15 0000 55       		pushq	%rbp
-  16              		.cfi_def_cfa_offset 16
-  17              		.cfi_offset 6, -16
-  18 0001 4889E5   		movq	%rsp, %rbp
-  19              		.cfi_def_cfa_register 6
-   7:main.c        **** 	printf("Hello World!\n");
-  20              		.loc 1 7 0
-  21 0004 BF000000 		movl	$.LC0, %edi
-  21      00
-  22 0009 E8000000 		call	puts
-  22      00
-   8:main.c        **** 	foo();
-  23              		.loc 1 8 0
-  24 000e B8000000 		movl	$0, %eax
-  24      00
-  25 0013 E8000000 		call	foo
-  25      00
-   9:main.c        **** 	bar();
-  26              		.loc 1 9 0
-  27 0018 B8000000 		movl	$0, %eax
-  27      00
-  28 001d E8000000 		call	bar
-  28      00
-  10:main.c        **** 	os();
-  29              		.loc 1 10 0
-  30 0022 B8000000 		movl	$0, %eax
-  30      00
-  31 0027 E8000000 		call	os
-  31      00
-  11:main.c        **** 	return 0;
-  32              		.loc 1 11 0
-  33 002c B8000000 		movl	$0, %eax
-  33      00
-  12:main.c        **** }
-  34              		.loc 1 12 0
-GAS LISTING /tmp/ccDgbch3.s 			page 2
-
-
-  35 0031 5D       		popq	%rbp
-  36              		.cfi_def_cfa 7, 8
-  37 0032 C3       		ret
-  38              		.cfi_endproc
-  39              	.LFE0:
-  41              	.Letext0:
-GAS LISTING /tmp/ccDgbch3.s 			page 3
+   4              	.Letext0:
+GAS LISTING /tmp/ccG5XE84.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccDgbch3.s:10     .text:0000000000000000 main
 
-UNDEFINED SYMBOLS
-puts
-foo
-bar
-os
-GAS LISTING /tmp/ccDgbch3.s 			page 1
+NO UNDEFINED SYMBOLS
+GAS LISTING /tmp/ccG5XE84.s 			page 1
 
 
    1              		.file	"linux.c"
@@ -188,40 +121,477 @@ GAS LISTING /tmp/ccDgbch3.s 			page 1
    7              		.text
    8              		.globl	os
   10              	os:
-  11              	.LFB0:
+  11              	.LFB2:
   12              		.file 1 "linux/linux.c"
-   1:linux/linux.c **** #include <stdio.h>
-   2:linux/linux.c **** 
-   3:linux/linux.c **** void os() {
-  13              		.loc 1 3 0
+   1:linux/linux.c **** #include "../foo.h"
+   2:linux/linux.c **** #include "../bar.h"
+   3:linux/linux.c **** #include "../os.h"
+   4:linux/linux.c **** #include <stdio.h>
+   5:linux/linux.c **** #include <stdlib.h>
+   6:linux/linux.c **** #include <string.h>
+   7:linux/linux.c **** #include <X11/Xlib.h>
+   8:linux/linux.c **** 
+   9:linux/linux.c **** void os() {
+  13              		.loc 1 9 0
   14              		.cfi_startproc
   15 0000 55       		pushq	%rbp
   16              		.cfi_def_cfa_offset 16
   17              		.cfi_offset 6, -16
   18 0001 4889E5   		movq	%rsp, %rbp
   19              		.cfi_def_cfa_register 6
-   4:linux/linux.c **** 	printf("Hey, I'm Linux");
-  20              		.loc 1 4 0
+  10:linux/linux.c ****     printf("Hey, I'm Linux");
+  20              		.loc 1 10 0
   21 0004 BF000000 		movl	$.LC0, %edi
   21      00
   22 0009 B8000000 		movl	$0, %eax
   22      00
   23 000e E8000000 		call	printf
   23      00
-   5:linux/linux.c **** }...
-  24              		.loc 1 5 0
+  11:linux/linux.c **** }
+  24              		.loc 1 11 0
   25 0013 5D       		popq	%rbp
   26              		.cfi_def_cfa 7, 8
   27 0014 C3       		ret
   28              		.cfi_endproc
-  29              	.LFE0:
-  31              	.Letext0:
-GAS LISTING /tmp/ccDgbch3.s 			page 2
+  29              	.LFE2:
+  31              		.section	.rodata
+  32              	.LC1:
+  33 000f 48656C6C 		.string	"Hello World Example"
+  33      6F20576F 
+  33      726C6420 
+  33      4578616D 
+  33      706C6500 
+  34              	.LC2:
+  35 0023 31307832 		.string	"10x20"
+  35      3000
+  36              		.text
+  37              		.globl	main
+GAS LISTING /tmp/ccG5XE84.s 			page 2
+
+
+  39              	main:
+  40              	.LFB3:
+  12:linux/linux.c **** 
+  13:linux/linux.c **** int main() {
+  41              		.loc 1 13 0
+  42              		.cfi_startproc
+  43 0015 55       		pushq	%rbp
+  44              		.cfi_def_cfa_offset 16
+  45              		.cfi_offset 6, -16
+  46 0016 4889E5   		movq	%rsp, %rbp
+  47              		.cfi_def_cfa_register 6
+  48 0019 4881ECF0 		subq	$752, %rsp
+  48      020000
+  49              		.loc 1 13 0
+  50 0020 64488B04 		movq	%fs:40, %rax
+  50      25280000 
+  50      00
+  51 0029 488945F8 		movq	%rax, -8(%rbp)
+  52 002d 31C0     		xorl	%eax, %eax
+  14:linux/linux.c ****     Display *display;
+  15:linux/linux.c ****     Visual *visual;
+  16:linux/linux.c ****     int depth;
+  17:linux/linux.c ****     int text_x;
+  18:linux/linux.c ****     int text_y;
+  19:linux/linux.c ****     XSetWindowAttributes frame_attributes;
+  20:linux/linux.c ****     Window frame_window;
+  21:linux/linux.c ****     XFontStruct *fontinfo;
+  22:linux/linux.c ****     XGCValues gr_values;
+  23:linux/linux.c ****     GC graphical_context;
+  24:linux/linux.c ****     XEvent event;
+  25:linux/linux.c ****     char hello_string[] = "Hello World";
+  53              		.loc 1 25 0
+  54 002f 48B84865 		movabsq	$8022916924116329800, %rax
+  54      6C6C6F20 
+  54      576F
+  55 0039 48898520 		movq	%rax, -224(%rbp)
+  55      FFFFFF
+  56 0040 C78528FF 		movl	$6581362, -216(%rbp)
+  56      FFFF726C 
+  56      6400
+  26:linux/linux.c ****     int hello_string_length = strlen(hello_string);
+  57              		.loc 1 26 0
+  58 004a 488D8520 		leaq	-224(%rbp), %rax
+  58      FFFFFF
+  59 0051 4889C7   		movq	%rax, %rdi
+  60 0054 E8000000 		call	strlen
+  60      00
+  61 0059 898558FD 		movl	%eax, -680(%rbp)
+  61      FFFF
+  27:linux/linux.c **** 
+  28:linux/linux.c ****     display = XOpenDisplay(NULL);
+  62              		.loc 1 28 0
+  63 005f BF000000 		movl	$0, %edi
+  63      00
+  64 0064 E8000000 		call	XOpenDisplay
+  64      00
+  65 0069 48898568 		movq	%rax, -664(%rbp)
+GAS LISTING /tmp/ccG5XE84.s 			page 3
+
+
+  65      FDFFFF
+  29:linux/linux.c ****     visual = DefaultVisual(display, 0);
+  66              		.loc 1 29 0
+  67 0070 488B8568 		movq	-664(%rbp), %rax
+  67      FDFFFF
+  68 0077 488B80E8 		movq	232(%rax), %rax
+  68      000000
+  69 007e 488B4040 		movq	64(%rax), %rax
+  70 0082 48898570 		movq	%rax, -656(%rbp)
+  70      FDFFFF
+  30:linux/linux.c ****     depth = DefaultDepth(display, 0);
+  71              		.loc 1 30 0
+  72 0089 488B8568 		movq	-664(%rbp), %rax
+  72      FDFFFF
+  73 0090 488B80E8 		movq	232(%rax), %rax
+  73      000000
+  74 0097 8B4038   		movl	56(%rax), %eax
+  75 009a 89855CFD 		movl	%eax, -676(%rbp)
+  75      FFFF
+  31:linux/linux.c **** 
+  32:linux/linux.c ****     frame_attributes.background_pixel = XWhitePixel(display, 0);
+  76              		.loc 1 32 0
+  77 00a0 488B8568 		movq	-664(%rbp), %rax
+  77      FDFFFF
+  78 00a7 BE000000 		movl	$0, %esi
+  78      00
+  79 00ac 4889C7   		movq	%rax, %rdi
+  80 00af E8000000 		call	XWhitePixel
+  80      00
+  81 00b4 488985A8 		movq	%rax, -600(%rbp)
+  81      FDFFFF
+  33:linux/linux.c ****     /* create the application window */
+  34:linux/linux.c ****     frame_window = XCreateWindow(display, XRootWindow(display, 0),
+  82              		.loc 1 34 0
+  83 00bb 488B8568 		movq	-664(%rbp), %rax
+  83      FDFFFF
+  84 00c2 BE000000 		movl	$0, %esi
+  84      00
+  85 00c7 4889C7   		movq	%rax, %rdi
+  86 00ca E8000000 		call	XRootWindow
+  86      00
+  87 00cf 4889C6   		movq	%rax, %rsi
+  88 00d2 488B8568 		movq	-664(%rbp), %rax
+  88      FDFFFF
+  89 00d9 488D95A0 		leaq	-608(%rbp), %rdx
+  89      FDFFFF
+  90 00e0 48895424 		movq	%rdx, 40(%rsp)
+  90      28
+  91 00e5 48C74424 		movq	$2, 32(%rsp)
+  91      20020000 
+  91      00
+  92 00ee 488B9570 		movq	-656(%rbp), %rdx
+  92      FDFFFF
+  93 00f5 48895424 		movq	%rdx, 24(%rsp)
+  93      18
+  94 00fa C7442410 		movl	$1, 16(%rsp)
+  94      01000000 
+GAS LISTING /tmp/ccG5XE84.s 			page 4
+
+
+  95 0102 8B955CFD 		movl	-676(%rbp), %edx
+  95      FFFF
+  96 0108 89542408 		movl	%edx, 8(%rsp)
+  97 010c C7042405 		movl	$5, (%rsp)
+  97      000000
+  98 0113 41B99001 		movl	$400, %r9d
+  98      0000
+  99 0119 41B89001 		movl	$400, %r8d
+  99      0000
+ 100 011f B9000000 		movl	$0, %ecx
+ 100      00
+ 101 0124 BA000000 		movl	$0, %edx
+ 101      00
+ 102 0129 4889C7   		movq	%rax, %rdi
+ 103 012c E8000000 		call	XCreateWindow
+ 103      00
+ 104 0131 48898578 		movq	%rax, -648(%rbp)
+ 104      FDFFFF
+  35:linux/linux.c ****             0, 0, 400, 400, 5, depth,
+  36:linux/linux.c ****             InputOutput, visual, CWBackPixel,
+  37:linux/linux.c ****             &frame_attributes);
+  38:linux/linux.c ****     XStoreName(display, frame_window, "Hello World Example");
+ 105              		.loc 1 38 0
+ 106 0138 488B8D78 		movq	-648(%rbp), %rcx
+ 106      FDFFFF
+ 107 013f 488B8568 		movq	-664(%rbp), %rax
+ 107      FDFFFF
+ 108 0146 BA000000 		movl	$.LC1, %edx
+ 108      00
+ 109 014b 4889CE   		movq	%rcx, %rsi
+ 110 014e 4889C7   		movq	%rax, %rdi
+ 111 0151 E8000000 		call	XStoreName
+ 111      00
+  39:linux/linux.c ****     XSelectInput(display, frame_window, ExposureMask | StructureNotifyMask);
+ 112              		.loc 1 39 0
+ 113 0156 488B8D78 		movq	-648(%rbp), %rcx
+ 113      FDFFFF
+ 114 015d 488B8568 		movq	-664(%rbp), %rax
+ 114      FDFFFF
+ 115 0164 BA008002 		movl	$163840, %edx
+ 115      00
+ 116 0169 4889CE   		movq	%rcx, %rsi
+ 117 016c 4889C7   		movq	%rax, %rdi
+ 118 016f E8000000 		call	XSelectInput
+ 118      00
+  40:linux/linux.c **** 
+  41:linux/linux.c ****     fontinfo = XLoadQueryFont(display, "10x20");
+ 119              		.loc 1 41 0
+ 120 0174 488B8568 		movq	-664(%rbp), %rax
+ 120      FDFFFF
+ 121 017b BE000000 		movl	$.LC2, %esi
+ 121      00
+ 122 0180 4889C7   		movq	%rax, %rdi
+ 123 0183 E8000000 		call	XLoadQueryFont
+ 123      00
+ 124 0188 48898580 		movq	%rax, -640(%rbp)
+ 124      FDFFFF
+GAS LISTING /tmp/ccG5XE84.s 			page 5
+
+
+  42:linux/linux.c ****     gr_values.font = fontinfo->fid;
+ 125              		.loc 1 42 0
+ 126 018f 488B8580 		movq	-640(%rbp), %rax
+ 126      FDFFFF
+ 127 0196 488B4008 		movq	8(%rax), %rax
+ 128 019a 48898568 		movq	%rax, -408(%rbp)
+ 128      FEFFFF
+  43:linux/linux.c ****     gr_values.foreground = XBlackPixel(display, 0);
+ 129              		.loc 1 43 0
+ 130 01a1 488B8568 		movq	-664(%rbp), %rax
+ 130      FDFFFF
+ 131 01a8 BE000000 		movl	$0, %esi
+ 131      00
+ 132 01ad 4889C7   		movq	%rax, %rdi
+ 133 01b0 E8000000 		call	XBlackPixel
+ 133      00
+ 134 01b5 48898520 		movq	%rax, -480(%rbp)
+ 134      FEFFFF
+  44:linux/linux.c ****     graphical_context = XCreateGC(display, frame_window,
+ 135              		.loc 1 44 0
+ 136 01bc 488D9510 		leaq	-496(%rbp), %rdx
+ 136      FEFFFF
+ 137 01c3 488BB578 		movq	-648(%rbp), %rsi
+ 137      FDFFFF
+ 138 01ca 488B8568 		movq	-664(%rbp), %rax
+ 138      FDFFFF
+ 139 01d1 4889D1   		movq	%rdx, %rcx
+ 140 01d4 BA044000 		movl	$16388, %edx
+ 140      00
+ 141 01d9 4889C7   		movq	%rax, %rdi
+ 142 01dc E8000000 		call	XCreateGC
+ 142      00
+ 143 01e1 48898588 		movq	%rax, -632(%rbp)
+ 143      FDFFFF
+  45:linux/linux.c ****             GCFont + GCForeground, &gr_values);
+  46:linux/linux.c ****     XMapWindow(display, frame_window);
+ 144              		.loc 1 46 0
+ 145 01e8 488B9578 		movq	-648(%rbp), %rdx
+ 145      FDFFFF
+ 146 01ef 488B8568 		movq	-664(%rbp), %rax
+ 146      FDFFFF
+ 147 01f6 4889D6   		movq	%rdx, %rsi
+ 148 01f9 4889C7   		movq	%rax, %rdi
+ 149 01fc E8000000 		call	XMapWindow
+ 149      00
+ 150              	.L6:
+  47:linux/linux.c **** 
+  48:linux/linux.c ****     while (1) {
+  49:linux/linux.c ****         XNextEvent(display, (XEvent *) & event);
+ 151              		.loc 1 49 0
+ 152 0201 488D9530 		leaq	-208(%rbp), %rdx
+ 152      FFFFFF
+ 153 0208 488B8568 		movq	-664(%rbp), %rax
+ 153      FDFFFF
+ 154 020f 4889D6   		movq	%rdx, %rsi
+ 155 0212 4889C7   		movq	%rax, %rdi
+ 156 0215 E8000000 		call	XNextEvent
+GAS LISTING /tmp/ccG5XE84.s 			page 6
+
+
+ 156      00
+  50:linux/linux.c ****         switch (event.type) {
+ 157              		.loc 1 50 0
+ 158 021a 8B8530FF 		movl	-208(%rbp), %eax
+ 158      FFFF
+ 159 0220 83F80C   		cmpl	$12, %eax
+ 160 0223 7405     		je	.L4
+  51:linux/linux.c ****             case Expose:
+  52:linux/linux.c ****             {
+  53:linux/linux.c ****                 XWindowAttributes window_attributes;
+  54:linux/linux.c ****                 int font_direction, font_ascent, font_descent;
+  55:linux/linux.c ****                 XCharStruct text_structure;
+  56:linux/linux.c ****                 XTextExtents(fontinfo, hello_string, hello_string_length,
+  57:linux/linux.c ****                         &font_direction, &font_ascent, &font_descent,
+  58:linux/linux.c ****                         &text_structure);
+  59:linux/linux.c ****                 XGetWindowAttributes(display, frame_window, &window_attributes);
+  60:linux/linux.c ****                 text_x = (window_attributes.width - text_structure.width) / 2;
+  61:linux/linux.c ****                 text_y = (window_attributes.height -
+  62:linux/linux.c ****                         (text_structure.ascent + text_structure.descent)) / 2;
+  63:linux/linux.c ****                 XDrawString(display, frame_window, graphical_context,
+  64:linux/linux.c ****                         text_x, text_y, hello_string, hello_string_length);
+  65:linux/linux.c ****                 XDrawRectangle(display, frame_window, graphical_context, 10, 10, 10, 10);
+  66:linux/linux.c ****                 break;
+  67:linux/linux.c ****             }
+  68:linux/linux.c ****             default:
+  69:linux/linux.c ****                 break;
+ 161              		.loc 1 69 0
+ 162 0225 E91A0100 		jmp	.L5
+ 162      00
+ 163              	.L4:
+ 164              	.LBB2:
+  56:linux/linux.c ****                         &font_direction, &font_ascent, &font_descent,
+ 165              		.loc 1 56 0
+ 166 022a 4C8D8D54 		leaq	-684(%rbp), %r9
+ 166      FDFFFF
+ 167 0231 4C8D8550 		leaq	-688(%rbp), %r8
+ 167      FDFFFF
+ 168 0238 488D8D4C 		leaq	-692(%rbp), %rcx
+ 168      FDFFFF
+ 169 023f 8B9558FD 		movl	-680(%rbp), %edx
+ 169      FFFF
+ 170 0245 488DB520 		leaq	-224(%rbp), %rsi
+ 170      FFFFFF
+ 171 024c 488B8580 		movq	-640(%rbp), %rax
+ 171      FDFFFF
+ 172 0253 488DBD90 		leaq	-624(%rbp), %rdi
+ 172      FDFFFF
+ 173 025a 48893C24 		movq	%rdi, (%rsp)
+ 174 025e 4889C7   		movq	%rax, %rdi
+ 175 0261 E8000000 		call	XTextExtents
+ 175      00
+  59:linux/linux.c ****                 text_x = (window_attributes.width - text_structure.width) / 2;
+ 176              		.loc 1 59 0
+ 177 0266 488D9590 		leaq	-368(%rbp), %rdx
+ 177      FEFFFF
+ 178 026d 488B8D78 		movq	-648(%rbp), %rcx
+ 178      FDFFFF
+GAS LISTING /tmp/ccG5XE84.s 			page 7
+
+
+ 179 0274 488B8568 		movq	-664(%rbp), %rax
+ 179      FDFFFF
+ 180 027b 4889CE   		movq	%rcx, %rsi
+ 181 027e 4889C7   		movq	%rax, %rdi
+ 182 0281 E8000000 		call	XGetWindowAttributes
+ 182      00
+  60:linux/linux.c ****                 text_y = (window_attributes.height -
+ 183              		.loc 1 60 0
+ 184 0286 8B9598FE 		movl	-360(%rbp), %edx
+ 184      FFFF
+ 185 028c 0FB78594 		movzwl	-620(%rbp), %eax
+ 185      FDFFFF
+ 186 0293 98       		cwtl
+ 187 0294 29C2     		subl	%eax, %edx
+ 188 0296 89D0     		movl	%edx, %eax
+ 189 0298 89C2     		movl	%eax, %edx
+ 190 029a C1EA1F   		shrl	$31, %edx
+ 191 029d 01D0     		addl	%edx, %eax
+ 192 029f D1F8     		sarl	%eax
+ 193 02a1 898560FD 		movl	%eax, -672(%rbp)
+ 193      FFFF
+  61:linux/linux.c ****                         (text_structure.ascent + text_structure.descent)) / 2;
+ 194              		.loc 1 61 0
+ 195 02a7 8B859CFE 		movl	-356(%rbp), %eax
+ 195      FFFF
+  62:linux/linux.c ****                 XDrawString(display, frame_window, graphical_context,
+ 196              		.loc 1 62 0
+ 197 02ad 0FB79596 		movzwl	-618(%rbp), %edx
+ 197      FDFFFF
+ 198 02b4 0FBFCA   		movswl	%dx, %ecx
+ 199 02b7 0FB79598 		movzwl	-616(%rbp), %edx
+ 199      FDFFFF
+ 200 02be 0FBFD2   		movswl	%dx, %edx
+ 201 02c1 01CA     		addl	%ecx, %edx
+  61:linux/linux.c ****                         (text_structure.ascent + text_structure.descent)) / 2;
+ 202              		.loc 1 61 0
+ 203 02c3 29D0     		subl	%edx, %eax
+ 204 02c5 89C2     		movl	%eax, %edx
+ 205 02c7 C1EA1F   		shrl	$31, %edx
+ 206 02ca 01D0     		addl	%edx, %eax
+ 207 02cc D1F8     		sarl	%eax
+ 208 02ce 898564FD 		movl	%eax, -668(%rbp)
+ 208      FFFF
+  63:linux/linux.c ****                         text_x, text_y, hello_string, hello_string_length);
+ 209              		.loc 1 63 0
+ 210 02d4 4C8D8D20 		leaq	-224(%rbp), %r9
+ 210      FFFFFF
+ 211 02db 448B8564 		movl	-668(%rbp), %r8d
+ 211      FDFFFF
+ 212 02e2 8B8D60FD 		movl	-672(%rbp), %ecx
+ 212      FFFF
+ 213 02e8 488B9588 		movq	-632(%rbp), %rdx
+ 213      FDFFFF
+ 214 02ef 488BB578 		movq	-648(%rbp), %rsi
+ 214      FDFFFF
+ 215 02f6 488B8568 		movq	-664(%rbp), %rax
+ 215      FDFFFF
+GAS LISTING /tmp/ccG5XE84.s 			page 8
+
+
+ 216 02fd 8BBD58FD 		movl	-680(%rbp), %edi
+ 216      FFFF
+ 217 0303 893C24   		movl	%edi, (%rsp)
+ 218 0306 4889C7   		movq	%rax, %rdi
+ 219 0309 E8000000 		call	XDrawString
+ 219      00
+  65:linux/linux.c ****                 break;
+ 220              		.loc 1 65 0
+ 221 030e 488B9588 		movq	-632(%rbp), %rdx
+ 221      FDFFFF
+ 222 0315 488BB578 		movq	-648(%rbp), %rsi
+ 222      FDFFFF
+ 223 031c 488B8568 		movq	-664(%rbp), %rax
+ 223      FDFFFF
+ 224 0323 C704240A 		movl	$10, (%rsp)
+ 224      000000
+ 225 032a 41B90A00 		movl	$10, %r9d
+ 225      0000
+ 226 0330 41B80A00 		movl	$10, %r8d
+ 226      0000
+ 227 0336 B90A0000 		movl	$10, %ecx
+ 227      00
+ 228 033b 4889C7   		movq	%rax, %rdi
+ 229 033e E8000000 		call	XDrawRectangle
+ 229      00
+  66:linux/linux.c ****             }
+ 230              		.loc 1 66 0
+ 231 0343 90       		nop
+ 232              	.L5:
+ 233              	.LBE2:
+  70:linux/linux.c ****         }
+  71:linux/linux.c ****     }
+ 234              		.loc 1 71 0
+ 235 0344 E9B8FEFF 		jmp	.L6
+ 235      FF
+ 236              		.cfi_endproc
+ 237              	.LFE3:
+ 239              	.Letext0:
+ 240              		.file 2 "/usr/include/X11/X.h"
+ 241              		.file 3 "/usr/include/X11/Xlib.h"
+GAS LISTING /tmp/ccG5XE84.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 linux.c
-     /tmp/ccDgbch3.s:10     .text:0000000000000000 os
+     /tmp/ccG5XE84.s:10     .text:0000000000000000 os
+     /tmp/ccG5XE84.s:39     .text:0000000000000015 main
 
 UNDEFINED SYMBOLS
 printf
+strlen
+XOpenDisplay
+XWhitePixel
+XRootWindow
+XCreateWindow
+XStoreName
+XSelectInput
+XLoadQueryFont
+XBlackPixel
+XCreateGC
+XMapWindow
+XNextEvent
+XTextExtents
+XGetWindowAttributes
+XDrawString
+XDrawRectangle

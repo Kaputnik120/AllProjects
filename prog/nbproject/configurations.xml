@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="C" displayName="C" projectFiles="true" root="../C">
+        <logicalFolder name="linux" displayName="linux" projectFiles="true">
+          <itemPath>../C/linux/linux.c</itemPath>
+        </logicalFolder>
+        <itemPath>../C/bar.c</itemPath>
+        <itemPath>../C/bar.h</itemPath>
+        <itemPath>../C/foo.c</itemPath>
+        <itemPath>../C/foo.h</itemPath>
+        <itemPath>../C/main.c</itemPath>
+        <itemPath>../C/os.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/prog/../C/makefile</itemPath>
+      <itemPath>../C/prog</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../C</Elem>
+  </sourceRootList>
+  <projectmakefile></projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=c89"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/prog/../C</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f makefile</buildCommand>
+          <cleanCommand>${MAKE} -f makefile clean</cleanCommand>
+          <executablePath>../C/prog</executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="../C/bar.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../C</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../C/foo.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../C</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../C/linux/linux.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="../C/main.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../C</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <folder path="SourceFiles/C/linux">
+        <cTool>
+          <incDir>
+            <pElem>../C/linux</pElem>
+            <pElem>../C</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+    </conf>
+  </confs>
+</configurationDescriptor>
