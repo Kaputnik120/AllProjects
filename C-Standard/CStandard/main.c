@@ -16,6 +16,13 @@
 int main(int argc, char** argv) {
     printf("Started!\n");
     
+#ifdef LINUX
+    printf("Compiled for Linux!\n");
+#endif
+#ifdef WINDOWS
+    printf("Compiled for Windows!\n");
+#endif
+    
     runCreateProcess();
     
     printf("Stopped!\n");

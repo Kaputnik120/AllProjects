@@ -8,6 +8,9 @@ int createProcess();
 
 pid_t getPid();
 
+#ifdef LINUX
+pid_t getParentPid();
+#endif
 
 /**
  * Tests some features of the stdlib
@@ -27,10 +30,14 @@ void runCreateProcess() {
         } else {
             printf("Process creation failed. Return code: %i\n", resCreate);
         }
-        
+
         //Make some PID stuff
         pid_t pid = getPid();
-        printf("The parent PID is %ld\n", pid);
+        printf("The current PID is %ld\n", pid);
+#ifdef LINUX
+        pid_t ppid = getParentPid();
+        printf("The parent PID is %ld\n", ppid);
+#endif
 
     } else {
         printf("No Command Processor available!\n");
@@ -41,14 +48,30 @@ void runCreateProcess() {
  * Simplest possible process creation with system(...) call. 
  */
 int createProcess() {
+#ifdef LINUX
+    return system("ls");
+#endif
+#ifdef WINDOWS
     return system("DIR");
+#endif
 }
 
 /**
- * Returns the PID of the parent process.
+ * Returns the PID of the current process.
  * @return 
  */
 pid_t getPid() {
     return getpid();
 }
+
+#ifdef LINUX
+
+/**
+ * Returns the PID of the parent process.
+ * @return 
+ */
+pid_t getParentPid() {
+    return getppid();
+}
+#endif
 
