@@ -27,17 +27,28 @@ public class MotorController {
         System.out.println("Configuring motor pins");
         final GpioController gpioController = GpioFactory.getInstance();
 
-        frontRightMotorForwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_25);
-        frontRightMotorBackwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_24);
+        frontRightMotorForwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_23);
+        frontRightMotorBackwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_14);
 
-        backLeftMotorForwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_14); //Chosen because gpio 22 seems to be default high
-        backLeftMotorBackwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_23);
+        backLeftMotorForwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_24); //Chosen because gpio 22 seems to be default high
+        backLeftMotorBackwardPin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_25);
 
         System.out.println("Setting initial motor pin values");
         stop();
         System.out.println("DC motors initialized");
     }
-
+    
+    public static void test() {
+        frontRightMotorForwardPin.setState(true);
+        System.out.println("Setting pin " + frontRightMotorForwardPin.getPin().getAddress() + " to " + true);
+        frontRightMotorBackwardPin.setState(true);
+        System.out.println("Setting pin " + frontRightMotorBackwardPin.getPin().getAddress() + " to " + true);
+        backLeftMotorBackwardPin.setState(true);
+        System.out.println("Setting pin " + backLeftMotorBackwardPin.getPin().getAddress() + " to " + true);
+        backLeftMotorForwardPin.setState(true);
+        System.out.println("Setting pin " + backLeftMotorForwardPin.getPin().getAddress() + " to " + true);
+    }
+    
     public static void driveForward() {
         System.out.println("Driving forward");
         setFrontRightMotorForward();

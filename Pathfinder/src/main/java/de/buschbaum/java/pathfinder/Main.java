@@ -2,6 +2,7 @@ package de.buschbaum.java.pathfinder;
 
 import de.buschbaum.java.pathfinder.device.dcmotors.MotorController;
 import de.buschbaum.java.pathfinder.logic.PositionController;
+import de.buschbaum.java.pathfinder.logic.TimingController;
 
 /**
  * Hello world!
@@ -22,7 +23,43 @@ public class Main {
     }
 
     private static void run() throws Exception {
-        PositionController.update();
+        final int duration = 5000;
+        
+//        long started = System.nanoTime();
+//        MotorController.test();
+//        TimingController.timeSlot(duration, started);
+//        started = System.nanoTime();
+//        MotorController.stop();
+//        TimingController.timeSlot(duration, started);
+        
+        
+        long started = System.nanoTime();
+        MotorController.driveForward();
+        TimingController.timeSlot(duration, started);
+        started = System.nanoTime();
+        MotorController.stop();
+        TimingController.timeSlot(duration, started);
+        
+        started = System.nanoTime();
+        MotorController.turnLeft();
+        TimingController.timeSlot(duration, started);
+        started = System.nanoTime();
+        MotorController.stop();
+        TimingController.timeSlot(duration, started);
+        
+        started = System.nanoTime();
+        MotorController.driveBackward();
+        TimingController.timeSlot(duration, started);
+        started = System.nanoTime();
+        MotorController.stop();
+        TimingController.timeSlot(duration, started);
+        
+        started = System.nanoTime();
+        MotorController.turnRight();
+        TimingController.timeSlot(duration, started);
+        started = System.nanoTime();
+        MotorController.stop();
+        TimingController.timeSlot(duration, started);
     }
 
     private static void initialize() throws Exception {
