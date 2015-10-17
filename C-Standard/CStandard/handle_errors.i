@@ -1,14 +1,14 @@
-# 1 "processes/create_process.c"
+# 1 "errors/handle_errors.c"
 # 1 "/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C-Standard/CStandard//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
-# 1 "processes/create_process.c"
-# 1 "processes/processes.h" 1
-# 15 "processes/processes.h"
-    void runCreateProcess();
-# 2 "processes/create_process.c" 2
+# 1 "errors/handle_errors.c"
+# 1 "errors/handle_errors.h" 1
+# 15 "errors/handle_errors.h"
+    void runHandleErrors();
+# 2 "errors/handle_errors.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 24 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
@@ -1187,7 +1187,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 956 "/usr/include/stdlib.h" 2 3 4
 # 968 "/usr/include/stdlib.h" 3 4
 
-# 3 "processes/create_process.c" 2
+# 3 "errors/handle_errors.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 29 "/usr/include/stdio.h" 3 4
 
@@ -1890,7 +1890,7 @@ extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)
 extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
 # 943 "/usr/include/stdio.h" 3 4
 
-# 4 "processes/create_process.c" 2
+# 4 "errors/handle_errors.c" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 27 "/usr/include/unistd.h" 3 4
 
@@ -3078,827 +3078,293 @@ extern int lockf (int __fd, int __cmd, __off_t __len) ;
 extern int fdatasync (int __fildes);
 # 1151 "/usr/include/unistd.h" 3 4
 
-# 5 "processes/create_process.c" 2
+# 5 "errors/handle_errors.c" 2
+# 1 "/usr/include/errno.h" 1 3 4
+# 31 "/usr/include/errno.h" 3 4
 
-# 1 "/usr/include/x86_64-linux-gnu/sys/wait.h" 1 3 4
-# 27 "/usr/include/x86_64-linux-gnu/sys/wait.h" 3 4
 
 
-# 1 "/usr/include/signal.h" 1 3 4
-# 30 "/usr/include/signal.h" 3 4
 
+# 1 "/usr/include/x86_64-linux-gnu/bits/errno.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4
+# 1 "/usr/include/linux/errno.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 1 3 4
+# 1 "/usr/include/asm-generic/errno.h" 1 3 4
 
-# 1 "/usr/include/x86_64-linux-gnu/bits/sigset.h" 1 3 4
-# 102 "/usr/include/x86_64-linux-gnu/bits/sigset.h" 3 4
-extern int __sigismember (const __sigset_t *, int);
-extern int __sigaddset (__sigset_t *, int);
-extern int __sigdelset (__sigset_t *, int);
-# 33 "/usr/include/signal.h" 2 3 4
 
 
+# 1 "/usr/include/asm-generic/errno-base.h" 1 3 4
+# 5 "/usr/include/asm-generic/errno.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 2 3 4
+# 1 "/usr/include/linux/errno.h" 2 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/errno.h" 2 3 4
+# 50 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4
+extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 36 "/usr/include/errno.h" 2 3 4
+# 58 "/usr/include/errno.h" 3 4
 
-
-
-
-
-typedef __sig_atomic_t sig_atomic_t;
-
-# 57 "/usr/include/signal.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/signum.h" 1 3 4
-# 58 "/usr/include/signal.h" 2 3 4
-# 75 "/usr/include/signal.h" 3 4
-# 1 "/usr/include/time.h" 1 3 4
-# 76 "/usr/include/signal.h" 2 3 4
-
-
-
-
-# 1 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 1 3 4
-# 24 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-# 25 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 2 3 4
-
-
-
-
-
-
-
-typedef union sigval
-  {
-    int sival_int;
-    void *sival_ptr;
-  } sigval_t;
-# 58 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 3 4
-typedef __clock_t __sigchld_clock_t;
-
-
-
-typedef struct
-  {
-    int si_signo;
-    int si_errno;
-
-    int si_code;
-
-    union
-      {
- int _pad[((128 / sizeof (int)) - 4)];
-
-
- struct
-   {
-     __pid_t si_pid;
-     __uid_t si_uid;
-   } _kill;
-
-
- struct
-   {
-     int si_tid;
-     int si_overrun;
-     sigval_t si_sigval;
-   } _timer;
-
-
- struct
-   {
-     __pid_t si_pid;
-     __uid_t si_uid;
-     sigval_t si_sigval;
-   } _rt;
-
-
- struct
-   {
-     __pid_t si_pid;
-     __uid_t si_uid;
-     int si_status;
-     __sigchld_clock_t si_utime;
-     __sigchld_clock_t si_stime;
-   } _sigchld;
-
-
- struct
-   {
-     void *si_addr;
-     short int si_addr_lsb;
-   } _sigfault;
-
-
- struct
-   {
-     long int si_band;
-     int si_fd;
-   } _sigpoll;
-
-
- struct
-   {
-     void *_call_addr;
-     int _syscall;
-     unsigned int _arch;
-   } _sigsys;
-      } _sifields;
-  } siginfo_t ;
-# 153 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 3 4
-enum
-{
-  SI_ASYNCNL = -60,
-
-  SI_TKILL = -6,
-
-  SI_SIGIO,
-
-  SI_ASYNCIO,
-
-  SI_MESGQ,
-
-  SI_TIMER,
-
-  SI_QUEUE,
-
-  SI_USER,
-
-  SI_KERNEL = 0x80
-
-};
-
-
-
-enum
-{
-  ILL_ILLOPC = 1,
-
-  ILL_ILLOPN,
-
-  ILL_ILLADR,
-
-  ILL_ILLTRP,
-
-  ILL_PRVOPC,
-
-  ILL_PRVREG,
-
-  ILL_COPROC,
-
-  ILL_BADSTK
-
-};
-
-
-enum
-{
-  FPE_INTDIV = 1,
-
-  FPE_INTOVF,
-
-  FPE_FLTDIV,
-
-  FPE_FLTOVF,
-
-  FPE_FLTUND,
-
-  FPE_FLTRES,
-
-  FPE_FLTINV,
-
-  FPE_FLTSUB
-
-};
-
-
-enum
-{
-  SEGV_MAPERR = 1,
-
-  SEGV_ACCERR
-
-};
-
-
-enum
-{
-  BUS_ADRALN = 1,
-
-  BUS_ADRERR,
-
-  BUS_OBJERR,
-
-  BUS_MCEERR_AR,
-
-  BUS_MCEERR_AO
-
-};
-
-
-enum
-{
-  TRAP_BRKPT = 1,
-
-  TRAP_TRACE
-
-};
-
-
-enum
-{
-  CLD_EXITED = 1,
-
-  CLD_KILLED,
-
-  CLD_DUMPED,
-
-  CLD_TRAPPED,
-
-  CLD_STOPPED,
-
-  CLD_CONTINUED
-
-};
-
-
-enum
-{
-  POLL_IN = 1,
-
-  POLL_OUT,
-
-  POLL_MSG,
-
-  POLL_ERR,
-
-  POLL_PRI,
-
-  POLL_HUP
-
-};
-# 307 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 3 4
-typedef struct sigevent
-  {
-    sigval_t sigev_value;
-    int sigev_signo;
-    int sigev_notify;
-
-    union
-      {
- int _pad[((64 / sizeof (int)) - 4)];
-
-
-
- __pid_t _tid;
-
- struct
-   {
-     void (*_function) (sigval_t);
-     pthread_attr_t *_attribute;
-   } _sigev_thread;
-      } _sigev_un;
-  } sigevent_t;
-
-
-
-
-
-
-enum
-{
-  SIGEV_SIGNAL = 0,
-
-  SIGEV_NONE,
-
-  SIGEV_THREAD,
-
-
-  SIGEV_THREAD_ID = 4
-
-};
-# 81 "/usr/include/signal.h" 2 3 4
-
-
-
-
-typedef void (*__sighandler_t) (int);
-
-
-
-
-extern __sighandler_t __sysv_signal (int __sig, __sighandler_t __handler)
-     __attribute__ ((__nothrow__ , __leaf__));
-# 100 "/usr/include/signal.h" 3 4
-
-
-extern __sighandler_t signal (int __sig, __sighandler_t __handler)
-     __attribute__ ((__nothrow__ , __leaf__));
-# 114 "/usr/include/signal.h" 3 4
-
-# 127 "/usr/include/signal.h" 3 4
-extern int kill (__pid_t __pid, int __sig) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-
-
-
-extern int killpg (__pid_t __pgrp, int __sig) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-
-extern int raise (int __sig) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-
-extern __sighandler_t ssignal (int __sig, __sighandler_t __handler)
-     __attribute__ ((__nothrow__ , __leaf__));
-extern int gsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-
-extern void psignal (int __sig, const char *__s);
-
-
-
-
-extern void psiginfo (const siginfo_t *__pinfo, const char *__s);
-# 167 "/usr/include/signal.h" 3 4
-extern int __sigpause (int __sig_or_mask, int __is_sig);
-# 189 "/usr/include/signal.h" 3 4
-extern int sigblock (int __mask) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
-
-
-extern int sigsetmask (int __mask) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
-
-
-extern int siggetmask (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
-# 209 "/usr/include/signal.h" 3 4
-typedef __sighandler_t sig_t;
-
-
-
-
-
-extern int sigemptyset (sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern int sigfillset (sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern int sigaddset (sigset_t *__set, int __signo) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern int sigdelset (sigset_t *__set, int __signo) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-
-extern int sigismember (const sigset_t *__set, int __signo)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-# 245 "/usr/include/signal.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/sigaction.h" 1 3 4
-# 24 "/usr/include/x86_64-linux-gnu/bits/sigaction.h" 3 4
-struct sigaction
-  {
-
-
-    union
-      {
-
- __sighandler_t sa_handler;
-
- void (*sa_sigaction) (int, siginfo_t *, void *);
-      }
-    __sigaction_handler;
-
-
-
-
-
-
-
-    __sigset_t sa_mask;
-
-
-    int sa_flags;
-
-
-    void (*sa_restorer) (void);
-  };
-# 246 "/usr/include/signal.h" 2 3 4
-
-
-extern int sigprocmask (int __how, const sigset_t *__restrict __set,
-   sigset_t *__restrict __oset) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-
-
-
-extern int sigsuspend (const sigset_t *__set) __attribute__ ((__nonnull__ (1)));
-
-
-extern int sigaction (int __sig, const struct sigaction *__restrict __act,
-        struct sigaction *__restrict __oact) __attribute__ ((__nothrow__ , __leaf__));
-
-
-extern int sigpending (sigset_t *__set) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-extern int sigwait (const sigset_t *__restrict __set, int *__restrict __sig)
-     __attribute__ ((__nonnull__ (1, 2)));
-
-
-
-
-
-
-extern int sigwaitinfo (const sigset_t *__restrict __set,
-   siginfo_t *__restrict __info) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-extern int sigtimedwait (const sigset_t *__restrict __set,
-    siginfo_t *__restrict __info,
-    const struct timespec *__restrict __timeout)
-     __attribute__ ((__nonnull__ (1)));
-
-
-
-extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
-     __attribute__ ((__nothrow__ , __leaf__));
-# 303 "/usr/include/signal.h" 3 4
-extern const char *const _sys_siglist[65];
-extern const char *const sys_siglist[65];
-
-
-struct sigvec
-  {
-    __sighandler_t sv_handler;
-    int sv_mask;
-
-    int sv_flags;
-
-  };
-# 327 "/usr/include/signal.h" 3 4
-extern int sigvec (int __sig, const struct sigvec *__vec,
-     struct sigvec *__ovec) __attribute__ ((__nothrow__ , __leaf__));
-
-
-
-# 1 "/usr/include/x86_64-linux-gnu/bits/sigcontext.h" 1 3 4
-# 29 "/usr/include/x86_64-linux-gnu/bits/sigcontext.h" 3 4
-struct _fpx_sw_bytes
-{
-  __uint32_t magic1;
-  __uint32_t extended_size;
-  __uint64_t xstate_bv;
-  __uint32_t xstate_size;
-  __uint32_t padding[7];
-};
-
-struct _fpreg
-{
-  unsigned short significand[4];
-  unsigned short exponent;
-};
-
-struct _fpxreg
-{
-  unsigned short significand[4];
-  unsigned short exponent;
-  unsigned short padding[3];
-};
-
-struct _xmmreg
-{
-  __uint32_t element[4];
-};
-# 121 "/usr/include/x86_64-linux-gnu/bits/sigcontext.h" 3 4
-struct _fpstate
-{
-
-  __uint16_t cwd;
-  __uint16_t swd;
-  __uint16_t ftw;
-  __uint16_t fop;
-  __uint64_t rip;
-  __uint64_t rdp;
-  __uint32_t mxcsr;
-  __uint32_t mxcr_mask;
-  struct _fpxreg _st[8];
-  struct _xmmreg _xmm[16];
-  __uint32_t padding[24];
-};
-
-struct sigcontext
-{
-  __uint64_t r8;
-  __uint64_t r9;
-  __uint64_t r10;
-  __uint64_t r11;
-  __uint64_t r12;
-  __uint64_t r13;
-  __uint64_t r14;
-  __uint64_t r15;
-  __uint64_t rdi;
-  __uint64_t rsi;
-  __uint64_t rbp;
-  __uint64_t rbx;
-  __uint64_t rdx;
-  __uint64_t rax;
-  __uint64_t rcx;
-  __uint64_t rsp;
-  __uint64_t rip;
-  __uint64_t eflags;
-  unsigned short cs;
-  unsigned short gs;
-  unsigned short fs;
-  unsigned short __pad0;
-  __uint64_t err;
-  __uint64_t trapno;
-  __uint64_t oldmask;
-  __uint64_t cr2;
-  __extension__ union
-    {
-      struct _fpstate * fpstate;
-      __uint64_t __fpstate_word;
-    };
-  __uint64_t __reserved1 [8];
-};
-
-
-
-struct _xsave_hdr
-{
-  __uint64_t xstate_bv;
-  __uint64_t reserved1[2];
-  __uint64_t reserved2[5];
-};
-
-struct _ymmh_state
-{
-  __uint32_t ymmh_space[64];
-};
-
-struct _xstate
-{
-  struct _fpstate fpstate;
-  struct _xsave_hdr xstate_hdr;
-  struct _ymmh_state ymmh;
-};
-# 333 "/usr/include/signal.h" 2 3 4
-
-
-extern int sigreturn (struct sigcontext *__scp) __attribute__ ((__nothrow__ , __leaf__));
-
+# 6 "errors/handle_errors.c" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 27 "/usr/include/string.h" 3 4
 
 
 
 
 
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h" 1 3 4
-# 343 "/usr/include/signal.h" 2 3 4
+# 33 "/usr/include/string.h" 2 3 4
+# 44 "/usr/include/string.h" 3 4
+
+
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
 
 
-extern int siginterrupt (int __sig, int __interrupt) __attribute__ ((__nothrow__ , __leaf__));
 
-# 1 "/usr/include/x86_64-linux-gnu/bits/sigstack.h" 1 3 4
-# 25 "/usr/include/x86_64-linux-gnu/bits/sigstack.h" 3 4
-struct sigstack
-  {
-    void *ss_sp;
-    int ss_onstack;
-  };
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
 
-enum
+
+
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 96 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+# 127 "/usr/include/string.h" 3 4
+
+
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+# 1 "/usr/include/xlocale.h" 1 3 4
+# 27 "/usr/include/xlocale.h" 3 4
+typedef struct __locale_struct
 {
-  SS_ONSTACK = 1,
 
-  SS_DISABLE
+  struct __locale_data *__locales[13];
 
-};
-# 49 "/usr/include/x86_64-linux-gnu/bits/sigstack.h" 3 4
-typedef struct sigaltstack
-  {
-    void *ss_sp;
-    int ss_flags;
-    size_t ss_size;
-  } stack_t;
-# 350 "/usr/include/signal.h" 2 3 4
 
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
 
-# 1 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 1 3 4
-# 22 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 3 4
-# 1 "/usr/include/signal.h" 1 3 4
-# 23 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 2 3 4
-# 31 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 3 4
-__extension__ typedef long long int greg_t;
 
+  const char *__names[13];
+} *__locale_t;
 
 
+typedef __locale_t locale_t;
+# 164 "/usr/include/string.h" 2 3 4
 
 
-typedef greg_t gregset_t[23];
-# 92 "/usr/include/x86_64-linux-gnu/sys/ucontext.h" 3 4
-struct _libc_fpxreg
-{
-  unsigned short int significand[4];
-  unsigned short int exponent;
-  unsigned short int padding[3];
-};
+extern int strcoll_l (const char *__s1, const char *__s2, __locale_t __l)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
 
-struct _libc_xmmreg
-{
-  __uint32_t element[4];
-};
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    __locale_t __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
 
-struct _libc_fpstate
-{
 
-  __uint16_t cwd;
-  __uint16_t swd;
-  __uint16_t ftw;
-  __uint16_t fop;
-  __uint64_t rip;
-  __uint64_t rdp;
-  __uint32_t mxcsr;
-  __uint32_t mxcr_mask;
-  struct _libc_fpxreg _st[8];
-  struct _libc_xmmreg _xmm[16];
-  __uint32_t padding[24];
-};
 
 
-typedef struct _libc_fpstate *fpregset_t;
 
+extern char *strdup (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
 
-typedef struct
-  {
-    gregset_t gregs;
 
-    fpregset_t fpregs;
-    __extension__ unsigned long long __reserved1 [8];
-} mcontext_t;
 
 
-typedef struct ucontext
-  {
-    unsigned long int uc_flags;
-    struct ucontext *uc_link;
-    stack_t uc_stack;
-    mcontext_t uc_mcontext;
-    __sigset_t uc_sigmask;
-    struct _libc_fpstate __fpregs_mem;
-  } ucontext_t;
-# 353 "/usr/include/signal.h" 2 3 4
 
 
+extern char *strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 211 "/usr/include/string.h" 3 4
 
+# 236 "/usr/include/string.h" 3 4
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 263 "/usr/include/string.h" 3 4
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 
 
-extern int sigstack (struct sigstack *__ss, struct sigstack *__oss)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__deprecated__));
+# 282 "/usr/include/string.h" 3 4
 
 
 
-extern int sigaltstack (const struct sigaltstack *__restrict __ss,
-   struct sigaltstack *__restrict __oss) __attribute__ ((__nothrow__ , __leaf__));
-# 388 "/usr/include/signal.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/sigthread.h" 1 3 4
-# 30 "/usr/include/x86_64-linux-gnu/bits/sigthread.h" 3 4
-extern int pthread_sigmask (int __how,
-       const __sigset_t *__restrict __newmask,
-       __sigset_t *__restrict __oldmask)__attribute__ ((__nothrow__ , __leaf__));
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
-extern int pthread_kill (pthread_t __threadid, int __signo) __attribute__ ((__nothrow__ , __leaf__));
-# 389 "/usr/include/signal.h" 2 3 4
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 315 "/usr/include/string.h" 3 4
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 342 "/usr/include/string.h" 3 4
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
 
 
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
 
 
-extern int __libc_current_sigrtmin (void) __attribute__ ((__nothrow__ , __leaf__));
 
-extern int __libc_current_sigrtmax (void) __attribute__ ((__nothrow__ , __leaf__));
 
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
 
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+# 397 "/usr/include/string.h" 3 4
 
 
-# 30 "/usr/include/x86_64-linux-gnu/sys/wait.h" 2 3 4
-# 102 "/usr/include/x86_64-linux-gnu/sys/wait.h" 3 4
-extern __pid_t wait (__WAIT_STATUS __stat_loc);
-# 125 "/usr/include/x86_64-linux-gnu/sys/wait.h" 3 4
-extern __pid_t waitpid (__pid_t __pid, int *__stat_loc, int __options);
-# 135 "/usr/include/x86_64-linux-gnu/sys/wait.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 1 3 4
-# 24 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-# 25 "/usr/include/x86_64-linux-gnu/bits/siginfo.h" 2 3 4
-# 136 "/usr/include/x86_64-linux-gnu/sys/wait.h" 2 3 4
-# 148 "/usr/include/x86_64-linux-gnu/sys/wait.h" 3 4
-extern int waitid (idtype_t __idtype, __id_t __id, siginfo_t *__infop,
-     int __options);
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 
 
 
 
 
-struct rusage;
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 
 
 
 
 
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
 
-extern __pid_t wait3 (__WAIT_STATUS __stat_loc, int __options,
-        struct rusage * __usage) __attribute__ ((__nothrow__));
+# 427 "/usr/include/string.h" 3 4
+extern int strerror_r (int __errnum, char *__buf, size_t __buflen) __asm__ ("" "__xpg_strerror_r") __attribute__ ((__nothrow__ , __leaf__))
 
+                        __attribute__ ((__nonnull__ (2)));
+# 445 "/usr/include/string.h" 3 4
+extern char *strerror_l (int __errnum, __locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
 
 
 
-extern __pid_t wait4 (__pid_t __pid, __WAIT_STATUS __stat_loc, int __options,
-        struct rusage *__usage) __attribute__ ((__nothrow__));
 
 
+extern void __bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
 
-# 7 "processes/create_process.c" 2
 
-int createProcess();
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
+extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
 
-void runCreateProcess() {
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 489 "/usr/include/string.h" 3 4
+extern char *index (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 517 "/usr/include/string.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 
 
-    int res = system(((void *)0));
-    if (res > 0) {
-        printf("Command Processor available!\n");
 
 
-        printf("Create process with system(...), output is: \n\n");
-        int resCreate = createProcess();
-        printf("\n");
-        if (resCreate == 0) {
-            printf("Process creation successful. Return code: %i\n", resCreate);
-        } else {
-            printf("Process creation failed. Return code: %i\n", resCreate);
-        }
+extern int ffs (int __i) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 534 "/usr/include/string.h" 3 4
+extern int strcasecmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
-        pid_t pid = getpid();
-        printf("The current PID is %ld\n", pid);
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 557 "/usr/include/string.h" 3 4
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
 
-        pid_t ppid = getppid();
-        printf("The parent PID is %ld\n", ppid);
 
 
-        pid = fork();
-        if (pid < 0) {
-            printf("Call to pid, didn't succeed - pid %ld\n", pid);
-        } else if (pid == 0) {
 
-            printf("Child: Entering the child code path - pid %ld\n", pid);
+extern char *strsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
 
-            printf("Child: parent pid is %ld\n", getppid());
 
-            printf("Child: Finished!\n");
-            exit(0);
-        } else {
-            printf("Parent: Waiting for child!\n");
-            int * statusPtr;
-            waitpid(pid,statusPtr, 0);
-            printf("Parent: waitpid returned with %i\n", statusPtr);
-            printf("Parent: Entering the parent code path - pid %ld\n", pid);
-        }
-    } else {
-        printf("No Command Processor available!\n");
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+# 644 "/usr/include/string.h" 3 4
+
+# 7 "errors/handle_errors.c" 2
+
+void runHandleErrors() {
+
+    int ret = close(123);
+    printf("Return code of close(...) is %i\n",ret);
+    if (ret < 0) {
+        printf("Error Code is %i\n", (*__errno_location ()));
+        char* msg = strerror((*__errno_location ()));
+        printf("%s\n",msg);
     }
-}
-
-
-
-
-int createProcess() {
-
-    return system("ls");
-
-
-
 
 }

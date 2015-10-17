@@ -1911,6 +1911,10 @@ extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __a
 # 15 "processes/processes.h"
     void runCreateProcess();
 # 12 "main.c" 2
+# 1 "errors/handle_errors.h" 1
+# 15 "errors/handle_errors.h"
+    void runHandleErrors();
+# 13 "main.c" 2
 
 
 
@@ -1925,7 +1929,10 @@ int main(int argc, char** argv) {
 
 
 
+    printf("PROCESSES:\n\n");
     runCreateProcess();
+    printf("\nERRORS:\n\n");
+    runHandleErrors();
 
     printf("Stopped!\n");
     return (0);

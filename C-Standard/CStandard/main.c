@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include "processes/processes.h"
+#include "errors/handle_errors.h"
 
 /*
  * 
@@ -23,7 +24,10 @@ int main(int argc, char** argv) {
     printf("Compiled for Windows!\n");
 #endif
     
+    printf("PROCESSES:\n\n");
     runCreateProcess();
+    printf("\nERRORS:\n\n");
+    runHandleErrors();
     
     printf("Stopped!\n");
     return (EXIT_SUCCESS);

@@ -1,24 +1,19 @@
-	.file	"main.c"
+	.file	"handle_errors.c"
 	.text
 .Ltext0:
 	.section	.rodata
+	.align 8
 .LC0:
-	.string	"Started!"
+	.string	"Return code of close(...) is %i\n"
 .LC1:
-	.string	"Compiled for Linux!"
-.LC2:
-	.string	"PROCESSES:\n"
-.LC3:
-	.string	"\nERRORS:\n"
-.LC4:
-	.string	"Stopped!"
+	.string	"Error Code is %i\n"
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	runHandleErrors
+	.type	runHandleErrors, @function
+runHandleErrors:
 .LFB2:
-	.file 1 "main.c"
-	.loc 1 17 0
+	.file 1 "errors/handle_errors.c"
+	.loc 1 8 0
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -26,50 +21,58 @@ main:
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
 	subq	$16, %rsp
-	movl	%edi, -4(%rbp)
-	movq	%rsi, -16(%rbp)
-	.loc 1 18 0
+	.loc 1 10 0
+	movl	$123, %edi
+	call	close
+	movl	%eax, -12(%rbp)
+	.loc 1 11 0
+	movl	-12(%rbp), %eax
+	movl	%eax, %esi
 	movl	$.LC0, %edi
-	call	puts
-	.loc 1 21 0
+	movl	$0, %eax
+	call	printf
+	.loc 1 12 0
+	cmpl	$0, -12(%rbp)
+	jns	.L1
+.LBB2:
+	.loc 1 13 0
+	call	__errno_location
+	movl	(%rax), %eax
+	movl	%eax, %esi
 	movl	$.LC1, %edi
-	call	puts
-	.loc 1 27 0
-	movl	$.LC2, %edi
-	call	puts
-	.loc 1 28 0
 	movl	$0, %eax
-	call	runCreateProcess
-	.loc 1 29 0
-	movl	$.LC3, %edi
+	call	printf
+	.loc 1 14 0
+	call	__errno_location
+	movl	(%rax), %eax
+	movl	%eax, %edi
+	call	strerror
+	movq	%rax, -8(%rbp)
+	.loc 1 15 0
+	movq	-8(%rbp), %rax
+	movq	%rax, %rdi
 	call	puts
-	.loc 1 30 0
-	movl	$0, %eax
-	call	runHandleErrors
-	.loc 1 32 0
-	movl	$.LC4, %edi
-	call	puts
-	.loc 1 33 0
-	movl	$0, %eax
-	.loc 1 34 0
+.L1:
+.LBE2:
+	.loc 1 18 0
 	leave
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE2:
-	.size	main, .-main
+	.size	runHandleErrors, .-runHandleErrors
 .Letext0:
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.long	0xc8
+	.long	0xcc
 	.value	0x4
 	.long	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.long	.LASF13
+	.long	.LASF11
 	.byte	0x1
-	.long	.LASF14
-	.long	.LASF15
+	.long	.LASF12
+	.long	.LASF13
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.long	.Ldebug_line0
@@ -77,6 +80,10 @@ main:
 	.byte	0x8
 	.byte	0x7
 	.long	.LASF0
+	.uleb128 0x3
+	.byte	0x4
+	.byte	0x5
+	.string	"int"
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
@@ -97,10 +104,6 @@ main:
 	.byte	0x2
 	.byte	0x5
 	.long	.LASF5
-	.uleb128 0x3
-	.byte	0x4
-	.byte	0x5
-	.string	"int"
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x5
@@ -125,35 +128,34 @@ main:
 	.byte	0x7
 	.long	.LASF10
 	.uleb128 0x5
-	.long	.LASF16
+	.long	.LASF14
 	.byte	0x1
-	.byte	0x11
-	.long	0x57
+	.byte	0x8
 	.quad	.LFB2
 	.quad	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xc5
 	.uleb128 0x6
-	.long	.LASF11
+	.string	"ret"
 	.byte	0x1
-	.byte	0x11
-	.long	0x57
+	.byte	0xa
+	.long	0x34
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -20
+	.sleb128 -28
+	.uleb128 0x7
+	.quad	.LBB2
+	.quad	.LBE2-.LBB2
 	.uleb128 0x6
-	.long	.LASF12
+	.string	"msg"
 	.byte	0x1
-	.byte	0x11
-	.long	0xc5
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -32
-	.byte	0
-	.uleb128 0x4
-	.byte	0x8
+	.byte	0xe
 	.long	0x6c
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.byte	0
+	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
@@ -218,10 +220,6 @@ main:
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -230,15 +228,13 @@ main:
 	.uleb128 0x18
 	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x6
-	.uleb128 0x5
+	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -247,6 +243,15 @@ main:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x7
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
 	.byte	0
 	.byte	0
 	.byte	0
@@ -269,35 +274,31 @@ main:
 	.string	"long long int"
 .LASF3:
 	.string	"unsigned int"
+.LASF1:
+	.string	"unsigned char"
+.LASF4:
+	.string	"signed char"
 .LASF14:
-	.string	"main.c"
-.LASF16:
-	.string	"main"
+	.string	"runHandleErrors"
 .LASF0:
 	.string	"long unsigned int"
 .LASF10:
 	.string	"long long unsigned int"
-.LASF13:
+.LASF11:
 	.string	"GNU C 4.8.4 -mtune=generic -march=x86-64 -g -fstack-protector"
-.LASF1:
-	.string	"unsigned char"
 .LASF8:
 	.string	"char"
 .LASF6:
 	.string	"long int"
-.LASF11:
-	.string	"argc"
 .LASF2:
 	.string	"short unsigned int"
-.LASF15:
+.LASF13:
 	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C-Standard/CStandard"
-.LASF12:
-	.string	"argv"
-.LASF7:
-	.string	"sizetype"
 .LASF5:
 	.string	"short int"
-.LASF4:
-	.string	"signed char"
+.LASF12:
+	.string	"errors/handle_errors.c"
+.LASF7:
+	.string	"sizetype"
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4"
 	.section	.note.GNU-stack,"",@progbits
