@@ -23,33 +23,43 @@ public class Main {
     }
 
     private static void run() throws Exception {
+        final int duration = 5000;
+        
+//        long started = System.nanoTime();
+//        MotorController.test();
+//        TimingController.timeSlot(duration, started);
+//        started = System.nanoTime();
+//        MotorController.stop();
+//        TimingController.timeSlot(duration, started);
+        
+        
         long started = System.nanoTime();
         MotorController.driveForward();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         started = System.nanoTime();
         MotorController.stop();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         
         started = System.nanoTime();
         MotorController.turnLeft();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         started = System.nanoTime();
         MotorController.stop();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         
         started = System.nanoTime();
         MotorController.driveBackward();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         started = System.nanoTime();
         MotorController.stop();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         
         started = System.nanoTime();
         MotorController.turnRight();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
         started = System.nanoTime();
         MotorController.stop();
-        TimingController.timeSlot(2000, started);
+        TimingController.timeSlot(duration, started);
     }
 
     private static void initialize() throws Exception {

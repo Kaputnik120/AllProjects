@@ -53,7 +53,7 @@
                 <configuration>
                     <serverId>pathfinder</serverId>
                     <fromFile>${project.build.directory}/${project.build.finalName}-jar-with-dependencies.jar</fromFile>
-                    <url>scp://192.168.0.13:/home/pi/jars</url>
+                    <url>scp://192.168.0.14:/home/pi/jars</url>
                 </configuration>
                 <executions>
                     <execution>
@@ -71,7 +71,7 @@
         <dependency>
             <groupId>com.pi4j</groupId>
             <artifactId>pi4j-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.pi4j</groupId>
