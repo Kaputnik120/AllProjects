@@ -17,7 +17,38 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	int i = 0;
 	int j = 1;
 	int result = i + j;
-	printf("Finished");
+	printf("Result is %d\n", result);
+	printf("Finished\n");
+	printf("Starting inline asm\n");
+	int src = 1;
+	int src2= 2;
+    int dst;
+     
+	 //"mov %2, %0\n\t"
+	 //"add $3, %0\n\t"
+	 //"add $3, %0\n\t"
+	 //1
+	 //"mov %%edx,%%esp\n\t"
+	 //"sysenter\n\t"
+	 //"ret\n\t"
+	 //2
+	 //"mov %%r10, %%rcx\n\t"
+	 //"mov %%eax, 52\n\t" 
+	 //"syscall \n\t"
+	 //"ret\n\t"
+	 //3
+	 
+	asm ("int $3\n\t"
+		 "mov $0x19, %%eax\n\t"
+         "int $0x2E\n\t"
+		 : "=r" (dst)
+		 : "r" (src), "r" (src2)
+		 );
+		 
+	getchar();
+     
+    //printf("%d\n", dst);
+	printf("Finished inline asm\n");
 
    HWND       hWnd;
    MSG        msg;
