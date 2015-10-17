@@ -3870,10 +3870,10 @@ void runCreateProcess() {
 
         pid = fork();
         if (pid < 0) {
-            printf("Call to pid, didn't succeed - pid %ld\n", pid);
+            printf("Call to pid, didn't succeed - pid = %ld\n", pid);
         } else if (pid == 0) {
 
-            printf("Child: Entering the child code path - pid %ld\n", pid);
+            printf("Child: Entering the child code path - pid = %ld\n", pid);
 
             printf("Child: parent pid is %ld\n", getppid());
 
@@ -3882,8 +3882,15 @@ void runCreateProcess() {
         } else {
             printf("Parent: Waiting for child!\n");
             int * statusPtr;
-            waitpid(pid,statusPtr, 0);
-            printf("Parent: waitpid returned with %i\n", statusPtr);
+            waitpid(pid, &statusPtr, 0);
+            printf("Parent: waitpid set the status pointer to %i\n", statusPtr);
+            int normExit = ((((__extension__ (((union { __typeof(statusPtr) __in; int __i; }) { .__in = (statusPtr) }).__i))) & 0x7f) == 0);
+            printf("Parent: WIFEXITED is %i\n", normExit);
+            if (normExit > 0) {
+                printf("The child process terminated normally.\n");
+            } else {
+                printf("The child process didn't terminate normally.\n");
+            }
             printf("Parent: Entering the parent code path - pid %ld\n", pid);
         }
     } else {

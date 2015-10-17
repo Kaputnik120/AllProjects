@@ -19,10 +19,10 @@
 	.string	"The parent PID is %ld\n"
 	.align 8
 .LC6:
-	.string	"Call to pid, didn't succeed - pid %ld\n"
+	.string	"Call to pid, didn't succeed - pid = %ld\n"
 	.align 8
 .LC7:
-	.string	"Child: Entering the child code path - pid %ld\n"
+	.string	"Child: Entering the child code path - pid = %ld\n"
 .LC8:
 	.string	"Child: parent pid is %ld\n"
 .LC9:
@@ -31,12 +31,20 @@
 	.string	"Parent: Waiting for child!"
 	.align 8
 .LC11:
-	.string	"Parent: waitpid returned with %i\n"
-	.align 8
+	.string	"Parent: waitpid set the status pointer to %i\n"
 .LC12:
-	.string	"Parent: Entering the parent code path - pid %ld\n"
+	.string	"Parent: WIFEXITED is %i\n"
 	.align 8
 .LC13:
+	.string	"The child process terminated normally."
+	.align 8
+.LC14:
+	.string	"The child process didn't terminate normally."
+	.align 8
+.LC15:
+	.string	"Parent: Entering the parent code path - pid %ld\n"
+	.align 8
+.LC16:
 	.string	"No Command Processor available!"
 	.text
 	.globl	runCreateProcess
@@ -51,13 +59,13 @@ runCreateProcess:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq	$32, %rsp
+	subq	$48, %rsp
 	.loc 1 16 0
 	movl	$0, %edi
 	call	system
-	movl	%eax, -24(%rbp)
+	movl	%eax, -36(%rbp)
 	.loc 1 17 0
-	cmpl	$0, -24(%rbp)
+	cmpl	$0, -36(%rbp)
 	jle	.L2
 .LBB2:
 	.loc 1 18 0
@@ -69,15 +77,15 @@ runCreateProcess:
 	.loc 1 22 0
 	movl	$0, %eax
 	call	createProcess
-	movl	%eax, -20(%rbp)
+	movl	%eax, -32(%rbp)
 	.loc 1 23 0
 	movl	$10, %edi
 	call	putchar
 	.loc 1 24 0
-	cmpl	$0, -20(%rbp)
+	cmpl	$0, -32(%rbp)
 	jne	.L3
 	.loc 1 25 0
-	movl	-20(%rbp), %eax
+	movl	-32(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC2, %edi
 	movl	$0, %eax
@@ -85,7 +93,7 @@ runCreateProcess:
 	jmp	.L4
 .L3:
 	.loc 1 27 0
-	movl	-20(%rbp), %eax
+	movl	-32(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC3, %edi
 	movl	$0, %eax
@@ -93,30 +101,30 @@ runCreateProcess:
 .L4:
 	.loc 1 31 0
 	call	getpid
-	movl	%eax, -16(%rbp)
+	movl	%eax, -28(%rbp)
 	.loc 1 32 0
-	movl	-16(%rbp), %eax
+	movl	-28(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC4, %edi
 	movl	$0, %eax
 	call	printf
 	.loc 1 34 0
 	call	getppid
-	movl	%eax, -12(%rbp)
+	movl	%eax, -24(%rbp)
 	.loc 1 35 0
-	movl	-12(%rbp), %eax
+	movl	-24(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC5, %edi
 	movl	$0, %eax
 	call	printf
 	.loc 1 38 0
 	call	fork
-	movl	%eax, -16(%rbp)
+	movl	%eax, -28(%rbp)
 	.loc 1 39 0
-	cmpl	$0, -16(%rbp)
+	cmpl	$0, -28(%rbp)
 	jns	.L5
 	.loc 1 40 0
-	movl	-16(%rbp), %eax
+	movl	-28(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC6, %edi
 	movl	$0, %eax
@@ -124,10 +132,10 @@ runCreateProcess:
 	jmp	.L1
 .L5:
 	.loc 1 41 0
-	cmpl	$0, -16(%rbp)
+	cmpl	$0, -28(%rbp)
 	jne	.L7
 	.loc 1 43 0
-	movl	-16(%rbp), %eax
+	movl	-28(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC7, %edi
 	movl	$0, %eax
@@ -150,8 +158,8 @@ runCreateProcess:
 	movl	$.LC10, %edi
 	call	puts
 	.loc 1 52 0
-	movq	-8(%rbp), %rcx
-	movl	-16(%rbp), %eax
+	leaq	-8(%rbp), %rcx
+	movl	-28(%rbp), %eax
 	movl	$0, %edx
 	movq	%rcx, %rsi
 	movl	%eax, %edi
@@ -163,20 +171,47 @@ runCreateProcess:
 	movl	$0, %eax
 	call	printf
 	.loc 1 54 0
+	movq	-8(%rbp), %rax
+	movq	%rax, -16(%rbp)
 	movl	-16(%rbp), %eax
+	andl	$127, %eax
+	testl	%eax, %eax
+	sete	%al
+	movzbl	%al, %eax
+	movl	%eax, -20(%rbp)
+	.loc 1 55 0
+	movl	-20(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC12, %edi
+	movl	$0, %eax
+	call	printf
+	.loc 1 56 0
+	cmpl	$0, -20(%rbp)
+	jle	.L8
+	.loc 1 57 0
+	movl	$.LC13, %edi
+	call	puts
+	jmp	.L9
+.L8:
+	.loc 1 59 0
+	movl	$.LC14, %edi
+	call	puts
+.L9:
+	.loc 1 61 0 discriminator 1
+	movl	-28(%rbp), %eax
+	movl	%eax, %esi
+	movl	$.LC15, %edi
 	movl	$0, %eax
 	call	printf
 .LBE3:
 .LBE2:
 	jmp	.L1
 .L2:
-	.loc 1 57 0
-	movl	$.LC13, %edi
+	.loc 1 64 0
+	movl	$.LC16, %edi
 	call	puts
 .L1:
-	.loc 1 59 0
+	.loc 1 66 0
 	leave
 	.cfi_def_cfa 7, 8
 	ret
@@ -184,24 +219,24 @@ runCreateProcess:
 .LFE2:
 	.size	runCreateProcess, .-runCreateProcess
 	.section	.rodata
-.LC14:
+.LC17:
 	.string	"ls"
 	.text
 	.globl	createProcess
 	.type	createProcess, @function
 createProcess:
 .LFB3:
-	.loc 1 64 0
+	.loc 1 71 0
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	.loc 1 66 0
-	movl	$.LC14, %edi
+	.loc 1 73 0
+	movl	$.LC17, %edi
 	call	system
-	.loc 1 71 0
+	.loc 1 78 0
 	popq	%rbp
 	.cfi_def_cfa 7, 8
 	ret
@@ -213,15 +248,15 @@ createProcess:
 	.file 3 "/usr/include/x86_64-linux-gnu/sys/types.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.long	0x13f
+	.long	0x14d
 	.value	0x4
 	.long	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.long	.LASF16
-	.byte	0x1
 	.long	.LASF17
+	.byte	0x1
 	.long	.LASF18
+	.long	.LASF19
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.long	.Ldebug_line0
@@ -287,14 +322,14 @@ createProcess:
 	.byte	0x7
 	.long	.LASF12
 	.uleb128 0x6
-	.long	.LASF19
+	.long	.LASF20
 	.byte	0x1
 	.byte	0xd
 	.quad	.LFB2
 	.quad	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x125
+	.long	0x133
 	.uleb128 0x7
 	.string	"res"
 	.byte	0x1
@@ -302,7 +337,7 @@ createProcess:
 	.long	0x34
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -40
+	.sleb128 -52
 	.uleb128 0x8
 	.quad	.LBB2
 	.quad	.LBE2-.LBB2
@@ -313,7 +348,7 @@ createProcess:
 	.long	0x34
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -36
+	.sleb128 -48
 	.uleb128 0x7
 	.string	"pid"
 	.byte	0x1
@@ -321,7 +356,7 @@ createProcess:
 	.long	0x8b
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -32
+	.sleb128 -44
 	.uleb128 0x9
 	.long	.LASF14
 	.byte	0x1
@@ -329,7 +364,7 @@ createProcess:
 	.long	0x8b
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -28
+	.sleb128 -40
 	.uleb128 0x8
 	.quad	.LBB3
 	.quad	.LBE3-.LBB3
@@ -341,13 +376,21 @@ createProcess:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
+	.uleb128 0x9
+	.long	.LASF16
+	.byte	0x1
+	.byte	0x36
+	.long	0x34
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
 	.byte	0
 	.byte	0
 	.byte	0
 	.uleb128 0xa
-	.long	.LASF20
+	.long	.LASF21
 	.byte	0x1
-	.byte	0x40
+	.byte	0x47
 	.long	0x34
 	.quad	.LFB3
 	.quad	.LFE3-.LFB3
@@ -524,13 +567,13 @@ createProcess:
 	.string	"long long int"
 .LASF3:
 	.string	"unsigned int"
-.LASF16:
+.LASF17:
 	.string	"GNU C 4.8.4 -mtune=generic -march=x86-64 -g -fstack-protector"
-.LASF18:
+.LASF19:
 	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C-Standard/CStandard"
 .LASF0:
 	.string	"long unsigned int"
-.LASF19:
+.LASF20:
 	.string	"runCreateProcess"
 .LASF15:
 	.string	"statusPtr"
@@ -540,14 +583,16 @@ createProcess:
 	.string	"long long unsigned int"
 .LASF1:
 	.string	"unsigned char"
-.LASF17:
+.LASF18:
 	.string	"processes/create_process.c"
 .LASF6:
 	.string	"long int"
-.LASF20:
-	.string	"createProcess"
 .LASF13:
 	.string	"resCreate"
+.LASF21:
+	.string	"createProcess"
+.LASF16:
+	.string	"normExit"
 .LASF2:
 	.string	"short unsigned int"
 .LASF4:
