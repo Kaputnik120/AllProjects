@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/asm/asm.o \
 	${OBJECTDIR}/errors/handle_errors.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/processes/create_process.o
@@ -63,6 +64,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cstandard: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cstandard ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/asm/asm.o: asm/asm.c 
+	${MKDIR} -p ${OBJECTDIR}/asm
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/asm/asm.o asm/asm.c
 
 ${OBJECTDIR}/errors/handle_errors.o: errors/handle_errors.c 
 	${MKDIR} -p ${OBJECTDIR}/errors

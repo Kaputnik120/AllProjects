@@ -4,8 +4,17 @@
 #include <unistd.h>
 #include "sys/types.h"
 #include <sys/wait.h>
+#include <errno.h>
+#include <string.h>
 
 int createProcess();
+
+#ifdef LINUX
+char bin[] = "ls";
+#endif
+#ifdef WINDOWS
+char bin[] = "bin";
+#endif
 
 /**
  * Tests some features of the stdlib
@@ -39,11 +48,21 @@ void runCreateProcess() {
         if (pid < 0) {
             printf("Call to pid, didn't succeed - pid = %ld\n", pid);
         } else if (pid == 0) {
-            //Child-Stdout is not displayed
             printf("Child: Entering the child code path - pid = %ld\n", pid);
 #ifdef LINUX
             printf("Child: parent pid is %ld\n", getppid());
 #endif
+            printf("Child: Try changing to ls: \n\n");
+            char* params[2] = {"-v", NULL};
+            int res = execvp("ls", &params);
+            if (res == 0) {
+                printf("\nChild: Changed executing program to ls!\n");
+            } else {
+                printf("Child: Error while changing executing program to ls!\n");
+                printf("Child: Error is %s\n", strerror(errno));
+            }
+
+
             printf("Child: Finished!\n");
             exit(0);
         } else {
@@ -69,10 +88,5 @@ void runCreateProcess() {
  * Simplest possible process creation with system(...) call. 
  */
 int createProcess() {
-#ifdef LINUX
-    return system("ls");
-#endif
-#ifdef WINDOWS
-    return system("DIR");
-#endif
+    return system(bin);
 }

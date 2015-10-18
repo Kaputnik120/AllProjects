@@ -276,8 +276,6 @@ runHandleErrors:
 	.string	"unsigned int"
 .LASF1:
 	.string	"unsigned char"
-.LASF4:
-	.string	"signed char"
 .LASF14:
 	.string	"runHandleErrors"
 .LASF0:
@@ -292,8 +290,10 @@ runHandleErrors:
 	.string	"long int"
 .LASF2:
 	.string	"short unsigned int"
+.LASF4:
+	.string	"signed char"
 .LASF13:
-	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C-Standard/CStandard"
+	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/C-Standard/CStandard"
 .LASF5:
 	.string	"short int"
 .LASF12:

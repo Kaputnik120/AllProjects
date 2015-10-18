@@ -10,13 +10,14 @@
 #include <errno.h>
 #include "processes/processes.h"
 #include "errors/handle_errors.h"
+#include "asm/asm.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
     printf("Started!\n");
-    
+
 #ifdef LINUX
     printf("Compiled for Linux!\n");
 #endif
@@ -24,11 +25,41 @@ int main(int argc, char** argv) {
     printf("Compiled for Windows!\n");
 #endif
     
-    printf("PROCESSES:\n\n");
-    runCreateProcess();
-    printf("\nERRORS:\n\n");
-    runHandleErrors();
+//    const char hello[] = "Hello World!\n";
+//    const size_t hello_size = sizeof(hello);
+//    ssize_t ret;
+//    asm volatile
+//    (
+//        "movl $1, %%eax\n\t"
+//        "movl $1, %%edi\n\t"
+//        "movq %1, %%rsi\n\t"
+//        "movl %2, %%edx\n\t"
+//        "syscall"
+//        : "=a"(ret)
+//        : "g"(hello), "g"(hello_size)
+//        : "%rdi", "%rsi", "%rdx", "%rcx", "%r11"
+//    );
     
+    __asm ("movq $1,%rax; movq $0,%rdi; syscall");
+    
+//        asm volatile
+//    (
+//        "movl $3, %%eax\n\t"
+//        "movl $0, %%edi\n\t"
+//        "syscall"
+//        : "=a"(ret)
+//        : "g"(hello), "g"(hello_size)
+//        : "%rdi"
+//    );
+    
+    
+    printf("\n0. ASM \n\n");
+//    runAsm();
+    printf("\n2. ERRORS:\n\n");
+    runHandleErrors();
+    printf("\n26. PROCESSES:\n\n");
+    runCreateProcess();
+
     printf("Stopped!\n");
     return (EXIT_SUCCESS);
 }

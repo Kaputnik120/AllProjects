@@ -1,5 +1,5 @@
 # 1 "main.c"
-# 1 "/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/C-Standard/CStandard//"
+# 1 "/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/C-Standard/CStandard//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
@@ -1915,24 +1915,24 @@ extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __a
 # 15 "errors/handle_errors.h"
     void runHandleErrors();
 # 13 "main.c" 2
+# 1 "asm/asm.h" 1
+# 15 "asm/asm.h"
+    void runAsm();
+# 14 "main.c" 2
 
 
 
 
 int main(int argc, char** argv) {
-    printf("Started!\n");
+# 43 "main.c"
+    __asm ("movq $1,%rax; movq $0,%rdi; syscall");
+# 56 "main.c"
+    printf("\n0. ASM \n\n");
 
-
-    printf("Compiled for Linux!\n");
-
-
-
-
-
-    printf("PROCESSES:\n\n");
-    runCreateProcess();
-    printf("\nERRORS:\n\n");
+    printf("\n2. ERRORS:\n\n");
     runHandleErrors();
+    printf("\n26. PROCESSES:\n\n");
+    runCreateProcess();
 
     printf("Stopped!\n");
     return (0);

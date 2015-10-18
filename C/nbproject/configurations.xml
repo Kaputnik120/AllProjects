@@ -38,7 +38,7 @@
           <buildCommandWorkingDir>.</buildCommandWorkingDir>
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath></executablePath>
+          <executablePath>prog</executablePath>
         </makeTool>
       </makefileType>
       <item path="bar.c" ex="false" tool="0" flavor2="2">
