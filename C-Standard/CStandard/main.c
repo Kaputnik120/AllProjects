@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 //        : "%rdi", "%rsi", "%rdx", "%rcx", "%r11"
 //    );
     
-    __asm ("movq $1,%rax; movq $0,%rdi; syscall");
+    asm ("movq $1,%rax\n movq $0,%rdi\n syscall");
     
 //        asm volatile
 //    (

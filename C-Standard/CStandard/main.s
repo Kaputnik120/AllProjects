@@ -3,12 +3,16 @@
 .Ltext0:
 	.section	.rodata
 .LC0:
-	.string	"\n0. ASM \n"
+	.string	"Started!"
 .LC1:
-	.string	"\n2. ERRORS:\n"
+	.string	"Compiled for Linux!"
 .LC2:
-	.string	"\n26. PROCESSES:\n"
+	.string	"\n0. ASM \n"
 .LC3:
+	.string	"\n2. ERRORS:\n"
+.LC4:
+	.string	"\n26. PROCESSES:\n"
+.LC5:
 	.string	"Stopped!"
 	.text
 	.globl	main
@@ -26,29 +30,37 @@ main:
 	subq	$16, %rsp
 	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
+	.loc 1 19 0
+	movl	$.LC0, %edi
+	call	puts
+	.loc 1 22 0
+	movl	$.LC1, %edi
+	call	puts
 	.loc 1 43 0
 #APP
 # 43 "main.c" 1
-	movq $1,%rax; movq $0,%rdi; syscall
+	movq $1,%rax
+ movq $0,%rdi
+ syscall
 # 0 "" 2
 	.loc 1 56 0
 #NO_APP
-	movl	$.LC0, %edi
+	movl	$.LC2, %edi
 	call	puts
 	.loc 1 58 0
-	movl	$.LC1, %edi
+	movl	$.LC3, %edi
 	call	puts
 	.loc 1 59 0
 	movl	$0, %eax
 	call	runHandleErrors
 	.loc 1 60 0
-	movl	$.LC2, %edi
+	movl	$.LC4, %edi
 	call	puts
 	.loc 1 61 0
 	movl	$0, %eax
 	call	runCreateProcess
 	.loc 1 63 0
-	movl	$.LC3, %edi
+	movl	$.LC5, %edi
 	call	puts
 	.loc 1 64 0
 	movl	$0, %eax

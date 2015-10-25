@@ -1924,8 +1924,12 @@ extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __a
 
 
 int main(int argc, char** argv) {
+    printf("Started!\n");
+
+
+    printf("Compiled for Linux!\n");
 # 43 "main.c"
-    __asm ("movq $1,%rax; movq $0,%rdi; syscall");
+    asm ("movq $1,%rax\n movq $0,%rdi\n syscall");
 # 56 "main.c"
     printf("\n0. ASM \n\n");
 

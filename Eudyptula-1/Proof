@@ -1,0 +1,31 @@
+MAKE:
+
+uli@uli-kubuntu:~/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1$ make
+make -C /lib/modules/3.13.0-66-generic/build M=/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1 modules
+make[1]: Verzeichnis »/usr/src/linux-headers-3.13.0-66-generic« wird betreten
+  CC [M]  /home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1/HelloWorldModule.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1/HelloWorldModule.mod.o
+  LD [M]  /home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1/HelloWorldModule.ko
+make[1]: Verzeichnis »/usr/src/linux-headers-3.13.0-66-generic« wird verlassen
+
+LOAD MODULE and DMESG:
+
+uli@uli-kubuntu:~/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1$ sudo insmod HelloWorldModule.ko
+uli@uli-kubuntu:~/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1$ dmesg
+...
+[ 2416.093526] Hello world from my first Linux Kernel Module!
+
+UNLOAD MODULE and DMESG:
+
+uli@uli-kubuntu:~/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1$ sudo rmmod HelloWorldModule.ko
+uli@uli-kubuntu:~/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/Eudyptula-1$ dmesg
+...
+[ 2416.093526] Hello world from my first Linux Kernel Module!
+[ 2480.853745] Good-by from my first Linux Kernel Module!
+
+
+
+
+
