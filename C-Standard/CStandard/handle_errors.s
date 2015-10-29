@@ -1,175 +1,188 @@
 	.file	"handle_errors.c"
 	.text
 .Ltext0:
-	.section	.rodata
+	.cfi_sections	.debug_frame
+	.section .rdata,"dr"
 	.align 8
 .LC0:
-	.string	"Return code of close(...) is %i\n"
+	.ascii "Return code of close(...) is %i\12\0"
 .LC1:
-	.string	"Error Code is %i\n"
+	.ascii "Error Code is %i\12\0"
 	.text
 	.globl	runHandleErrors
-	.type	runHandleErrors, @function
+	.def	runHandleErrors;	.scl	2;	.type	32;	.endef
+	.seh_proc	runHandleErrors
 runHandleErrors:
-.LFB2:
+.LFB16:
 	.file 1 "errors/handle_errors.c"
 	.loc 1 8 0
 	.cfi_startproc
 	pushq	%rbp
+	.seh_pushreg	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
 	.cfi_def_cfa_register 6
-	subq	$16, %rsp
+	subq	$48, %rsp
+	.seh_stackalloc	48
+	.seh_endprologue
 	.loc 1 10 0
-	movl	$123, %edi
+	movl	$123, %ecx
 	call	close
-	movl	%eax, -12(%rbp)
+	movl	%eax, -4(%rbp)
 	.loc 1 11 0
-	movl	-12(%rbp), %eax
-	movl	%eax, %esi
-	movl	$.LC0, %edi
-	movl	$0, %eax
+	movl	-4(%rbp), %eax
+	movl	%eax, %edx
+	leaq	.LC0(%rip), %rcx
 	call	printf
 	.loc 1 12 0
-	cmpl	$0, -12(%rbp)
+	cmpl	$0, -4(%rbp)
 	jns	.L1
 .LBB2:
 	.loc 1 13 0
-	call	__errno_location
+	movq	__imp__errno(%rip), %rax
+	call	*%rax
 	movl	(%rax), %eax
-	movl	%eax, %esi
-	movl	$.LC1, %edi
-	movl	$0, %eax
+	movl	%eax, %edx
+	leaq	.LC1(%rip), %rcx
 	call	printf
 	.loc 1 14 0
-	call	__errno_location
+	movq	__imp__errno(%rip), %rax
+	call	*%rax
 	movl	(%rax), %eax
-	movl	%eax, %edi
+	movl	%eax, %ecx
 	call	strerror
-	movq	%rax, -8(%rbp)
+	movq	%rax, -16(%rbp)
 	.loc 1 15 0
-	movq	-8(%rbp), %rax
-	movq	%rax, %rdi
+	movq	-16(%rbp), %rax
+	movq	%rax, %rcx
 	call	puts
+	nop
 .L1:
 .LBE2:
 	.loc 1 18 0
-	leave
+	addq	$48, %rsp
+	popq	%rbp
+	.cfi_restore 6
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE2:
-	.size	runHandleErrors, .-runHandleErrors
+.LFE16:
+	.seh_endproc
 .Letext0:
-	.section	.debug_info,"",@progbits
+	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0xcc
-	.value	0x4
-	.long	.Ldebug_abbrev0
+	.long	0x1c4
+	.word	0x4
+	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.long	.LASF11
+	.ascii "GNU C 4.9.2 -fpreprocessed -mtune=haswell -march=x86-64 -g\0"
 	.byte	0x1
-	.long	.LASF12
-	.long	.LASF13
+	.ascii "errors/handle_errors.c\0"
+	.ascii "C:\\\\JavaProjects\\\\GIT\\\\Kaputnik120\\\\C-Standard\\\\CStandard\0"
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
-	.long	.Ldebug_line0
+	.secrel32	.Ldebug_line0
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.ascii "char\0"
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
-	.long	.LASF0
+	.ascii "long long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x5
+	.ascii "long long int\0"
+	.uleb128 0x2
+	.byte	0x2
+	.byte	0x7
+	.ascii "short unsigned int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
 	.uleb128 0x3
-	.byte	0x4
-	.byte	0x5
-	.string	"int"
-	.uleb128 0x2
-	.byte	0x1
 	.byte	0x8
-	.long	.LASF1
-	.uleb128 0x2
-	.byte	0x2
-	.byte	0x7
-	.long	.LASF2
+	.long	0xad
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.long	.LASF3
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x6
-	.long	.LASF4
-	.uleb128 0x2
-	.byte	0x2
-	.byte	0x5
-	.long	.LASF5
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x5
-	.long	.LASF6
+	.ascii "unsigned int\0"
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
-	.long	.LASF7
+	.ascii "sizetype\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x8
+	.ascii "unsigned char\0"
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x4
+	.ascii "double\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x4
+	.ascii "float\0"
+	.uleb128 0x2
+	.byte	0x10
+	.byte	0x4
+	.ascii "long double\0"
 	.uleb128 0x4
-	.byte	0x8
-	.long	0x72
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x6
-	.long	.LASF8
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x5
-	.long	.LASF9
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x7
-	.long	.LASF10
-	.uleb128 0x5
-	.long	.LASF14
+	.ascii "runHandleErrors\0"
 	.byte	0x1
 	.byte	0x8
-	.quad	.LFB2
-	.quad	.LFE2-.LFB2
+	.quad	.LFB16
+	.quad	.LFE16-.LFB16
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x6
-	.string	"ret"
+	.uleb128 0x5
+	.ascii "ret\0"
 	.byte	0x1
 	.byte	0xa
-	.long	0x34
+	.long	0xf6
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -28
-	.uleb128 0x7
+	.sleb128 -20
+	.uleb128 0x6
 	.quad	.LBB2
 	.quad	.LBE2-.LBB2
-	.uleb128 0x6
-	.string	"msg"
+	.uleb128 0x5
+	.ascii "msg\0"
 	.byte	0x1
 	.byte	0xe
-	.long	0x6c
+	.long	0x109
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -24
+	.sleb128 -32
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_abbrev,"",@progbits
+	.section	.debug_abbrev,"dr"
 .Ldebug_abbrev0:
 	.uleb128 0x1
 	.uleb128 0x11
 	.byte	0x1
 	.uleb128 0x25
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x13
 	.uleb128 0xb
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x1b
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -186,21 +199,10 @@ runHandleErrors:
 	.uleb128 0x3e
 	.uleb128 0xb
 	.uleb128 0x3
-	.uleb128 0xe
-	.byte	0
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
 	.uleb128 0x8
 	.byte	0
 	.byte	0
-	.uleb128 0x4
+	.uleb128 0x3
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -209,13 +211,13 @@ runHandleErrors:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x5
+	.uleb128 0x4
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -230,7 +232,7 @@ runHandleErrors:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x6
+	.uleb128 0x5
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -245,7 +247,7 @@ runHandleErrors:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x7
+	.uleb128 0x6
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x11
@@ -255,50 +257,23 @@ runHandleErrors:
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_aranges,"",@progbits
+	.section	.debug_aranges,"dr"
 	.long	0x2c
-	.value	0x2
-	.long	.Ldebug_info0
+	.word	0x2
+	.secrel32	.Ldebug_info0
 	.byte	0x8
 	.byte	0
-	.value	0
-	.value	0
+	.word	0
+	.word	0
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.quad	0
 	.quad	0
-	.section	.debug_line,"",@progbits
+	.section	.debug_line,"dr"
 .Ldebug_line0:
-	.section	.debug_str,"MS",@progbits,1
-.LASF9:
-	.string	"long long int"
-.LASF3:
-	.string	"unsigned int"
-.LASF1:
-	.string	"unsigned char"
-.LASF14:
-	.string	"runHandleErrors"
-.LASF0:
-	.string	"long unsigned int"
-.LASF10:
-	.string	"long long unsigned int"
-.LASF11:
-	.string	"GNU C 4.8.4 -mtune=generic -march=x86-64 -g -fstack-protector"
-.LASF8:
-	.string	"char"
-.LASF6:
-	.string	"long int"
-.LASF2:
-	.string	"short unsigned int"
-.LASF4:
-	.string	"signed char"
-.LASF13:
-	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/C-Standard/CStandard"
-.LASF5:
-	.string	"short int"
-.LASF12:
-	.string	"errors/handle_errors.c"
-.LASF7:
-	.string	"sizetype"
-	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4"
-	.section	.note.GNU-stack,"",@progbits
+	.section	.debug_str,"dr"
+	.ident	"GCC: (GNU) 4.9.2"
+	.def	close;	.scl	2;	.type	32;	.endef
+	.def	printf;	.scl	2;	.type	32;	.endef
+	.def	strerror;	.scl	2;	.type	32;	.endef
+	.def	puts;	.scl	2;	.type	32;	.endef

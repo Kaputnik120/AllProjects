@@ -1,0 +1,197 @@
+int main()
+{
+    return 0;
+}
+   
+   
+   0x0000000000401530 <+0>:     push   %rbp					//Speichern des alten Stack Base Pointers
+   0x0000000000401531 <+1>:     mov    %rsp,%rbp			//Stack Base Pointer auf den höchsten Stack-Eintrag zeigen lassen
+   0x0000000000401534 <+4>:     sub    $0x20,%rsp			//Stack Pointer um 0x30/4 Memory-Einträge nach unten verschrieben
+   
+   0x0000000000401538 <+8>:     callq  0x401760 <__main>	//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+   0x000000000040153d <+13>:    mov    $0x0,%eax			//Setze Return Value
+   
+   0x0000000000401542 <+18>:    add    $0x20,%rsp			//Setze Stack Pointer zurück
+ 
+   0x0000000000401546 <+22>:    pop    %rbp					//Hole gespeicherten Base Pointer
+   0x0000000000401547 <+23>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+
+
+
+
+int main()
+{
+    int a = 5;
+    int b = a + 6;
+    return 0;
+}   
+   
+=>
+   
+   0x0000000000401530 <+0>:     push   %rbp 				//Speichern des alten Stack Base Pointers
+   0x0000000000401531 <+1>:     mov    %rsp,%rbp 			//Stack Base Pointer auf den höchsten Stack-Eintrag zeigen lassen
+   0x0000000000401534 <+4>:     sub    $0x30,%rsp 			//Stack Pointer um 0x30/4 Memory-Einträge nach unten verschrieben
+   
+   0x0000000000401538 <+8>:     callq  0x401770 <__main>	//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+   0x000000000040153d <+13>:    movl   $0x5,-0x4(%rbp)		//Lege 0x5 an 4/4 Memory Adressen niedriger als der Base Pointer zeigt
+   0x0000000000401544 <+20>:    mov    -0x4(%rbp),%eax		//Lege den Wert von dieser Adresse nach eax
+   0x0000000000401547 <+23>:    add    $0x6,%eax			//Addiere 0x6 zu eax
+   0x000000000040154a <+26>:    mov    %eax,-0x8(%rbp)		//Lege eax an 8/4 Memory Adressen niedriger als der Base Pointer zeigt
+   
+   0x000000000040154d <+29>:    mov    $0x0,%eax			//Lege 0x0 nach eax
+   
+   0x0000000000401552 <+34>:    add    $0x30,%rsp			//Setze den Stack Pointer zurück
+   
+   0x0000000000401556 <+38>:    pop    %rbp					//Hole gespeicherten Base Pointer
+   0x0000000000401557 <+39>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+   
+void foo() {
+	int c = 1 + 1;
+}
+
+int main()
+{
+	int a = 5;
+    int b = a + 6;
+	foo();
+    return 0;
+}
+
+=>
+
+   0x0000000000401536 <+0>:     push   %rbp					//Speichern des alten Stack Base Pointers
+   0x0000000000401537 <+1>:     mov    %rsp,%rbp			//Stack Base Pointer auf den höchsten Stack-Eintrag zeigen lassen
+   0x000000000040153a <+4>:     sub    $0x30,%rsp			//Stack Pointer um 0x30/4 Memory-Einträge nach unten verschrieben
+   
+   0x000000000040153e <+8>:     callq  0x401780 <__main>	//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+   0x0000000000401543 <+13>:    movl   $0x5,-0x4(%rbp)		//Lege 0x5 an 4/4 Memory Adressen niedriger als der Base Pointer zeigt
+   0x000000000040154a <+20>:    mov    -0x4(%rbp),%eax		//Lege den Wert von dieser Adresse nach eax
+   0x000000000040154d <+23>:    add    $0x6,%eax			//Addiere 0x6 zu eax
+   0x0000000000401550 <+26>:    mov    %eax,-0x8(%rbp)		//Lege eax an 8/4 Memory Adressen niedriger als der Base Pointer zeigt
+   
+   0x0000000000401553 <+29>:    callq  0x401530 <foo>		//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+	   -- Sprung zu Foo --
+	   
+	   0x0000000000401530 <+0>:     push   %rbp					//Speichern des alten Stack Base Pointers
+	   0x0000000000401531 <+1>:     mov    %rsp,%rbp			//Stack Base Pointer auf den höchsten Stack-Eintrag zeigen lassen
+	   
+	   0x0000000000401534 <+4>:     sub    $0x10,%rsp			//Stack Pointer um 0x10/4 verschieben
+	   0x0000000000401538 <+8>:     movl   $0x2,-0x4(%rbp)		//Lege 0x2 an 4/4 Memory Adressen niedriger als der Base Pointer zeigt
+	   
+	   0x000000000040153f <+15>:    add    $0x10,%rsp			//Setze den Stack Pointer zurück
+	   0x0000000000401543 <+19>:    pop    %rbp					//Hole gespeicherten Base Pointer
+	   0x0000000000401544 <+20>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+   
+   0x0000000000401558 <+34>:    mov    $0x0,%eax			//Lege 0x0 nach eax
+   
+   0x000000000040155d <+39>:    add    $0x30,%rsp			//Setze den Stack Pointer zurück
+   
+   0x0000000000401561 <+43>:    pop    %rbp					//Hole gespeicherten Base Pointer
+   0x0000000000401562 <+44>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+
+
+int foo() {
+	int c = 1 + 1;
+	return c;
+}
+
+int main()
+{
+	int a = foo();
+    int b = a + 6;
+    return 0;
+}
+   
+  =>
+   
+   0x0000000000401536 <+0>:     push   %rbp					//Speichern des alten Stack Base Pointers
+   0x0000000000401537 <+1>:     mov    %rsp,%rbp			//Stack Base Pointer auf den höchsten Stack-Eintrag zeigen lassen
+   0x000000000040153a <+4>:     sub    $0x30,%rsp			//Stack Pointer um 0x30/4 Memory-Einträge nach unten verschrieben
+   
+   0x000000000040153e <+8>:     callq  0x401780 <__main>	//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+   0x0000000000401553 <+29>:    callq  0x401530 <foo>		//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+	   -- Sprung zu Foo --
+	   0x0000000000401530 <+0>:     push   %rbp					//Speichern des alten Stack Base Pointers
+	   0x0000000000401531 <+1>:     mov    %rsp,%rbp			//Stack Base Pointer auf den höchsten Stack-Eintrag zeigen lassen
+	   
+	   0x0000000000401534 <+4>:     sub    $0x10,%rsp			//Stack Pointer um 0x10/4 verschieben
+	   0x0000000000401538 <+8>:     movl   $0x2,-0x4(%rbp)		//Lege 0x2 an 4/4 Memory Adressen niedriger als der Base Pointer zeigt
+	   
+	   0x000000000040153f <+15>:    mov    -0x4(%rbp),%eax		//Lege den Wert von 4/4 Memory Adressen niedriger als der Base Pointer zeigt nach eax
+	   
+	   0x000000000040153f <+15>:    add    $0x10,%rsp			//Setze den Stack Pointer zurück
+	   0x0000000000401543 <+19>:    pop    %rbp					//Hole gespeicherten Base Pointer
+	   0x0000000000401544 <+20>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+   
+   
+   0x000000000040155a <+18>:    mov    %eax,-0x4(%rbp)			//Lege eax an 4/4 Memory Adressen niedriger als der Base Pointer zeigt
+   0x000000000040155d <+21>:    mov    -0x4(%rbp),%eax			//???
+   
+   0x0000000000401560 <+24>:    add    $0x6,%eax				//Lege 0x06 nach eax
+   0x0000000000401563 <+27>:    mov    %eax,-0x8(%rbp)			//Lege eax an 8/4 Memory Adressen niedriger als der Base Pointer zeigt
+   
+   0x0000000000401558 <+34>:    mov    $0x0,%eax			//Lege 0x0 nach eax
+   
+   0x000000000040155d <+39>:    add    $0x30,%rsp			//Setze den Stack Pointer zurück
+   
+   0x0000000000401561 <+43>:    pop    %rbp					//Hole gespeicherten Base Pointer
+   0x0000000000401562 <+44>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+
+Mit -O10 kompiliert
+   
+int foo() {
+	int c = 1 + 1;
+	return c;
+}
+
+int main()
+{
+	int a = foo();
+    int b = a + 6;
+    return 0;
+}
+   
+   
+   0x0000000000402e60 <+0>:     sub    $0x28,%rsp			//Stack Pointer um 0x28/4 Memory-Einträge nach unten verschrieben
+   
+   0x0000000000402e64 <+4>:     callq  0x401750 <__main>	//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   
+   0x0000000000402e69 <+9>:     xor    %eax,%eax			//Günstigste Instruktion zum Nullen
+   
+   0x0000000000402e6b <+11>:    add    $0x28,%rsp			//Setze den Stack Pointer zurück
+   0x0000000000402e6f <+15>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+Mit -O3 kompiliert   
+int foo() {
+	int c = 1 + 1;
+	return c;
+}
+
+int main()
+{
+	int a = foo();
+    int b = a + 6;
+    return b;
+}
+
+   0x0000000000402e60 <+0>:     sub    $0x28,%rsp			//Stack Pointer um 0x28/4 Memory-Einträge nach unten verschrieben
+   0x0000000000402e64 <+4>:     callq  0x401750 <__main>	//Hole nächste Instruktionen bzw. (technisch:)setze den Instruktions-Pointer
+   0x0000000000402e69 <+9>:     mov    $0x8,%eax			//Schreibe 0x8 nach eax
+   0x0000000000402e6e <+14>:    add    $0x28,%rsp			//Setze den Stack Pointer zurück
+   0x0000000000402e72 <+18>:    retq						//"Transfers program control to a return address located on the top of the stack"
+
+   
+   
+   

@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Windows
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Windows
-CND_ARTIFACT_NAME_Debug=cstandard
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Windows/cstandard
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Windows/package
-CND_PACKAGE_NAME_Debug=cstandard.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Windows/package/cstandard.tar
+CND_PLATFORM_Debug=MinGW-Windows
+CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
+CND_ARTIFACT_NAME_Debug=c-asm
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/c-asm
+CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
+CND_PACKAGE_NAME_Debug=c-asm.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/c-asm.tar
 # Release configuration
 CND_PLATFORM_Release=MinGW-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
-CND_ARTIFACT_NAME_Release=cstandard
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/cstandard
+CND_ARTIFACT_NAME_Release=c-asm
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/c-asm
 CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
-CND_PACKAGE_NAME_Release=cstandard.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/cstandard.tar
+CND_PACKAGE_NAME_Release=c-asm.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/c-asm.tar
 #
 # include compiler specific variables
 #

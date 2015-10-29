@@ -28,8 +28,21 @@
       <itemPath>/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/prog/../C/makefile</itemPath>
       <itemPath>../C/prog</itemPath>
     </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/prog/../C/makefile</itemPath>
+      <itemPath>../C/prog</itemPath>
+    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
+    <Elem>../C</Elem>
     <Elem>../C</Elem>
   </sourceRootList>
   <projectmakefile></projectmakefile>

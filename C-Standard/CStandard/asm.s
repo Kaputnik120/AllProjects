@@ -1,136 +1,144 @@
 	.file	"asm.c"
 	.text
 .Ltext0:
-	.section	.rodata
+	.cfi_sections	.debug_frame
+	.section .rdata,"dr"
 .LC0:
-	.string	"Beginning syscall."
+	.ascii "Beginning syscall.\0"
 .LC1:
-	.string	"Syscall ended. Result is %i\n"
+	.ascii "Syscall ended. Result is %i\12\0"
 	.text
 	.globl	runAsm
-	.type	runAsm, @function
+	.def	runAsm;	.scl	2;	.type	32;	.endef
+	.seh_proc	runAsm
 runAsm:
-.LFB0:
+.LFB13:
 	.file 1 "asm/asm.c"
 	.loc 1 4 0
 	.cfi_startproc
 	pushq	%rbp
+	.seh_pushreg	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
 	.cfi_def_cfa_register 6
-	subq	$16, %rsp
+	subq	$48, %rsp
+	.seh_stackalloc	48
+	.seh_endprologue
 	.loc 1 19 0
-	movl	$.LC0, %edi
+	leaq	.LC0(%rip), %rcx
 	call	puts
 	.loc 1 20 0
 	movl	$-14235, -4(%rbp)
 	.loc 1 21 0
-#APP
-# 21 "asm/asm.c" 1
+/APP
+ # 21 "asm/asm.c" 1
 	mov $3,%rax;mov $0,%rdi;syscall
-# 0 "" 2
-#NO_APP
+ # 0 "" 2
+/NO_APP
 	movl	%eax, -4(%rbp)
 	.loc 1 27 0
 	movl	-4(%rbp), %eax
-	movl	%eax, %esi
-	movl	$.LC1, %edi
-	movl	$0, %eax
+	movl	%eax, %edx
+	leaq	.LC1(%rip), %rcx
 	call	printf
+	nop
 	.loc 1 29 0
-	leave
+	addq	$48, %rsp
+	popq	%rbp
+	.cfi_restore 6
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE0:
-	.size	runAsm, .-runAsm
+.LFE13:
+	.seh_endproc
 .Letext0:
-	.section	.debug_info,"",@progbits
+	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x98
-	.value	0x4
-	.long	.Ldebug_abbrev0
+	.long	0x166
+	.word	0x4
+	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.long	.LASF9
+	.ascii "GNU C 4.9.2 -fpreprocessed -mtune=haswell -march=x86-64 -g\0"
 	.byte	0x1
-	.long	.LASF10
-	.long	.LASF11
+	.ascii "asm/asm.c\0"
+	.ascii "C:\\\\JavaProjects\\\\GIT\\\\Kaputnik120\\\\C-Standard\\\\CStandard\0"
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
-	.long	.Ldebug_line0
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x7
-	.long	.LASF0
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x8
-	.long	.LASF1
-	.uleb128 0x2
-	.byte	0x2
-	.byte	0x7
-	.long	.LASF2
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x7
-	.long	.LASF3
+	.secrel32	.Ldebug_line0
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
-	.long	.LASF4
+	.ascii "char\0"
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x7
+	.ascii "long long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x5
+	.ascii "long long int\0"
 	.uleb128 0x2
 	.byte	0x2
+	.byte	0x7
+	.ascii "short unsigned int\0"
+	.uleb128 0x2
+	.byte	0x4
 	.byte	0x5
-	.long	.LASF5
+	.ascii "int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x5
+	.ascii "long int\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "unsigned int\0"
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x7
+	.ascii "sizetype\0"
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.ascii "long unsigned int\0"
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x8
+	.ascii "unsigned char\0"
 	.uleb128 0x3
-	.byte	0x4
-	.byte	0x5
-	.string	"int"
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x5
-	.long	.LASF6
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x7
-	.long	.LASF7
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x6
-	.long	.LASF8
-	.uleb128 0x4
-	.long	.LASF12
+	.ascii "runAsm\0"
 	.byte	0x1
 	.byte	0x4
-	.quad	.LFB0
-	.quad	.LFE0-.LFB0
+	.quad	.LFB13
+	.quad	.LFE13-.LFB13
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x5
-	.string	"res"
+	.uleb128 0x4
+	.ascii "res\0"
 	.byte	0x1
 	.byte	0x14
-	.long	0x57
+	.long	0xe9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.byte	0
 	.byte	0
-	.section	.debug_abbrev,"",@progbits
+	.section	.debug_abbrev,"dr"
 .Ldebug_abbrev0:
 	.uleb128 0x1
 	.uleb128 0x11
 	.byte	0x1
 	.uleb128 0x25
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x13
 	.uleb128 0xb
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x1b
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -147,27 +155,16 @@ runAsm:
 	.uleb128 0x3e
 	.uleb128 0xb
 	.uleb128 0x3
-	.uleb128 0xe
-	.byte	0
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
 	.uleb128 0x8
 	.byte	0
 	.byte	0
-	.uleb128 0x4
+	.uleb128 0x3
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -182,7 +179,7 @@ runAsm:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x5
+	.uleb128 0x4
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -198,46 +195,21 @@ runAsm:
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_aranges,"",@progbits
+	.section	.debug_aranges,"dr"
 	.long	0x2c
-	.value	0x2
-	.long	.Ldebug_info0
+	.word	0x2
+	.secrel32	.Ldebug_info0
 	.byte	0x8
 	.byte	0
-	.value	0
-	.value	0
+	.word	0
+	.word	0
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.quad	0
 	.quad	0
-	.section	.debug_line,"",@progbits
+	.section	.debug_line,"dr"
 .Ldebug_line0:
-	.section	.debug_str,"MS",@progbits,1
-.LASF3:
-	.string	"unsigned int"
-.LASF0:
-	.string	"long unsigned int"
-.LASF10:
-	.string	"asm/asm.c"
-.LASF4:
-	.string	"signed char"
-.LASF2:
-	.string	"short unsigned int"
-.LASF5:
-	.string	"short int"
-.LASF9:
-	.string	"GNU C 4.8.4 -mtune=generic -march=x86-64 -g -fstack-protector"
-.LASF1:
-	.string	"unsigned char"
-.LASF6:
-	.string	"long int"
-.LASF7:
-	.string	"sizetype"
-.LASF11:
-	.string	"/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/C-Standard/CStandard"
-.LASF12:
-	.string	"runAsm"
-.LASF8:
-	.string	"char"
-	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4"
-	.section	.note.GNU-stack,"",@progbits
+	.section	.debug_str,"dr"
+	.ident	"GCC: (GNU) 4.9.2"
+	.def	puts;	.scl	2;	.type	32;	.endef
+	.def	printf;	.scl	2;	.type	32;	.endef

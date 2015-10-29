@@ -35,10 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/asm/asm.o \
-	${OBJECTDIR}/errors/handle_errors.o \
-	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/processes/create_process.o
+	${OBJECTDIR}/main.o
 
 
 # C Compiler Flags
@@ -59,31 +56,16 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cstandard.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c-asm.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cstandard.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c-asm.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cstandard ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/asm/asm.o: asm/asm.c 
-	${MKDIR} -p ${OBJECTDIR}/asm
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/asm/asm.o asm/asm.c
-
-${OBJECTDIR}/errors/handle_errors.o: errors/handle_errors.c 
-	${MKDIR} -p ${OBJECTDIR}/errors
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/errors/handle_errors.o errors/handle_errors.c
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c-asm ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/main.o: main.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
-
-${OBJECTDIR}/processes/create_process.o: processes/create_process.c 
-	${MKDIR} -p ${OBJECTDIR}/processes
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/processes/create_process.o processes/create_process.c
 
 # Subprojects
 .build-subprojects:
@@ -91,7 +73,7 @@ ${OBJECTDIR}/processes/create_process.o: processes/create_process.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cstandard.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c-asm.exe
 
 # Subprojects
 .clean-subprojects:

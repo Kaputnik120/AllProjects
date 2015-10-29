@@ -1,19 +1,13 @@
 	.file	"main.c"
 	.text
 .Ltext0:
-	.section	.rodata
-.LC0:
-	.string	"Started!"
-.LC1:
-	.string	"Compiled for Linux!"
-.LC2:
-	.string	"\n0. ASM \n"
-.LC3:
-	.string	"\n2. ERRORS:\n"
-.LC4:
-	.string	"\n26. PROCESSES:\n"
-.LC5:
-	.string	"Stopped!"
+	.cfi_sections	.debug_frame
+	.globl	i
+	.section .rdata,"dr"
+	.align 4
+i:
+	.long	2
+	.def	__main;	.scl	2;	.type	32;	.endef
 	.text
 	.globl	main
 	.def	main;	.scl	2;	.type	32;	.endef
@@ -30,42 +24,16 @@ main:
 	movq	%rsp, %rbp
 	.seh_setframe	%rbp, 0
 	.cfi_def_cfa_register 6
-	subq	$16, %rsp
-	movl	%edi, -4(%rbp)
-	movq	%rsi, -16(%rbp)
-	.loc 1 19 0
-	movl	$.LC0, %edi
-	call	puts
-	.loc 1 22 0
-	movl	$.LC1, %edi
-	call	puts
-	.loc 1 43 0
-#APP
-# 43 "main.c" 1
-	movq $1,%rax
- movq $0,%rdi
- syscall
-# 0 "" 2
-	.loc 1 56 0
-#NO_APP
-	movl	$.LC2, %edi
-	call	puts
-	.loc 1 58 0
-	movl	$.LC3, %edi
-	call	puts
-	.loc 1 59 0
-	call	runHandleErrors
-	.loc 1 60 0
-	movl	$.LC4, %edi
-	call	puts
-	.loc 1 61 0
-	call	runCreateProcess
-	.loc 1 63 0
-	movl	$.LC5, %edi
-	call	puts
-	.loc 1 64 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movl	%ecx, 16(%rbp)
+	movq	%rdx, 24(%rbp)
+	.loc 1 18 0
+	call	__main
+	.loc 1 20 0
 	movl	$0, %eax
-	.loc 1 65 0
+	.loc 1 21 0
 	addq	$32, %rsp
 	popq	%rbp
 	.cfi_restore 6
@@ -74,10 +42,33 @@ main:
 	.cfi_endproc
 .LFE16:
 	.seh_endproc
+	.globl	foo
+	.def	foo;	.scl	2;	.type	32;	.endef
+	.seh_proc	foo
+foo:
+.LFB17:
+	.loc 1 23 0
+	.cfi_startproc
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
+	.seh_endprologue
+	.loc 1 25 0
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE17:
+	.seh_endproc
 .Letext0:
 	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x1a7
+	.long	0x1c8
 	.word	0x4
 	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
@@ -85,7 +76,7 @@ main:
 	.ascii "GNU C 4.9.2 -fpreprocessed -mtune=haswell -march=x86-64 -g\0"
 	.byte	0x1
 	.ascii "main.c\0"
-	.ascii "C:\\\\JavaProjects\\\\GIT\\\\Kaputnik120\\\\C-Standard\\\\CStandard\0"
+	.ascii "C:\\\\JavaProjects\\\\GIT\\\\Kaputnik120\\\\C-ASM\0"
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.secrel32	.Ldebug_line0
@@ -115,7 +106,7 @@ main:
 	.ascii "long int\0"
 	.uleb128 0x3
 	.byte	0x8
-	.long	0x9d
+	.long	0x8d
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -148,17 +139,17 @@ main:
 	.ascii "main\0"
 	.byte	0x1
 	.byte	0x12
-	.long	0xe6
+	.long	0xd6
 	.quad	.LFB16
 	.quad	.LFE16-.LFB16
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1a4
+	.long	0x194
 	.uleb128 0x5
 	.ascii "argc\0"
 	.byte	0x1
 	.byte	0x12
-	.long	0xe6
+	.long	0xd6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -166,14 +157,32 @@ main:
 	.ascii "argv\0"
 	.byte	0x1
 	.byte	0x12
-	.long	0x1a4
+	.long	0x194
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
 	.uleb128 0x3
 	.byte	0x8
-	.long	0xf9
+	.long	0xe9
+	.uleb128 0x6
+	.ascii "foo\0"
+	.byte	0x1
+	.byte	0x17
+	.quad	.LFB17
+	.quad	.LFE17-.LFB17
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x7
+	.ascii "i\0"
+	.byte	0x1
+	.byte	0xb
+	.long	0x1c6
+	.uleb128 0x9
+	.byte	0x3
+	.quad	i
+	.uleb128 0x8
+	.long	0xd6
 	.byte	0
 	.section	.debug_abbrev,"dr"
 .Ldebug_abbrev0:
@@ -258,6 +267,51 @@ main:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
+	.uleb128 0x6
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x7
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x8
+	.uleb128 0x26
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
 	.byte	0
 	.section	.debug_aranges,"dr"
 	.long	0x2c
@@ -275,6 +329,3 @@ main:
 .Ldebug_line0:
 	.section	.debug_str,"dr"
 	.ident	"GCC: (GNU) 4.9.2"
-	.def	puts;	.scl	2;	.type	32;	.endef
-	.def	runHandleErrors;	.scl	2;	.type	32;	.endef
-	.def	runCreateProcess;	.scl	2;	.type	32;	.endef
