@@ -105,7 +105,7 @@ public class FXMLController implements Initializable {
             raiseValidationError("Please select either one \"Feel no pain Save: Reroll 1s\" or \"Feel no pain Save: Reroll\"!");
             return null;
         }
-        
+
         calculationModel.setRerollHit(shootingHitsReroll.isSelected());
         calculationModel.setReroll1sHit(shootingHitsReroll1s.isSelected());
         calculationModel.setRerollArmourSaves(shotArmourSaveReroll.isSelected());
@@ -114,11 +114,62 @@ public class FXMLController implements Initializable {
         calculationModel.setReroll1sInvulnerableSave(shotInvulnerableSaveReroll1s.isSelected());
         calculationModel.setReroll1sFnpSave(shotFNPSaveReroll1s.isSelected());
         calculationModel.setRerollFnpSave(shotFNPSaveReroll.isSelected());
-        
-        
-        
-        
+
+        calculationModel.setRending(shootingRending.isSelected());
+        calculationModel.setRerollWound(shootingWoundsReroll.isSelected());
+
+        int hit = sanitize((String) shootingHit.getSelectionModel().getSelectedItem());
+        calculationModel.setHit(hit);
+        int strength = sanitize((String) shootingStrength.getSelectionModel().getSelectedItem());
+        calculationModel.setStrength(strength);
+        int ap = sanitize((String) shootingAP.getSelectionModel().getSelectedItem());
+        calculationModel.setAp(ap);
+
+        try {
+            int points = sanitize(shootingPoints.getText());
+            calculationModel.setShootingPoints(points);
+        } catch (Exception e) {
+            raiseValidationError("Points must be a number!");
+            return null;
+        }
+        try {
+            int shots = sanitize(shootingShots.getText());
+            calculationModel.setShots(shots);
+        } catch (Exception e) {
+            raiseValidationError("Shots must be a number!");
+            return null;
+        }
+
+        int toughness = sanitize((String) shotToughness.getSelectionModel().getSelectedItem());
+        calculationModel.setToughness(toughness);
+        int armourSave = sanitize((String) shotArmourSave.getSelectionModel().getSelectedItem());
+        calculationModel.setArmourSave(armourSave);
+        int invulnerableSave = sanitize((String) shotInvulnerableSave.getSelectionModel().getSelectedItem());
+        calculationModel.setInvulnerableSave(invulnerableSave);
+        int fnpSave = sanitize((String) shotFNPSave.getSelectionModel().getSelectedItem());
+        calculationModel.setFnpSave(fnpSave);
+
+        try {
+            int woundsCount = sanitize(wounds.getText());
+            calculationModel.setWounds(woundsCount);
+        } catch (Exception e) {
+            raiseValidationError("Wounds must be a number!");
+            return null;
+        }
+        try {
+            int pointsCount = sanitize(points.getText());
+            calculationModel.setPoints(pointsCount);
+        } catch (Exception e) {
+            raiseValidationError("Shots must be a number!");
+            return null;
+        }
+
         return calculationModel;
+    }
+
+    private int sanitize(String s) {
+        String sanitizedHit = s.replace("-", "-1").replace("+", "").replace("Automatic", "-1").replace("D", "-1");
+        return Integer.parseInt(sanitizedHit);
     }
 
     private void raiseValidationError(String message) {
