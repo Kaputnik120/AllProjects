@@ -1,4 +1,4 @@
-package de.buschbaum.battle.statistics.battlestatistics;
+package de.buschbaum.battle.statistics.main;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;

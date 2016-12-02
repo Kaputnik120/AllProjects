@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
 
-<GridPane fx:controller="de.buschbaum.battle.statistics.battlestatistics.FXMLController"
+<GridPane fx:controller="de.buschbaum.battle.statistics.main.FXMLController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <padding>
         <Insets top="50" right="50" bottom="50" left="50"/>
@@ -17,13 +17,13 @@
     <children>
         <!-- Heading -->
         <GridPane alignment="center" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <ImageView id="boxImage" fitHeight="200" fitWidth="200" preserveRatio="true"
+            <ImageView id="boxImage" fitHeight="100" fitWidth="100" preserveRatio="true"
                        GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4">    
                 <image>
                     <Image url="dices.png" />
                 </image>
                 <GridPane.margin>
-                    <Insets bottom="80.0" />
+                    <Insets bottom="10.0" />
                 </GridPane.margin>
             </ImageView>
         </GridPane>
@@ -116,32 +116,24 @@
         </GridPane>
         
         <!-- Actions -->
-        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="3">
-            <padding>
-                <Insets bottom="50"/>
-            </padding>
-            
+        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="3">          
             <Button text="Calculate" fx:id="calculate" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
         </GridPane>
         
         <!-- Result -->
-        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <GridPane alignment="CENTER" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints vgrow="NEVER" prefHeight="150.0" />
+            </rowConstraints>
             <Label text="Result" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <TableView fx:id="binomialResult" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                <columns>
-                    <TableColumn text="Lost wounds">
-                    </TableColumn>
-                    <TableColumn text="Probability">
-                    </TableColumn>
-                </columns>    
+            <TableView fx:id="binomialResult" GridPane.columnIndex="0" GridPane.rowIndex="1"> 
             </TableView>
-            <TableView fx:id="otherResult" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                <columns>
-                    <TableColumn text="Point effectiveness">
-                    </TableColumn>
-                    <TableColumn text="Single shot probability">
-                    </TableColumn>
-                </columns>    
+            <TableView fx:id="otherResult" GridPane.columnIndex="1" GridPane.rowIndex="1">  
             </TableView>
         </GridPane>
         

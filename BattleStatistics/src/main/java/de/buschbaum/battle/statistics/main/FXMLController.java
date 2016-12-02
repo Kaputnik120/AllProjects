@@ -1,14 +1,21 @@
-package de.buschbaum.battle.statistics.battlestatistics;
+package de.buschbaum.battle.statistics.main;
 
+import de.buschbaum.battle.statistics.model.BinomialTableModel;
+import de.buschbaum.battle.statistics.model.OtherTableModel;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class FXMLController implements Initializable {
 
@@ -59,6 +66,10 @@ public class FXMLController implements Initializable {
     private TextField wounds;
     @FXML
     private TextField points;
+    @FXML
+    private TableView binomialResult;
+    @FXML
+    private TableView otherResult;
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -98,5 +109,23 @@ public class FXMLController implements Initializable {
         shotFNPSaveReroll1s.setSelected(false);
         points.setText("200");
         wounds.setText("5");
+
+        
+        //TableViews
+        TableColumn binomailLostWoundsColumn = new TableColumn("Lost Wounds");
+        TableColumn binomialChanceColumn = new TableColumn("At least chance");
+        binomialResult.getColumns().addAll(binomailLostWoundsColumn, binomialChanceColumn);        
+        ObservableList<BinomialTableModel> binomialRow = FXCollections.observableArrayList(new BinomialTableModel("0", "0"));
+        binomailLostWoundsColumn.setCellValueFactory(new PropertyValueFactory<>("lostWounds"));
+        binomialChanceColumn.setCellValueFactory(new PropertyValueFactory<>("chance"));
+        binomialResult.setItems(binomialRow);
+        
+        TableColumn otherPointsColumn = new TableColumn("Point effectiveness");
+        TableColumn otherSingleHitChanceColumn = new TableColumn("Single hit chance");
+        otherResult.getColumns().addAll(otherPointsColumn, otherSingleHitChanceColumn);        
+        ObservableList<OtherTableModel> otherRow = FXCollections.observableArrayList(new OtherTableModel("0", "0"));
+        otherPointsColumn.setCellValueFactory(new PropertyValueFactory<>("points"));
+        otherSingleHitChanceColumn.setCellValueFactory(new PropertyValueFactory<>("singleHitChance"));
+        otherResult.setItems(otherRow);
     }
 }

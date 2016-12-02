@@ -11,13 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>de.buschbaum.battle.statistics.battlestatistics.MainApp</mainClass>
+        <mainClass>de.buschbaum.battle.statistics.main.MainApp</mainClass>
     </properties>
-
-    <organization>
-        <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>Your Organisation</name>
-    </organization>
 
     <build>
         <plugins>
