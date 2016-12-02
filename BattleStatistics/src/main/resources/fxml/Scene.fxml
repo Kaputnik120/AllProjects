@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
@@ -12,20 +13,137 @@
     <padding>
         <Insets top="50" right="50" bottom="50" left="50"/>
     </padding>
+    
     <children>
+        <!-- Heading -->
+        <GridPane alignment="center" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <ImageView id="boxImage" fitHeight="200" fitWidth="200" preserveRatio="true"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4">    
+                <image>
+                    <Image url="dices.png" />
+                </image>
+                <GridPane.margin>
+                    <Insets bottom="80.0" />
+                </GridPane.margin>
+            </ImageView>
+        </GridPane>
         
-        <Label >
         
-        
-        <TextField GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="unitName"/>
-        
-        <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="hit">                
+        <!-- Shooting Unit -->
+        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <padding>
+                <Insets bottom="50"/>
+            </padding>
             
-        </ComboBox>
-
+            <Label text="Shooting unit" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            
+            <Label text="Unit" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="Hit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Hit Modifiers" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Strength" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Wound Modifiers" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text="AP" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text="Shots" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label text="Points" GridPane.columnIndex="7" GridPane.rowIndex="1" />
         
+            <TextField GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="shootingUnitName"/>
+            <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="shootingHit">                
+            </ComboBox>
+            <VBox spacing="10"
+                  GridPane.columnIndex="2" GridPane.rowIndex="2">
+                <CheckBox fx:id="shootingHitsReroll" text="Reroll" />
+                <CheckBox fx:id="shootingHitsReroll1s" text="Reroll 1s" />
+            </VBox>
+            <ComboBox  GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="shootingStrength">                
+            </ComboBox>
+            <VBox spacing="10"
+                  GridPane.columnIndex="4" GridPane.rowIndex="2">
+                <CheckBox fx:id="shootingWoundsReroll" text="Reroll" />
+                <CheckBox fx:id="shootingRending" text="Rending" />
+            </VBox>
+            <ComboBox  GridPane.columnIndex="5" GridPane.rowIndex="2" fx:id="shootingAP">                     
+            </ComboBox>
+            <TextField GridPane.columnIndex="6" GridPane.rowIndex="2" fx:id="shootingShots"/>
+            <TextField GridPane.columnIndex="7" GridPane.rowIndex="2" fx:id="shootingPoints"/>
+        </GridPane>
         
+        <!-- Shot unit -->
+        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            
+            <padding>
+                <Insets bottom="50"/>
+            </padding>
+            
+            <Label text="Shot unit" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            
+            <Label text="Unit" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="Toughness" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Armour save" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Armour save modifiers" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Invulnerable save" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text="Invulnerable save modifiers" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text="Feel no Pain/Reap save" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label text="Feel no Pain/Reap save modifiers" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Label text="Wounds" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Label text="Points" GridPane.columnIndex="9" GridPane.rowIndex="1" />
         
+            <TextField GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="shotUnitName"/>
+            <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="shotToughness">                
+            </ComboBox>
+            <ComboBox  GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="shotArmourSave">                
+            </ComboBox>
+            <VBox spacing="10"
+                  GridPane.columnIndex="3" GridPane.rowIndex="2">
+                <CheckBox fx:id="shotArmourSaveReroll" text="Reroll" />
+                <CheckBox fx:id="shotArmourSaveReroll1s" text="Reroll 1s" />
+            </VBox>
+            <ComboBox  GridPane.columnIndex="4" GridPane.rowIndex="2" fx:id="shotInvulnerableSave">                
+            </ComboBox>
+            <VBox spacing="10"
+                  GridPane.columnIndex="5" GridPane.rowIndex="2">
+                <CheckBox fx:id="shotInvulnerableSaveReroll" text="Reroll" />
+                <CheckBox fx:id="shotInvulnerableSaveReroll1s" text="Reroll 1s" />
+            </VBox>
+            <ComboBox  GridPane.columnIndex="6" GridPane.rowIndex="2" fx:id="shotFNPSave">                
+            </ComboBox>
+            <VBox spacing="10"
+                  GridPane.columnIndex="7" GridPane.rowIndex="2">
+                <CheckBox fx:id="shotFNPSaveReroll" text="Reroll" />
+                <CheckBox fx:id="shotFNPSaveReroll1s" text="Reroll 1s" />
+            </VBox>
+            <TextField GridPane.columnIndex="8" GridPane.rowIndex="2" fx:id="wounds"/>
+            <TextField GridPane.columnIndex="9" GridPane.rowIndex="2" fx:id="points"/>
+        </GridPane>
+        
+        <!-- Actions -->
+        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <padding>
+                <Insets bottom="50"/>
+            </padding>
+            
+            <Button text="Calculate" fx:id="calculate" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        </GridPane>
+        
+        <!-- Result -->
+        <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <Label text="Result" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TableView fx:id="binomialResult" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <columns>
+                    <TableColumn text="Lost wounds">
+                    </TableColumn>
+                    <TableColumn text="Probability">
+                    </TableColumn>
+                </columns>    
+            </TableView>
+            <TableView fx:id="otherResult" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <columns>
+                    <TableColumn text="Point effectiveness">
+                    </TableColumn>
+                    <TableColumn text="Single shot probability">
+                    </TableColumn>
+                </columns>    
+            </TableView>
+        </GridPane>
         
     </children>
 </GridPane>
