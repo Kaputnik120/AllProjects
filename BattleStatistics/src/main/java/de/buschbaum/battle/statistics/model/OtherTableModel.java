@@ -49,6 +49,11 @@ public class OtherTableModel {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "OtherTableModel{" + "points=" + points + ", singleHitChance=" + singleHitChance + '}';
+    }
+
     public String getPoints() {
         return points.get();
     }
@@ -56,7 +61,4 @@ public class OtherTableModel {
     public String getSingleHitChance() {
         return singleHitChance.get();
     }
-
-    
-    
 }

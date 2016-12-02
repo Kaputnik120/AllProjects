@@ -49,6 +49,13 @@ public class BinomialTableModel {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "BinomialTableModel{" + "lostWounds=" + lostWounds + ", chance=" + chance + '}';
+    }
+
+    
+    
     public String getLostWounds() {
         return lostWounds.get();
     }

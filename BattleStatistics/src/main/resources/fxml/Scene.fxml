@@ -117,7 +117,7 @@
         
         <!-- Actions -->
         <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="3">          
-            <Button text="Calculate" fx:id="calculate" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Button text="Calculate" fx:id="calculate" onAction="#handleCalculateAction" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
         </GridPane>
         
         <!-- Result -->

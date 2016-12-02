@@ -1,6 +1,8 @@
 package de.buschbaum.battle.statistics.main;
 
+import de.buschbaum.battle.statistics.core.CalculationService;
 import de.buschbaum.battle.statistics.model.BinomialTableModel;
+import de.buschbaum.battle.statistics.model.CalculationModel;
 import de.buschbaum.battle.statistics.model.OtherTableModel;
 import java.net.URL;
 import java.util.Arrays;
@@ -10,6 +12,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -72,7 +76,56 @@ public class FXMLController implements Initializable {
     private TableView otherResult;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleCalculateAction(ActionEvent event) {
+        CalculationModel calculationModel = convert();
+
+        if (calculationModel != null) {
+            System.out.println("Start calculating!");
+            CalculationService.calculate(calculationModel);
+        }
+
+    }
+
+    private CalculationModel convert() {
+        CalculationModel calculationModel = new CalculationModel();
+
+        if (shootingHitsReroll.isSelected() && shootingHitsReroll1s.isSelected()) {
+            raiseValidationError("Please select either one \"Hit: Reroll 1s\" or \"Hit: Reroll\"!");
+            return null;
+        }
+        if (shotArmourSaveReroll.isSelected() && shotArmourSaveReroll1s.isSelected()) {
+            raiseValidationError("Please select either one \"Armour Save: Reroll 1s\" or \"Armour Save: Reroll\"!");
+            return null;
+        }
+        if (shotInvulnerableSaveReroll.isSelected() && shotInvulnerableSaveReroll1s.isSelected()) {
+            raiseValidationError("Please select either one \"Invulnerable Save: Reroll 1s\" or \"Invulnerable Save: Reroll\"!");
+            return null;
+        }
+        if (shotFNPSaveReroll.isSelected() && shotFNPSaveReroll1s.isSelected()) {
+            raiseValidationError("Please select either one \"Feel no pain Save: Reroll 1s\" or \"Feel no pain Save: Reroll\"!");
+            return null;
+        }
+        
+        calculationModel.setRerollHit(shootingHitsReroll.isSelected());
+        calculationModel.setReroll1sHit(shootingHitsReroll1s.isSelected());
+        calculationModel.setRerollArmourSaves(shotArmourSaveReroll.isSelected());
+        calculationModel.setReroll1sArmourSaves(shotArmourSaveReroll1s.isSelected());
+        calculationModel.setRerollInvulnerableSave(shotInvulnerableSaveReroll.isSelected());
+        calculationModel.setReroll1sInvulnerableSave(shotInvulnerableSaveReroll1s.isSelected());
+        calculationModel.setReroll1sFnpSave(shotFNPSaveReroll1s.isSelected());
+        calculationModel.setRerollFnpSave(shotFNPSaveReroll.isSelected());
+        
+        
+        
+        
+        return calculationModel;
+    }
+
+    private void raiseValidationError(String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Input validation failed");
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
 
     @Override
@@ -110,19 +163,18 @@ public class FXMLController implements Initializable {
         points.setText("200");
         wounds.setText("5");
 
-        
         //TableViews
         TableColumn binomailLostWoundsColumn = new TableColumn("Lost Wounds");
         TableColumn binomialChanceColumn = new TableColumn("At least chance");
-        binomialResult.getColumns().addAll(binomailLostWoundsColumn, binomialChanceColumn);        
+        binomialResult.getColumns().addAll(binomailLostWoundsColumn, binomialChanceColumn);
         ObservableList<BinomialTableModel> binomialRow = FXCollections.observableArrayList(new BinomialTableModel("0", "0"));
         binomailLostWoundsColumn.setCellValueFactory(new PropertyValueFactory<>("lostWounds"));
         binomialChanceColumn.setCellValueFactory(new PropertyValueFactory<>("chance"));
         binomialResult.setItems(binomialRow);
-        
+
         TableColumn otherPointsColumn = new TableColumn("Point effectiveness");
         TableColumn otherSingleHitChanceColumn = new TableColumn("Single hit chance");
-        otherResult.getColumns().addAll(otherPointsColumn, otherSingleHitChanceColumn);        
+        otherResult.getColumns().addAll(otherPointsColumn, otherSingleHitChanceColumn);
         ObservableList<OtherTableModel> otherRow = FXCollections.observableArrayList(new OtherTableModel("0", "0"));
         otherPointsColumn.setCellValueFactory(new PropertyValueFactory<>("points"));
         otherSingleHitChanceColumn.setCellValueFactory(new PropertyValueFactory<>("singleHitChance"));
