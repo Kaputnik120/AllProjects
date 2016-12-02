@@ -12,5 +12,14 @@
         <group>
             <file>file:/home/uli/Dokumente/IT/Entwicklung/NetBeansProjects/Kaputnik120/C/makefile</file>
         </group>
+        <group name="Stuff"/>
+        <group name="Liferay">
+            <file>file:/C:/JavaProjects/GIT/Kaputnik120/C/win/win.c</file>
+            <file>file:/C:/JavaProjects/GIT/Kaputnik120/C/foo.h</file>
+            <file>file:/C:/JavaProjects/GIT/Kaputnik120/C/bar.c</file>
+            <file>file:/C:/JavaProjects/GIT/Kaputnik120/C/makefile</file>
+            <file>file:/C:/JavaProjects/GIT/Kaputnik120/C/bar.h</file>
+            <file>file:/C:/JavaProjects/GIT/Kaputnik120/C/linux/linux.c</file>
+        </group>
     </open-files>
 </project-private>
