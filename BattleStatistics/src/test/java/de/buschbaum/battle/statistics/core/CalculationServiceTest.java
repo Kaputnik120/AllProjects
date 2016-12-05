@@ -6,6 +6,8 @@ package de.buschbaum.battle.statistics.core;
 import static de.buschbaum.battle.statistics.core.CalculationService.*;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -13,6 +15,8 @@ import org.junit.Test;
  */
 public class CalculationServiceTest {
 
+    private final static Logger LOG = LoggerFactory.getLogger(CalculationServiceTest.class);
+    
     @Test
     public void testd6() {
         double d6_6 = d6(6);
@@ -45,9 +49,33 @@ public class CalculationServiceTest {
 
     @Test
     public void testRending() {
-        double[] rending = splitRending(0.5, 6);
-        Assert.assertTrue(littleDifference(rending[1], 0.08333333));
-        Assert.assertTrue(littleDifference(rending[0], 0.416666666));
+        double[] rending = splitRending(3, false, false);
+        Assert.assertTrue(littleDifference(rending[0], 0.5));
+        Assert.assertTrue(littleDifference(rending[1], 0.16666666));
+        
+        rending = splitRending(4, true, false);
+        Assert.assertTrue(littleDifference(rending[0], 0.38888888));
+        Assert.assertTrue(littleDifference(rending[1], 0.19444444));
+        
+        rending = splitRending(5, true, false);
+        Assert.assertTrue(littleDifference(rending[0], 0.19444444));
+        Assert.assertTrue(littleDifference(rending[1], 0.19444444));
+        
+        rending = splitRending(6, true, false);
+        Assert.assertTrue(littleDifference(rending[0], 0));
+        Assert.assertTrue(littleDifference(rending[1], 0.19444444));
+        
+        rending = splitRending(4, false, true);
+        Assert.assertTrue(littleDifference(rending[0], 0.5));
+        Assert.assertTrue(littleDifference(rending[1], 0.25));
+        
+        rending = splitRending(5, false, true);
+        Assert.assertTrue(littleDifference(rending[0], 0.27777777));
+        Assert.assertTrue(littleDifference(rending[1], 0.27777777));
+        
+        rending = splitRending(6, false, true);
+        Assert.assertTrue(littleDifference(rending[0], 0));
+        Assert.assertTrue(littleDifference(rending[1], 0.30555555));
     }
 
     @Test
@@ -61,8 +89,7 @@ public class CalculationServiceTest {
         bestSave = chooseBestSave(new int[]{5, 4, 6});
         Assert.assertTrue(bestSave == 4);
     }
-    
-    
+
     @Test
     public void testBestSaveRules() {
         int bestSave = chooseBestSave(2, 4, 5, false, 5, false);
@@ -79,7 +106,24 @@ public class CalculationServiceTest {
         Assert.assertTrue(bestSave == 7);
     }
 
+    @Test
+    public void testCalculateWoundD6() {
+        int woundD6 = calculateWoundD6(7, 2);
+        Assert.assertTrue(woundD6 == 2);
+        woundD6 = calculateWoundD6(3, 2);
+        Assert.assertTrue(woundD6 == 3);
+        woundD6 = calculateWoundD6(4, 4);
+        Assert.assertTrue(woundD6 == 4);
+        woundD6 = calculateWoundD6(1, 4);
+        Assert.assertTrue(woundD6 == 6);
+        woundD6 = calculateWoundD6(6, 8);
+        Assert.assertTrue(woundD6 == 6);
+        woundD6 = calculateWoundD6(5, 10);
+        Assert.assertTrue(woundD6 == 7);
+    }
+
     private boolean littleDifference(double a, double b) {
+        LOG.info("Checking {} and {}", a, b);
         return Math.abs(a - b) < 0.000001;
     }
 
