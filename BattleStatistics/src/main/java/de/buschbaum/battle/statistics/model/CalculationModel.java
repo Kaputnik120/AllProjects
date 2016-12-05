@@ -26,7 +26,11 @@ public class CalculationModel {
 
     private boolean rerollWound;
 
+    private boolean reroll1sWound;
+
     private boolean rending;
+    
+    private boolean ignoreCover;
 
     /**
      * If ap is "-", it's represented as -1.
@@ -44,6 +48,12 @@ public class CalculationModel {
      * represented as -1.
      */
     private int armourSave;
+
+    /**
+     * Append "+" to the value for human readibility. No cover save is
+     * represented as -1.
+     */
+    private int coverSave;
 
     private boolean rerollArmourSaves;
 
@@ -72,118 +82,6 @@ public class CalculationModel {
     private int wounds;
 
     private int points;
-
-    @Override
-    public String toString() {
-        return "CalculationModel{" + "hit=" + hit + ", rerollHit=" + rerollHit + ", reroll1sHit=" + reroll1sHit + ", strength=" + strength + ", rerollWound=" + rerollWound + ", rending=" + rending + ", ap=" + ap + ", shots=" + shots + ", shootingPoints=" + shootingPoints + ", toughness=" + toughness + ", armourSave=" + armourSave + ", rerollArmourSaves=" + rerollArmourSaves + ", reroll1sArmourSaves=" + reroll1sArmourSaves + ", invulnerableSave=" + invulnerableSave + ", rerollInvulnerableSave=" + rerollInvulnerableSave + ", reroll1sInvulnerableSave=" + reroll1sInvulnerableSave + ", fnpSave=" + fnpSave + ", rerollFnpSave=" + rerollFnpSave + ", reroll1sFnpSave=" + reroll1sFnpSave + ", wounds=" + wounds + ", points=" + points + '}';
-    }
-
-    
-    
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 71 * hash + this.getHit();
-        hash = 71 * hash + (this.isRerollHit() ? 1 : 0);
-        hash = 71 * hash + (this.isReroll1sHit() ? 1 : 0);
-        hash = 71 * hash + this.getStrength();
-        hash = 71 * hash + (this.isRerollWound() ? 1 : 0);
-        hash = 71 * hash + (this.isRending() ? 1 : 0);
-        hash = 71 * hash + this.getAp();
-        hash = 71 * hash + this.getShots();
-        hash = 71 * hash + this.getShootingPoints();
-        hash = 71 * hash + this.getToughness();
-        hash = 71 * hash + this.getArmourSave();
-        hash = 71 * hash + (this.isRerollArmourSaves() ? 1 : 0);
-        hash = 71 * hash + (this.isReroll1sArmourSaves() ? 1 : 0);
-        hash = 71 * hash + this.getInvulnerableSave();
-        hash = 71 * hash + (this.isRerollInvulnerableSave() ? 1 : 0);
-        hash = 71 * hash + (this.isReroll1sInvulnerableSave() ? 1 : 0);
-        hash = 71 * hash + this.getFnpSave();
-        hash = 71 * hash + (this.isRerollFnpSave() ? 1 : 0);
-        hash = 71 * hash + (this.isReroll1sFnpSave() ? 1 : 0);
-        hash = 71 * hash + this.getWounds();
-        hash = 71 * hash + this.getPoints();
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CalculationModel other = (CalculationModel) obj;
-        if (this.getHit() != other.getHit()) {
-            return false;
-        }
-        if (this.isRerollHit() != other.isRerollHit()) {
-            return false;
-        }
-        if (this.isReroll1sHit() != other.isReroll1sHit()) {
-            return false;
-        }
-        if (this.getStrength() != other.getStrength()) {
-            return false;
-        }
-        if (this.isRerollWound() != other.isRerollWound()) {
-            return false;
-        }
-        if (this.isRending() != other.isRending()) {
-            return false;
-        }
-        if (this.getAp() != other.getAp()) {
-            return false;
-        }
-        if (this.getShots() != other.getShots()) {
-            return false;
-        }
-        if (this.getShootingPoints() != other.getShootingPoints()) {
-            return false;
-        }
-        if (this.getToughness() != other.getToughness()) {
-            return false;
-        }
-        if (this.getArmourSave() != other.getArmourSave()) {
-            return false;
-        }
-        if (this.isRerollArmourSaves() != other.isRerollArmourSaves()) {
-            return false;
-        }
-        if (this.isReroll1sArmourSaves() != other.isReroll1sArmourSaves()) {
-            return false;
-        }
-        if (this.getInvulnerableSave() != other.getInvulnerableSave()) {
-            return false;
-        }
-        if (this.isRerollInvulnerableSave() != other.isRerollInvulnerableSave()) {
-            return false;
-        }
-        if (this.isReroll1sInvulnerableSave() != other.isReroll1sInvulnerableSave()) {
-            return false;
-        }
-        if (this.getFnpSave() != other.getFnpSave()) {
-            return false;
-        }
-        if (this.isRerollFnpSave() != other.isRerollFnpSave()) {
-            return false;
-        }
-        if (this.isReroll1sFnpSave() != other.isReroll1sFnpSave()) {
-            return false;
-        }
-        if (this.getWounds() != other.getWounds()) {
-            return false;
-        }
-        if (this.getPoints() != other.getPoints()) {
-            return false;
-        }
-        return true;
-    }
 
     /**
      * @return the hit
@@ -256,6 +154,20 @@ public class CalculationModel {
     }
 
     /**
+     * @return the reroll1sWound
+     */
+    public boolean isReroll1sWound() {
+        return reroll1sWound;
+    }
+
+    /**
+     * @param reroll1sWound the reroll1sWound to set
+     */
+    public void setReroll1sWound(boolean reroll1sWound) {
+        this.reroll1sWound = reroll1sWound;
+    }
+
+    /**
      * @return the rending
      */
     public boolean isRending() {
@@ -267,6 +179,20 @@ public class CalculationModel {
      */
     public void setRending(boolean rending) {
         this.rending = rending;
+    }
+
+    /**
+     * @return the ignoreCover
+     */
+    public boolean isIgnoreCover() {
+        return ignoreCover;
+    }
+
+    /**
+     * @param ignoreCover the ignoreCover to set
+     */
+    public void setIgnoreCover(boolean ignoreCover) {
+        this.ignoreCover = ignoreCover;
     }
 
     /**
@@ -337,6 +263,20 @@ public class CalculationModel {
      */
     public void setArmourSave(int armourSave) {
         this.armourSave = armourSave;
+    }
+
+    /**
+     * @return the coverSave
+     */
+    public int getCoverSave() {
+        return coverSave;
+    }
+
+    /**
+     * @param coverSave the coverSave to set
+     */
+    public void setCoverSave(int coverSave) {
+        this.coverSave = coverSave;
     }
 
     /**

@@ -120,6 +120,8 @@ public class CalculationServiceTest {
         Assert.assertTrue(woundD6 == 6);
         woundD6 = calculateWoundD6(5, 10);
         Assert.assertTrue(woundD6 == 7);
+        woundD6 = calculateWoundD6(10, 4);
+        Assert.assertTrue(woundD6 == 2);
     }
 
     private boolean littleDifference(double a, double b) {

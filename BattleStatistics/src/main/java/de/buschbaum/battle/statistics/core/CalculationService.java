@@ -27,10 +27,17 @@ public class CalculationService {
             chanceHit = d6(cm.getHit());
         }
 
-        double woundChance;
-        if (cm.isRerollWound()) {
+        int woundD6 = calculateWoundD6(cm.getStrength(), cm.getToughness());
+        
+        double[] woundResult = splitRending(woundD6, cm.isReroll1sWound(), cm.isRerollWound());
+        
+        boolean destroyer = false;
+        
+        int noRendingSave = chooseBestSave(cm.getArmourSave(), cm.getCoverSave(), cm.getInvulnerableSave() , cm.isIgnoreCover(), cm.getAp(), false);
+        int rendingSave = chooseBestSave(cm.getArmourSave(), cm.getCoverSave(), cm.getInvulnerableSave() , cm.isIgnoreCover(), 2, false);
+        
+        
 
-        }
     }
 
     static double d6(int d) {

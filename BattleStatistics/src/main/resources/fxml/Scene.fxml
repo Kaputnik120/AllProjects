@@ -28,6 +28,24 @@
             </ImageView>
         </GridPane>
         
+        <!-- Es fehlt: 
+        -Reroll1s Wound
+        -Ignore Cover
+        -Ignore all saves
+        (-InstantDeath)
+        (-Monster Hunter)
+        -Sniper
+        -Poison Dropdown
+        -Preffered Enemy 
+        -Hatred
+        -Shred
+        
+
+        -Cover
+        -RerollCover
+        -Reroll1sCover
+        (-Eternal Warrior)
+        -->
         
         <!-- Shooting Unit -->
         <GridPane alignment="BASELINE_LEFT" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
