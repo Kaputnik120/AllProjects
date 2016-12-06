@@ -38,6 +38,8 @@
     -fx-background-color: -rgba-secondary-1-1;
     -fx-color: -rgba-secondary-1-1;
     -fx-font-size: 16px;
+    -fx-focus-color: transparent; 
+    -fx-faint-focus-color: transparent;
 }
 .table-row-cell {
     -fx-background-color: -rgba-secondary-1-1;
@@ -54,4 +56,51 @@
     -fx-highlight-fill: -rgba-primary-2;
     -fx-highlight-text-fill:-rgba-primary-4;
     -fx-prompt-text-fill: -rgba-primary-4;
+}
+.check-box:hover .mark {
+    -fx-color: -rgba-secondary-1-2;
+}
+.check-box:armed .mark {
+    -fx-color: -rgba-secondary-1-2;
+}
+.check-box:hover .box {
+    -fx-color: -rgba-secondary-1-2;
+}
+.check-box:armed .box {
+    -fx-color: -rgba-secondary-1-2;
+}
+.combo-box-popup .list-view{
+    -fx-background-color: -rgba-secondary-1-1;
+    -fx-text-fill: -rgba-secondary-1-4;
+}
+.combo-box-popup .list-cell{
+    -fx-background-color: -rgba-secondary-1-1;
+    -fx-text-fill: -rgba-secondary-1-4;
+}
+.combo-box-popup .list-view .list-cell{
+    -fx-background-color: -rgba-secondary-1-1;
+    -fx-text-fill: -rgba-secondary-1-4;
+}
+.combo-box > .list-cell {
+    -fx-background-color: red;
+}
+.combo-box > .list-cell:hover {
+    -fx-background-color: blue;
+}
+.combo-box > .list-cell:selected:hover {
+    -fx-background-color: green;
+}
+.combo-box > .list-cell:filled:hover {
+    -fx-background-color: yellow;
+}
+.combo-box > .list-cell:filled:selected:hover {
+    -fx-background-color: brown;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover {
+    -fx-background-color: -rgba-secondary-1-2;
+    -fx-text-fill: -rgba-secondary-1-4;
+}
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: -rgba-secondary-1-2;
+    -fx-text-fill: -rgba-secondary-1-4;
 }
