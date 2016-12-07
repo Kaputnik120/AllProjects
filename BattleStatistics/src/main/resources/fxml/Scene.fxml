@@ -57,6 +57,7 @@
                 <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="shootingStrength"/>
                 <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="shootingWoundsReroll" text="Reroll" />
                 <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="shootingWoundsReroll1s" text="Reroll 1s" />
+                <CheckBox GridPane.columnIndex="4" GridPane.rowIndex="3" fx:id="instantDeath" text="Instant death" />
                 <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="AP" />
                 <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="shootingAP"/>
                 <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="shootingRending" text="Rending" />

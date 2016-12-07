@@ -29,7 +29,9 @@ public class CalculationModel {
     private boolean reroll1sWound;
 
     private boolean rending;
-    
+
+    private boolean instantDeath;
+
     private boolean ignoreCover;
 
     /**
@@ -83,7 +85,15 @@ public class CalculationModel {
 
     private int points;
 
+    @Override
+    public String toString() {
+        return "CalculationModel{" + "hit=" + hit + ", rerollHit=" + rerollHit + ", reroll1sHit=" + reroll1sHit + ", strength=" + strength + ", rerollWound=" + rerollWound + ", reroll1sWound=" + reroll1sWound + ", rending=" + rending + ", instantDeath=" + instantDeath + ", ignoreCover=" + ignoreCover + ", ap=" + ap + ", shots=" + shots + ", shootingPoints=" + shootingPoints + ", toughness=" + toughness + ", armourSave=" + armourSave + ", coverSave=" + coverSave + ", rerollArmourSaves=" + rerollArmourSaves + ", reroll1sArmourSaves=" + reroll1sArmourSaves + ", invulnerableSave=" + invulnerableSave + ", rerollInvulnerableSave=" + rerollInvulnerableSave + ", reroll1sInvulnerableSave=" + reroll1sInvulnerableSave + ", fnpSave=" + fnpSave + ", rerollFnpSave=" + rerollFnpSave + ", reroll1sFnpSave=" + reroll1sFnpSave + ", wounds=" + wounds + ", points=" + points + '}';
+    }
+
     /**
+     * Append + for human readibility. E.g. 3 is interpreted as 3+. -1 indicates
+     * automatic hit.
+     *
      * @return the hit
      */
     public int getHit() {
@@ -91,6 +101,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append + for human readibility. E.g. 3 is interpreted as 3+. -1 indicates
+     * automatic hit.
+     *
      * @param hit the hit to set
      */
     public void setHit(int hit) {
@@ -126,6 +139,8 @@ public class CalculationModel {
     }
 
     /**
+     * Strength "D" will be represented as -1.
+     *
      * @return the strength
      */
     public int getStrength() {
@@ -133,6 +148,8 @@ public class CalculationModel {
     }
 
     /**
+     * Strength "D" will be represented as -1.
+     *
      * @param strength the strength to set
      */
     public void setStrength(int strength) {
@@ -182,6 +199,20 @@ public class CalculationModel {
     }
 
     /**
+     * @return the instantDeath
+     */
+    public boolean isInstantDeath() {
+        return instantDeath;
+    }
+
+    /**
+     * @param instantDeath the instantDeath to set
+     */
+    public void setInstantDeath(boolean instantDeath) {
+        this.instantDeath = instantDeath;
+    }
+
+    /**
      * @return the ignoreCover
      */
     public boolean isIgnoreCover() {
@@ -196,6 +227,8 @@ public class CalculationModel {
     }
 
     /**
+     * If ap is "-", it's represented as -1.
+     *
      * @return the ap
      */
     public int getAp() {
@@ -203,6 +236,8 @@ public class CalculationModel {
     }
 
     /**
+     * If ap is "-", it's represented as -1.
+     *
      * @param ap the ap to set
      */
     public void setAp(int ap) {
@@ -252,6 +287,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No armour save is
+     * represented as -1.
+     *
      * @return the armourSave
      */
     public int getArmourSave() {
@@ -259,6 +297,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No armour save is
+     * represented as -1.
+     *
      * @param armourSave the armourSave to set
      */
     public void setArmourSave(int armourSave) {
@@ -266,6 +307,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No cover save is
+     * represented as -1.
+     *
      * @return the coverSave
      */
     public int getCoverSave() {
@@ -273,6 +317,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No cover save is
+     * represented as -1.
+     *
      * @param coverSave the coverSave to set
      */
     public void setCoverSave(int coverSave) {
@@ -308,6 +355,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No armour save is
+     * represented as -1.
+     *
      * @return the invulnerableSave
      */
     public int getInvulnerableSave() {
@@ -315,6 +365,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No armour save is
+     * represented as -1.
+     *
      * @param invulnerableSave the invulnerableSave to set
      */
     public void setInvulnerableSave(int invulnerableSave) {
@@ -350,6 +403,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No armour save is
+     * represented as -1.
+     *
      * @return the fnpSave
      */
     public int getFnpSave() {
@@ -357,6 +413,9 @@ public class CalculationModel {
     }
 
     /**
+     * Append "+" to the value for human readibility. No armour save is
+     * represented as -1.
+     *
      * @param fnpSave the fnpSave to set
      */
     public void setFnpSave(int fnpSave) {

@@ -36,6 +36,10 @@ public class FXMLController implements Initializable {
     @FXML
     private CheckBox shootingWoundsReroll;
     @FXML
+    private CheckBox shootingWoundsReroll1s;
+    @FXML
+    private CheckBox instantDeath;
+    @FXML
     private CheckBox shootingRending;
     @FXML
     private ComboBox shootingAP;
@@ -114,6 +118,8 @@ public class FXMLController implements Initializable {
         calculationModel.setReroll1sInvulnerableSave(shotInvulnerableSaveReroll1s.isSelected());
         calculationModel.setReroll1sFnpSave(shotFNPSaveReroll1s.isSelected());
         calculationModel.setRerollFnpSave(shotFNPSaveReroll.isSelected());
+        calculationModel.setReroll1sWound(shootingWoundsReroll1s.isSelected());
+        calculationModel.setInstantDeath(instantDeath.isSelected());
 
         calculationModel.setRending(shootingRending.isSelected());
         calculationModel.setRerollWound(shootingWoundsReroll.isSelected());
@@ -122,7 +128,7 @@ public class FXMLController implements Initializable {
         calculationModel.setHit(hit);
         int strength = sanitize((String) shootingStrength.getSelectionModel().getSelectedItem());
         calculationModel.setStrength(strength);
-        int ap = sanitize((String) shootingAP.getSelectionModel().getSelectedItem());
+        int ap = sanitizeAp((String) shootingAP.getSelectionModel().getSelectedItem());
         calculationModel.setAp(ap);
 
         try {
@@ -169,6 +175,11 @@ public class FXMLController implements Initializable {
 
     private int sanitize(String s) {
         String sanitizedHit = s.replace("-", "-1").replace("+", "").replace("Automatic", "-1").replace("D", "-1");
+        return Integer.parseInt(sanitizedHit);
+    }
+
+    private int sanitizeAp(String s) {
+        String sanitizedHit = s.replace("-", "7").replace("+", "").replace("Automatic", "-1").replace("D", "-1");
         return Integer.parseInt(sanitizedHit);
     }
 

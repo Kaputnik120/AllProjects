@@ -18,6 +18,23 @@ public class CalculationService {
     public static void calculate(CalculationModel cm) {
         LOG.info("CalculationModel is " + cm);
 
+        double chanceHit = calculateHitChance(cm);
+
+        //[0] = FnP allowd, [1] = no FnP allowed
+        double[] loseWoundChance;
+        if (cm.getStrength() != -1) {
+            loseWoundChance = calculateLoseWoundBeforeFnpUsual(cm.getStrength(), cm.getToughness(), cm.isReroll1sWound(), cm.isRerollWound(), cm.getArmourSave(),
+                    cm.getCoverSave(), cm.getInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), cm.isInstantDeath(), cm.isRending(), chanceHit);
+        } else {
+            loseWoundChance = calculateLoseWoundBeforeFnpD(cm.getArmourSave(), cm.getCoverSave(), cm.getInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), chanceHit);
+        }
+
+        double finalLoseWoundChance = applySave(loseWoundChance, cm.getFnpSave());
+
+        LOG.info("The final chance to inflict an unsaved wound is {}", finalLoseWoundChance);
+    }
+
+    static double calculateHitChance(CalculationModel cm) {
         double chanceHit;
         if (cm.isRerollHit()) {
             chanceHit = d6Reroll(cm.getHit());
@@ -26,18 +43,76 @@ public class CalculationService {
         } else {
             chanceHit = d6(cm.getHit());
         }
+        return chanceHit;
+    }
 
-        int woundD6 = calculateWoundD6(cm.getStrength(), cm.getToughness());
-        
-        double[] woundResult = splitRending(woundD6, cm.isReroll1sWound(), cm.isRerollWound());
-        
-        boolean destroyer = false;
-        
-        int noRendingSave = chooseBestSave(cm.getArmourSave(), cm.getCoverSave(), cm.getInvulnerableSave() , cm.isIgnoreCover(), cm.getAp(), false);
-        int rendingSave = chooseBestSave(cm.getArmourSave(), cm.getCoverSave(), cm.getInvulnerableSave() , cm.isIgnoreCover(), 2, false);
-        
-        
+    static double applySave(double[] loseWoundChance, int save) {
+        return loseWoundChance[0] * (1 - d6(save)) + loseWoundChance[1];
+    }
 
+    static double[] calculateLoseWoundBeforeFnpD(int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap, double chanceHit) {
+        double[] loseWoundChance = new double[2];
+
+        double[] woundResult = splitDestroyer();
+        int usualWoundSave = chooseBestSave(armourSave, coverSave, invulnerableSave, ignoreCover, ap);
+        int noSavesWoundSave = 7;
+
+        loseWoundChance[0] = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], usualWoundSave);
+        loseWoundChance[1] = calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], noSavesWoundSave);
+
+        return loseWoundChance;
+    }
+
+    static double[] calculateLoseWoundBeforeFnpUsual(int strength, int toughness, boolean reroll1sWound, boolean rerollWound,
+            int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap,
+            boolean instantDeath, boolean rending, double chanceHit) {
+
+        int woundD6 = calculateWoundD6(strength, toughness);
+
+        double augmentedResult = applyRending(rending, woundD6, reroll1sWound, rerollWound, armourSave, coverSave, invulnerableSave, ignoreCover, ap, chanceHit);
+
+        double[] loseWoundChance = applyFnP(strength, toughness, instantDeath, augmentedResult);
+        return loseWoundChance;
+    }
+
+    static double[] applyFnP(int strength, int toughness, boolean instantDeath, double augmentedResult) {
+        double[] loseWoundChance = new double[2];
+
+        boolean fnpAllowed = !isInstantDeath(strength, toughness, instantDeath);
+        if (fnpAllowed) {
+            loseWoundChance[0] = augmentedResult;
+            loseWoundChance[1] = 0;
+        } else {
+            loseWoundChance[0] = 0;
+            loseWoundChance[1] = augmentedResult;
+        }
+
+        return loseWoundChance;
+    }
+
+    static double applyRending(boolean rending, int woundD6, boolean reroll1sWound, boolean rerollWound, int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap, double chanceHit) {
+        double augmentedResult;
+        
+        int noRendingSave = chooseBestSave(armourSave, coverSave, invulnerableSave, ignoreCover, ap);
+        
+        if (rending) {
+            double[] woundResult = splitRending(woundD6, reroll1sWound, rerollWound);
+            
+            int rendingSave = chooseBestSave(armourSave, coverSave, invulnerableSave, ignoreCover, 2);
+            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], noRendingSave)
+                    + calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], rendingSave);
+        } else {
+            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, d6(woundD6), noRendingSave);
+        }
+        return augmentedResult;
+    }
+
+    static double calculateLoseWoundBeforeFnp(double hitChance, double woundChance, int bestSave) {
+        return hitChance * woundChance * (1 - d6(bestSave));
+    }
+
+    static boolean isInstantDeath(int strength, int toughness, boolean instantDeath) {
+        return strength >= toughness * 2 || instantDeath;
     }
 
     static double d6(int d) {
@@ -96,6 +171,20 @@ public class CalculationService {
     }
 
     /**
+     * Resulting array will contain the woundChance with any saves allowed
+     * (D-table 2-5) in [0] and the chance of a no saves allowed wound (D-table
+     * 6) in [1].
+     */
+    static double[] splitDestroyer() {
+        double[] splittedDestroyer = new double[2];
+
+        splittedDestroyer[0] = d6(3);
+        splittedDestroyer[1] = d6(6);
+
+        return splittedDestroyer;
+    }
+
+    /**
      * The given array must contain exactly 3 values.
      */
     static int chooseBestSave(int[] saves) {
@@ -109,13 +198,11 @@ public class CalculationService {
         return bestSave;
     }
 
-    static int chooseBestSave(int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap, boolean ignoreAllSaves) {
-        if (ignoreAllSaves) {
-            return 7; //ignore alle saves
-        }
-
+    static int chooseBestSave(int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap) {
         int[] saves = new int[]{armourSave, coverSave, invulnerableSave};
 
+        //coverSave=0 better than armourSave=6?
+        
         if (ap > 0 && ap < 7 && ap <= armourSave) {
             saves[0] = 7;//ignore armourSave
         }
@@ -149,13 +236,4 @@ public class CalculationService {
 
         return 7; //never happens, stupid compiler
     }
-
-    @Deprecated
-    static double rendingWound(double woundChance, double rendingChance, int armourSave, int invulnerableSave) {
-        double chance = (woundChance - rendingChance) * (1 - d6(armourSave)) + rendingChance * (1 - d6(invulnerableSave));
-        LOG.info("Chance for rending with woundchance {}, rendingChance {}, armourSave {} and invulnerableSave {} is {}",
-                woundChance, rendingChance, armourSave, invulnerableSave, chance);
-        return chance;
-    }
-
 }
