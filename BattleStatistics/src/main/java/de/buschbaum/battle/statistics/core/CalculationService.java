@@ -26,13 +26,13 @@ public class CalculationService {
         //[0] = FnP allowd, [1] = no FnP allowed
         double[] loseWoundChance;
         if (cm.getStrength() != -1) {
-            loseWoundChance = calculateLoseWoundBeforeFnpUsual(cm.getStrength(), cm.getToughness(), cm.isReroll1sWound(), cm.isRerollWound(),
+            loseWoundChance = calculateLoseWoundUsual(cm.getStrength(), cm.getToughness(), cm.isReroll1sWound(), cm.isRerollWound(),
                     cm.getArmourSave(), cm.isReroll1sArmourSave(), cm.isRerollArmourSave(),
                     cm.getCoverSave(), cm.isReroll1sCoverSave(), cm.isRerollCoverSave(),
                     cm.getInvulnerableSave(), cm.isReroll1sInvulnerableSave(), cm.isRerollInvulnerableSave(),
                     cm.isIgnoreCover(), cm.getAp(), cm.isInstantDeath(), cm.isRending(), chanceHit);
         } else {
-            loseWoundChance = calculateLoseWoundBeforeFnpD(cm.getArmourSave(), cm.isReroll1sArmourSave(), cm.isRerollArmourSave(),
+            loseWoundChance = calculateLoseWoundD(cm.getArmourSave(), cm.isReroll1sArmourSave(), cm.isRerollArmourSave(),
                     cm.getCoverSave(), cm.isReroll1sCoverSave(), cm.isRerollCoverSave(),
                     cm.getInvulnerableSave(), cm.isReroll1sInvulnerableSave(), cm.isRerollInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), chanceHit);
         }
@@ -54,7 +54,7 @@ public class CalculationService {
         return loseWoundChance[0] * (1 - d6(save)) + loseWoundChance[1];
     }
 
-    static double[] calculateLoseWoundBeforeFnpD(int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
+    static double[] calculateLoseWoundD(int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
             int coverSave, boolean reroll1sCoverSave, boolean rerollCoverSave,
             int invulnerableSave, boolean reroll1sInvulnerableSave, boolean rerollInvulnerableSave,
             boolean ignoreCover, int ap, double chanceHit) {
@@ -74,7 +74,7 @@ public class CalculationService {
         return loseWoundChance;
     }
 
-    static double[] calculateLoseWoundBeforeFnpUsual(int strength, int toughness, boolean reroll1sWound, boolean rerollWound,
+    static double[] calculateLoseWoundUsual(int strength, int toughness, boolean reroll1sWound, boolean rerollWound,
             int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
             int coverSave, boolean reroll1sCoverSave, boolean rerollCoverSave,
             int invulnerableSave, boolean reroll1sInvulnerableSave, boolean rerollInvulnerableSave,
