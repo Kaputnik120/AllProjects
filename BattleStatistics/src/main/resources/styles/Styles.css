@@ -81,7 +81,7 @@
     -fx-background-color: -rgba-secondary-1-1;
     -fx-text-fill: -rgba-secondary-1-4;
 }
-.combo-box > .list-cell {
+/*.combo-box > .list-cell {
     -fx-background-color: red;
 }
 .combo-box > .list-cell:hover {
@@ -95,7 +95,7 @@
 }
 .combo-box > .list-cell:filled:selected:hover {
     -fx-background-color: brown;
-}
+}*/
 .combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover {
     -fx-background-color: -rgba-secondary-1-2;
     -fx-text-fill: -rgba-secondary-1-4;

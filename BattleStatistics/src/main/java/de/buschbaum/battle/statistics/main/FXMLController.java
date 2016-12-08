@@ -228,6 +228,10 @@ public class FXMLController implements Initializable {
         shotInvulnerableSave.getSelectionModel().select("5+");
         shotInvulnerableSaveReroll.setSelected(false);
         shotInvulnerableSaveReroll1s.setSelected(false);
+        shotCoverSave.getItems().addAll(Arrays.asList(new String[]{"2+", "3+", "4+", "5+", "6+", "-"}));
+        shotCoverSave.getSelectionModel().select("-");
+        shotCoverSaveReroll.setSelected(false);
+        shotCoverSaveReroll1s.setSelected(false);
         shotFNPSave.getItems().addAll(Arrays.asList(new String[]{"2+", "3+", "4+", "5+", "6+", "-"}));
         shotFNPSave.getSelectionModel().select("-");
         shotFNPSaveReroll.setSelected(false);

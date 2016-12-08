@@ -4,6 +4,8 @@
 package de.buschbaum.battle.statistics.core;
 
 import de.buschbaum.battle.statistics.model.CalculationModel;
+import java.util.ArrayList;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,9 +17,13 @@ public class CalculationService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CalculationService.class);
 
+    private static final List<String> messages = new ArrayList<>(2);
+
     public static void calculate(CalculationModel cm) {
         LOG.info("CalculationModel is " + cm);
-
+        
+        messages.clear();
+        
         double chanceHit = caculateD6Chance(cm.getHit(), cm.isReroll1sHit(), cm.isRerollHit());
 
         //[0] = FnP allowd, [1] = no FnP allowed
@@ -37,18 +43,6 @@ public class CalculationService {
         double finalLoseWoundChance = applySave(loseWoundChance, cm.getFnpSave());
 
         LOG.info("The final chance to inflict an unsaved wound is {}", finalLoseWoundChance);
-    }
-
-    static double caculateD6Chance(int d, boolean reroll1s, boolean reroll) {
-        double chance;
-        if (reroll) {
-            chance = d6Reroll(d);
-        } else if (reroll1s) {
-            chance = d6Reroll1s(d);
-        } else {
-            chance = d6(d);
-        }
-        return chance;
     }
 
     static double applySave(double[] loseWoundChance, int save) {
@@ -133,7 +127,8 @@ public class CalculationService {
             augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], noRendingSaveChance)
                     + calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], rendingSaveChance);
         } else {
-            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, d6(woundD6), noRendingSaveChance);
+
+            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, caculateD6Chance(woundD6, reroll1sWound, rerollWound), noRendingSaveChance);
         }
         return augmentedResult;
     }
@@ -171,6 +166,18 @@ public class CalculationService {
     static double d6Reroll1s(int d) {
         double chance = d6(d) + (1.0 / 6.0) * d6(d);
         LOG.info("Chance for rolling {} with reroll 1s is {}", d, chance);
+        return chance;
+    }
+
+    static double caculateD6Chance(int d, boolean reroll1s, boolean reroll) {
+        double chance;
+        if (reroll) {
+            chance = d6Reroll(d);
+        } else if (reroll1s) {
+            chance = d6Reroll1s(d);
+        } else {
+            chance = d6(d);
+        }
         return chance;
     }
 
@@ -239,16 +246,16 @@ public class CalculationService {
         if (ap > 0 && ap < 7 && ap <= armourSave) {
             saves[0] = 0;
         } else {
-            saves[0] = caculateD6Chance(armourSave, reroll1sArmourSave, reroll1sArmourSave);
+            saves[0] = caculateD6Chance(armourSave, reroll1sArmourSave, rerollArmourSave);
         }
 
         if (ignoreCover) {
             saves[1] = 0;
         } else {
-            saves[1] = caculateD6Chance(coverSave, reroll1sCoverSave, reroll1sCoverSave);
+            saves[1] = caculateD6Chance(coverSave, reroll1sCoverSave, rerollCoverSave);
         }
 
-        saves[2] = caculateD6Chance(invulnerableSave, reroll1sInvulnerableSave, reroll1sInvulnerableSave);
+        saves[2] = caculateD6Chance(invulnerableSave, reroll1sInvulnerableSave, rerollInvulnerableSave);
 
         return chooseBestSaveChance(saves);
     }
