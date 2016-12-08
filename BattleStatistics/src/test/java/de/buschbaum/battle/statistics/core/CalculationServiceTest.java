@@ -53,6 +53,18 @@ public class CalculationServiceTest {
         Assert.assertTrue(littleDifference(rending[0], 0.5));
         Assert.assertTrue(littleDifference(rending[1], 0.16666666));
 
+        rending = splitRending(4, false, false);
+        Assert.assertTrue(littleDifference(rending[0], 0.33333333));
+        Assert.assertTrue(littleDifference(rending[1], 0.16666666));
+
+        rending = splitRending(5, false, false);
+        Assert.assertTrue(littleDifference(rending[0], 0.16666666));
+        Assert.assertTrue(littleDifference(rending[1], 0.16666666));
+
+        rending = splitRending(6, false, false);
+        Assert.assertTrue(littleDifference(rending[0], 0));
+        Assert.assertTrue(littleDifference(rending[1], 0.16666666));
+
         rending = splitRending(4, true, false);
         Assert.assertTrue(littleDifference(rending[0], 0.38888888));
         Assert.assertTrue(littleDifference(rending[1], 0.19444444));
@@ -64,7 +76,7 @@ public class CalculationServiceTest {
         rending = splitRending(6, true, false);
         Assert.assertTrue(littleDifference(rending[0], 0));
         Assert.assertTrue(littleDifference(rending[1], 0.19444444));
-
+        
         rending = splitRending(4, false, true);
         Assert.assertTrue(littleDifference(rending[0], 0.5));
         Assert.assertTrue(littleDifference(rending[1], 0.25));
@@ -80,28 +92,24 @@ public class CalculationServiceTest {
 
     @Test
     public void testBestSave() {
-        int bestSave = chooseBestSave(new int[]{2, 4, 5});
-        Assert.assertTrue(bestSave == 2);
+        double bestSaveChance = chooseBestSaveChance(new double[]{0.222222, 0.44444, 0.5555});
+        Assert.assertTrue(littleDifference(bestSaveChance, 0.5555));
 
-        bestSave = chooseBestSave(new int[]{6, 6, 3});
-        Assert.assertTrue(bestSave == 3);
+        bestSaveChance = chooseBestSaveChance(new double[]{0.7892, 0.9999, 0.1234});
+        Assert.assertTrue(littleDifference(bestSaveChance, 0.9999));
 
-        bestSave = chooseBestSave(new int[]{5, 4, 6});
-        Assert.assertTrue(bestSave == 4);
+        bestSaveChance = chooseBestSaveChance(new double[]{0.1234, 0.41232, 0.6436436});
+        Assert.assertTrue(littleDifference(bestSaveChance, 0.6436436));
     }
 
     @Test
     public void testBestSaveRules() {
-        int bestSave = chooseBestSave(2, 4, 5, false, 5);
-        Assert.assertTrue(bestSave == 2);
-        bestSave = chooseBestSave(2, 4, 5, false, 2);
-        Assert.assertTrue(bestSave == 4);
-        bestSave = chooseBestSave(2, 4, 5, true, 2);
-        Assert.assertTrue(bestSave == 5);
-        bestSave = chooseBestSave(6, 4, 7, true, 7);
-        Assert.assertTrue(bestSave == 6);
-        bestSave = chooseBestSave(3, 3, 3, true, 4);
-        Assert.assertTrue(bestSave == 3);
+        double bestSaveChance = calculateBestSaveChance(2, false, false, 
+                3, false, false, 
+                5, false, false, 
+                false, 5);
+        Assert.assertTrue(littleDifference(bestSaveChance, 0.8333333333));
+
     }
 
     @Test
@@ -126,37 +134,35 @@ public class CalculationServiceTest {
     //calculateLoseWoundBeforeFnpD
     //calculateLoseWoundBeforeFnpUsual
     //applyRending
-    //calculateHitChance
-
     @Test
     public void testCalculateWoundBeforeFnp() {
-        double woundChance = calculateLoseWoundBeforeFnp(0.5, 0.5, 2);
+        double woundChance = calculateLoseWoundBeforeFnp(0.5, 0.5, 5.0/6);
         Assert.assertTrue(littleDifference(woundChance, 0.04166666));
-        woundChance = calculateLoseWoundBeforeFnp(0.5, 0.5, 7);
+        woundChance = calculateLoseWoundBeforeFnp(0.5, 0.5, 0);
         Assert.assertTrue(littleDifference(woundChance, 0.25));
-        woundChance = calculateLoseWoundBeforeFnp(0.654, 0.234, 3);
+        woundChance = calculateLoseWoundBeforeFnp(0.654, 0.234, 4.0/6);
         Assert.assertTrue(littleDifference(woundChance, 0.051012));
     }
-    
+
     @Test
     public void testApplySave() {
-        double applySave = applySave(new double []{0.66666666, 0}, 5);
+        double applySave = applySave(new double[]{0.66666666, 0}, 5);
         Assert.assertTrue(littleDifference(applySave, 0.444444444));
-        applySave = applySave(new double []{0.23456, 0}, 4);
+        applySave = applySave(new double[]{0.23456, 0}, 4);
         Assert.assertTrue(littleDifference(applySave, 0.11728));
-        applySave = applySave(new double []{0.216431642152, 0}, 7);
+        applySave = applySave(new double[]{0.216431642152, 0}, 7);
         Assert.assertTrue(littleDifference(applySave, 0.216431642152));
-        applySave = applySave(new double []{0, 0.42312}, 2);
+        applySave = applySave(new double[]{0, 0.42312}, 2);
         Assert.assertTrue(littleDifference(applySave, 0.42312));
     }
-    
+
     @Test
     public void testSplitDestroyer() {
         double[] splitDestroyer = splitDestroyer();
         Assert.assertTrue(littleDifference(splitDestroyer[1], 0.1666666));
         Assert.assertTrue(littleDifference(splitDestroyer[0], 0.6666666));
     }
-    
+
     @Test
     public void testIsInstantDeath() {
         boolean instantDeath = isInstantDeath(10, 5, false);
@@ -170,9 +176,9 @@ public class CalculationServiceTest {
         instantDeath = isInstantDeath(6, 3, false);
         Assert.assertTrue(instantDeath);
     }
-    
+
     private boolean littleDifference(double a, double b) {
         LOG.info("Checking {} and {}", a, b);
-        return Math.abs(a - b) < 0.000001;
+        return Math.abs(a - b) < 0.0001;
     }
 }

@@ -65,6 +65,12 @@ public class FXMLController implements Initializable {
     @FXML
     private CheckBox shotInvulnerableSaveReroll1s;
     @FXML
+    private ComboBox shotCoverSave;
+    @FXML
+    private CheckBox shotCoverSaveReroll;
+    @FXML
+    private CheckBox shotCoverSaveReroll1s;
+    @FXML
     private ComboBox shotFNPSave;
     @FXML
     private CheckBox shotFNPSaveReroll;
@@ -112,10 +118,12 @@ public class FXMLController implements Initializable {
 
         calculationModel.setRerollHit(shootingHitsReroll.isSelected());
         calculationModel.setReroll1sHit(shootingHitsReroll1s.isSelected());
-        calculationModel.setRerollArmourSaves(shotArmourSaveReroll.isSelected());
-        calculationModel.setReroll1sArmourSaves(shotArmourSaveReroll1s.isSelected());
+        calculationModel.setRerollArmourSave(shotArmourSaveReroll.isSelected());
+        calculationModel.setReroll1sArmourSave(shotArmourSaveReroll1s.isSelected());
         calculationModel.setRerollInvulnerableSave(shotInvulnerableSaveReroll.isSelected());
         calculationModel.setReroll1sInvulnerableSave(shotInvulnerableSaveReroll1s.isSelected());
+        calculationModel.setRerollCoverSave(shotCoverSaveReroll.isSelected());
+        calculationModel.setReroll1sCoverSave(shotCoverSaveReroll1s.isSelected());
         calculationModel.setReroll1sFnpSave(shotFNPSaveReroll1s.isSelected());
         calculationModel.setRerollFnpSave(shotFNPSaveReroll.isSelected());
         calculationModel.setReroll1sWound(shootingWoundsReroll1s.isSelected());
@@ -124,11 +132,11 @@ public class FXMLController implements Initializable {
         calculationModel.setRending(shootingRending.isSelected());
         calculationModel.setRerollWound(shootingWoundsReroll.isSelected());
 
-        int hit = sanitize((String) shootingHit.getSelectionModel().getSelectedItem());
+        int hit = sanitizeD6((String) shootingHit.getSelectionModel().getSelectedItem());
         calculationModel.setHit(hit);
         int strength = sanitize((String) shootingStrength.getSelectionModel().getSelectedItem());
         calculationModel.setStrength(strength);
-        int ap = sanitizeAp((String) shootingAP.getSelectionModel().getSelectedItem());
+        int ap = sanitizeD6((String) shootingAP.getSelectionModel().getSelectedItem());
         calculationModel.setAp(ap);
 
         try {
@@ -148,11 +156,13 @@ public class FXMLController implements Initializable {
 
         int toughness = sanitize((String) shotToughness.getSelectionModel().getSelectedItem());
         calculationModel.setToughness(toughness);
-        int armourSave = sanitize((String) shotArmourSave.getSelectionModel().getSelectedItem());
+        int armourSave = sanitizeD6((String) shotArmourSave.getSelectionModel().getSelectedItem());
         calculationModel.setArmourSave(armourSave);
-        int invulnerableSave = sanitize((String) shotInvulnerableSave.getSelectionModel().getSelectedItem());
+        int invulnerableSave = sanitizeD6((String) shotInvulnerableSave.getSelectionModel().getSelectedItem());
         calculationModel.setInvulnerableSave(invulnerableSave);
-        int fnpSave = sanitize((String) shotFNPSave.getSelectionModel().getSelectedItem());
+        int coverSave = sanitizeD6((String) shotCoverSave.getSelectionModel().getSelectedItem());
+        calculationModel.setCoverSave(coverSave);
+        int fnpSave = sanitizeD6((String) shotFNPSave.getSelectionModel().getSelectedItem());
         calculationModel.setFnpSave(fnpSave);
 
         try {
@@ -178,7 +188,7 @@ public class FXMLController implements Initializable {
         return Integer.parseInt(sanitizedHit);
     }
 
-    private int sanitizeAp(String s) {
+    private int sanitizeD6(String s) {
         String sanitizedHit = s.replace("-", "7").replace("+", "").replace("Automatic", "-1").replace("D", "-1");
         return Integer.parseInt(sanitizedHit);
     }

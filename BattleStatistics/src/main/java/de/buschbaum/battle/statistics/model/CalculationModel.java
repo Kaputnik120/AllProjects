@@ -57,9 +57,13 @@ public class CalculationModel {
      */
     private int coverSave;
 
-    private boolean rerollArmourSaves;
+    private boolean rerollCoverSave;
 
-    private boolean reroll1sArmourSaves;
+    private boolean reroll1sCoverSave;
+
+    private boolean rerollArmourSave;
+
+    private boolean reroll1sArmourSave;
 
     /**
      * Append "+" to the value for human readibility. No armour save is
@@ -87,7 +91,7 @@ public class CalculationModel {
 
     @Override
     public String toString() {
-        return "CalculationModel{" + "hit=" + hit + ", rerollHit=" + rerollHit + ", reroll1sHit=" + reroll1sHit + ", strength=" + strength + ", rerollWound=" + rerollWound + ", reroll1sWound=" + reroll1sWound + ", rending=" + rending + ", instantDeath=" + instantDeath + ", ignoreCover=" + ignoreCover + ", ap=" + ap + ", shots=" + shots + ", shootingPoints=" + shootingPoints + ", toughness=" + toughness + ", armourSave=" + armourSave + ", coverSave=" + coverSave + ", rerollArmourSaves=" + rerollArmourSaves + ", reroll1sArmourSaves=" + reroll1sArmourSaves + ", invulnerableSave=" + invulnerableSave + ", rerollInvulnerableSave=" + rerollInvulnerableSave + ", reroll1sInvulnerableSave=" + reroll1sInvulnerableSave + ", fnpSave=" + fnpSave + ", rerollFnpSave=" + rerollFnpSave + ", reroll1sFnpSave=" + reroll1sFnpSave + ", wounds=" + wounds + ", points=" + points + '}';
+        return "CalculationModel{" + "hit=" + hit + ", rerollHit=" + rerollHit + ", reroll1sHit=" + reroll1sHit + ", strength=" + strength + ", rerollWound=" + rerollWound + ", reroll1sWound=" + reroll1sWound + ", rending=" + rending + ", instantDeath=" + instantDeath + ", ignoreCover=" + ignoreCover + ", ap=" + ap + ", shots=" + shots + ", shootingPoints=" + shootingPoints + ", toughness=" + toughness + ", armourSave=" + armourSave + ", coverSave=" + coverSave + ", rerollCoverSave=" + rerollCoverSave + ", reroll1sCoverSave=" + reroll1sCoverSave + ", rerollArmourSave=" + rerollArmourSave + ", reroll1sArmourSave=" + reroll1sArmourSave + ", invulnerableSave=" + invulnerableSave + ", rerollInvulnerableSave=" + rerollInvulnerableSave + ", reroll1sInvulnerableSave=" + reroll1sInvulnerableSave + ", fnpSave=" + fnpSave + ", rerollFnpSave=" + rerollFnpSave + ", reroll1sFnpSave=" + reroll1sFnpSave + ", wounds=" + wounds + ", points=" + points + '}';
     }
 
     /**
@@ -327,31 +331,59 @@ public class CalculationModel {
     }
 
     /**
-     * @return the rerollArmourSaves
+     * @return the rerollCoverSave
      */
-    public boolean isRerollArmourSaves() {
-        return rerollArmourSaves;
+    public boolean isRerollCoverSave() {
+        return rerollCoverSave;
     }
 
     /**
-     * @param rerollArmourSaves the rerollArmourSaves to set
+     * @param rerollCoverSave the rerollCoverSave to set
      */
-    public void setRerollArmourSaves(boolean rerollArmourSaves) {
-        this.rerollArmourSaves = rerollArmourSaves;
+    public void setRerollCoverSave(boolean rerollCoverSave) {
+        this.rerollCoverSave = rerollCoverSave;
     }
 
     /**
-     * @return the reroll1sArmourSaves
+     * @return the reroll1sCoverSave
      */
-    public boolean isReroll1sArmourSaves() {
-        return reroll1sArmourSaves;
+    public boolean isReroll1sCoverSave() {
+        return reroll1sCoverSave;
     }
 
     /**
-     * @param reroll1sArmourSaves the reroll1sArmourSaves to set
+     * @param reroll1sCoverSave the reroll1sCoverSave to set
      */
-    public void setReroll1sArmourSaves(boolean reroll1sArmourSaves) {
-        this.reroll1sArmourSaves = reroll1sArmourSaves;
+    public void setReroll1sCoverSave(boolean reroll1sCoverSave) {
+        this.reroll1sCoverSave = reroll1sCoverSave;
+    }
+
+    /**
+     * @return the rerollArmourSave
+     */
+    public boolean isRerollArmourSave() {
+        return rerollArmourSave;
+    }
+
+    /**
+     * @param rerollArmourSave the rerollArmourSave to set
+     */
+    public void setRerollArmourSave(boolean rerollArmourSave) {
+        this.rerollArmourSave = rerollArmourSave;
+    }
+
+    /**
+     * @return the reroll1sArmourSave
+     */
+    public boolean isReroll1sArmourSave() {
+        return reroll1sArmourSave;
+    }
+
+    /**
+     * @param reroll1sArmourSave the reroll1sArmourSave to set
+     */
+    public void setReroll1sArmourSave(boolean reroll1sArmourSave) {
+        this.reroll1sArmourSave = reroll1sArmourSave;
     }
 
     /**

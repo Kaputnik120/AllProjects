@@ -18,15 +18,20 @@ public class CalculationService {
     public static void calculate(CalculationModel cm) {
         LOG.info("CalculationModel is " + cm);
 
-        double chanceHit = calculateHitChance(cm);
+        double chanceHit = caculateD6Chance(cm.getHit(), cm.isReroll1sHit(), cm.isRerollHit());
 
         //[0] = FnP allowd, [1] = no FnP allowed
         double[] loseWoundChance;
         if (cm.getStrength() != -1) {
-            loseWoundChance = calculateLoseWoundBeforeFnpUsual(cm.getStrength(), cm.getToughness(), cm.isReroll1sWound(), cm.isRerollWound(), cm.getArmourSave(),
-                    cm.getCoverSave(), cm.getInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), cm.isInstantDeath(), cm.isRending(), chanceHit);
+            loseWoundChance = calculateLoseWoundBeforeFnpUsual(cm.getStrength(), cm.getToughness(), cm.isReroll1sWound(), cm.isRerollWound(),
+                    cm.getArmourSave(), cm.isReroll1sArmourSave(), cm.isRerollArmourSave(),
+                    cm.getCoverSave(), cm.isReroll1sCoverSave(), cm.isRerollCoverSave(),
+                    cm.getInvulnerableSave(), cm.isReroll1sInvulnerableSave(), cm.isRerollInvulnerableSave(),
+                    cm.isIgnoreCover(), cm.getAp(), cm.isInstantDeath(), cm.isRending(), chanceHit);
         } else {
-            loseWoundChance = calculateLoseWoundBeforeFnpD(cm.getArmourSave(), cm.getCoverSave(), cm.getInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), chanceHit);
+            loseWoundChance = calculateLoseWoundBeforeFnpD(cm.getArmourSave(), cm.isReroll1sArmourSave(), cm.isRerollArmourSave(),
+                    cm.getCoverSave(), cm.isReroll1sCoverSave(), cm.isRerollCoverSave(),
+                    cm.getInvulnerableSave(), cm.isReroll1sInvulnerableSave(), cm.isRerollInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), chanceHit);
         }
 
         double finalLoseWoundChance = applySave(loseWoundChance, cm.getFnpSave());
@@ -34,42 +39,56 @@ public class CalculationService {
         LOG.info("The final chance to inflict an unsaved wound is {}", finalLoseWoundChance);
     }
 
-    static double calculateHitChance(CalculationModel cm) {
-        double chanceHit;
-        if (cm.isRerollHit()) {
-            chanceHit = d6Reroll(cm.getHit());
-        } else if (cm.isReroll1sHit()) {
-            chanceHit = d6Reroll1s(cm.getHit());
+    static double caculateD6Chance(int d, boolean reroll1s, boolean reroll) {
+        double chance;
+        if (reroll) {
+            chance = d6Reroll(d);
+        } else if (reroll1s) {
+            chance = d6Reroll1s(d);
         } else {
-            chanceHit = d6(cm.getHit());
+            chance = d6(d);
         }
-        return chanceHit;
+        return chance;
     }
 
     static double applySave(double[] loseWoundChance, int save) {
         return loseWoundChance[0] * (1 - d6(save)) + loseWoundChance[1];
     }
 
-    static double[] calculateLoseWoundBeforeFnpD(int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap, double chanceHit) {
+    static double[] calculateLoseWoundBeforeFnpD(int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
+            int coverSave, boolean reroll1sCoverSave, boolean rerollCoverSave,
+            int invulnerableSave, boolean reroll1sInvulnerableSave, boolean rerollInvulnerableSave,
+            boolean ignoreCover, int ap, double chanceHit) {
+
         double[] loseWoundChance = new double[2];
 
         double[] woundResult = splitDestroyer();
-        int usualWoundSave = chooseBestSave(armourSave, coverSave, invulnerableSave, ignoreCover, ap);
-        int noSavesWoundSave = 7;
+        double usualWoundSaveChance = calculateBestSaveChance(armourSave, reroll1sArmourSave, rerollArmourSave,
+                coverSave, reroll1sCoverSave, rerollCoverSave,
+                invulnerableSave, reroll1sInvulnerableSave, rerollInvulnerableSave,
+                ignoreCover, ap);
+        double noSavesWoundSaveChance = 0;
 
-        loseWoundChance[0] = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], usualWoundSave);
-        loseWoundChance[1] = calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], noSavesWoundSave);
+        loseWoundChance[0] = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], usualWoundSaveChance);
+        loseWoundChance[1] = calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], noSavesWoundSaveChance);
 
         return loseWoundChance;
     }
 
     static double[] calculateLoseWoundBeforeFnpUsual(int strength, int toughness, boolean reroll1sWound, boolean rerollWound,
-            int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap,
+            int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
+            int coverSave, boolean reroll1sCoverSave, boolean rerollCoverSave,
+            int invulnerableSave, boolean reroll1sInvulnerableSave, boolean rerollInvulnerableSave,
+            boolean ignoreCover, int ap,
             boolean instantDeath, boolean rending, double chanceHit) {
 
         int woundD6 = calculateWoundD6(strength, toughness);
 
-        double augmentedResult = applyRending(rending, woundD6, reroll1sWound, rerollWound, armourSave, coverSave, invulnerableSave, ignoreCover, ap, chanceHit);
+        double augmentedResult = calculateRendingAndFirstSave(rending, woundD6, reroll1sWound, rerollWound,
+                armourSave, reroll1sArmourSave, rerollArmourSave,
+                coverSave, reroll1sCoverSave, rerollCoverSave,
+                invulnerableSave, reroll1sInvulnerableSave, rerollInvulnerableSave,
+                ignoreCover, ap, chanceHit);
 
         double[] loseWoundChance = applyFnP(strength, toughness, instantDeath, augmentedResult);
         return loseWoundChance;
@@ -90,25 +109,37 @@ public class CalculationService {
         return loseWoundChance;
     }
 
-    static double applyRending(boolean rending, int woundD6, boolean reroll1sWound, boolean rerollWound, int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap, double chanceHit) {
+    static double calculateRendingAndFirstSave(boolean rending, int woundD6, boolean reroll1sWound, boolean rerollWound,
+            int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
+            int coverSave, boolean reroll1sCoverSave, boolean rerollCoverSave,
+            int invulnerableSave, boolean reroll1sInvulnerableSave, boolean rerollInvulnerableSave,
+            boolean ignoreCover, int ap, double chanceHit) {
+
         double augmentedResult;
-        
-        int noRendingSave = chooseBestSave(armourSave, coverSave, invulnerableSave, ignoreCover, ap);
-        
+
+        double noRendingSaveChance = calculateBestSaveChance(armourSave, reroll1sArmourSave, rerollArmourSave,
+                coverSave, reroll1sCoverSave, rerollCoverSave,
+                invulnerableSave, reroll1sInvulnerableSave, rerollInvulnerableSave,
+                ignoreCover, ap);
+
         if (rending) {
             double[] woundResult = splitRending(woundD6, reroll1sWound, rerollWound);
-            
-            int rendingSave = chooseBestSave(armourSave, coverSave, invulnerableSave, ignoreCover, 2);
-            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], noRendingSave)
-                    + calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], rendingSave);
+
+            double rendingSaveChance = calculateBestSaveChance(armourSave, reroll1sArmourSave, rerollArmourSave,
+                    coverSave, reroll1sCoverSave, rerollCoverSave,
+                    invulnerableSave, reroll1sInvulnerableSave, rerollInvulnerableSave,
+                    ignoreCover, 2);
+
+            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, woundResult[0], noRendingSaveChance)
+                    + calculateLoseWoundBeforeFnp(chanceHit, woundResult[1], rendingSaveChance);
         } else {
-            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, d6(woundD6), noRendingSave);
+            augmentedResult = calculateLoseWoundBeforeFnp(chanceHit, d6(woundD6), noRendingSaveChance);
         }
         return augmentedResult;
     }
 
-    static double calculateLoseWoundBeforeFnp(double hitChance, double woundChance, int bestSave) {
-        return hitChance * woundChance * (1 - d6(bestSave));
+    static double calculateLoseWoundBeforeFnp(double hitChance, double woundChance, double bestSaveChance) {
+        return hitChance * woundChance * (1 - bestSaveChance);
     }
 
     static boolean isInstantDeath(int strength, int toughness, boolean instantDeath) {
@@ -187,31 +218,39 @@ public class CalculationService {
     /**
      * The given array must contain exactly 3 values.
      */
-    static int chooseBestSave(int[] saves) {
-        int bestSave = saves[0];
-        if (saves[1] < bestSave) {
+    static double chooseBestSaveChance(double[] saves) {
+        double bestSave = saves[0];
+        if (saves[1] > bestSave) {
             bestSave = saves[1];
         }
-        if (saves[2] < bestSave) {
+        if (saves[2] > bestSave) {
             bestSave = saves[2];
         }
         return bestSave;
     }
 
-    static int chooseBestSave(int armourSave, int coverSave, int invulnerableSave, boolean ignoreCover, int ap) {
-        int[] saves = new int[]{armourSave, coverSave, invulnerableSave};
+    static double calculateBestSaveChance(int armourSave, boolean reroll1sArmourSave, boolean rerollArmourSave,
+            int coverSave, boolean reroll1sCoverSave, boolean rerollCoverSave,
+            int invulnerableSave, boolean reroll1sInvulnerableSave, boolean rerollInvulnerableSave,
+            boolean ignoreCover, int ap) {
 
-        //coverSave=0 better than armourSave=6?
-        
+        double[] saves = new double[3];
+
         if (ap > 0 && ap < 7 && ap <= armourSave) {
-            saves[0] = 7;//ignore armourSave
+            saves[0] = 0;
+        } else {
+            saves[0] = caculateD6Chance(armourSave, reroll1sArmourSave, reroll1sArmourSave);
         }
 
         if (ignoreCover) {
-            saves[1] = 7;//ignore coverSave
+            saves[1] = 0;
+        } else {
+            saves[1] = caculateD6Chance(coverSave, reroll1sCoverSave, reroll1sCoverSave);
         }
 
-        return chooseBestSave(saves);
+        saves[2] = caculateD6Chance(invulnerableSave, reroll1sInvulnerableSave, reroll1sInvulnerableSave);
+
+        return chooseBestSaveChance(saves);
     }
 
     static int calculateWoundD6(int strength, int toughness) {
