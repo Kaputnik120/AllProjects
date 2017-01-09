@@ -4,6 +4,9 @@
 package de.buschbaum.battle.statistics.core;
 
 import de.buschbaum.battle.statistics.model.CalculationModel;
+import de.buschbaum.battle.statistics.model.CalculationResult;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.math3.distribution.BinomialDistribution;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +19,12 @@ public class CalculationService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CalculationService.class);
 
-    //private static final List<String> messages = new ArrayList<>(2);
-    public static void calculate(CalculationModel cm) {
+    private static final List<String> messages = new ArrayList<>(2);
+
+    public static CalculationResult calculate(CalculationModel cm) {
         LOG.info("CalculationModel is " + cm);
 
-//        messages.clear();
+        messages.clear();
         double chanceHit = caculateD6Chance(cm.getHit(), cm.isReroll1sHit(), cm.isRerollHit());
 
         //[0] = FnP allowd, [1] = no FnP allowed
@@ -38,16 +42,25 @@ public class CalculationService {
         }
 
         double finalLoseWoundChance = applySave(loseWoundChance, cm.getFnpSave());
-        LOG.info("The final chance to inflict an unsaved wound is {}", finalLoseWoundChance);
+        String finalWoundMsg = "The final chance to inflict an unsaved wound is " + String.format("%.4f", finalLoseWoundChance);
+        messages.add(finalWoundMsg);
+        LOG.info(finalWoundMsg);
 
         BinomialDistribution binomialDistribution = new BinomialDistribution(cm.getShots(), finalLoseWoundChance);
 
-        for (int i = 0; i <= cm.getShots(); i++) {
-            LOG.info("The chance for inflicting {} unsaved wounds is: {}", i, String.format("%.4f", binomialDistribution.cumulativeProbability(i)));
-            LOG.info("The chance for inflicting {} unsaved wounds is: {}", i, String.format("%.4f", binomialDistribution.cumulativeProbability(i, i + 1)));
-        }
-        LOG.info("Sample is {}", binomialDistribution.sample());
+        CalculationResult calculationResult = new CalculationResult();
 
+        List<Double> binomialResults = new ArrayList<>(cm.getShots());
+        for (int i = 1; i <= cm.getShots(); i++) {
+            double cumulativeProbability = binomialDistribution.cumulativeProbability(i - 1, cm.getShots());
+            LOG.info("The chance for inflicting {} or more unsaved wounds is: {}", i, String.format("%.4f", cumulativeProbability));
+            binomialResults.add(cumulativeProbability);
+        }
+        calculationResult.setBinomialResults(binomialResults);
+
+        calculationResult.setMessages(messages);
+
+        return calculationResult;
     }
 
     static double applySave(double[] loseWoundChance, int save) {

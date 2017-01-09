@@ -12,19 +12,21 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class OtherTableModel {
 
-    private final SimpleStringProperty points;
-    private final SimpleStringProperty singleHitChance;
+    private SimpleStringProperty msg;
 
-    public OtherTableModel(String points, String singleHitChance) {
-        this.points = new SimpleStringProperty(points);
-        this.singleHitChance = new SimpleStringProperty(singleHitChance);
+    public OtherTableModel(String msg) {
+        this.msg = new SimpleStringProperty(msg);
+    }
+
+    @Override
+    public String toString() {
+        return "OtherTableModel{" + "msg=" + getMsg() + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.points);
-        hash = 53 * hash + Objects.hashCode(this.singleHitChance);
+        int hash = 5;
+        hash = 41 * hash + Objects.hashCode(this.getMsg());
         return hash;
     }
 
@@ -40,25 +42,24 @@ public class OtherTableModel {
             return false;
         }
         final OtherTableModel other = (OtherTableModel) obj;
-        if (!Objects.equals(this.points, other.points)) {
-            return false;
-        }
-        if (!Objects.equals(this.singleHitChance, other.singleHitChance)) {
+        if (!Objects.equals(this.msg, other.msg)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "OtherTableModel{" + "points=" + points + ", singleHitChance=" + singleHitChance + '}';
+    /**
+     * @return the msg
+     */
+    public SimpleStringProperty getMsg() {
+        return msg;
     }
 
-    public String getPoints() {
-        return points.get();
+    /**
+     * @param msg the msg to set
+     */
+    public void setMsg(SimpleStringProperty msg) {
+        this.msg = msg;
     }
 
-    public String getSingleHitChance() {
-        return singleHitChance.get();
-    }
 }

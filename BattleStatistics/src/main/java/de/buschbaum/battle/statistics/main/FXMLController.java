@@ -3,6 +3,7 @@ package de.buschbaum.battle.statistics.main;
 import de.buschbaum.battle.statistics.core.CalculationService;
 import de.buschbaum.battle.statistics.model.BinomialTableModel;
 import de.buschbaum.battle.statistics.model.CalculationModel;
+import de.buschbaum.battle.statistics.model.CalculationResult;
 import de.buschbaum.battle.statistics.model.OtherTableModel;
 import java.net.URL;
 import java.util.Arrays;
@@ -90,10 +91,22 @@ public class FXMLController implements Initializable {
         CalculationModel calculationModel = convert();
 
         if (calculationModel != null) {
-            System.out.println("Start calculating!");
-            CalculationService.calculate(calculationModel);
-        }
+            CalculationResult result = CalculationService.calculate(calculationModel);
 
+            ObservableList<BinomialTableModel> binomialRow = FXCollections.observableArrayList();
+            for (int i = 0; i < result.getBinomialResults().size(); i++) {
+                binomialRow.add(new BinomialTableModel(String.valueOf(i + 1),
+                        String.format("%.2f", result.getBinomialResults().get(i) * 100)));
+            }
+            binomialResult.setItems(binomialRow);
+
+            ObservableList<OtherTableModel> otherRow = FXCollections.observableArrayList();
+            for (String msg : result.getMessages()) {
+                otherRow.add(new OtherTableModel(msg));
+            }
+            otherResult.setItems(otherRow);
+
+        }
     }
 
     private CalculationModel convert() {
@@ -240,20 +253,20 @@ public class FXMLController implements Initializable {
         wounds.setText("5");
 
         //TableViews
-        TableColumn binomailLostWoundsColumn = new TableColumn("Lost Wounds");
-        TableColumn binomialChanceColumn = new TableColumn("At least chance");
+        TableColumn binomailLostWoundsColumn = new TableColumn("At least lost wounds");
+        TableColumn binomialChanceColumn = new TableColumn("% Chance");
         binomialResult.getColumns().addAll(binomailLostWoundsColumn, binomialChanceColumn);
+
         ObservableList<BinomialTableModel> binomialRow = FXCollections.observableArrayList(new BinomialTableModel("0", "0"));
         binomailLostWoundsColumn.setCellValueFactory(new PropertyValueFactory<>("lostWounds"));
         binomialChanceColumn.setCellValueFactory(new PropertyValueFactory<>("chance"));
         binomialResult.setItems(binomialRow);
 
-        TableColumn otherPointsColumn = new TableColumn("Point effectiveness");
-        TableColumn otherSingleHitChanceColumn = new TableColumn("Single hit chance");
-        otherResult.getColumns().addAll(otherPointsColumn, otherSingleHitChanceColumn);
-        ObservableList<OtherTableModel> otherRow = FXCollections.observableArrayList(new OtherTableModel("0", "0"));
-        otherPointsColumn.setCellValueFactory(new PropertyValueFactory<>("points"));
-        otherSingleHitChanceColumn.setCellValueFactory(new PropertyValueFactory<>("singleHitChance"));
+        TableColumn otherColumn = new TableColumn("Messages");
+        otherResult.getColumns().addAll(otherColumn);
+        otherColumn.setCellValueFactory(new PropertyValueFactory<>("other"));
+
+        ObservableList<OtherTableModel> otherRow = FXCollections.observableArrayList(new OtherTableModel(""));
         otherResult.setItems(otherRow);
     }
 }
