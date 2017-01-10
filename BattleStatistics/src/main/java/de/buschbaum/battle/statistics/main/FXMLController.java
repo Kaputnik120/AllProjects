@@ -264,9 +264,9 @@ public class FXMLController implements Initializable {
 
         TableColumn otherColumn = new TableColumn("Messages");
         otherResult.getColumns().addAll(otherColumn);
-        otherColumn.setCellValueFactory(new PropertyValueFactory<>("other"));
-
+        
         ObservableList<OtherTableModel> otherRow = FXCollections.observableArrayList(new OtherTableModel(""));
+        otherColumn.setCellValueFactory(new PropertyValueFactory<>("msg"));
         otherResult.setItems(otherRow);
     }
 }

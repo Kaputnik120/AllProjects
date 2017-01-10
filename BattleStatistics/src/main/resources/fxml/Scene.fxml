@@ -104,18 +104,12 @@
         
         <!-- Result -->
         <GridPane alignment="CENTER" hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0"/>
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints />
-                <RowConstraints vgrow="NEVER" prefHeight="150.0" />
-            </rowConstraints>
             <Label text="Result" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <TableView fx:id="binomialResult" GridPane.columnIndex="0" GridPane.rowIndex="1"> 
+            <TableView fx:id="binomialResult" GridPane.hgrow="ALWAYS" 
+                       GridPane.vgrow="ALWAYS" GridPane.columnIndex="0" GridPane.rowIndex="1" > 
             </TableView>
-            <TableView fx:id="otherResult" GridPane.columnIndex="1" GridPane.rowIndex="1">  
+            <TableView fx:id="otherResult" GridPane.hgrow="ALWAYS" 
+                       GridPane.vgrow="ALWAYS" GridPane.columnIndex="1" GridPane.rowIndex="1">  
             </TableView>
         </GridPane>
         

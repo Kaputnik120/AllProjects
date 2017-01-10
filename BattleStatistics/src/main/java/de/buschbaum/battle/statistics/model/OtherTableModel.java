@@ -51,8 +51,8 @@ public class OtherTableModel {
     /**
      * @return the msg
      */
-    public SimpleStringProperty getMsg() {
-        return msg;
+    public String getMsg() {
+        return msg.getValue();
     }
 
     /**
