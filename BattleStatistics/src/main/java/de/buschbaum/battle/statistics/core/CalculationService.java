@@ -42,7 +42,7 @@ public class CalculationService {
         }
 
         double finalLoseWoundChance = applySave(loseWoundChance, cm.getFnpSave());
-        String finalWoundMsg = "The final chance to inflict an unsaved wound is " + String.format("%.4f", finalLoseWoundChance);
+        String finalWoundMsg = "The chance to inflict an unsaved wound with one shot is " + String.format("%.4f", finalLoseWoundChance);
         messages.add(finalWoundMsg);
         LOG.info(finalWoundMsg);
 
