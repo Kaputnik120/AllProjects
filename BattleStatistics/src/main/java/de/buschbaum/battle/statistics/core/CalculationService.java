@@ -39,6 +39,8 @@ public class CalculationService {
             loseWoundChance = calculateLoseWoundD(cm.getArmourSave(), cm.isReroll1sArmourSave(), cm.isRerollArmourSave(),
                     cm.getCoverSave(), cm.isReroll1sCoverSave(), cm.isRerollCoverSave(),
                     cm.getInvulnerableSave(), cm.isReroll1sInvulnerableSave(), cm.isRerollInvulnerableSave(), cm.isIgnoreCover(), cm.getAp(), chanceHit);
+            messages.add("Remind that only the D weapon rules regarding saves are applied,");
+            messages.add("but no multiple wounds (D3 or D6) will be calculated!");
         }
 
         double finalLoseWoundChance = applySave(loseWoundChance, cm.getFnpSave());

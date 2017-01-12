@@ -47,17 +47,14 @@
         -->
         <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="vbox-shooting">
             <GridPane alignment="BASELINE_LEFT" styleClass="grid-standard">
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Unit" styleClass="text"/>
-                <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="shootingUnitName"/>
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Shooting unit" styleClass="heading"/>
                 <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Shots" />
                 <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="shootingShots"/>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Points"/>
-                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="shootingPoints"/>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="Strength"/>
-                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="shootingStrength"/>
-                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="shootingWoundsReroll" text="Reroll" />
-                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="shootingWoundsReroll1s" text="Reroll 1s" />
-                <CheckBox GridPane.columnIndex="4" GridPane.rowIndex="3" fx:id="instantDeath" text="Instant death" />
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Strength"/>
+                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="shootingStrength"/>
+                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="shootingWoundsReroll" text="Reroll" />
+                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="shootingWoundsReroll1s" text="Reroll 1s" />
+                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="instantDeath" text="Instant death" />
                 <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="AP" />
                 <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="shootingAP"/>
                 <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="shootingRending" text="Rending" />
@@ -70,30 +67,25 @@
         
         <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="vbox-shot">
             <GridPane alignment="BASELINE_LEFT" styleClass="grid-standard">
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Unit"/>
-                <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="shotUnitName"/>
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Target unit" styleClass="heading"/>
                 <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Toughness" />
                 <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="shotToughness"/>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Points"/>
-                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="points"/>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="Wounds"/>
-                <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="wounds"/>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="Armour save"/>
-                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="shotArmourSave"/>
-                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="shotArmourSaveReroll" text="Reroll" />
-                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="4" fx:id="shotArmourSaveReroll1s" text="Reroll 1s" />
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="5" text="Invulnerable save" />
-                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="shotInvulnerableSave"/>
-                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="shotInvulnerableSaveReroll" text="Reroll" />
-                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="5" fx:id="shotInvulnerableSaveReroll1s" text="Reroll 1s" />
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="6" text="Cover save" />
-                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="6" fx:id="shotCoverSave"/>
-                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="6" fx:id="shotCoverSaveReroll" text="Reroll" />
-                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="6" fx:id="shotCoverSaveReroll1s" text="Reroll 1s" />
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="7" text="Feel no Pain"/>
-                <ComboBox GridPane.columnIndex="1" GridPane.rowIndex="7" fx:id="shotFNPSave"/>                
-                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="7" fx:id="shotFNPSaveReroll" text="Reroll" />
-                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="7" fx:id="shotFNPSaveReroll1s" text="Reroll 1s" />
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Armour save"/>
+                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="shotArmourSave"/>
+                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="shotArmourSaveReroll" text="Reroll" />
+                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="shotArmourSaveReroll1s" text="Reroll 1s" />
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="Invulnerable save" />
+                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="shotInvulnerableSave"/>
+                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="shotInvulnerableSaveReroll" text="Reroll" />
+                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="shotInvulnerableSaveReroll1s" text="Reroll 1s" />
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="Cover save" />
+                <ComboBox  GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="shotCoverSave"/>
+                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="shotCoverSaveReroll" text="Reroll" />
+                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="4" fx:id="shotCoverSaveReroll1s" text="Reroll 1s" />
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="5" text="Feel no Pain"/>
+                <ComboBox GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="shotFNPSave"/>                
+                <CheckBox GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="shotFNPSaveReroll" text="Reroll" />
+                <CheckBox GridPane.columnIndex="3" GridPane.rowIndex="5" fx:id="shotFNPSaveReroll1s" text="Reroll 1s" />
             </GridPane>
         </VBox>
         

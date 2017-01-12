@@ -15,6 +15,10 @@
     -fx-vgap: 5px;
 }
 
+.heading {
+    -fx-font-size: 24px;
+}
+
 .root {
 
     -rgba-primary-0:rgba( 50, 66, 62,1);	/* Main Primary color */

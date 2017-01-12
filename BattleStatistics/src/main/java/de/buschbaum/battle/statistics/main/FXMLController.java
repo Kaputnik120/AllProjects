@@ -24,8 +24,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class FXMLController implements Initializable {
 
-    @FXML
-    private TextField shootingUnitName;
+
     @FXML
     private ComboBox shootingHit;
     @FXML
@@ -46,11 +45,6 @@ public class FXMLController implements Initializable {
     private ComboBox shootingAP;
     @FXML
     private TextField shootingShots;
-    @FXML
-    private TextField shootingPoints;
-
-    @FXML
-    private TextField shotUnitName;
     @FXML
     private ComboBox shotToughness;
     @FXML
@@ -77,10 +71,6 @@ public class FXMLController implements Initializable {
     private CheckBox shotFNPSaveReroll;
     @FXML
     private CheckBox shotFNPSaveReroll1s;
-    @FXML
-    private TextField wounds;
-    @FXML
-    private TextField points;
     @FXML
     private TableView binomialResult;
     @FXML
@@ -153,13 +143,6 @@ public class FXMLController implements Initializable {
         calculationModel.setAp(ap);
 
         try {
-            int points = sanitize(shootingPoints.getText());
-            calculationModel.setShootingPoints(points);
-        } catch (Exception e) {
-            raiseValidationError("Points must be a number!");
-            return null;
-        }
-        try {
             int shots = sanitize(shootingShots.getText());
             calculationModel.setShots(shots);
         } catch (Exception e) {
@@ -177,21 +160,6 @@ public class FXMLController implements Initializable {
         calculationModel.setCoverSave(coverSave);
         int fnpSave = sanitizeD6((String) shotFNPSave.getSelectionModel().getSelectedItem());
         calculationModel.setFnpSave(fnpSave);
-
-        try {
-            int woundsCount = sanitize(wounds.getText());
-            calculationModel.setWounds(woundsCount);
-        } catch (Exception e) {
-            raiseValidationError("Wounds must be a number!");
-            return null;
-        }
-        try {
-            int pointsCount = sanitize(points.getText());
-            calculationModel.setPoints(pointsCount);
-        } catch (Exception e) {
-            raiseValidationError("Shots must be a number!");
-            return null;
-        }
 
         return calculationModel;
     }
@@ -216,7 +184,6 @@ public class FXMLController implements Initializable {
     @Override
     @SuppressWarnings("unchecked")
     public void initialize(URL url, ResourceBundle rb) {
-        shootingUnitName.setText("Space Marines");
         shootingHit.getItems().addAll(Arrays.asList(new String[]{"2+", "3+", "4+", "5+", "6+", "Automatic"}));
         shootingHit.getSelectionModel().select("3+");
         shootingHitsReroll.setSelected(false);
@@ -228,9 +195,7 @@ public class FXMLController implements Initializable {
         shootingAP.getItems().addAll(Arrays.asList(new String[]{"1", "2", "3", "4", "5", "6", "-"}));
         shootingAP.getSelectionModel().select("5");
         shootingShots.setText("20");
-        shootingPoints.setText("170");
 
-        shotUnitName.setText("Chaos Terminators");
         shotToughness.getItems().addAll(Arrays.asList(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
         shotToughness.getSelectionModel().select("4");
         shotArmourSave.getItems().addAll(Arrays.asList(new String[]{"2+", "3+", "4+", "5+", "6+", "-"}));
@@ -249,8 +214,6 @@ public class FXMLController implements Initializable {
         shotFNPSave.getSelectionModel().select("-");
         shotFNPSaveReroll.setSelected(false);
         shotFNPSaveReroll1s.setSelected(false);
-        points.setText("200");
-        wounds.setText("5");
 
         //TableViews
         TableColumn binomailLostWoundsColumn = new TableColumn("At least lost wounds");

@@ -1,9 +1,9 @@
 <configuration debug="true">
  
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logFile.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- daily rollover -->
+             daily rollover 
             <fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
 
             <maxHistory>3</maxHistory>
@@ -14,7 +14,7 @@
         <encoder>
             <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
         </encoder>
-    </appender> 
+    </appender> -->
     
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
