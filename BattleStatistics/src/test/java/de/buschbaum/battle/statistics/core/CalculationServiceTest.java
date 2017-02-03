@@ -88,6 +88,10 @@ public class CalculationServiceTest {
         rending = splitRending(6, false, true);
         Assert.assertTrue(littleDifference(rending[0], 0));
         Assert.assertTrue(littleDifference(rending[1], 0.30555555));
+        
+        rending = splitRending(7, false, true);
+        Assert.assertTrue(littleDifference(rending[0], 0));
+        Assert.assertTrue(littleDifference(rending[1], 0));
     }
 
     @Test
@@ -126,14 +130,12 @@ public class CalculationServiceTest {
         Assert.assertTrue(woundD6 == 6);
         woundD6 = calculateWoundD6(5, 10);
         Assert.assertTrue(woundD6 == 7);
+        woundD6 = calculateWoundD6(1, 5);
+        Assert.assertTrue(woundD6 == 7);
         woundD6 = calculateWoundD6(10, 4);
         Assert.assertTrue(woundD6 == 2);
     }
 
-    //Calculate
-    //calculateLoseWoundBeforeFnpD
-    //calculateLoseWoundBeforeFnpUsual
-    //applyRending
     @Test
     public void testCalculateWoundBeforeFnp() {
         double woundChance = calculateLoseWoundBeforeFnp(0.5, 0.5, 5.0/6);

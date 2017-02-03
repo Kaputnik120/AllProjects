@@ -102,6 +102,8 @@ public class FXMLController implements Initializable {
     private CalculationModel convert() {
         CalculationModel calculationModel = new CalculationModel();
 
+        //Ignore cover is missing
+        
         if (shootingHitsReroll.isSelected() && shootingHitsReroll1s.isSelected()) {
             raiseValidationError("Please select either one \"Hit: Reroll 1s\" or \"Hit: Reroll\"!");
             return null;

@@ -225,6 +225,11 @@ public class CalculationService {
             splittedRending[0] = woundChanceNoRending;
             splittedRending[1] = rendingChance;
         }
+
+        if (woundD6 == 7) {
+            splittedRending[1] = 0;
+        }
+
         return splittedRending;
     }
 
